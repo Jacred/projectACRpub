@@ -126,7 +126,6 @@ NewGame: ; 5b6b
 	ld [wc2cc], a
 	call Function5ba7
 	call Function5b44
-	; call Function5b8f
 	call OakSpeech
 	call Function5d23
 	ld a, $1
@@ -145,19 +144,7 @@ NewGame: ; 5b6b
 	ld a, -1
 	ld [hl], a
 	jp Function5e5d
-; 5b8f
-
-; Function5b8f: ; 5b8f
-	; callba Function10632f
-	; jr c, .asm_5b9e
-	; callba SetPlayerGender
-	; ret
-
-; .asm_5b9e
-	; ld c, $0
-	; callba Function4802f
-	; ret
-; ; 5ba7
+; 5ba7
 
 Function5ba7: ; 5ba7
 	xor a
@@ -341,7 +328,7 @@ Function5ce9: ; 5ce9
 	ret
 
 .Rival  db "???@"
-.Red    db "AIIIAAB@"
+.Red    db "RED@"
 .Green  db "GREEN@"
 .Mom    db "MOM@"
 ; 5d23
@@ -701,7 +688,7 @@ OakSpeech: ; 0x5f99
 	callba SetTimeOfDay
 	call Function4dd
 	call ClearTileMap
-	ld de, MUSIC_ROUTE_24
+	ld de, MUSIC_ROUTE_30
 	call PlayMusic
 	call Function4a3
 	call Function4b6
@@ -717,7 +704,7 @@ OakSpeech: ; 0x5f99
 	call PrintText
 	call Function4b6
 	call ClearTileMap
-	ld a, NIDORINO
+	ld a, PIKACHU
 	ld [CurSpecies], a
 	ld [CurPartySpecies], a
 	call GetBaseData
@@ -745,13 +732,22 @@ OakSpeech: ; 0x5f99
 	call Function616a
 	ld hl, OakText5
 	call PrintText
-
+;.SelectGender
+	call Function4b6
+	call ClearTileMap
+	call Function616a
+	ld hl, .Text_BoyOrGirl
+	call PrintText
+	ld de, MUSIC_ROUTE_24
+	call PlayMusic
+	jr .SelectGenderFirst
 .SelectGender
 	call Function4b6
 	call ClearTileMap
 	call Function616a
 	ld hl, .Text_BoyOrGirl
 	call PrintText
+.SelectGenderFirst
 	ld hl, .MenuDataHeader
 	call LoadMenuDataHeader
 	call Function3200
@@ -833,8 +829,8 @@ OakSpeech: ; 0x5f99
 .MenuData2: ; 0x48e04
 	db $a1 ; flags
 	db 2 ; items
-	db "Boy@"
-	db "Girl@"
+	db "BOY@"
+	db "GIRL@"
 ; 0x48e0f
 
 .Text_BoyOrGirl: ; 0x48e0f
@@ -855,7 +851,7 @@ OakText1: ; 0x6045
 OakText2: ; 0x604a
 	TX_FAR _OakText2
 	start_asm
-	ld a, NIDORINO
+	ld a, PIKACHU
 	call PlayCry
 	call WaitSFX
 	ld hl, OakText3
@@ -925,16 +921,10 @@ NamePlayer: ; 0x6074
 .asm_60cf
 	call InitName
 	ret
-IF DEF(APRILFOOLS)
 .Chris
-.Kris
-	db "OLDEN@@@@@@"
-ELSE
-.Chris
-	db "RUST@@@@@@@"
+	db "RUSTY@@@@@@"
 .Kris
 	db "AZURE@@@@@@"
-ENDC
 ; 60e9
 
 NameRivalRB: ; 0x6074
@@ -973,7 +963,7 @@ NameRivalRB: ; 0x6074
 	ret
 
 .Chris
-	db "RUST@@@@@@@"
+	db "RUSTY@@@@@@"
 .Kris
 	db "AZURE@@@@@@"
 ; 60e9
@@ -1392,12 +1382,10 @@ TitleScreenMain: ; 6304
 	and D_UP + B_BUTTON + SELECT
 	cp  D_UP + B_BUTTON + SELECT
 	jr z, .delete_save_data
-; To bring up the clock reset dialog:
-; Hold Down + B + Select to initiate the sequence.
-
+; To bring up the clock reset dialog, press DOWN + B + SELECT.
 	ld a, [$ffeb]
 	cp $34
-	jr z, .check_clock_reset
+	jr z, .clock_reset
 	ld a, [hl]
 	and D_DOWN + B_BUTTON + SELECT
 	cp  D_DOWN + B_BUTTON + SELECT
@@ -1405,18 +1393,7 @@ TitleScreenMain: ; 6304
 	ld a, $34
 	ld [$ffeb], a
 	jr .check_start
-; Keep Select pressed, and hold Left + Up.
-; Then let go of Select.
 
-.check_clock_reset
-	bit 2, [hl] ; SELECT
-	jr nz, .check_start
-	xor a
-	ld [$ffeb], a
-	ld a, [hl]
-	and D_LEFT + D_UP
-	cp  D_LEFT + D_UP
-	jr z, .clock_reset
 ; Press Start or A to start the game.
 
 .check_start
@@ -2895,25 +2872,25 @@ ChangeHappiness: ; 71c2
 ; 7221
 
 .Actions
-	db  +5,  +3,  +2 ; Gained a level
-	db  +5,  +3,  +2 ; Used a stat-boosting item (vitamin or X-item)
-	db  +1,  +1,  +0
-	db  +3,  +2,  +1 ; Battled a Gym Leader
-	db  +1,  +1,  +0 ; Learned a move
-	db  -1,  -1,  -1 ; Lost to an enemy
-	db  -5,  -5, -10 ; Survived poisoning
-	db  -5,  -5, -10 ; Lost to a much weaker enemy
-	db  +1,  +1,  +1
-	db  +3,  +3,  +1
-	db  +5,  +5,  +2
-	db  +1,  +1,  +1
-	db  +3,  +3,  +1
+	db +10,  +6,  +4 ; Gained a level
+	db +10,  +6,  +4 ; Used a stat-boosting item (vitamin or X-item)
+	db  +2,  +2,  +0
+	db  +6,  +4,  +2 ; Battled a Gym Leader
+	db  +2,  +2,  +0 ; Learned a move
+	db  -2,  -2,  -2 ; Lost to an enemy
+	db -10, -10, -20 ; Survived poisoning
+	db -10, -10, -20 ; Lost to a much weaker enemy
+	db  +2,  +2,  +2
+	db  +6,  +6,  +2
 	db +10, +10,  +4
-	db  -5,  -5, -10 ; Used Heal Powder or Energypowder (bitter)
-	db -10, -10, -15 ; Used Energy Root (bitter)
-	db -15, -15, -20 ; Used Revival Herb (bitter)
-	db  +3,  +3,  +1
-	db +10,  +6,  +4
+	db  +2,  +2,  +2
+	db  +6,  +6,  +2
+	db +20, +20,  +8
+	db -10, -10, -20 ; Used Heal Powder or Energypowder (bitter)
+	db -20, -20, -30 ; Used Energy Root (bitter)
+	db -30, -30, -40 ; Used Revival Herb (bitter)
+	db  +6,  +6,  +2
+	db +20, +12,  +8
 ; 725a
 
 StepHappiness:: ; 725a
@@ -3027,7 +3004,7 @@ SpecialGiveShuckle: ; 7305
 
 	xor a
 	ld [MonType], a
-; Level 15 Shuckle.
+; Level 50 Shuckle.
 
 	ld a, SHUCKLE
 	ld [CurPartySpecies], a
@@ -3048,7 +3025,7 @@ SpecialGiveShuckle: ; 7305
 	push bc
 	ld hl, PartyMon1Item
 	call AddNTimes
-	ld [hl], BERRY
+	ld [hl], RARE_CANDY
 	pop bc
 	pop af
 ; OT ID.
@@ -3088,9 +3065,9 @@ SpecialGiveShuckle: ; 7305
 	ret
 
 SpecialShuckleOT:
-	db "MANIA@"
+	db "KIRK@"
 SpecialShuckleNick:
-	db "SHUCKIE@"
+	db "SHUCKLE@"
 ; 737e
 
 SpecialReturnShuckle: ; 737e
@@ -5015,7 +4992,7 @@ Functionc8ac: ; c8ac
 Functionc8b5: ; c8b5
 ; Flash
 
-	ld de, ENGINE_STORMBADGE
+	ld de, ENGINE_FOGBADGE
 	callba CheckBadge
 	jr c, .asm_c8dd
 	push hl
@@ -5094,7 +5071,7 @@ Jumptable_c91a: ; c91a (3:491a)
 	dw Functionc97a
 
 Functionc922: ; c922 (3:4922)
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_GLACIERBADGE
 	call CheckBadge
 	jr c, .asm_c956
 	ld hl, BikeFlags
@@ -5252,7 +5229,7 @@ TrySurfOW:: ; c9e7
 
 	call CheckDirection
 	jr c, .quit
-	ld de, ENGINE_FOGBADGE
+	ld de, ENGINE_GLACIERBADGE
 	call CheckEngineFlag
 	jr c, .print_message
 	ld d, SURF
@@ -5954,7 +5931,7 @@ Jumptable_cdae: ; cdae
 ; cdb4
 
 Functioncdb4: ; cdb4
-	ld de, ENGINE_GLACIERBADGE
+	ld de, ENGINE_RISINGBADGE
 	call CheckBadge
 	jr c, .asm_cdc7
 	call Functioncdde
@@ -6055,7 +6032,7 @@ TryWhirlpoolOW:: ; ce3e
 	ld d, WHIRLPOOL
 	call CheckPartyMove
 	jr c, .asm_ce5c
-	ld de, ENGINE_GLACIERBADGE
+	ld de, ENGINE_RISINGBADGE
 	call CheckEngineFlag
 	jr c, .asm_ce5c
 	call Functioncdde
@@ -9572,7 +9549,7 @@ Strings_e47f: ; e47f
 	db "WITHDRAW ", $e1, $e2, "@"
 	db "DEPOSIT ", $e1, $e2, "@"
 	db "CHANGE BOX@"
-	db "MOVE ", $e1, $e2, " W/O MAIL@"
+	db "MOVE ", $e1, $e2, "@"
 	db "SEE YA!@"
 Jumptable_e4ba: ; e4ba (3:64ba)
 	dw Functione559
@@ -10651,7 +10628,7 @@ TMHMMoves: ; 1167a
 	db GUNK_SHOT
 	db SEISMIC_TOSS
 	db SWORDS_DANCE
-	db STRING_SHOT
+	db DREAM_EATER
 	db DARK_PULSE
 	db REST
 	db ATTRACT
@@ -10802,7 +10779,7 @@ Function1173e: ; 1173e (4:573e)
 ; 11780 (4:5780)
 
 Strings_11780: ; 11780
-	db "'S@"
+	db "'s@"
 	db "NICKNAME?@"
 ; 1178d
 
@@ -10817,7 +10794,7 @@ Function1178d: ; 1178d (4:578d)
 ; 117a3 (4:57a3)
 
 String_117a3: ; 117a3
-	db "YOUR NAME?@"
+	db "PLAYER's NAME?@"
 ; 117ae
 
 Function117ae: ; 117ae (4:57ae)
@@ -10825,7 +10802,7 @@ Function117ae: ; 117ae (4:57ae)
 	ld b, BANK(SilverSpriteGFX)
 	call Function11847
 	hlcoord 5, 2
-	ld de, String_117c3
+	ld de, String_11839
 	call PlaceString
 	call Function11882
 	ret
@@ -10841,7 +10818,7 @@ RivalNamingScreenRB: ; 117ae (4:57ae)
 	ret
 
 String_117c3: ; 117c3
-	db "RIVAL'S NAME?@"
+	db "RIVAL's NAME?@"
 ; 117d1
 
 DistCodeEntry:
@@ -10865,7 +10842,7 @@ Function117d1: ; 117d1 (4:57d1)
 ; 117e6 (4:57e6)
 
 String_117e6: ; 117e6
-	db "MOTHER'S NAME?@"
+	db "MOTHER's NAME?@"
 ; 117f5
 
 Function117f5: ; 117f5 (4:57f5)
@@ -13071,14 +13048,14 @@ StartMenu:: ; 125cd
 .PokegearString	db $24, "GEAR@"
 .QuitString    	db "QUIT@"
 .PokedexDesc 	db "#MON", $4e, "database@"
-.PartyDesc   	db "Party ", $4a, $4e, "status@"
+.PartyDesc   	db "Active ", $4a, $4e, "party@"
 .PackDesc    	db "Contains", $4e, "items@"
-.PokegearDesc	db "Trainer's", $4e, "key device@"
-.StatusDesc  	db "Your own", $4e, "status@"
+.PokegearDesc	db "Open the", $4e, "#GEAR@"
+.StatusDesc  	db "<PLAYER>'s", $4e, "status@"
 .SaveDesc    	db "Save your", $4e, "progress@"
 .OptionDesc  	db "Change", $4e, "settings@"
-.ExitDesc    	db "Close this", $4e, "menu@"
-.QuitDesc    	db "Quit and", $4e, "be judged.@"
+.ExitDesc    	db "Close the", $4e, "menu@"
+.QuitDesc    	db "Quit and", $4e, "be judged@"
 .OpenMenu ; 127e5
 	ld a, [MenuSelection]
 	call .GetMenuAccountTextPointer
@@ -15090,7 +15067,7 @@ Function13512: ; 13512
 ; 13537
 
 String_13537: ; 13537
-	db "Now on:@"
+	db "NOW ON:@"
 ; 1353f
 
 Function1353f: ; 1353f
@@ -15198,7 +15175,7 @@ Function13575: ; 13575
 ._11f
 	db "11F@"
 .roof
-	db "ROOF@"
+	db "RF@"
 ; 135db
 
 Function135db: ; 135db
@@ -16295,11 +16272,11 @@ GetTimeOfDay:: ; 14032
 
 TimesOfDay: ; 14044
 ; hours for the time of day
-; 04-09 morn | 10-17 day | 18-03 nite
+; 5am-11am morn | 11am-7pm day | 7pm-5am nite
 
-	db 04, NITE
-	db 10, MORN
-	db 18, DAY
+	db 05, NITE
+	db 11, MORN
+	db 19, DAY
 	db 24, NITE
 	db -1, MORN
 ; 1404e
@@ -19433,7 +19410,7 @@ String_155fa:	db "<PLAYER>'s PC@"
 String_15600:	db "BILL's PC@"
 String_15609:	db "PROF.OAK's PC@"
 String_15616:	db "HALL OF FAME@"
-String_15623:	db "TURN OFF@"
+String_15623:	db "LOG OUT@"
 String_SomeonesPC: db "SOMEONE's PC@"
 ; 1562c
 
@@ -19653,7 +19630,7 @@ KrissPCMenuData: ; 0x15736
 .WithdrawItem db "WITHDRAW ITEM@"
 .DepositItem  db "DEPOSIT ITEM@"
 .TossItem     db "TOSS ITEM@"
-.MailBox      db "MAIL BOX@"
+.MailBox      db "MAILBOX@"
 .Decoration   db "DECORATION@"
 .TurnOff      db "TURN OFF@"
 .LogOff       db "LOG OFF@"
@@ -20174,20 +20151,35 @@ VendingMachine: ; 15ac4
 ; 15aee
 
 Unknown_15aee: ; 15aee
-	db 5
-	dbw POKE_BALL,     150
-	dbw GREAT_BALL,    500
-	dbw SUPER_POTION,  500
-	dbw FULL_HEAL,     500
-	dbw REVIVE,       1200
+	db 13
+	dbw POKE_BALL,    50
+	dbw GREAT_BALL,   150
+	dbw ULTRA_BALL,   300
+	dbw SUPER_POTION, 300
+	dbw HYPER_POTION, 600
+	dbw FULL_RESTORE, 1500
+	dbw REVIVE,       750
+	dbw FULL_HEAL,    200
+	dbw HP_UP,        5000
+	dbw PROTEIN,      5000
+	dbw IRON,         5000
+	dbw CARBOS,       5000
+	dbw CALCIUM,      5000
 	db -1
 Unknown_15aff: ; 15aff
-	db 5
-	dbw HYPER_POTION, 1000
-	dbw FULL_RESTORE, 2000
-	dbw FULL_HEAL,     500
-	dbw ULTRA_BALL,   1000
-	dbw PROTEIN,      7800
+	db 12
+	dbw ULTRA_BALL,   100
+	dbw HYPER_POTION, 200
+	dbw FULL_RESTORE, 500
+	dbw REVIVE,       250
+	dbw HP_UP,        1650
+	dbw PROTEIN, 	  1650
+	dbw IRON,         1650
+	dbw CARBOS,       1650
+	dbw CALCIUM,      1650
+	dbw PP_UP,        1650
+	dbw MAX_REVIVE,   4000
+	dbw RARE_CANDY,   5000
 	db -1
 ; 15b10
 
@@ -20424,12 +20416,12 @@ Function15c25: ; 15c25
 
 Unknown_15c51: ; 15c51
 	db 6
-	dbw NUGGET,     4500
-	dbw PEARL,       650
-	dbw BIG_PEARL,  3500
-	dbw STARDUST,    900
-	dbw STAR_PIECE, 4600
-	dbw EXP_SHARE,  2100
+	dbw NUGGET,     4000 ; 1000 profit
+	dbw PEARL,      900  ; 100 profit
+	dbw BIG_PEARL,  3500 ; 500 profit
+	dbw STARDUST,   1300 ; 200 profit
+	dbw STAR_PIECE, 5400 ; 600 profit
+	dbw EXP_SHARE,  3000
 	db -1
 ; 15c62
 
@@ -20502,8 +20494,8 @@ Function15c91: ; 15c91
 	scf
 	ret
 .already_have_txt
-	text "You can't carry"
-	line "any more."
+	text "You're carrying"
+	line "too much."
 	done
 
 Function15ca3: ; 15ca3
@@ -26366,9 +26358,9 @@ String24c43: ; 24c43
 String24c4b: ; 24c4b
 	db "CAUGHT@"
 String24c52: ; 24c52
-	db "BALLS:@"
+	db "BALLs:@"
 String24c59: ; 24c59
-	db "None@"
+	db "NONE@"
 String24c5e: ; 24c5e
 	db "LEVEL@"
 ; 24c64
@@ -26819,7 +26811,7 @@ MenuData_0x24f34: ; 0x24f34
 Strings24f3d: ; 0x24f3d
 	db "FIGHT@"
 	db $4a, "@"
-	db "PACK@"
+	db "ITEM@"
 	db "RUN@"
 ; 24f4e
 
@@ -26873,7 +26865,7 @@ MenuData_0x24f91: ; 24f91
 Strings24f9a: ; 24f9a
 	db "FIGHT@"
 	db $4a, "@"
-	db "PARKBALL×  @"
+	db "PARK BALL× @"
 	db "RUN@"
 ; 24fb2
 
@@ -27514,7 +27506,7 @@ Function2530a: ; 2530a (9:530a)
 
 String_2534c: ; 2534c
 	db "#DEX", $4e
-	db "PLAY TIME@"
+	db "ADVENTURE@"
 String_2535b: ; 2535b
 	db "@"
 String_2535c: ; 2535c
@@ -28256,7 +28248,7 @@ Unknown_267aa: ; 267aa
 .carpet   db "CARPET@"
 .plant    db "PLANT@"
 .poster   db "POSTER@"
-.game     db "GAME CONSOLE@"
+.game     db "GAME SYSTEM@"
 .ornament db "ORNAMENT@"
 .big_doll db "BIG DOLL@"
 .exit     db "EXIT@"
@@ -28747,7 +28739,7 @@ DecorationNames: ; 26b8d
 	db "TROPICPLANT@"
 	db "JUMBOPLANT@"
 	db "TOWN MAP@"
-	db "NES@"
+	db "FAMICOM@"
 	db "SUPER NES@"
 	db "NINTENDO 64@"
 	db "VIRTUAL BOY@"
@@ -30414,9 +30406,8 @@ StringCantBattle: ; 0x4d3fe
 	db "@"
 
 StringCantBattleText: ; 28ece
-	text "A TPP game can"
-	next "only battle with"
-	cont "another TPP game."
+	text "Both players must"
+	next "use the same ROM."
 	done
 	
 StringItemIncompatible: ; 0x4d3fe
@@ -30424,12 +30415,10 @@ StringItemIncompatible: ; 0x4d3fe
 	db "@"
 
 StringItemIncompatibleText: ; 28ece
-	text "A #mon in your"
-	next "party is holding"
-	cont "an item that is"
-	cont "a TPP exclusive."
+	text "One of your"
+	next "#MON's items is"
+	cont "incompatible."
 	done
-
 
 Function283b2: ; 283b2
 	ld de, UnknownText_0x283ed
@@ -31939,13 +31928,14 @@ StringMoveIncompatible: ; 0x4d3fe
 	db "@"
 	
 StringMoveIncompatibleText: ; 28ece
-	text "Your friend's"
-	line "@"
+	text "@"
 	text_from_ram StringBuffer3
-	text ""
-	cont "knows a move"
-	cont "that can't be"
-	cont "traded over"
+	text "'s"
+	line "@"
+	text_from_ram StringBuffer1
+	text " is"
+	cont "incompatible with"
+	cont "your friend's ROM."
 	done
 
 StringMoveIncompatibleYou: ; 0x4d3fe
@@ -34845,85 +34835,84 @@ Function2c1b2: ; 2c1b2
 ; 2c1ef
 
 TrainerClassNames:: ; 2c1ef
-	db "LEADER@"
- 	db "LEADER@"
- 	db "LEADER@"
- 	db "LEADER@"
- 	db "LEADER@"
- 	db "LEADER@"
- 	db "LEADER@"
- 	db "LEADER@"
+	db "LEADER@" ; falkner
+ 	db "LEADER@" ; whitney
+ 	db "LEADER@" ; bugsy
+ 	db "LEADER@" ; morty
+ 	db "LEADER@" ; pryce
+ 	db "LEADER@" ; jasmine
+ 	db "LEADER@" ; chuck
+ 	db "LEADER@" ; clair
  	db "RIVAL@"
- 	db "#MON PROF.@"
- 	db "ELITE FOUR@"
- 	db $4a, " TRAINER@"
- 	db "ELITE FOUR@"
- 	db "ELITE FOUR@"
- 	db "ELITE FOUR@"
+ 	db "PROFESSOR@" ; oak
+ 	db "ELITE FOUR@" ; will
+ 	db $4a, " TRAINER@" ; gold
+ 	db "ELITE FOUR@" ; bruno
+ 	db "ELITE FOUR@" ; karen
+ 	db "ELITE FOUR@" ; koga
  	db "CHAMPION@"
- 	db "LEADER@"
- 	db "LEADER@"
- 	db "LEADER@"
- 	db "SCIENTIST@"
- 	db "LEADER@"
+ 	db $4a, " BREEDER@" ; brock
+ 	db "MERMAID@" ; misty
+ 	db "LIEUTENANT@" ; surge
+ 	db "RESEARCHER@"
+ 	db "AROMA LADY@" ; erika
  	db "YOUNGSTER@"
- 	db "SCHOOLBOY@"
- 	db "BIRD KEEPER@"
+ 	db "SCHOOLKID@"
+ 	db "BIRDKEEPER@"
  	db "LASS@"
- 	db "LEADER@"
- 	db "COOLTRAINER@"
- 	db "COOLTRAINER@"
+ 	db "NINJA GIRL@" ; janine
+ 	db "ELITE♂@"
+ 	db "ELITE♀@"
  	db "BEAUTY@"
  	db "#MANIAC@"
  	db "ROCKET@"
  	db "GENTLEMAN@"
  	db "SKIER@"
  	db "TEACHER@"
- 	db "LEADER@"
+ 	db "PSYCHIC@" ; sabrina
  	db "BUG CATCHER@"
  	db "FISHER@"
- 	db "SWIMMER♂@"
- 	db "SWIMMER♀@"
+ 	db "SWIMMER@"
+ 	db "SWIMMER@"
  	db "SAILOR@"
  	db "SUPER NERD@"
  	db "RIVAL@"
  	db "GUITARIST@"
  	db "HIKER@"
  	db "BIKER@"
- 	db "LEADER@"
+ 	db "SCIENTIST@" ; blaine
  	db "BURGLAR@"
  	db "FIREBREATHER@"
  	db "JUGGLER@"
  	db "BLACKBELT@"
- 	db "ROCKET@"
- 	db "PSYCHIC@"
- 	db "PICNICKER@"
- 	db "CAMPER@"
- 	db "ROCKET@"
+ 	db "EXECUTIVE@"
+ 	db "ESPER@"
+ 	db "SCOUT♀@"
+ 	db "SCOUT♂@"
+ 	db "EXECUTIVE@"
  	db "SAGE@"
- 	db "MEDIUM@"
+ 	db "CHANNELER@"
  	db "BOARDER@"
  	db "#FAN@"
  	db "KIMONO GIRL@"
  	db "TWINS@"
  	db "#FAN@"
- 	db $4a, " TRAINER@"
- 	db "LEADER@"
+ 	db $4a, " TRAINER@" ; red
+ 	db "EX CHAMPION@" ; blue
  	db "OFFICER@"
  	db "ROCKET@"
- 	db "MYSTICALMAN@"
- 	db "#MANIAC@"
- 	db $4a, " PROF.@"
- 	db $4a, " LEAGUE@"
+ 	db "LORESEEKER@"
+ 	db "#MANIAC@" ; bill
+ 	db "PROFESSOR@"
+ 	db $4a, " LEAGUE's@"
  	db "BOSS@"
- 	db "COOLSIBS@"
- 	db "RIVAL@"
- 	db "RIVAL@"
- 	db "LEADER@"
- 	db "LEADER@"
-	db "ELF COACH'S@"
+ 	db "ELITEs@"
+ 	db $4a, " TRAINER@" ; rusty
+ 	db $4a, " TRAINER@" ; azure
+ 	db "LEADER@" ; brock
+ 	db "LEADER@" ; misty
+	db $4a, " TRAINER@" ; kris
 	db "ROCKET@"
- 	; db $4a, " TRAINER@" ; Uncomment this if the above is rejected
 
 AI_Redundant: ; 2c41a
 ; Check if move effect c will fail because it's already been used.
@@ -36047,7 +36036,7 @@ ConvertBerriesToBerryJuice: ; 2ede6
 	ret
 
 .convertToJuice
-	ld a, BERRY_JUICE
+	ld a, RARE_CANDY
 	ld [hl], a
 	pop hl
 	pop af
@@ -36194,6 +36183,9 @@ PlayBattleMusic: ; 2ee6c
 	cp LUGIA
 	ld de, MUSIC_LUGIA_BATTLE
 	jp z, .done
+	cp PHANCERO
+	ld de, MUSIC_PHANCERO_BATTLE
+	jp z, .done
 	callba RegionCheck
 	ld a, e
 	and a
@@ -36215,14 +36207,26 @@ PlayBattleMusic: ; 2ee6c
 	jp z, .done
 	cp RED
 	jp z, .done
-	cp POKEMON_PROF
-	jp z, .done
 	cp BABA
 	jp z, .done
+
+	ld de, MUSIC_CHAMPION_BATTLE_RB
+	cp POKEMON_PROF
+	jp z, .done
+	cp BLUE
+	jp z, .done
+
+	ld de, MUSIC_RIVAL_BATTLE
+	cp RIVAL1
+	jp z, .done
+	cp RIVAL2
+	jp z, .done
+
 	ld de, MUSIC_VS_WCS
 	cp PROF_ELM
-	jr z, .done
-	; really, they should have included admins and scientists here too...
+	jp z, .done
+	; this was originally jr, but wouldn't build. changing to jp fixed it, no idea if that will break anything...
+
 	ld de, MUSIC_ROCKET_BATTLE
 	call RocketMusicCheck
 	jr c, .okay_rocket
@@ -36233,40 +36237,33 @@ PlayBattleMusic: ; 2ee6c
 	cp GRUNTF
 	jr z, .done
 	cp EXECUTIVEM
-	jr z, .done
+	jr z, .apollo_check
 	cp EXECUTIVEF
 	jr z, .done
 	cp SCIENTIST
 	jr z, .scientist
-	cp EXECUTIVE_EGK
+	cp ROCKETBOSS
 	jr z, .done
+
 	ld de, MUSIC_RIVAL_BATTLE_RB
 	cp BLUE_RB
 	jr z, .egk_check
 	cp BLUE_RB_F
 	jr z, .egk_check
+
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	callba IsKantoGymLeader
 	jr c, .done
+
 	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
 	callba IsJohtoGymLeader
 	jr c, .done
-	ld de, MUSIC_RIVAL_BATTLE
-	ld a, [OtherTrainerClass]
-	cp RIVAL1
-	jr z, .done
-	cp RIVAL2
-	jr nz, .othertrainer
-	ld a, [OtherTrainerID]
-	cp 4 ; Rival in Indigo Plateau
-	jr c, .done
-	ld de, MUSIC_CHAMPION_BATTLE
-	jr .done
 
 .scientist
 	ld a, [InBattleTowerBattle]
 	bit 0, a
 	jr z, .done
+
 .othertrainer
 	ld a, [wLinkMode]
 	and a
@@ -36275,6 +36272,7 @@ PlayBattleMusic: ; 2ee6c
 	ld a, e
 	and a
 	jr nz, .kantotrainer
+
 .johtotrainer
 	ld de, MUSIC_JOHTO_TRAINER_BATTLE
 	jr .done
@@ -36293,7 +36291,14 @@ PlayBattleMusic: ; 2ee6c
 	ld a, [StatusFlags]
 	bit 5, a
 	jr z, .done
-	ld de, MUSIC_CHAMPION_BATTLE_RB
+	ld de, MUSIC_VS_WCS
+	jr .done
+
+.apollo
+	ld a, [OtherTrainerID]
+	cp 5 ; apollo battle 2 at radio tower
+	jr z, .done
+	ld de, MUSIC_LUGIA_BATTLE
 	jr .done
 
 ClearBattleRAM: ; 2ef18
@@ -38710,7 +38715,7 @@ Function48187: ; 48187 (12:4187)
 ; 48202 (12:4202)
 
 String_48202: ; 48202
-	db "Tell Later@"
+	db "TELL LATER@"
 ; 4820d
 
 Function4820d: ; 4820d (12:420d)
@@ -38769,7 +38774,7 @@ Function48272: ; 48272 (12:4272)
 ; 48275 (12:4275)
 
 String_48275: ; 48275
-	db "Personal Info@"
+	db "PERSONAL INFO@"
 ; 48283
 
 Function48283: ; 48283 (12:4283)
@@ -39055,14 +39060,14 @@ Unknown_4845d: ; 4845d
 	db "9@"
 ; 48471
 
-MobileProfileString: db "  Mobile Profile@"
-String_48482: db "Gender@"
-String_48489: db "Age@"
-String_4848d: db "Address@"
-String_48495: db "Zip Code@"
+MobileProfileString: db "  MOBILE PROFILE@"
+String_48482: db "GENDER@"
+String_48489: db "AGE@"
+String_4848d: db "ADDRESS@"
+String_48495: db "ZIP CODE@"
 String_4849e: db "OK@"
-String_484a1: db "Profile Changed@"
-String_484b1: db "Boy or girl?@"
+String_484a1: db "PROFILE CHANGED@"
+String_484b1: db "BOY or GIRL?@"
 String_484be: db "How old are you?@"
 String_484cf: db "Where do you live?@"
 String_484e2: db "Your zip code?@"
@@ -39080,8 +39085,8 @@ MenuData2_0x484f9: ; 0x484f9
 	db $a0 ; flags
 	db 2 ; items
 Strings_484fb:
-String_484fb: db "Boy@"
-String_484ff: db "Girl@"
+String_484fb: db "BOY@"
+String_484ff: db "GIRL@"
 ; 0x48504
 
 MenuDataHeader_0x48504: ; 0x48504
@@ -39777,8 +39782,8 @@ MenuDataHeader_0x48a9c: ; 0x48a9c
 	db 08, 10 ; start coords
 	db 13, 19 ; end coord
 String_48aa1: ; 48aa1
-	db   "Tell Now"
-	next "Tell Later@"
+	db   "TELL NOW"
+	next "TELL LATER@"
 ; 48ab5
 
 Function48ab5: ; 48ab5 (12:4ab5)
@@ -40382,8 +40387,8 @@ Function48d94: ; 48d94 (12:4d94)
 ; MenuData2_0x48e04: ; 0x48e04
 	; db $a1 ; flags
 	; db 2 ; items
-	; db "Boy@"
-	; db "Girl@"
+	; db "BOY@"
+	; db "GIRL@"
 ; ; 0x48e0f
 
 ; UnknownText_0x48e0f: ; 0x48e0f
@@ -41755,7 +41760,7 @@ MainMenuText: ; 49d24
 	db "OPTION@"
 	db "MYSTERY GIFT@"
 	db "MOBILE@"
-	db "MOBILE STUDIUM@"
+	db "MOBILE STADIUM@"
 Jumptable_49d60: ; 0x49d60
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
@@ -41998,7 +42003,7 @@ Function49e75: ; 49e75
 ; 49e7f
 
 .TimeNotSet ; 49e7f
-	db "TIME NOT SET@"
+	db "The game's clock", $4e, "must be reset.@"
 ; 49e8c
 
 UnknownText_0x49e8c: ; 49e8c
@@ -44860,8 +44865,8 @@ Function4d3b1: ; 4d3b1
 	ld a, [wcfa9]
 	cp $1
 	ret z
-	call Function4d41e
-	jr c, .asm_4d3f7
+;	call Function4d41e
+;	jr c, .asm_4d3f7
 	ld a, $0
 	call GetSRAMBank
 	ld a, $80
@@ -44871,10 +44876,10 @@ Function4d3b1: ; 4d3b1
 	call PrintText
 	ret
 
-.asm_4d3f7
-	ld hl, UnknownText_0x4d403
-	call PrintText
-	ret
+;.asm_4d3f7
+;	ld hl, UnknownText_0x4d403
+;	call PrintText
+;	ret
 ; 4d3fe
 
 UnknownText_0x4d3fe: ; 0x4d3fe
@@ -44883,10 +44888,10 @@ UnknownText_0x4d3fe: ; 0x4d3fe
 	db "@"
 ; 0x4d403
 
-UnknownText_0x4d403: ; 0x4d403
+;UnknownText_0x4d403: ; 0x4d403
 	; Wrong password!
-	text_jump UnknownText_0x1c560b
-	db "@"
+;	text_jump UnknownText_0x1c560b
+;	db "@"
 ; 0x4d408
 
 UnknownText_0x4d408: ; 0x4d408
@@ -44909,217 +44914,6 @@ MenuData2_0x4d415: ; 0x4d415
 	db "NO@"
 	db "YES@"
 ; 0x4d41e
-
-Function4d41e: ; 4d41e
-	call Function4d50f
-	push de
-	ld hl, StringBuffer2
-	ld bc, $0005
-	xor a
-	call ByteFill
-	ld a, $4
-	ld [StringBuffer2 + 5], a
-	ld hl, UnknownText_0x4d463
-	call PrintText
-.asm_4d437
-	call Function4d468
-.asm_4d43a
-	call Functiona57
-	ld a, [$ffa9]
-	ld b, a
-	and $1
-	jr nz, .asm_4d453
-	ld a, b
-	and $f0
-	jr z, .asm_4d43a
-	call Function4d490
-	ld c, $3
-	call DelayFrames
-	jr .asm_4d437
-
-.asm_4d453
-	call Function4d4e0
-	pop de
-	ld a, e
-	cp l
-	jr nz, .asm_4d461
-	ld a, d
-	cp h
-	jr nz, .asm_4d461
-	and a
-	ret
-
-.asm_4d461
-	scf
-	ret
-; 4d463
-
-UnknownText_0x4d463: ; 0x4d463
-	; Please enter the password.
-	text_jump UnknownText_0x1c562e
-	db "@"
-; 0x4d468
-
-Function4d468: ; 4d468
-	hlcoord 14, 15
-	ld de, StringBuffer2
-	ld c, $5
-.asm_4d470
-	ld a, [de]
-	add $f6
-	ld [hli], a
-	inc de
-	dec c
-	jr nz, .asm_4d470
-	hlcoord 14, 16
-	ld bc, $0005
-	ld a, $7f
-	call ByteFill
-	hlcoord 14, 16
-	ld a, [StringBuffer2 + 5]
-	ld e, a
-	ld d, $0
-	add hl, de
-	ld [hl], $61
-	ret
-; 4d490
-
-Function4d490: ; 4d490
-	ld a, b
-	and $20
-	jr nz, .asm_4d4a5
-	ld a, b
-	and $10
-	jr nz, .asm_4d4af
-	ld a, b
-	and $40
-	jr nz, .asm_4d4ba
-	ld a, b
-	and $80
-	jr nz, .asm_4d4c8
-	ret
-
-.asm_4d4a5
-	ld a, [StringBuffer2 + 5]
-	and a
-	ret z
-	dec a
-	ld [StringBuffer2 + 5], a
-	ret
-
-.asm_4d4af
-	ld a, [StringBuffer2 + 5]
-	cp $4
-	ret z
-	inc a
-	ld [StringBuffer2 + 5], a
-	ret
-
-.asm_4d4ba
-	call Function4d4d5
-	ld a, [hl]
-	cp $9
-	jr z, .asm_4d4c5
-	inc a
-	ld [hl], a
-	ret
-
-.asm_4d4c5
-	ld [hl], $0
-	ret
-
-.asm_4d4c8
-	call Function4d4d5
-	ld a, [hl]
-	and a
-	jr z, .asm_4d4d2
-	dec a
-	ld [hl], a
-	ret
-
-.asm_4d4d2
-	ld [hl], $9
-	ret
-; 4d4d5
-
-Function4d4d5: ; 4d4d5
-	ld a, [StringBuffer2 + 5]
-	ld e, a
-	ld d, $0
-	ld hl, StringBuffer2
-	add hl, de
-	ret
-; 4d4e0
-
-Function4d4e0: ; 4d4e0
-	ld hl, 0
-	ld de, StringBuffer2 + 4
-	ld bc, 1
-	call Function4d501
-	ld bc, 10
-	call Function4d501
-	ld bc, 100
-	call Function4d501
-	ld bc, 1000
-	call Function4d501
-	ld bc, 10000
-Function4d501: ; 4d501
-	ld a, [de]
-	dec de
-	push hl
-	ld hl, 0
-	call AddNTimes
-	ld c, l
-	ld b, h
-	pop hl
-	add hl, bc
-	ret
-; 4d50f
-
-Function4d50f: ; 4d50f
-	ld a, $1
-	call GetSRAMBank
-	ld de, $0000
-	ld hl, $a009
-	ld c, $2
-	call Function4d533
-	ld hl, $a00b
-	ld c, $5
-	call Function4d53e
-	ld hl, $a3dc
-	ld c, $3
-	call Function4d533
-	call CloseSRAM
-	ret
-; 4d533
-
-Function4d533: ; 4d533
-.asm_4d533
-	ld a, [hli]
-	add e
-	ld e, a
-	ld a, $0
-	adc d
-	ld d, a
-	dec c
-	jr nz, .asm_4d533
-	ret
-; 4d53e
-
-Function4d53e: ; 4d53e
-.asm_4d53e
-	ld a, [hli]
-	cp "@"
-	ret z
-	add e
-	ld e, a
-	ld a, $0
-	adc d
-	ld d, a
-	dec c
-	jr nz, .asm_4d53e
-	ret
-; 4d54c
 
 Function4d54c: ; 4d54c
 	callba Function8000
@@ -46579,7 +46373,7 @@ String_4e127: ; 4e127
 ; 4e12b
 
 String_4e12b: ; 4e12b
-	db "EXP POINTS@"
+	db "EXP.POINTS@"
 ; 4e136
 
 String_4e136: ; 4e136
@@ -46902,13 +46696,13 @@ EggStatsScreen: ; 4e33a
 	call PlaceString
 	ld a, [TempMonHappiness] ; egg status
 	ld de, EggSoonString
-	cp $6
+	cp $2
 	jr c, .picked
 	ld de, EggCloseString
-	cp $b
+	cp $3
 	jr c, .picked
 	ld de, EggMoreTimeString
-	cp $29
+	cp $9
 	jr c, .picked
 	ld de, EggALotMoreTimeString
 .picked
@@ -46950,7 +46744,7 @@ EggMoreTimeString: ; 0x4e43d
 EggALotMoreTimeString: ; 0x4e46e
 	db   "This EGG needs a"
 	next "lot more time to"
-	next "hatch.@"
+	next "hatch<...>@"
 ; 0x4e497
 
 Function4e497: ; 4e497 (13:6497)
@@ -47105,6 +46899,8 @@ Function4e56a: ; 4e56a (13:656a)
 	ld a, [MapGroup]
 	cp GROUP_VIRIDIAN_CITY_RB
 	jr z, .OldMan
+	cp GROUP_VIRIDIAN_CITY
+	jr z, .OldMan
 	ld hl, DudeString
 	jr .GotString
 
@@ -47155,6 +46951,8 @@ Function4e5b7: ; 4e5b7 (13:65b7)
 	ld a, [MapGroup]
 	cp GROUP_VIRIDIAN_CITY_RB
 	jr z, .OldMan
+	cp GROUP_VIRIDIAN_CITY
+	jr z, .OldMan
 	ld a, GREAT_BALL
 	ld [hli], a
 	ld a, 5
@@ -47170,7 +46968,7 @@ Function4e5b7: ; 4e5b7 (13:65b7)
 
 
 DudeString: ; 4e5da
-	db "DUDE@"
+	db "GUY@"
 ; 4e5df
 OldManString:
 	db "OLD MAN@"
@@ -55433,7 +55231,7 @@ Function8650c: ; 8650c
 ; 8652c
 
 String_8652c:
-	db "New Hall of Famer!@"
+	db "NEW HALL OF FAMER!@"
 ; 8653f
 
 Function8653f: ; 8653f
@@ -55701,11 +55499,11 @@ String_866fb:
 ; 866fc
 
 String_866fc:
-	db "    HOF Master!@"
+	db "    HOF MASTER!@"
 ; 8670c
 
 String_8670c:
-	db "    -Time Famer@"
+	db "    -TIME CHAMP@"
 ; 8671c
 
 Function8671c: ; 8671c
@@ -55910,7 +55708,7 @@ Function86810: ; 86810
 ; 868ed
 
 .PlayTime
-	db "PLAY TIME@"
+	db "ADVENTURE@"
 ; 868f7
 
 SECTION "bank22", ROMX, BANK[$22]
@@ -56404,12 +56202,12 @@ MenuData2_0x882be: ; 882be
 	db 5 ; items
 	db "NEW NAME@"
 Unknown_882c9: ; 882c9
-	db "RUST@"
-	db "CARMINE@"
+	db "RUSTY@"
+	db "CRIMSON@"
 	db "DUSTIN@"
 	db "EVAN@"
 	db 2 ; displacement
-	db " NAME @" ; title
+	db "@" ; title
 ; 882e5
 
 KrisNameMenuHeader: ; 882e5
@@ -56429,9 +56227,9 @@ Unknown_882f9: ; 882f9
 	db "AZURE@"
 	db "CELESTE@"
 	db "DAPHNE@"
-	db "AURORA@"
+	db "MAYA@"
 	db 2 ; displacement
-	db " NAME @" ; title
+	db "@" ; title
 ; 88318
 
 Function88318: ; 88318
@@ -61496,7 +61294,7 @@ Function8b09e: ; 8b09e
 ; 8b0ca
 
 String_8b0ca:
-	db "Points@"
+	db "POINTs@"
 ; 8b0d1
 
 MenuDataHeader_0x8b0d1: ; 0x8b0d1
@@ -67227,12 +67025,12 @@ Unknown_909f2: ; 909f2
 	dw Saturday
 	dw Sunday
 
-Sunday:    db " SUNDAY@"
-Monday:    db " MONDAY@"
-Tuesday:   db " TUESDAY@"
+Sunday:    db "SUNDAY@"
+Monday:    db "MONDAY@"
+Tuesday:   db "TUESDAY@"
 Wednesday: db "WEDNESDAY@"
 Thursday:  db "THURSDAY@"
-Friday:    db " FRIDAY@"
+Friday:    db "FRIDAY@"
 Saturday:  db "SATURDAY@"
 UnknownText_0x90a3f: ; 0x90a3f
 	; What day is it?
@@ -69338,15 +69136,15 @@ NoRadioName: ; 918a9 (24:58a9)
 	ret
 ; 918bf
 
-OaksPkmnTalkName:     db "OAK's ", $e1, $e2, " Talk@"
-PokedexShowName:      db "#DEX Show@"
-PokemonMusicName:     db "#MON Music@"
-LuckyChannelName:     db "Lucky Channel@"
+OaksPkmnTalkName:     db "OAK's ", $e1, $e2, " TALK@"
+PokedexShowName:      db "#DEX SHOW@"
+PokemonMusicName:     db "#MON MUSIC@"
+LuckyChannelName:     db "LUCKY CHANNEL@"
 UnknownStationName:   db "?????@"
-PlacesAndPeopleName:  db "Places & People@"
-LetsAllSingName:      db "Let's All Sing!@"
+PlacesAndPeopleName:  db "PEOPLE & PLACES@"
+LetsAllSingName:      db "#MON MUSIC@"
 PokeFluteStationName: db "# FLUTE@"
-WhosThatPkmnName:     db "#MON Quiz@"
+WhosThatPkmnName:     db "WHO'S THAT ", $e1, $e2, "?@"
 ; 9191c
 
 Function9191c: ; 9191c
@@ -70231,7 +70029,7 @@ Function91de9: ; 91de9
 ; 91e16
 
 String_91e16:
-	db "'S NEST@"
+	db "'s NEST@"
 ; 91e1e
 
 Function91e1e: ; 91e1e
@@ -80564,15 +80362,15 @@ String_e3500: db "Move to where?@"
 String_e350f: db "It's your last ", $e1, $e2, "!@"
 String_e3521: db "There's no room!@"
 String_e3531: db "No more usable ", $e1, $e2, "!@"
-String_e3544: db "Remove MAIL.@"
+String_e3544: db "Remove MAIL first.@"
 String_e3551: db "Released ", $e1, $e2, ".@"
 String_e355e: db "Bye,@"
 String_e3563: db "Stored @"
 String_e356b: db "Got @"
 String_e3570: db "Non.@"
 String_e3575: db "The BOX is full.@"
-String_e3586: db "The party's full!@"
-String_e3597: db "No releasing EGGS!@"
+String_e3586: db "Your party's full!@"
+String_e3597: db "No releasing EGGs!@"
 ; e35aa
 
 Functione35aa: ; e35aa (38:75aa)
@@ -80964,28 +80762,30 @@ Functione36f9: ; e36f9 (38:76f9)
 	db "Can't release EGG!@"
 
 .AreYouSure
-	text "WARNING: You are"
+	text "WARNING! You are"
 	line "about to release"
+	cont "an entire BOX of"
+	cont "stored #MON."
 
-	para "all the #MON"
-	line "in this PC box."
+	para "Once released,"
+	line "these #MON can"
+	cont "not be recovered."
 
-	para "Once released, the"
-	line "#MON can not be"
-	cont "be recovered."
-
-	para "Proceed anyway?"
+	para "Are you sure you"
+	line "want to do this?"
 	done
 
 .AreYouReallySure
-    text "This action can-"
-    line "not be undone."
+	text "Every #MON in"
+	line "this BOX will be"
+	cont "released forever."
 
-    para "Are you absolutely"
-    line "positively sure"
+	para "This action can"
+	line "NEVER be undone."
 
-    para "you want to empty"
-    line "this entire box?"
+	para "Are you REALLY"
+	line "sure you want to"
+	cont "empty this box?"
 	done
 
 .NoYesBox:
@@ -81152,7 +80952,7 @@ OptionsMenu_LoadOptions:
 StringOptions: ; e4241
 	db "TEXT SPEED", $22
 	db "        :", $22
-	db "BATTLE ANIMATION", $22
+	db "BATTLE SCENE", $22
 	db "        :", $22
 	db "BATTLE STYLE", $22
 	db "        :", $22
@@ -81170,11 +80970,11 @@ StringOptions: ; e4241
 StringOptions2:
 	db "MENU TOOLTIPS", $22
 	db "        :", $22
-	db "FAST HP BAR", $22
+	db "BATTLE SPEED", $22
 	db "        :", $22
 	db "CLOCK FORMAT", $22
 	db "        :", $22
-	db "MEASUREMENT UNIT", $22
+	db "MEASUREMENT", $22
 	db "        :", $22
 	db "SFX TEST", $22
 	db "        :", $22
@@ -81274,11 +81074,11 @@ Options_TextSpeed: ; e42f5
 	dw .Slow
 
 .Fast
-	db "INST@"
+	db "INSTANT@"
 .Mid
-	db "FAST@"
+	db "NORMAL @"
 .Slow
-	db "NORM@"
+	db "SLOWER @"
 ; e4346
 
 GetTextSpeed: ; e4346
@@ -81480,15 +81280,15 @@ Options_Print: ; e4424
 	dw .Darkest
 
 .Lightest
-	db "LIGHTEST@"
-.Lighter
 	db "LIGHTER @"
+.Lighter
+	db "LIGHT   @"
 .Normal
 	db "NORMAL  @"
 .Darker
-	db "DARKER  @"
+	db "DARK    @"
 .Darkest
-	db "DARKEST @"
+	db "DARKER  @"
 ; e4491
 
 GetPrinterSetting: ; e4491
@@ -81598,9 +81398,9 @@ Options_FastHP:
 	ret
 
 .Off
-	db "OFF@"
+	db "SLOWER@"
 .On
-	db "ON @"
+	db "NORMAL@"
 
 Options_Clock:
 	ld hl, Options2
@@ -81676,7 +81476,7 @@ Options_Unit:
 .Off
 	db "METRIC  @"
 .On
-	db "IMPERIAL@"
+	db "NORMAL  @"
 
 Options_SFXTest:
 	ld a, [hJoyPressed]
@@ -86287,17 +86087,17 @@ npctrade: MACRO
 ENDM
 
 
-	npctrade 0, BUTTERFREE, KANGASKHAN, "BRUNHILDA@@", $a9, $88, CONFUSEGUARD, 37460, "MIKE@@@@@@@", TRADE_EITHER_GENDER
-	npctrade 0, RATICATE,   DELIBIRD,   "NICK@@@@@@@", $fa, $ac, SHARP_BEAK,   48926, "KYLE@@@@@@@", TRADE_EITHER_GENDER
-	npctrade 1, GYARADOS,   EXEGGUTOR,  "COCOEGG@@@@", $eb, $6a, TWISTEDSPOON, 29189, "TIM@@@@@@@@", TRADE_EITHER_GENDER
-	npctrade 3, DRAGONAIR,  SNORLAX,    "FATSO@@@@@@", $cb, $3f, SMOKE_BALL,   00283, "EMY@@@@@@@@", TRADE_FEMALE_ONLY
-	npctrade 2, FLAREON,    HYPNO,      "HYPPY@@@@@@", $96, $86, SLEEP_GUARD,  15616, "CHRIS@@@@@@", TRADE_EITHER_GENDER
-	npctrade 3, OMASTAR,    AERODACTYL, "AEROY@@@@@@", $ba, $f8, RARE_CANDY,   26491, "KIM@@@@@@@@", TRADE_EITHER_GENDER
-	npctrade 0, LICKITUNG,  SCYTHER,    "SCYLVIA@@@@", $ec, $a8, METAL_COAT,   50082, "FOREST@@@@@", TRADE_EITHER_GENDER
-	npctrade 1, ABRA,       MR__MIME,   "MARCEL@@@@@", $68, $82, BERRY,        49677, "ANDREW@@@@@", TRADE_EITHER_GENDER
-	npctrade 0, PIDGEOTTO,  TANGELA,    "GELA@@@@@@@", $52, $67, PSNCUREBERRY, 60392, "JEREMY@@@@@", TRADE_EITHER_GENDER
-	npctrade 3, CUBONE,     MACHOP,     "MUSCLE@@@@@", $e3, $b5, BURNT_BERRY,  62577, "LUCY@@@@@@@", TRADE_MALE_ONLY
-	npctrade 1, FARFETCH_D, GASTLY,     "SPOOKS@@@@@", $62, $6c, ICE_BERRY,    44627, "ELYSSA@@@@@", TRADE_EITHER_GENDER
+	npctrade 0, DROWZEE,    MACHOP,     "MUSCLES@@@@", $FF, $FF, GOLD_BERRY,   37460, "MIKE@@@@@@@", TRADE_EITHER_GENDER
+	npctrade 0, BELLSPROUT, ONIX,       "ROCKY@@@@@@", $FF, $FF, BITTER_BERRY, 48926, "KYLE@@@@@@@", TRADE_EITHER_GENDER
+	npctrade 1, KRABBY,     PIKACHU,    "VOLTY@@@@@@", $FF, $FF, LIGHT_BALL,   29189, "TIM@@@@@@@@", TRADE_EITHER_GENDER
+	npctrade 3, DRAGONAIR,  SEAKING,    "NEPTUNE@@@@", $FF, $FF, DRAGON_SCALE, 00283, "EMY@@@@@@@@", TRADE_FEMALE_ONLY
+	npctrade 2, RAPIDASH,   GLOOM,      "SUNNY@@@@@@", $FF, $FF, SUN_STONE,    15616, "CHRIS@@@@@@", TRADE_EITHER_GENDER
+	npctrade 3, CHANSEY,    AERODACTYL, "AEROY@@@@@@", $FF, $FF, RARE_CANDY,   26491, "KIM@@@@@@@@", TRADE_EITHER_GENDER
+	npctrade 0, DUGTRIO,    MAGNETON,   "MAGGIE@@@@@", $AA, $AA, METAL_COAT,   50082, "FOREST@@@@@", TRADE_EITHER_GENDER
+	npctrade 1, ABRA,       MR__MIME,   "MARCEL@@@@@", $98, $88, BITTER_BERRY, 01985, "REYLEY@@@@@", TRADE_EITHER_GENDER
+	npctrade 0, MEOWTH,     MANKEY,     "CRANKY@@@@@", $98, $88, MINT_BERRY,   36728, "DONTAE@@@@@", TRADE_EITHER_GENDER
+	npctrade 3, RATTATA,    POLIWAG,    "PAULY@@@@@@", $98, $88, TINYMUSHROOM, 63184, "SAIGE@@@@@@", TRADE_EITHER_GENDER
+	npctrade 1, SPEAROW,    FARFETCH_D, "DUX@@@@@@@@", $98, $88, STICK,        08810, "ELYSSA@@@@@", TRADE_EITHER_GENDER
 ; fcf38
 
 PrintTradeText: ; fcf38
