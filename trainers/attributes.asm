@@ -21,130 +21,130 @@ const_value = 0
 TrainerClassAttributes: ; 3959c
 
 ; Falkner
-	db X_ATTACK, X_SPEED ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_ATTACK ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Whitney
 	db FULL_RESTORE, X_DEFEND ; items
-	db 25 ; base reward
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Bugsy
 	db FULL_RESTORE, X_SPEED ; items
-	db 25 ; base reward
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Morty
-	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25 ; base reward
+	db FULL_RESTORE, GUARD_SPEC ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Pryce
 	db FULL_RESTORE, X_SPECIAL ; items
-	db 25 ; base reward
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Jasmine
-	db X_DEFEND, FULL_RESTORE ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_SPDEF ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Chuck
-	db X_ACCURACY, X_ATTACK ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_ACCURACY ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Clair
-	db FULL_RESTORE, X_SPEED ; items
-	db 25 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
-
-; Rival1
-	db HYPER_POTION, FULL_HEAL ; items
-	db 15 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
-
-; Pokemon Prof
 	db FULL_RESTORE, FULL_RESTORE ; items
+	db 40 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_OFTEN
+
+; Silver (1-6)
+	db HYPER_POTION, NONE ; items
 	db 25 ; base reward
-	dw AI_BASIC + AI_AGGRESSIVE + AI_STATUS
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_OFTEN
+
+; Prof.Oak
+	db FULL_RESTORE, FULL_RESTORE ; items
+	db 50 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Will
 	db FULL_RESTORE, GUARD_SPEC ; items
-	db 25 ; base reward
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Cal
+; Gold
 	db NONE, NONE ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Bruno
-	db X_DEFEND, FULL_RESTORE ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_DEFEND ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Karen
-	db NONE, NONE ; items
-	db 25 ; base reward
+	db FULL_RESTORE, FULL_HEAL ; items
+	db 40 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Koga
-	db FULL_RESTORE, X_SPECIAL ; items
-	db 25 ; base reward
+	db FULL_RESTORE, DIRE_HIT ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Champion
+; Lance
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25 ; base reward
+	db 50 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Brock
-	db FULL_RESTORE, X_DEFEND ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_ATTACK ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Misty
-	db X_ATTACK, X_SPECIAL ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_SPECIAL ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Lt Surge
-	db FULL_RESTORE, X_DEFEND ; items
-	db 25 ; base reward
+; Lt.Surge
+	db FULL_RESTORE, X_ACCURACY ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Scientist
-	db NONE, NONE ; items
-	db 25 ; base reward
+; Researcher
+	db X_SPECIAL, X_DEFEND ; items
+	db 8 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Erika
-	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_SPEED ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Youngster
 	db NONE, NONE ; items
@@ -152,83 +152,83 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Schoolboy
-	db NONE, NONE ; items
-	db 8 ; base reward
+; Schoolkid
+	db X_DEFEND, X_SPEED ; items
+	db 5 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Bird Keeper
+; Birdkeeper
 	db NONE, NONE ; items
-	db 6 ; base reward
+	db 8 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OFFENSIVE + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Lass
 	db NONE, NONE ; items
-	db 6 ; base reward
+	db 4 ; base reward
 	dw AI_BASIC + AI_CAUTIOUS + AI_STATUS
-	dw CONTEXT_USE + SWITCH_OFTEN
+	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Janine
-	db FULL_RESTORE, X_SPEED ; items
+	db FULL_RESTORE, DIRE_HIT ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Cooltrainerm
-	db NONE, NONE ; items
-	db 12 ; base reward
+; Elite♂
+	db HYPER_POTION, FULL_HEAL ; items
+	db 15 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Cooltrainerf
-	db NONE, NONE ; items
-	db 12 ; base reward
+; Elite♀
+	db HYPER_POTION, FULL_HEAL ; items
+	db 15 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Beauty
 	db NONE, NONE ; items
-	db 22 ; base reward
+	db 14 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Pokemaniac
+; Pokémaniac
 	db NONE, NONE ; items
-	db 15 ; base reward
+	db 16 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_OFFENSIVE + AI_AGGRESSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Gruntm
+; Grunt♂
 	db NONE, NONE ; items
 	db 10 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Gentleman
-	db NONE, NONE ; items
-	db 18 ; base reward
+	db FULL_RESTORE, NONE ; items
+	db 50 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_AGGRESSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Skier
-	db NONE, NONE ; items
-	db 18 ; base reward
+	db X_SPEED, NONE ; items
+	db 8 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Teacher
 	db NONE, NONE ; items
-	db 18 ; base reward
+	db 10 ; base reward
 	dw AI_BASIC + AI_OPPORTUNIST + AI_AGGRESSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Sabrina
-	db FULL_RESTORE, X_SPECIAL ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_DEFEND ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Bug Catcher
 	db NONE, NONE ; items
@@ -238,43 +238,43 @@ TrainerClassAttributes: ; 3959c
 
 ; Fisher
 	db NONE, NONE ; items
-	db 10 ; base reward
+	db 8 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Swimmerm
+; Swimmer♂
 	db NONE, NONE ; items
-	db 2 ; base reward
+	db 4 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_OFFENSIVE + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Swimmerf
+; Swimmer♀
 	db NONE, NONE ; items
-	db 5 ; base reward
+	db 4 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Sailor
 	db NONE, NONE ; items
-	db 10 ; base reward
+	db 8 ; base reward
 	dw AI_BASIC + AI_OFFENSIVE + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Super Nerd
-	db NONE, NONE ; items
-	db 8 ; base reward
+	db X_DEFEND, NONE ; items
+	db 12 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_SMART + AI_STATUS
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Rival2
+; Silver (7-10)
 	db FULL_RESTORE, X_SPEED ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Guitarist
 	db NONE, NONE ; items
-	db 8 ; base reward
+	db 6 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
@@ -285,124 +285,124 @@ TrainerClassAttributes: ; 3959c
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Biker
-	db NONE, NONE ; items
-	db 8 ; base reward
+	db X_SPEED, NONE ; items
+	db 4 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Blaine
-	db FULL_RESTORE, X_SPECIAL ; items
-	db 25 ; base reward
+	db FULL_RESTORE, X_SPDEF ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Burglar
-	db NONE, NONE ; items
-	db 22 ; base reward
+	db SODA_POP, LEMONADE ; items
+	db 4 ; base reward
 	dw AI_BASIC + AI_OFFENSIVE + AI_CAUTIOUS + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Firebreather
-	db NONE, NONE ; items
-	db 12 ; base reward
+	db X_SPECIAL, X_SPECIAL ; items
+	db 8 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_OFFENSIVE + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Juggler
 	db NONE, NONE ; items
-	db 10 ; base reward
+	db 8 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_SMART + AI_STATUS
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Blackbelt T
-	db NONE, NONE ; items
+; Blackbelt
+	db X_ATTACK, X_ATTACK ; items
 	db 6 ; base reward
 	dw AI_BASIC + AI_OFFENSIVE + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Executivem
-	db HYPER_POTION, FULL_HEAL ; items
-	db 18 ; base reward
+; Executive♂
+	db HYPER_POTION, X_ATTACK ; items
+	db 20 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_SMART + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Psychic T
-	db NONE, NONE ; items
+; Esper
+	db X_SPECIAL, X_SPDEF ; items
 	db 8 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Picnicker
+; Scout♀
 	db NONE, NONE ; items
-	db 5 ; base reward
+	db 4 ; base reward
 	dw AI_BASIC + AI_CAUTIOUS + AI_STATUS
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Camper
+; Scout♂
 	db NONE, NONE ; items
-	db 5 ; base reward
+	db 4 ; base reward
 	dw AI_BASIC + AI_CAUTIOUS + AI_STATUS
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Executivef
-	db HYPER_POTION, FULL_HEAL ; items
-	db 18 ; base reward
+; Executive♀
+	db HYPER_POTION, X_ATTACK ; items
+	db 20 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_SMART + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Sage
-	db NONE, NONE ; items
-	db 8 ; base reward
+	db FULL_HEAL, NONE ; items
+	db 12 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Medium
-	db NONE, NONE ; items
-	db 10 ; base reward
+	db FULL_HEAL, NONE ; items
+	db 12 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Boarder
-	db NONE, NONE ; items
-	db 18 ; base reward
+	db X_SPEED, NONE ; items
+	db 8 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Pokefanm
-	db NONE, NONE ; items
-	db 20 ; base reward
+; Pokéfan♂
+	db SUPER_POTION, FULL_HEAL ; items
+	db 16 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_SMART + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Kimono Girl
-	db NONE, NONE ; items
-	db 18 ; base reward
+	db HYPER_POTION, FULL_HEAL ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_RARELY
 
 ; Twins
 	db NONE, NONE ; items
-	db 5 ; base reward
+	db 8 ; base reward
 	dw NO_AI
 	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Pokefanf
-	db NONE, NONE ; items
-	db 20 ; base reward
+; Pokéfan♀
+	db SUPER_POTION, FULL_HEAL ; items
+	db 16 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_SMART + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
 ; Red
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25 ; base reward
+	db 50 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Blue
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25 ; base reward
+	db 50 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Officer
 	db NONE, NONE ; items
@@ -410,83 +410,82 @@ TrainerClassAttributes: ; 3959c
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_STATUS
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Gruntf
+; Grunt♀
 	db NONE, NONE ; items
 	db 10 ; base reward
 	dw AI_BASIC + AI_TYPES + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
 	dw CONTEXT_USE + SWITCH_SOMETIMES
 
-; Mysticalman
-	db HYPER_POTION, NONE ; items
-	db 25 ; base reward
+; Eusine
+	db HYPER_POTION, FULL_HEAL ; items
+	db 30 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Bill
-	db X_SPECIAL, X_ATTACK ; items
+	db NONE, NONE ; items
 	db 25
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_RARELY
 
-; Elm
+; Prof.Elm
 	db FULL_RESTORE, FULL_RESTORE ; items
-	db 25
+	db 50
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; tppPc
-	db FULL_RESTORE, FULL_RESTORE ; items
+; League's PC
+	db NONE, NONE ; items
 	db 25
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
 ; Giovanni
-	db GUARD_SPEC, FULL_RESTORE ; items
-	db 25
+	db FULL_RESTORE, GUARD_SPEC ; items
+	db 45
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; CoolSibs
+; Elites
+	db HYPER_POTION, HYPER_POTION ; items
+	db 60 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_OFTEN
+
+; Azure
 	db NONE, NONE ; items
-	db 12 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
-
-; RivalRB
-	db NONE, NONE ; items
-	db 15 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
-
-; RivalRB
-	db NONE, NONE ; items
-	db 15 ; base reward
-	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
-
-; BrockRB
-	db POTION, NONE ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; MistyRB
-	db SUPER_POTION, FULL_HEAL ; items
+; Rusty
+	db NONE, NONE ; items
 	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_OFTEN
 
-; Baba
-	db X_SPECIAL, X_SPECIAL ; items
-	db 25
+; Brock
+	db POTION, FULL_HEAL ; items
+	db 25 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_RARELY
+
+; Misty
+	db FRESH_WATER, X_DEFEND ; items
+	db 25 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_RARELY
+
+; Kris
+	db NONE, NONE ; items
+	db 50 ; base reward
+	dw AI_BASIC + AI_SETUP + AI_SMART + AI_AGGRESSIVE + AI_CAUTIOUS + AI_STATUS + AI_RISKY
+	dw CONTEXT_USE + SWITCH_OFTEN
 	
-; Executive_egk
+; Executive
 	db POTION, NONE
 	db 18 ; base reward
 	dw AI_BASIC + AI_SETUP + AI_TYPES + AI_SMART + AI_OPPORTUNIST + AI_CAUTIOUS + AI_STATUS + AI_RISKY
-	dw CONTEXT_USE + SWITCH_SOMETIMES
+	dw CONTEXT_USE + SWITCH_RARELY
 	
-
 ; 39771
