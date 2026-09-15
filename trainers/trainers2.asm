@@ -1,700 +1,672 @@
 Trainers2:
 
 BillGroup:
-; ================================
-; ================
-
-	; BILL_TC (1)
 	db "BILL@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-
-	; party
-	db 100, EEVEE, LEFTOVERS
-		db SHADOW_BALL
-		db RETURN
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 100, EEVEE, BRIGHTPOWDER
+		db BODY_SLAM
+		db GROWTH
 		db DOUBLE_TEAM
 		db BATON_PASS
-
-	db 100, JOLTEON, BURN_GUARD
-		db THUNDERBOLT
-		db SHADOW_BALL
-		db SUBSTITUTE
-		db BATON_PASS
-
-	db 100, VAPOREON, PARLYZ_GUARD
-		db SURF
-		db ICE_BEAM
+	db 100, VAPOREON, LEFTOVERS
+		db BUBBLEBEAM
+		db AURORA_BEAM
 		db ACID_ARMOR
 		db BATON_PASS
-
-	db 100, FLAREON, POISON_GUARD
-		db FLARE_BLITZ
-		db RETURN
-		db CURSE
+	db 100, JOLTEON, SCOPE_LENS
+		db THUNDERBOLT
+		db PIN_MISSILE
+		db AGILITY
 		db BATON_PASS
-
-	db 100, UMBREON, FREEZE_GUARD
+	db 100, FLAREON, GOLD_BERRY
+		db FLARE_BLITZ
+		db FLAME_WHEEL
+		db FOCUS_ENERGY
+		db BATON_PASS
+	db 100, ESPEON, MIRACLEBERRY
+		db PSYCHIC_M
+		db GROWTH
+		db BARRIER
+		db BATON_PASS
+	db 100, UMBREON, QUICK_CLAW
 		db DARK_PULSE
-		db CONFUSE_RAY
+		db DOUBLE_TEAM
 		db MEAN_LOOK
 		db BATON_PASS
-
-	db 100, ESPEON, SLEEP_GUARD
-		db PSYCHIC_M
-		db DAZZLINGLEAM
-		db GROWTH
-		db BATON_PASS
-
-
 	db $ff ; end
 
-; ================
-; ================================
+	db "BILL@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_MAXXP)
+	db 17, EEVEE
+		db TACKLE
+		db TAIL_WHIP
+		db SAND_ATTACK
+		db GROWL
+	db 17, FLAREON
+		db TACKLE
+		db TAIL_WHIP
+		db SAND_ATTACK
+		db EMBER
+	db 17, JOLTEON
+		db TACKLE
+		db TAIL_WHIP
+		db SAND_ATTACK
+		db THUNDERSHOCK
+	db 17, VAPOREON
+		db TACKLE
+		db TAIL_WHIP
+		db SAND_ATTACK
+		db WATER_GUN
+	db $ff ; end
 
 ProfElmGroup:
 	db "ELM@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-
-	; party
 	db 100, DONPHAN, LEFTOVERS
 		db EARTHQUAKE
+		db FLARE_BLITZ
 		db ROLLOUT
 		db DEFENSE_CURL
-		db FLARE_BLITZ
-
-	db 100, XATU, TWISTEDSPOON
-		db FUTURE_SIGHT
+	db 100, AMPHAROS, GOLD_BERRY
+		db THUNDERBOLT
+		db DRAGON_PULSE
+		db FOCUS_BLAST
+		db AGILITY
+	db 100, SLOWKING, QUICK_CLAW
 		db PSYCHIC_M
-		db CONFUSE_RAY
-		db AIR_SLASH
-
-	db 100, HOUNDOOM, PARLYZ_GUARD
-		db DARK_PULSE
-		db FLAMETHROWER
-		db ROAR
-		db NASTY_PLOT
-
-	db 100, CORSOLA, LEFTOVERS
-		db ROCK_SLIDE
-		db MIRROR_COAT
-		db RECOVER
 		db SURF
-
-	db 100, TYRANITAR, HARD_STONE
-		db SANDSTORM
-		db CRUNCH
-		db ROCK_SLIDE
-		db EARTHQUAKE
-
-	db 100, MEGANIUM, BITTER_BERRY
-		db PETAL_DANCE
-		db OUTRAGE
-		db REFLECT
-		db LIGHT_SCREEN
-
-	db $ff ; end
-
-
-
-	db "ELM@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-
-	; party
-		db 100, DONPHAN, LEFTOVERS
-		db EARTHQUAKE
-		db ROLLOUT
-		db DEFENSE_CURL
-		db FLARE_BLITZ
-
-	db 100, XATU, TWISTEDSPOON
-		db FUTURE_SIGHT
-		db PSYCHIC_M
-		db CONFUSE_RAY
-		db AIR_SLASH
-
-	db 100, HOUNDOOM, PARLYZ_GUARD
-		db DARK_PULSE
-		db FLAMETHROWER
-		db ROAR
-		db NASTY_PLOT
-
-	db 100, CORSOLA, LEFTOVERS
-		db ROCK_SLIDE
-		db MIRROR_COAT
-		db RECOVER
-		db SURF
-
-	db 100, TYRANITAR, HARD_STONE
-		db SANDSTORM
-		db CRUNCH
-		db ROCK_SLIDE
-		db EARTHQUAKE
-
+		db BLIZZARD
+		db FIRE_BLAST
 	db 100, TYPHLOSION, CHARCOAL
 		db FLAMETHROWER
-		db WILLOWISP
 		db EARTHQUAKE
-		db SMOKESCREEN
-
-	db $ff ; end
-
-
-
-	db "ELM@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-
-	; party
-		db 100, DONPHAN, LEFTOVERS
-		db EARTHQUAKE
-		db ROLLOUT
-		db DEFENSE_CURL
-		db FLARE_BLITZ
-
-	db 100, XATU, TWISTEDSPOON
-		db FUTURE_SIGHT
-		db PSYCHIC_M
-		db CONFUSE_RAY
-		db AIR_SLASH
-
-	db 100, HOUNDOOM, PARLYZ_GUARD
-		db DARK_PULSE
-		db FLAMETHROWER
-		db ROAR
-		db NASTY_PLOT
-
-	db 100, CORSOLA, LEFTOVERS
-		db ROCK_SLIDE
-		db MIRROR_COAT
-		db RECOVER
-		db SURF
-
-	db 100, TYRANITAR, HARD_STONE
-		db SANDSTORM
-		db CRUNCH
-		db ROCK_SLIDE
-		db EARTHQUAKE
-
+		db SHADOW_BALL
+		db WILD_CHARGE
 	db 100, FERALIGATR, MYSTIC_WATER
-		db CRUNCH
 		db WATERFALL
-		db IRON_TAIL
+		db CRUNCH
 		db ICE_PUNCH
-
+		db OUTRAGE
+	db 100, MEGANIUM, POWER_HERB
+		db GIGA_DRAIN
+		db DAZZLINGLEAM
+		db EARTH_POWER
+		db SOLARBEAM
 	db $ff ; end
 
 tppPcGroup:
 	db "PC@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-
-	db 100, MOLTRES, CHARCOAL
-		db AGILITY
-		db FIRE_BLAST
-		db DRILL_PECK
-		db FIRE_SPIN
-	db 100, ARTICUNO, NEVERMELTICE
-		db AGILITY
-		db BLIZZARD
-		db AIR_SLASH
-		db SHEER_COLD
-	db 100, ZAPDOS, MAGNET
-		db SLEEP_TALK
-		db THUNDER
-		db DRILL_PECK
-		db REST
-	db 100, LUGIA, MIRACLEBERRY
-		db RECOVER
-		db AEROBLAST
+	db 100, MEWTWO, MIRACLEBERRY
 		db PSYCHIC_M
-		db SURF
-	db 100, HO_OH, LEFTOVERS
-		db AGILITY
-		db SACRED_FIRE
+		db THUNDERBOLT
+		db ICE_BEAM
 		db RECOVER
-		db SHADOW_BALL
-	db 100, MEWTWO, TWISTEDSPOON
-		db AGILITY
-		db PSYCHIC_M
-		db RECOVER
-		db TRI_ATTACK
 	db $ff
 
 	db "PC@"
 	db 0
-
-	; This party is handled separately.
-
 	db $ff
 
 	db "PC@"
 	db 0
-
-	; This party is handled separately.
-
 	db $ff
 
 GiovanniGroup:
 	db "GIOVANNI@"
-	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
-
-	db 62, MURKROW, BLACKGLASSES
+	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 60, MURKROW, SCOPE_LENS
 		db DARK_PULSE
-		db WING_ATTACK
+		db AIR_SLASH
 		db AGILITY
-		db MEAN_LOOK
-
-	db 64, RHYDON, SOFT_SAND
-		db HORN_DRILL
-		db ROCK_SLIDE
-		db EARTHQUAKE
-		db STOMP
-
-	db 65, NIDOKING, GOLD_BERRY
-		db HORN_DRILL
-		db SURF
-		db EARTHQUAKE
-		db STOMP
-
-	db 65, NIDOQUEEN, GOLD_BERRY
-		db HORN_DRILL
-		db SURF
-		db EARTHQUAKE
-		db STOMP
-
-	db 64, DUGTRIO, BRIGHTPOWDER
-		db FISSURE
-		db MAGNITUDE
+		db SWAGGER
+	db 62, DUGTRIO, BRIGHTPOWDER
 		db DIG
+		db SLASH
+		db SANDSTORM
+		db FISSURE
+	db 63, NIDOQUEEN, GOLD_BERRY
+		db POISON_JAB
 		db EARTHQUAKE
-
-	db 67, KANGASKHAN, LEFTOVERS
+		db THUNDER
 		db BODY_SLAM
-		db DOUBLE_TEAM
+	db 63, NIDOKING, KINGS_ROCK
+		db POISON_JAB
 		db EARTHQUAKE
-		db REVERSAL
+		db THUNDER
+		db HORN_DRILL
+	db 62, KANGASKHAN, BITTER_BERRY
+		db THRASH
+		db EARTHQUAKE
+		db DYNAMICPUNCH
+		db FISSURE
+	db 65, RHYDON, FOCUS_BAND ; full restore target
+		db EARTHQUAKE
+		db ROCK_SLIDE
+		db HORN_DRILL
+		db FISSURE
+	db $ff
 
+	db "GIOVANNI@"
+	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 95, MURKROW, SCOPE_LENS
+		db DARK_PULSE
+		db AIR_SLASH
+		db AGILITY
+		db SWAGGER
+	db 97, DUGTRIO, BRIGHTPOWDER
+		db DIG
+		db SLASH
+		db SANDSTORM
+		db EARTHQUAKE
+	db 98, NIDOQUEEN, GOLD_BERRY
+		db POISON_JAB
+		db EARTHQUAKE
+		db THUNDER
+		db BLIZZARD
+	db 98, NIDOKING, KINGS_ROCK
+		db POISON_JAB
+		db EARTHQUAKE
+		db THUNDER
+		db FIRE_BLAST
+	db 97, KANGASKHAN, BITTER_BERRY
+		db THRASH
+		db EARTHQUAKE
+		db DYNAMICPUNCH
+		db OUTRAGE
+	db 100, RHYDON, FOCUS_BAND ; full restore target
+		db EARTHQUAKE
+		db ROCK_SLIDE
+		db FISSURE
+		db HORN_DRILL
+	db $ff
+
+	db "GIOVANNI@"
+	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 24, RHYHORN, BERSERK_GENE
+		db HORN_ATTACK
+		db 0
+		db 0
+		db 0
+	db 29, PERSIAN, NO_ITEM
+		db SLASH
+		db BITE
+		db SCREECH
+		db FAINT_ATTACK
+	db 35, NIDOKING, NO_ITEM ; full restore target
+		db POISON_JAB
+		db DRILL_RUN
+		db THRASH
+		db HORN_DRILL
 	db $ff
 
 CoolSiblingsGroup:
-	db "ELAN&IDA@"
-	db 0 ; normal
-
-	db 90, PORYGON2
-	db 90, AZUMARILL
+	db "ELAN & IDA@"
+	db (1 << TRAINERTYPE_MOVES)
+	db 71, PORYGON2 ; hyper potion target
+		db TRI_ATTACK
+		db BLIZZARD
+		db MIND_READER
+		db ZAP_CANNON
+	db 70, AZUMARILL
+		db PLAY_ROUGH
+		db BELLY_DRUM
+		db DOUBLE_EDGE
+		db AQUA_JET
 	db $ff
 
-	db "ELAN&IDA@"
-	db 0 ; normal
-
-	db 90, AZUMARILL
-	db 90, PORYGON2
+	db "ELAN & IDA@"
+	db (1 << TRAINERTYPE_MOVES)
+	db 70, AZUMARILL
+		db PLAY_ROUGH
+		db BELLY_DRUM
+		db DOUBLE_EDGE
+		db AQUA_JET
+	db 71, PORYGON2 ; hyper potion target
+		db TRI_ATTACK
+		db BLIZZARD
+		db MIND_READER
+		db ZAP_CANNON
 	db $ff
 
-	db "ARA&BELLA@"
-	db 0 ; normal
-	db 91, STANTLER
-	db 91, TAUROS
+	db "ARA & BELLA@"
+	db (1 << TRAINERTYPE_MOVES)
+	db 72, STANTLER ; hyper potion target
+		db ZEN_HEADBUTT
+		db THRASH
+		db THUNDER_WAVE
+		db HI_JUMP_KICK
+	db 71, TAUROS
+		db OUTRAGE
+		db HORN_DRILL
+		db EARTHQUAKE
+		db DOUBLE_EDGE
 	db $ff
 
-	db "ARA&BELLA@"
-	db 0 ; normal
-	db 91, TAUROS
-	db 91, STANTLER
+	db "ARA & BELLA@"
+	db (1 << TRAINERTYPE_MOVES)
+	db 71, TAUROS
+		db OUTRAGE
+		db HORN_DRILL
+		db EARTHQUAKE
+		db DOUBLE_EDGE
+	db 72, STANTLER ; hyper potion target
+		db ZEN_HEADBUTT
+		db THRASH
+		db THUNDER_WAVE
+		db HI_JUMP_KICK
 	db $ff
 
-	db "MING&LEE@"
+	db "MING & LEE@"
 	db 0
-	db 100, DRAGONITE
-	db 100, KINGDRA
+	db 95, DRAGONITE
+	db 95, KINGDRA
 	db $ff
 
-	db "MING&LEE@"
+	db "MING & LEE@"
 	db 0
-	db 100, KINGDRA
-	db 100, DRAGONITE
+	db 95, KINGDRA
+	db 95, DRAGONITE
 	db $ff
-
-; ===========================
-; =====================
 
 RivalRBGroup:
-	; Lab, choose Charmander
+; battle 1 - OAK's LAB
 	db "<GREEN>@"
 	db 0
-
 	db 5, SQUIRTLE
 	db $ff
 
-	; Lab, choose Squirtle
 	db "<GREEN>@"
 	db 0
-
 	db 5, BULBASAUR
 	db $ff
 
-	; Lab, choose Bulbasaur
 	db "<GREEN>@"
 	db 0
-
 	db 5, CHARMANDER
 	db $ff
 
-; ===============================
-
-	; Route 22, choose Charmander
+; battle 2 - ROUTE 22
 	db "<GREEN>@"
-	db 0 ; normal
-
-	db 9, PIDGEY
-	db 8, SQUIRTLE
-	db $ff
-
-	; Route 22, choose Squirtle
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 9, PIDGEY
-	db 8, BULBASAUR
-	db $ff
-
-	; Route 22, choose Bulbasaur
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 9, PIDGEY
-	db 8, CHARMANDER
-	db $ff
-
-; ==============================
-
-	; Route 24, choose Charmander
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 18, PIDGEOTTO
-	db 15, ABRA
-	db 15, RATTATA
-	db 17, SQUIRTLE
-	db $ff
-
-	; Route 24, choose Squirtle
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 18, PIDGEOTTO
-	db 15, ABRA
-	db 15, RATTATA
-	db 17, BULBASAUR
-	db $ff
-
-	; Route 24, choose Bulbasaur
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 18, PIDGEOTTO
-	db 15, ABRA
-	db 15, RATTATA
-	db 17, CHARMANDER
-	db $ff
-
-; ==============================
-
-	; SS Anne, choose Charmander
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 19, PIDGEOTTO
-	db 16, RATICATE
-	db 18, KADABRA
-	db 20, WARTORTLE
-	db $ff
-
-	; SS Anne, choose Squirtle
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 19, PIDGEOTTO
-	db 16, RATICATE
-	db 18, KADABRA
-	db 20, IVYSAUR
-	db $ff
-
-	; SS Anne, choose Bulbasaur
-	db "<GREEN>@"
-	db 0 ; normal
-
-	db 19, PIDGEOTTO
-	db 16, RATICATE
-	db 18, KADABRA
-	db 20, CHARMELEON
-	db $ff
-
-; ================================
-	; HoF 1 Choose Charmander
-	db "<GREEN>@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-
-	db 76, PIDGEOT, SHARP_BEAK
-		db WING_ATTACK
-		db SAND_ATTACK
-		db SKY_ATTACK
-		db WHIRLWIND
-
-	db 75, ALAKAZAM, TWISTEDSPOON
-		db FUTURE_SIGHT
-		db PSYCHIC_M
-		db REFLECT
-		db RECOVER
-
-	db 76, RHYDON, SCOPE_LENS
-		db TAKE_DOWN
-		db EARTHQUAKE
-		db HORN_DRILL
-		db SCARY_FACE
-
-	db 76, ARCANINE, CHARCOAL
-		db EXTREMESPEED
-		db FLAMETHROWER
-		db ROAR
-		db BITE
-
-	db 76, EXEGGUTOR, MIRACLE_SEED
-		db GIGA_DRAIN
-		db SEED_BOMB
-		db SLEEP_POWDER
-		db LIGHT_SCREEN
-
-	db 77, BLASTOISE, MYSTIC_WATER
-		db HYDRO_PUMP
-		db RAIN_DANCE
-		db AQUA_JET
-		db BITE
-
-	db $ff
-
-	; HoF 1
-	db "<GREEN>@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-
-	db 76, PIDGEOT, SHARP_BEAK
-		db WING_ATTACK
-		db SAND_ATTACK
-		db SKY_ATTACK
-		db WHIRLWIND
-
-	db 75, ALAKAZAM, TWISTEDSPOON
-		db FUTURE_SIGHT
-		db PSYCHIC_M
-		db REFLECT
-		db RECOVER
-
-	db 76, RHYDON, SCOPE_LENS
-		db TAKE_DOWN
-		db EARTHQUAKE
-		db HORN_DRILL
-		db SCARY_FACE
-
-	db 76, GYARADOS, MYSTIC_WATER
-		db HYDRO_PUMP
-		db DRAGON_RAGE
-		db BITE
-		db THRASH
-
-	db 76, ARCANINE, CHARCOAL
-		db EXTREMESPEED
-		db FLAMETHROWER
-		db ROAR
-		db BITE
-
-	db 77, VENUSAUR, MIRACLE_SEED
-		db SOLARBEAM
-		db SYNTHESIS
-		db SUNNY_DAY
-		db GROWTH
-
-	db $ff
-
-	; HOF 1
-	db "<GREEN>@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-
-	db 76, PIDGEOT, SHARP_BEAK
-		db WING_ATTACK
-		db SAND_ATTACK
-		db SKY_ATTACK
-		db WHIRLWIND
-
-	db 75, ALAKAZAM, TWISTEDSPOON
-		db FUTURE_SIGHT
-		db PSYCHIC_M
-		db REFLECT
-		db RECOVER
-
-	db 76, RHYDON, SCOPE_LENS
-		db TAKE_DOWN
-		db EARTHQUAKE
-		db HORN_DRILL
-		db SCARY_FACE
-
-	db 76, EXEGGUTOR, MIRACLE_SEED
-		db GIGA_DRAIN
-		db SEED_BOMB
-		db SLEEP_POWDER
-		db LIGHT_SCREEN
-
-	db 76, GYARADOS, MYSTIC_WATER
-		db HYDRO_PUMP
-		db DRAGON_RAGE
-		db CRUNCH
-		db THRASH
-
-	db 77, CHARIZARD, CHARCOAL
-		db FIRE_BLAST
-		db WING_ATTACK
-		db SLASH
-		db FIRE_SPIN
-
-	db $ff
-	;lvl 100 rematch
-		db "<GREEN>@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)  | (1 << TRAINERTYPE_MAXXP)
-
-	db 100, PIDGEOT, POWER_HERB
-		db DOUBLE_EDGE
-		db HEAT_WAVE
-		db SKY_ATTACK
-		db WHIRLWIND
-
-	db 100, ALAKAZAM, TWISTEDSPOON
-		db SHADOW_BALL
-		db PSYCHIC_M
-		db FOCUS_BLAST
-		db RECOVER
-
-	db 100, MAROWAK, THICK_CLUB
-		db ROCK_SLIDE
-		db BONEMERANG
-		db PERISH_SONG
-		db CURSE
-
-	db 100, ARCANINE, CHARCOAL
-		db EXTREMESPEED
-		db FLAMETHROWER
-		db ROAR
-		db CRUNCH
-
-	db 100, EXEGGUTOR, MIRACLE_SEED
-		db PSYCHIC_M
-		db SEED_BOMB
-		db SLEEP_POWDER
-		db LIGHT_SCREEN
-
-	db 100, BLASTOISE, LEFTOVERS
-		db HYDRO_PUMP
-		db RAIN_DANCE
-		db AQUA_JET
-		db OUTRAGE
-
-	db $ff
-
-	; lvl 100 rematch, Choose Squirtle
-	db "<GREEN>@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-
-
-	db 100, PIDGEOT, POWER_HERB
-		db DOUBLE_EDGE
-		db HEAT_WAVE
-		db SKY_ATTACK
-		db WHIRLWIND
-
-	db 100, ALAKAZAM, TWISTEDSPOON
-		db SHADOW_BALL
-		db PSYCHIC_M
-		db FOCUS_BLAST
-		db RECOVER
-
-	db 100, MAROWAK, THICK_CLUB
-		db ROCK_SLIDE
-		db BONEMERANG
-		db PERISH_SONG
-		db CURSE
-
-	db 100, OMASTAR, MYSTIC_WATER
-		db SURF
-		db ANCIENTPOWER
-		db EARTH_POWER
-		db ROCK_POLISH
-
-	db 100, ARCANINE, CHARCOAL
-		db EXTREMESPEED
-		db FLAMETHROWER
-		db ROAR
-		db CRUNCH
-
-	db 100, VENUSAUR, LEFTOVERS
-		db GIGA_DRAIN
-		db SYNTHESIS
-		db SLUDGE_BOMB
-		db LEECH_SEED
-
-	db $ff
-
-	; lvl 100 rematch, Choose Bulbasaur
-	db "<GREEN>@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-
-
-	db 100, PIDGEOT, POWER_HERB
-		db DOUBLE_EDGE
-		db HEAT_WAVE
-		db SKY_ATTACK
-		db WHIRLWIND
-
-	db 100, ALAKAZAM, TWISTEDSPOON
-		db SHADOW_BALL
-		db PSYCHIC_M
-		db FOCUS_BLAST
-		db RECOVER
-
-	db 100, MAROWAK, THICK_CLUB
-		db ROCK_SLIDE
-		db BONEMERANG
-		db PERISH_SONG
-		db CURSE
-
-	db 100, EXEGGUTOR, MIRACLE_SEED
-		db PSYCHIC_M
-		db GIGA_DRAIN
-		db SLEEP_POWDER
-		db LIGHT_SCREEN
-
-	db 100, OMASTAR, MYSTIC_WATER
-		db SURF
-		db ANCIENTPOWER
-		db EARTH_POWER
-		db ROCK_POLISH
-
-	db 100, CHARIZARD, LEFTOVERS
-		db FIRE_BLAST
-		db AIR_SLASH
-		db EARTHQUAKE
-		db WILLOWISP
-
-	db $ff
-BrockRBGroup:
-; BROCK (1)
-	db "BROCK@"
 	db (1 << TRAINERTYPE_MOVES)
+	db 6, RATTATA
+		db TACKLE
+		db TAIL_WHIP
+		db 0
+		db 0
+	db 8, SQUIRTLE
+		db TACKLE
+		db TAIL_WHIP
+		db BUBBLE
+		db 0
+	db $ff
 
-	; party
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES)
+	db 6, RATTATA
+		db TACKLE
+		db TAIL_WHIP
+		db 0
+		db 0
+	db 8, BULBASAUR
+		db TACKLE
+		db GROWL
+		db VINE_WHIP
+		db 0
+	db $ff
 
-	db 12, GEODUDE
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES)
+	db 6, RATTATA
+		db TACKLE
+		db TAIL_WHIP
+		db 0
+		db 0
+	db 8, CHARMANDER
+		db SCRATCH
+		db GROWL
+		db EMBER
+		db 0
+	db $ff
+
+; battle 3 - CERULEAN CITY
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db 14, RATTATA, NO_ITEM
+		db TACKLE
+		db TAIL_WHIP
+		db QUICK_ATTACK
+		db BITE
+	db 14, PIDGEY, NO_ITEM
+		db GUST
+		db SAND_ATTACK
+		db QUICK_ATTACK
+		db 0
+	db 14, PIKACHU, NO_ITEM
+		db THUNDERSHOCK
+		db GROWL
+		db TAIL_WHIP
+		db QUICK_ATTACK
+	db 15, SQUIRTLE, BERRY
+		db TACKLE
+		db BUBBLE
+		db WITHDRAW
+		db WATER_GUN
+	db $ff
+
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db 14, RATTATA, NO_ITEM
+		db TACKLE
+		db TAIL_WHIP
+		db QUICK_ATTACK
+		db BITE
+	db 14, PIDGEY, NO_ITEM
+		db GUST
+		db SAND_ATTACK
+		db QUICK_ATTACK
+		db 0
+	db 14, PIKACHU, NO_ITEM
+		db THUNDERSHOCK
+		db GROWL
+		db TAIL_WHIP
+		db QUICK_ATTACK
+	db 15, BULBASAUR, BERRY
+		db TACKLE
+		db VINE_WHIP
+		db LEECH_SEED
+		db POISONPOWDER
+	db $ff
+
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db 14, RATTATA, NO_ITEM
+		db TACKLE
+		db TAIL_WHIP
+		db QUICK_ATTACK
+		db BITE
+	db 14, PIDGEY, NO_ITEM
+		db GUST
+		db SAND_ATTACK
+		db QUICK_ATTACK
+		db 0
+	db 14, PIKACHU, NO_ITEM
+		db THUNDERSHOCK
+		db GROWL
+		db TAIL_WHIP
+		db QUICK_ATTACK
+	db 15, CHARMANDER, BERRY
+		db SCRATCH
+		db EMBER
+		db METAL_CLAW
+		db SMOKESCREEN
+	db $ff
+
+; battle 4 - ST.ANNE
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db 17, PIDGEOTTO, NO_ITEM
+		db GUST
+		db SAND_ATTACK
+		db QUICK_ATTACK
+		db 0
+	db 16, PIKACHU, NO_ITEM
+		db THUNDERSHOCK
+		db QUICK_ATTACK
+		db THUNDER_WAVE
+		db DOUBLE_TEAM
+	db 15, CUBONE, NO_ITEM
+		db BONE_CLUB
+		db GROWL
+		db TAIL_WHIP
+		db HEADBUTT
+	db 14, VULPIX, NO_ITEM
+		db EMBER
+		db TAIL_WHIP
+		db QUICK_ATTACK
+		db 0
+	db 14, BELLSPROUT, NO_ITEM
+		db VINE_WHIP
+		db GROWTH
+		db WRAP
+		db 0
+	db 18, WARTORTLE, BERRY
+		db BUBBLE
+		db WITHDRAW
+		db WATER_GUN
+		db BITE
+	db $ff
+
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db 17, PIDGEOTTO, NO_ITEM
+		db GUST
+		db SAND_ATTACK
+		db QUICK_ATTACK
+		db 0
+	db 16, PIKACHU, NO_ITEM
+		db THUNDERSHOCK
+		db QUICK_ATTACK
+		db THUNDER_WAVE
+		db DOUBLE_TEAM
+	db 15, CUBONE, NO_ITEM
+		db BONE_CLUB
+		db GROWL
+		db TAIL_WHIP
+		db HEADBUTT
+	db 14, STARYU, NO_ITEM
+		db TACKLE
+		db HARDEN
+		db WATER_GUN
+		db 0
+	db 14, VULPIX, NO_ITEM
+		db EMBER
+		db TAIL_WHIP
+		db QUICK_ATTACK
+		db 0
+	db 18, IVYSAUR, BERRY
+		db VINE_WHIP
+		db LEECH_SEED
+		db POISONPOWDER
+		db SLEEP_POWDER
+	db $ff
+
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db 17, PIDGEOTTO, NO_ITEM
+		db GUST
+		db SAND_ATTACK
+		db QUICK_ATTACK
+		db 0
+	db 16, PIKACHU, NO_ITEM
+		db THUNDERSHOCK
+		db QUICK_ATTACK
+		db THUNDER_WAVE
+		db DOUBLE_TEAM
+	db 15, CUBONE, NO_ITEM
+		db BONE_CLUB
+		db GROWL
+		db TAIL_WHIP
+		db HEADBUTT
+	db 14, BELLSPROUT, NO_ITEM
+		db VINE_WHIP
+		db GROWTH
+		db WRAP
+		db 0
+	db 14, STARYU, NO_ITEM
+		db TACKLE
+		db HARDEN
+		db WATER_GUN
+		db 0
+	db 18, CHARMELEON, BERRY
+		db EMBER
+		db METAL_CLAW
+		db SMOKESCREEN
+		db RAGE
+	db $ff
+
+; battle 5 - INDIGO PLATEAU
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 61, PIDGEOT, POWER_HERB
+		db WING_ATTACK
+		db SAND_ATTACK
+		db SKY_ATTACK
+		db WHIRLWIND
+	db 61, RAICHU, GOLD_BERRY
+		db THUNDERBOLT
+		db IRON_TAIL
+		db SURF
+		db WILD_CHARGE
+	db 61, MAROWAK, THICK_CLUB
+		db BONEMERANG
+		db ROCK_SLIDE
+		db PERISH_SONG
+		db EARTHQUAKE
+	db 61, NINETALES, CHARCOAL
+		db FLAMETHROWER
+		db SHADOW_BALL
+		db HIDDEN_POWER
+		db CURSE
+	db 61, VICTREEBEL, MIRACLE_SEED
+		db GIGA_DRAIN
+		db SLUDGE_BOMB
+		db SLEEP_POWDER
+		db REFLECT
+	db 65, BLASTOISE, LEFTOVERS
+		db HYDRO_PUMP
+		db ICE_BEAM
+		db EARTHQUAKE
+		db BLIZZARD
+	db $ff
+
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 61, PIDGEOT, POWER_HERB
+		db WING_ATTACK
+		db SAND_ATTACK
+		db SKY_ATTACK
+		db WHIRLWIND
+	db 61, RAICHU, GOLD_BERRY
+		db THUNDERBOLT
+		db IRON_TAIL
+		db SURF
+		db WILD_CHARGE
+	db 61, MAROWAK, THICK_CLUB
+		db BONEMERANG
+		db ROCK_SLIDE
+		db PERISH_SONG
+		db EARTHQUAKE
+	db 61, STARMIE, MYSTIC_WATER
+		db SURF
+		db PSYCHIC_M
+		db ICE_BEAM
+		db CONFUSE_RAY
+	db 61, NINETALES, CHARCOAL
+		db FLAMETHROWER
+		db SHADOW_BALL
+		db HIDDEN_POWER
+		db CURSE
+	db 65, VENUSAUR, LEFTOVERS
+		db SOLARBEAM
+		db SLUDGE_BOMB
+		db EARTHQUAKE
+		db GIGA_DRAIN
+	db $ff
+
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 61, PIDGEOT, POWER_HERB
+		db WING_ATTACK
+		db SAND_ATTACK
+		db SKY_ATTACK
+		db WHIRLWIND
+	db 61, RAICHU, GOLD_BERRY
+		db THUNDERBOLT
+		db IRON_TAIL
+		db SURF
+		db WILD_CHARGE
+	db 61, MAROWAK, THICK_CLUB
+		db BONEMERANG
+		db ROCK_SLIDE
+		db PERISH_SONG
+		db EARTHQUAKE
+	db 61, VICTREEBEL, MIRACLE_SEED
+		db GIGA_DRAIN
+		db SLUDGE_BOMB
+		db SLEEP_POWDER
+		db REFLECT
+	db 61, STARMIE, MYSTIC_WATER
+		db SURF
+		db PSYCHIC_M
+		db ICE_BEAM
+		db CONFUSE_RAY
+	db 65, CHARIZARD, LEFTOVERS
+		db FIRE_BLAST
+		db DRAGON_PULSE
+		db WING_ATTACK
+		db EARTHQUAKE
+	db $ff
+
+
+; battle 6 - CHAMPION REMATCH
+	db "<GREEN>@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 100, ARTICUNO, LEFTOVERS
+		db ICE_BEAM
+		db BUBBLEBEAM
+		db HIDDEN_POWER ; grass
+		db REFLECT
+	db 100, ZAPDOS, LEFTOVERS
+		db THUNDERBOLT
+		db DRILL_PECK
+		db HIDDEN_POWER ; grass
+		db THUNDER_WAVE
+	db 100, MOLTRES, LEFTOVERS
+		db FLAMETHROWER
+		db DOUBLE_EDGE
+		db HIDDEN_POWER ; grass
+		db FIRE_BLAST
+	db 100, SNORLAX, LEFTOVERS
+		db BODY_SLAM
+		db EARTHQUAKE
+		db CURSE
+		db REST
+	db 100, LAPRAS, LEFTOVERS
+		db SURF
+		db ICE_BEAM
+		db THUNDERBOLT
+		db CONFUSE_RAY
+	db 100, MEW, LEFTOVERS
+		db PSYCHIC_M
+		db EARTHQUAKE
+		db ICE_BEAM
+		db SOFTBOILED
+	db $ff
+
+BrockRBGroup:
+	db "BROCK@" ; if the player picked charmander
+	db (1 << TRAINERTYPE_MOVES)
+	db 10, GEODUDE
 		db TACKLE
 		db DEFENSE_CURL
 		db ROLLOUT
 		db SANDSTORM
+	db 12, ONIX ; potion target
+		db BIDE
+		db WRAP
+		db IRON_TAIL
+		db SANDSTORM
+	db $ff ; end
 
-	db 14, ONIX
+	db "BROCK@" ; if the player picked bulbasaur/squirtle
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_MAXXP)
+	db 10, GEODUDE
+		db TACKLE
+		db DEFENSE_CURL
+		db ROLLOUT
+		db SANDSTORM
+	db 12, ONIX ; potion target
 		db BIDE
 		db WRAP
 		db IRON_TAIL
@@ -702,76 +674,61 @@ BrockRBGroup:
 	db $ff ; end
 
 MistyRBGroup:
-	; MISTY (1)
 	db "MISTY@"
-	db (1 << TRAINERTYPE_MOVES)
-
-	; party
-
-	db 18, STARYU
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db 15, STARYU, STARDUST
 		db SWIFT
 		db RAIN_DANCE
 		db RAPID_SPIN
 		db BUBBLE
-
-	db 21, STARMIE
+	db 18, STARMIE, STAR_PIECE ; fresh water target
 		db BUBBLEBEAM
 		db CONFUSION
 		db SWIFT
 		db HARDEN
-
 	db $ff ; end
 
 BabaGroup:
-	db "BABA@"
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_NICKNAME) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-
-	db 100, TYPHLOSION, LEFTOVERS, "BEST@"
-		db THUNDERPUNCH
-		db FLAMETHROWER
-		db EARTHQUAKE
-		db STRENGTH
-
-	db 100, SUICUNE, MYSTIC_WATER, "DONG@"
-		db SURF
-		db ICY_WIND
-		db AURORA_BEAM
-		db GUST
-
-	db 100, PIDGEOT, GOLD_BERRY, "EVER@"
-		db FLY
-		db AIR_SLASH
-		db STEEL_WING
-		db HEAT_WAVE
-
-	db 100, GYARADOS, BITTER_BERRY, "DADA@"
-		db OUTRAGE
+	db "KRIS@"
+	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
+	db 100, RAIKOU, FOCUS_BAND
+		db THUNDERBOLT
 		db CRUNCH
-		db WATERFALL
-		db HYPER_BEAM
-
-	db 100, POLITOED, PARLYZ_GUARD, "ORGY@"
+		db IRON_HEAD
+		db HIDDEN_POWER ; ice
+	db 100, ENTEI, SCOPE_LENS
+		db FIRE_BLAST
+		db CRUNCH
+		db IRON_HEAD
+		db HIDDEN_POWER ; ground
+	db 100, SUICUNE, BRIGHTPOWDER
 		db SURF
-		db PERISH_SONG
-		db HYPNOSIS
-		db RAIN_DANCE
-
-	db 100, TOGETIC, SCOPE_LENS, "DEKU@"
-		db NASTY_PLOT
-		db ATTRACT
-		db DAZZLINGLEAM
-		db METRONOME
-
+		db ICE_BEAM
+		db ROAR
+		db HIDDEN_POWER ; grass
+	db 100, CELEBI, MIRACLEBERRY
+		db PSYCHIC_M
+		db GIGA_DRAIN
+		db RECOVER
+		db LEECH_SEED
+	db 100, LUGIA, LEFTOVERS
+		db AEROBLAST
+		db PSYCHIC_M
+		db EARTHQUAKE
+		db SURF
+	db 100, HO_OH, QUICK_CLAW
+		db SACRED_FIRE
+		db THUNDER
+		db EARTHQUAKE
+		db GIGA_DRAIN
 	db $ff
 
 ExecutiveEgkGroup:
-; ================
-	; EXECUTIVEEGK (1)
-	
-	db "EXECUTIVE@" ; 1
-	db (1 << TRAINERTYPE_NICKNAME) | (1 << TRAINERTYPE_ITEM)
-	db 15, RATICATE, GOLD_BERRY, "GILGAMESH@"
-	
+	db "EXECUTIVE@"
+	db (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MOVES)
+	db 16, RATICATE, BERSERK_GENE
+		db HYPER_FANG
+		db BITE
+		db QUICK_ATTACK
+		db 0
 	db $ff
-	
-; ================================
