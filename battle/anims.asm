@@ -1440,9 +1440,9 @@ BattleAnim_RazorWind_branch_c9bc8: ; c9bc8
 	anim_ret
 ; c9c00
 
-BattleAnim_Sonicboom_JP: ; c9c00
+BattleAnim_Sonicboom: ; c9c00
 	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
-BattleAnim_Sonicboom_JP_branch_c9c03: ; c9c03
+BattleAnim_Sonicboom_branch_c9c03: ; c9c03
 	anim_sound $c, SFX_RAZOR_WIND
 	anim_obj $43, 64, 80, $3
 	anim_wait 8
@@ -1452,7 +1452,7 @@ BattleAnim_Sonicboom_JP_branch_c9c03: ; c9c03
 	anim_sound $c, SFX_RAZOR_WIND
 	anim_obj $43, 64, 96, $4
 	anim_wait 8
-	anim_loop $2, BattleAnim_Sonicboom_JP_branch_c9c03
+	anim_loop $2, BattleAnim_Sonicboom_branch_c9c03
 	anim_wait 32
 	anim_incobj $1
 	anim_incobj $2
@@ -1466,10 +1466,8 @@ BattleAnim_Sonicboom_JP_branch_c9c03: ; c9c03
 ; c9c36
 
 BattleAnim_Gust: ; c9c36
-BattleAnim_Sonicboom: ; c9c36
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
 BattleAnim_Gust_branch_c9c39: ; c9c39
-BattleAnim_Sonicboom_branch_c9c39: ; c9c39
 	anim_sound $1, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_GUST, 136, 72, $0
 	anim_wait 6
@@ -1741,13 +1739,16 @@ BattleAnim_Teleport: ; c9e4f
 ; c9e6f
 
 BattleAnim_Fly: ; c9e6f
-	anim_jumpif $1, BattleAnim_Fly_branch_c9e89
-	anim_jumpif $2, BattleAnim_Fly_branch_c9e82
+	anim_1gfx ANIM_GFX_SPEED
+	anim_bgeffect $6, $0, $1, $0
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_call BattleAnim_Fly_branch_cbb12
+	anim_wait 64
 	anim_1gfx ANIM_GFX_HIT
 	anim_sound $1, SFX_WING_ATTACK
 	anim_obj $1, 136, 56, $0
 	anim_wait 32
-BattleAnim_Fly_branch_c9e82: ; c9e82
+;BattleAnim_Fly_branch_c9e82: ; c9e82
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 32
 	anim_ret
