@@ -180,7 +180,7 @@ Psychic:    db "PSYCHIC@"
 Ice:        db "ICE@"
 Ground:     db "GROUND@"
 Rock:       db "ROCK@"
-Bird:       db "BIRD@"
+Bird:       db "GAS@" ; only used for Koffing/Weezing, simulates Levitate + fire weakness
 Bug:        db "BUG@"
 Ghost:      db "GHOST@"
 Steel:      db "STEEL@"
