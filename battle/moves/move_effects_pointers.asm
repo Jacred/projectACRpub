@@ -156,3 +156,4 @@
 	dw Fly
 	dw DefenseCurl
 	dw Extremespeed
+	dw WildCharge
