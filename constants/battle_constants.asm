@@ -1,6 +1,6 @@
 MAX_LEVEL EQU 100
 MIN_LEVEL EQU 1
-EGG_LEVEL EQU 1
+EGG_LEVEL EQU 5
 NUM_MOVES EQU 4
 
 REST_TURNS EQU 2
@@ -44,21 +44,21 @@ TRAINER_BATTLE EQU 2
 
 ; battle types
 	const_def
-	const BATTLETYPE_NORMAL ; $0
-	const BATTLETYPE_CANLOSE ; $1
-	const BATTLETYPE_DEBUG ; $2
-	const BATTLETYPE_TUTORIAL ; $3
-	const BATTLETYPE_FISH ; $4
-	const BATTLETYPE_ROAMING ; $5
-	const BATTLETYPE_CONTEST ; $6
-	const BATTLETYPE_SHINY ; $7
-	const BATTLETYPE_TREE ; $8
-	const BATTLETYPE_TRAP ; $9
-	const BATTLETYPE_FORCEITEM ; $a
-	const BATTLETYPE_CELEBI ; $b
-	const BATTLETYPE_SUICUNE ; $c
-	const BATTLETYPE_KANTOLEGEND ; $d
-	const BATTLETYPE_RIVAL_RB ; $e
+	const BATTLETYPE_NORMAL ; normal battles
+	const BATTLETYPE_CANLOSE ; no penalty for blacking out, NEEDS autoheal or game will crash
+	const BATTLETYPE_DEBUG ; obviously not used
+	const BATTLETYPE_TUTORIAL ; automated catch tutorial, probably bugs tf out if used elsewhere
+	const BATTLETYPE_FISH ; normal wild battle but with fishing flavor text
+	const BATTLETYPE_ROAMING ; used for entei/raikou, sacred beast BGM
+	const BATTLETYPE_CONTEST ; bug-catching contest
+	const BATTLETYPE_SHINY ; red gyarados + forced shiny
+	const BATTLETYPE_TREE ; headbutt tree encounter, mon may spawn sleeping
+	const BATTLETYPE_TRAP ; rocket base traps, can't escape
+	const BATTLETYPE_FORCEITEM ; always uses item slot 1, legendary BGM if applicable
+	const BATTLETYPE_CELEBI ; legendary battle with encounter flavor text
+	const BATTLETYPE_SUICUNE ; tin tower suicune, sacred beast BGM
+	const BATTLETYPE_KANTOLEGEND ; winged mirages + mew/mewtwo, kanto legend BGM
+	const BATTLETYPE_RIVAL_RB ; loss dialogue for enemy trainer, still black out if lose
 
 ; battle variables
 BATTLE_VARS_SUBSTATUS1 EQU 0
@@ -283,7 +283,7 @@ EFFECT_MAGNITUDE           EQU $7e
 EFFECT_BATON_PASS          EQU $7f
 EFFECT_PURSUIT             EQU $80
 EFFECT_RAPID_SPIN          EQU $81
-EFFECT_UNUSED_82           EQU $82 ; unused
+EFFECT_WILD_CHARGE         EQU $82 ; now used
 EFFECT_UNUSED_83           EQU $83 ; unused
 EFFECT_MORNING_SUN         EQU $84
 EFFECT_SYNTHESIS           EQU $85
