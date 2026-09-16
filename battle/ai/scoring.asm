@@ -366,8 +366,9 @@ AI_Smart: ; 386be
 	dbw EFFECT_MEAN_LOOK,        AI_Smart_MeanLook
 	dbw EFFECT_NIGHTMARE,        AI_Smart_Nightmare
 	dbw EFFECT_FLAME_WHEEL,      AI_Smart_FlameWheel
-	dbw EFFECT_SACRED_FIRE,		 AI_Smart_FlameWheel
-	dbw EFFECT_FLARE_BLITZ,		AI_Smart_FlameWheel
+	dbw EFFECT_SACRED_FIRE,	     AI_Smart_FlameWheel
+	dbw EFFECT_FLARE_BLITZ,	     AI_Smart_FlameWheel
+	dbw EFFECT_BURN_HIT,	     AI_Smart_FlameWheel
 	dbw EFFECT_CURSE,            AI_Smart_Curse
 	dbw EFFECT_PROTECT,          AI_Smart_Protect
 	dbw EFFECT_FORESIGHT,        AI_Smart_Foresight
@@ -398,7 +399,7 @@ AI_Smart: ; 386be
 	dbw EFFECT_FUTURE_SIGHT,     AI_Smart_FutureSight
 	dbw EFFECT_GUST,             AI_Smart_Gust
 	dbw EFFECT_STOMP,            AI_Smart_Stomp
-	dbw EFFECT_BODY_SLAM,		 AI_Smart_Stomp
+	dbw EFFECT_BODY_SLAM,	     AI_Smart_Stomp
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
@@ -2588,10 +2589,13 @@ RainDanceMoves: ; 390e7
 	db THUNDER
 	db WATERFALL
 	db CLAMP
+	db AQUA_JET
+	db SPIKE_CANNON
 	db BUBBLE
 	db CRABHAMMER
 	db OCTAZOOKA
 	db WHIRLPOOL
+	db THUNDER
 	db $ff
 ; 390f3
 
@@ -2682,6 +2686,8 @@ SunnyDayMoves: ; 39134
 	db MORNING_SUN
 	db SYNTHESIS
 	db FLARE_BLITZ
+	db HEAT_WAVE
+	db SOLARBEAM
 	db $ff
 ; 3913d
 
@@ -3014,72 +3020,124 @@ AIHasMoveInArray: ; 392e6
 
 
 UsefulMoves: ; 39301
-; Moves that are usable all-around.
-	db DOUBLE_EDGE
-	db FLAMETHROWER
-	db HYDRO_PUMP
-	db SURF
-	db ICE_BEAM
-	db BLIZZARD
-	db HYPER_BEAM
-	db HI_JUMP_KICK
-	db THUNDERBOLT
-	db THUNDER
-	db EARTHQUAKE
-	db TOXIC
-	db PSYCHIC_M
-	db HYPNOSIS
-	db RECOVER
-	db FIRE_BLAST
-	db SOFTBOILED
-	db SUPER_FANG
+; Moves that the enemy will try to copy using Mimic, or disable with Disable.
+	; 120+ bp moves with at least 70% accuracy, regardless of other drawbacks
+	; 100% accurate damage-dealing moves with at least 70 base power
+	; status-inflicting moves (including confusion) with 75% base power or higher
+	; ANY move that inflicts sleep
+	; status moves that restore the user's HP
+	; signature moves that are worth running (super fang, bonemerang, etc.)
+	; moves that raise the user's evasion
 	db GUNK_SHOT
 	db ZEN_HEADBUTT
 	db FIRE_PUNCH
 	db ICE_PUNCH
 	db THUNDERPUNCH
 	db FOCUS_BLAST
+	db FLY
 	db BUG_BUZZ
 	db MEGA_KICK
 	db FLARE_BLITZ
+	db HORN_DRILL
 	db BODY_SLAM
 	db THRASH
+	db DOUBLE_EDGE
+	db TWINEEDLE
+	db SING
+	db FLAMETHROWER
+	db HYDRO_PUMP
+	db SURF
+	db ICE_BEAM
+	db BLIZZARD
+	db PSYBEAM
+	db BUBBLEBEAM
+	db AURORA_BEAM
+	db HYPER_BEAM
+	db DRILL_PECK
+	db SUBMISSION
 	db HEAT_WAVE
+	db SEISMIC_TOSS
+	db STRENGTH
+	db RAZOR_LEAF
+	db SOLARBEAM
+	db POISONPOWDER
+	db STUN_SPORE
+	db SLEEP_POWDER
 	db PETAL_DANCE
+	db THUNDERBOLT
+	db THUNDER_WAVE
+	db THUNDER
+	db EARTHQUAKE
+	db FISSURE
+	db DIG
+	db TOXIC
+	db PSYCHIC_M
+	db HYPNOSIS
+	db NIGHT_SHADE
+	db DOUBLE_TEAM
+	db RECOVER
 	db MINIMIZE
 	db CONFUSE_RAY
+	db DRAGON_PULSE
+	db BONE_CLUB
+	db FIRE_BLAST
 	db WATERFALL
+	db SPIKE_CANNON
 	db FLASH_CANNON
+	db WILLOWISP
+	db SOFTBOILED
+	db HI_JUMP_KICK
+	db GLARE
 	db SEED_BOMB
 	db LOVELY_KISS
+	db SKY_ATTACK
 	db DIZZY_PUNCH
+	db SPORE
+	db FLASH
+	db PSYWAVE
 	db CRABHAMMER
 	db POISON_JAB
 	db BONEMERANG
+	db REST
 	db ROCK_SLIDE
+	db HYPER_FANG
 	db TRI_ATTACK
+	db SUPER_FANG
+	db SLASH
 	db WILD_CHARGE
 	db X_SCISSOR
 	db IRON_HEAD
 	db AEROBLAST
+	db PROTECT
 	db SLUDGE_BOMB
+	db OCTAZOOKA
 	db AIR_SLASH
 	db DARK_PULSE
 	db EARTH_POWER
 	db OUTRAGE
 	db GIGA_DRAIN
+	db CHARM
 	db MILK_DRINK
+	db ATTRACT
 	db DAZZLINGLEAM
+	db SACRED_FIRE
 	db MEGAHORN
+	db DRAGONBREATH
 	db IRON_TAIL
+	db MORNING_SUN
+	db SYNTHESIS
+	db MOONLIGHT
 	db CROSS_CHOP
 	db CRUNCH
 	db SHADOW_CLAW
 	db EXTREMESPEED
+	db ANCIENTPOWER
 	db SHADOW_BALL
+	db WHIRLPOOL
 	db DRILL_RUN
 	db MOONBLAST
 	db PLAY_ROUGH
+	db SHEER_COLD
 	db $ff
 ; 39315
 
@@ -3132,6 +3190,8 @@ AI_Opportunist: ; 39315
 	ret
 
 .stallmoves
+; moves the enemy will avoid using when HP is low
+	db IRON_DEFENSE
 	db SWORDS_DANCE
 	db TAIL_WHIP
 	db LEER
@@ -3144,6 +3204,7 @@ AI_Opportunist: ; 39315
 	db STRING_SHOT
 	db MEDITATE
 	db AGILITY
+	db TELEPORT
 	db MIMIC
 	db SCREECH
 	db HARDEN
@@ -3155,17 +3216,30 @@ AI_Opportunist: ; 39315
 	db REFLECT
 	db FOCUS_ENERGY
 	db BIDE
+	db METAL_SOUND
 	db AMNESIA
+	db ROCK_POLISH
 	db TRANSFORM
 	db SPLASH
 	db ACID_ARMOR
 	db SHARPEN
 	db CONVERSION
 	db SUBSTITUTE
-	db METAL_SOUND
-	db IRON_DEFENSE
-	db ROCK_POLISH
+	db SKETCH
+	db MIND_READER
+	db COTTON_SPORE
+	db SCARY_FACE
+	db BELLY_DRUM
+	db SPIKES
+	db FORESIGHT
+	db PERISH_SONG
+	db CHARM
+	db FALSE_SWIPE
+	db MEAN_LOOK
+	db SAFEGUARD
+	db ENCORE
 	db NASTY_PLOT
+	db MIRROR_COAT
 	db $ff
 ; 39369
 
@@ -3358,7 +3432,6 @@ AI_Cautious: ; 39418
 	db THUNDER_WAVE
 	db FOCUS_ENERGY
 	db BIDE
-	;db POISON_GAS
 	db TRANSFORM
 	db CONVERSION
 	db SUBSTITUTE
