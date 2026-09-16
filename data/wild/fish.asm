@@ -287,6 +287,12 @@ FishGroup21Header:
 	dw FishGroup21_Good
 	dw FishGroup21_Super
 
+FishGroup22Header:
+	;db $80 ; 50%
+	dw FishGroup22_Old
+	dw FishGroup22_Good
+	dw FishGroup22_Super
+
 ;to set fishing mons, first you have to make/edit a group, then assign that group to an area in maps/map_headers.asm (last number). group 0 is used to represent no fishing mons
 ;each group is split into rods, but each table can be any legnth
 ;first number is chance out of 255, currently in hex (noted by the $) but a decimal number can be entered too. This number is not individual chance, but culumulative chance of getting that far
@@ -300,34 +306,34 @@ FishGroup21Header:
 
 FishGroup1: ;Johto Freshwater
 FishGroup1_Old: ; 924e3
-	db 125, REMORAID,    15
-	db 138, TOTODILE,    15
-	db 150, POLIWAG,    15
-	db 163, MARILL,    15
+	db 125, REMORAID,    10
+	db 138, TOTODILE,    10
+	db 150, POLIWAG,    10
+	db 163, MARILL,    10
 	db 188, $0,    1
 	db 213, $0,    2
 	db $ff, $0,    0
 FishGroup1_Good: ; 924ec
-	db 75, REMORAID,    40
-	db 113, AZUMARILL,    45
-	db 120, OCTILLERY,    45
-	db 125, CROCONAW,    45
-	db 138, WOOPER,    40
-	db 150, MARILL,    40
+	db 75, REMORAID,    25
+	db 113, AZUMARILL,    30
+	db 120, OCTILLERY,    30
+	db 125, CROCONAW,    30
+	db 138, WOOPER,    25
+	db 150, MARILL,    25
 	db 188, $0,    4
 	db 201, $0,    3
 	db 213, $0,    6
 	db 226, $0,    7
 	db $ff, $0,         5
 FishGroup1_Super: ; 924f8
-	db 63, OCTILLERY,    75
-	db 75, TOTODILE,    50
-	db 88, CROCONAW,    65
-	db 100, WOOPER,    50
-	db 125, QUAGSIRE,    75
-	db 138, AZUMARILL,    75
-	db 150, POLIWHIRL,    65
-	db 163, POLITOED,    75
+	db 63, OCTILLERY,    50
+	db 75, TOTODILE,    35
+	db 88, CROCONAW,    45
+	db 100, WOOPER,    35
+	db 125, QUAGSIRE,    50
+	db 138, AZUMARILL,    50
+	db 150, POLIWHIRL,    45
+	db 163, POLITOED,    50
 	db 175, $0,    8
 	db 200, $0,    9
 	db 238, $0,    10
@@ -335,172 +341,172 @@ FishGroup1_Super: ; 924f8
 
 FishGroup2: ; Johto Seawater
 FishGroup2_Old: ; 92504
-	db 125, REMORAID,    15
-	db 160, HORSEA,    15
-	db 180, CORSOLA,    15
-	db 214, CHINCHOU,    15
+	db 125, REMORAID,    10
+	db 160, HORSEA,    10
+	db 180, CORSOLA,    10
+	db 214, CHINCHOU,    10
 	db $ff, $0,    12
 FishGroup2_Good: ; 9250d
-	db 63, REMORAID,    40
-	db 125, OCTILLERY,    45
-	db 163, CORSOLA,    45
-	db 176, HORSEA,    40
-	db 189, SEADRA,    45
-	db 202, CHINCHOU,    40
-	db 214, LANTURN,    45
+	db 63, REMORAID,    25
+	db 125, OCTILLERY,    30
+	db 163, CORSOLA,    30
+	db 176, HORSEA,    25
+	db 189, SEADRA,    30
+	db 202, CHINCHOU,    25
+	db 214, LANTURN,    30
 	db 226, $0,    13
 	db $ff, $0,         14
 FishGroup2_Super: ; 92519
-	db 35, OCTILLERY,    75
-	db 55, CORSOLA,    75
-	db 65, LANTURN,    75
-	db 75, SEADRA,    65
-	db 80, QWILFISH,    75
+	db 35, OCTILLERY,    50
+	db 55, CORSOLA,    50
+	db 65, LANTURN,    50
+	db 75, SEADRA,    45
+	db 80, QWILFISH,    50
 	db $ff, $0,        15
 
 FishGroup3: ; Lake of Rage
 FishGroup3_Old: ; 92525
-	db $ff, MAGIKARP,   15
+	db $ff, MAGIKARP,   10
 FishGroup3_Good: ; 9252e
-	db 150, MAGIKARP,    40
-	db 201, GYARADOS,    50
-	db 227, STARMIE,    45
-	db 240, SEAKING,    45
+	db 150, MAGIKARP,    25
+	db 201, GYARADOS,    35
+	db 227, STARMIE,    30
+	db 240, SEAKING,    30
 	db $ff, $0,         16
 FishGroup3_Super: ; 9253a
-	db 25, MAGIKARP,    70
-	db 70, GYARADOS,    80
-	db 85, STARMIE,    75
-	db 95, SEAKING,    75
+	db 25, MAGIKARP,    45
+	db 70, GYARADOS,    55
+	db 85, STARMIE,    50
+	db 95, SEAKING,    50
 	db $ff, $0,  		17
 
 FishGroup4: ; Dragon's Den
 FishGroup4_Old: ; 92546
-	db 200, MAGIKARP,    15
+	db 200, MAGIKARP,    10
 	db 214, $0,    18
-	db 240, DRATINI,    15
+	db 240, DRATINI,    10
 	db $ff, $0,    20
 FishGroup4_Good: ; 9254f
-	db 76, MAGIKARP,    40
-	db 127, DRATINI,    40
-	db 152, DRAGONAIR,    30
-	db 183, SEADRA,    40
+	db 76, MAGIKARP,    25
+	db 127, DRATINI,    25
+	db 152, DRAGONAIR,    20
+	db 183, SEADRA,    25
 	db 215, $0,    21
 	db 241, $0,    22
 	db $ff, $0,         23
 FishGroup4_Super: ; 9255b
-	db 26, MAGIKARP,    70
-	db 102, GYARADOS,    80
-	db 128, DRATINI,    70
-	db 179, DRAGONAIR,    75
-	db 193, SEADRA,    75
+	db 26, MAGIKARP,    45
+	db 102, GYARADOS,    55
+	db 128, DRATINI,    45
+	db 179, DRAGONAIR,    50
+	db 193, SEADRA,    50
 	db 242, $0,    24
 	db $ff, $0,    25
 
-FishGroup5: ; Blackthorne City
+FishGroup5: ; Blackthorn City
 FishGroup5_Old: ; 92567
-	db 88, MAGIKARP,    15
-	db 126, SEEL,    15
-	db 164, SHELLDER,    15
-	db 190, DRATINI,    15
-	db 228, HORSEA,    15
+	db 88, MAGIKARP,    10
+	db 126, SEEL,    10
+	db 164, SHELLDER,    10
+	db 190, DRATINI,    10
+	db 228, HORSEA,    10
 	db 242, $0,    26
 	db $ff, $0,    27
 FishGroup5_Good: ; 92570
-	db 26, HORSEA,    40
-	db 52, SEADRA,    45
-	db 90, SEEL,    40
-	db 128, SHELLDER,    40
-	db 166, DRATINI,    40
-	db 204, DRAGONAIR,    45
+	db 26, HORSEA,    25
+	db 52, SEADRA,    30
+	db 90, SEEL,    25
+	db 128, SHELLDER,    25
+	db 166, DRATINI,    25
+	db 204, DRAGONAIR,    30
 	db 229, $0,    28
 	db $ff, $0,         29
 FishGroup5_Super: ; 9257c
-	db 51, GYARADOS,    80
-	db 76, SEADRA,    75
-	db 102, DRAGONAIR,    75
-	db 140, DEWGONG,    80
-	db 178, CLOYSTER,    80
+	db 51, GYARADOS,    55
+	db 76, SEADRA,    50
+	db 102, DRAGONAIR,   50
+	db 140, DEWGONG,    55
+	db 178, CLOYSTER,    55
 	db 215, $0,    30
 	db $ff, $0,    31
 
 FishGroup6: ; Qwilfish swarm
 FishGroup6_Old: ; 92588
-	db $b3, MAGIKARP,   15
-	db $d9, MAGIKARP,   15
-	db $ff, QWILFISH,   15
+	db $b3, MAGIKARP,   10
+	db $d9, MAGIKARP,   10
+	db $ff, QWILFISH,   10
 FishGroup6_Good: ; 92591
-	db $59, MAGIKARP,   40
-	db $b2, QWILFISH,   45
-	db $e6, QWILFISH,   45
+	db $59, MAGIKARP,   25
+	db $b2, QWILFISH,   30
+	db $e6, QWILFISH,   30
 	db $ff, $0,         10
 FishGroup6_Super: ; 9259d
-	db $66, QWILFISH,   75
+	db $66, QWILFISH,   50
 	db $b2, $0,         11
-	db $e6, QWILFISH,   80
-	db $ff, QWILFISH,   85
+	db $e6, QWILFISH,   55
+	db $ff, QWILFISH,   55
 
 FishGroup7: ; Remoraid swarm
 FishGroup7_Old: ; 925a9
-	db $b3, MAGIKARP,   15
-	db $d9, MAGIKARP,   15
-	db $ff, REMORAID,   15
+	db $b3, MAGIKARP,   10
+	db $d9, MAGIKARP,   10
+	db $ff, REMORAID,   10
 FishGroup7_Good: ; 925b2
-	db $59, MAGIKARP,   40
-	db $b2, REMORAID,   40
-	db $e6, REMORAID,   50
+	db $59, MAGIKARP,   25
+	db $b2, REMORAID,   25
+	db $e6, REMORAID,   35
 	db $ff, $0,         12
 FishGroup7_Super: ; 925be
-	db $66, REMORAID,   70
+	db $66, REMORAID,   45
 	db $b2, $0,         13
-	db $e6, REMORAID,   80
-	db $ff, REMORAID,   85
+	db $e6, REMORAID,   55
+	db $ff, REMORAID,   55
 
 FishGroup8: ; Dark Cave
 FishGroup8_Old: ; 925ca
-	db 126, PSYDUCK,    15
-	db 152, WOOPER,    15
-	db 178, CORSOLA,    15
-	db 191, SEEL,    15
-	db 204, SHELLDER,    15
+	db 126, PSYDUCK,    10
+	db 152, WOOPER,    10
+	db 178, CORSOLA,    10
+	db 191, SEEL,    10
+	db 204, SHELLDER,    10
 	db 230, $0,    32
 	db $ff, $0,    33
 FishGroup8_Good: ; 925d3
-	db 76, GOLDUCK,    40
-	db 113, CORSOLA,    45
-	db 139, QUAGSIRE,    45
-	db 166, SEEL,    40
-	db 191, SHELLDER,    40
+	db 76, GOLDUCK,    25
+	db 113, CORSOLA,    30
+	db 139, QUAGSIRE,    30
+	db 166, SEEL,    25
+	db 191, SHELLDER,    25
 	db 216, $0,    34
-	db $ff, $0,         35
+	db $ff, $0,         32
 FishGroup8_Super: ; 925df
-	db 76, GYARADOS,    80
-	db 128, CORSOLA,    75
-	db 153, DEWGONG,    80
-	db 179, CLOYSTER,    80
+	db 76, GYARADOS,    55
+	db 128, CORSOLA,    50
+	db 153, DEWGONG,    55
+	db 179, CLOYSTER,    55
 	db 216, $0,    36
 	db $ff, $0,    37
 
 FishGroup9: ; Mt Mortar
 FishGroup9_Old: ; 925eb
-	db 126, REMORAID,    15
-	db 164, MARILL,    15
-	db 203, GOLDEEN,    15
-	db 228, POLIWAG,    15
+	db 126, REMORAID,    10
+	db 164, MARILL,    10
+	db 203, GOLDEEN,    10
+	db 228, POLIWAG,    10
 	db 242, $0,    38
 	db $ff, $0,    39
 FishGroup9_Good: ; 925f4
-	db 76, REMORAID,    40
-	db 101, AZUMARILL,    45
-	db 114, GOLDEEN,    40
-	db 140, SEAKING,    45
-	db 166, POLIWHIRL,    45
-	db 202, OCTILLERY,    45
+	db 76, REMORAID,    25
+	db 101, AZUMARILL,    30
+	db 114, GOLDEEN,    25
+	db 140, SEAKING,    30
+	db 166, POLIWHIRL,    30
+	db 202, OCTILLERY,    30
 	db 215, $0,    40
 	db 228, $0,    41
 	db $ff, $0,         42
 FishGroup9_Super: ; 92600
-	db 76, OCTILLERY,    75
+	db 76, OCTILLERY,    50
 	db 139, $0,    43
 	db 190, $0,    44
 	db 215, $0,    45
@@ -509,17 +515,17 @@ FishGroup9_Super: ; 92600
 
 FishGroup10: ; Mt Silver
 FishGroup10_Old: ; 9260c
-	db 51, TOTODILE,    90
-	db 102, DRATINI,    90
-	db 153, GOLDEEN,    90
-	db 204, MAGIKARP,    90
-	db $ff, REMORAID,    90
+	db 51, TOTODILE,    40
+	db 102, DRATINI,    40
+	db 153, GOLDEEN,    40
+	db 204, MAGIKARP,    40
+	db $ff, REMORAID,    40
 FishGroup10_Good: ; 92615
-	db 51, CROCONAW,    90
-	db 102, DRAGONAIR,    90
-	db 153, SEAKING,    90
-	db 204, STARYU,    90
-	db $ff, OCTILLERY,    90
+	db 51, CROCONAW,    60
+	db 102, DRAGONAIR,    60
+	db 153, SEAKING,    60
+	db 204, STARYU,    60
+	db $ff, OCTILLERY,    60
 FishGroup10_Super: ; 92621
 	db 51, FERALIGATR,    90
 	db 102, CORSOLA,    90
@@ -530,25 +536,25 @@ FishGroup10_Super: ; 92621
 
 FishGroup11: ; swarm route
 FishGroup11_Old: ; 9262d
-	db $b3, MAGIKARP,   15
-	db $d9, MAGIKARP,   15
-	db $ff, TENTACOOL,  15
+	db $b3, MAGIKARP,   10
+	db $d9, MAGIKARP,   10
+	db $ff, TENTACOOL,  10
 FishGroup11_Good: ; 92636
-	db $59, MAGIKARP,   40
-	db $b2, TENTACOOL,  40
-	db $e6, TENTACOOL,  40
+	db $59, MAGIKARP,   25
+	db $b2, TENTACOOL,  25
+	db $e6, TENTACOOL,  25
 	db $ff, $0,         40
 FishGroup11_Super: ; 92642
-	db $66, TENTACOOL,  70
+	db $66, TENTACOOL,  45
 	db $b2, $0,         21
-	db $e6, MAGIKARP,   70
-	db $ff, QWILFISH,   70
+	db $e6, MAGIKARP,   45
+	db $ff, QWILFISH,   45
 
 FishGroup12: ; swarm route
 FishGroup12_Old: ; 9264e
-	db $b3, MAGIKARP,   15
-	db $d9, MAGIKARP,   15
-	db $ff, POLIWAG,    15
+	db $b3, MAGIKARP,   10
+	db $d9, MAGIKARP,   10
+	db $ff, POLIWAG,    10
 FishGroup12_Good: ; 92657
 	db $59, MAGIKARP,   20
 	db $b2, POLIWAG,    20
@@ -562,66 +568,66 @@ FishGroup12_Super: ; 92663
 
 FishGroup13: ; Kanto freshwater
 FishGroup13_Old:
-	db 125, MAGIKARP,    15
-	db 163, GOLDEEN,    15
-	db 189, POLIWAG,    15
-	db 203, PSYDUCK,    15
-	db 228, GRIMER,    15
+	db 125, MAGIKARP,    10
+	db 163, GOLDEEN,    10
+	db 189, POLIWAG,    10
+	db 203, PSYDUCK,    10
+	db 228, GRIMER,    10
 	db $ff, $0,    48
 FishGroup13_Good:
-	db 75, MAGIKARP,    40
-	db 100, GOLDEEN,    40
-	db 125, SEAKING,    45
-	db 150, POLIWHIRL,    45
-	db 189, GOLDUCK,    45
-	db 215, GRIMER,    40
+	db 75, MAGIKARP,    25
+	db 100, GOLDEEN,    25
+	db 125, SEAKING,    30
+	db 150, POLIWHIRL,    30
+	db 189, GOLDUCK,    30
+	db 215, GRIMER,    25
 	db 241, $0,    49
 	db $ff, $0,         50
 FishGroup13_Super:
-	db 75, GYARADOS,    80
-	db 101, SEAKING,    75
-	db 139, POLIWRATH,    80
-	db 190, GOLDUCK,    75
-	db 216, MUK,    80
+	db 75, GYARADOS,    55
+	db 101, SEAKING,    50
+	db 139, POLIWRATH,    55
+	db 190, GOLDUCK,    50
+	db 216, MUK,    55
 	db $ff, $0,    51
 
 FishGroup14: ; Kanto seawater
 FishGroup14_Old:
-	db 75, MAGIKARP,    15
-	db 139, TENTACOOL,    15
-	db 165, SHELLDER,    15
-	db 191, SEEL,    15
+	db 75, MAGIKARP,    10
+	db 139, TENTACOOL,    10
+	db 165, SHELLDER,    10
+	db 191, SEEL,    10
 	db 204, $0,    52
 	db $ff, $0,    53
 FishGroup14_Good:
-	db 88, TENTACOOL,    40
-	db 126, TENTACRUEL,    45
-	db 152, SHELLDER,    40
-	db 178, SEEL,    40
+	db 88, TENTACOOL,    25
+	db 126, TENTACRUEL,    30
+	db 152, SHELLDER,    25
+	db 178, SEEL,    25
 	db 192, $0,    54
 	db $ff, $0,         55
 FishGroup14_Super:
-	db 102, TENTACRUEL,    75
-	db 128, DEWGONG,    80
-	db 154, CLOYSTER,    80
+	db 102, TENTACRUEL,    50
+	db 128, DEWGONG,    55
+	db 154, CLOYSTER,    55
 	db 179, $0,    56
 	db $ff, $0,    57
 
 FishGroup15: ; Seafoam outside
 FishGroup15_Old:
-	db 51, SHELLDER,    15
+	db 51, SHELLDER,    10
 	db 77, $0,    58
 	db 141, $0,    59
 	db 179, $0,    60
 	db $ff, $0,    61
 FishGroup15_Good:
-	db 51, SHELLDER,    40
+	db 51, SHELLDER,    25
 	db 77, $0,    62
 	db 166, $0,    63
 	db 192, $0,    64
 	db $ff, $0,         65
 FishGroup15_Super:
-	db 26, CLOYSTER,    80
+	db 26, CLOYSTER,    55
 	db 100, $0,    66
 	db 216, $0,    67
 	db 229, $0,    68
@@ -629,88 +635,88 @@ FishGroup15_Super:
 
 FishGroup16: ; Celadon Pond
 FishGroup16_Old:
-	db $ff, GRIMER,    15
+	db $ff, GRIMER,    10
 FishGroup16_Good:
-	db 200, GRIMER,    40
-	db $ff, MUK,        50
+	db 200, GRIMER,    25
+	db $ff, MUK,        35
 FishGroup16_Super:
-	db 164, GRIMER,    70
-	db $ff, MUK,    80
+	db 164, GRIMER,    45
+	db $ff, MUK,    55
 
 FishGroup17: ; Cerulean Gym
 FishGroup17_Old:
-	db 125, STARYU,    15
-	db 188, GOLDEEN,    15
-	db 248, TENTACOOL,    15
-	db $ff, TOGEPI,    15
+	db 125, STARYU,    10
+	db 188, GOLDEEN,    10
+	db 248, TENTACOOL,    10
+	db $ff, TOGEPI,    10
 FishGroup17_Good:
-	db 75, STARYU,    40
-	db 125, STARMIE,    45
-	db 150, SEAKING,    45
-	db 175, SHELLDER,    40
-	db 200, HORSEA,    40
-	db 248, TENTACRUEL,    45
-	db $ff, TOGEPI,     40
+	db 75, STARYU,    25
+	db 125, STARMIE,    30
+	db 150, SEAKING,    30
+	db 175, SHELLDER,    25
+	db 200, HORSEA,    25
+	db 248, TENTACRUEL,    30
+	db $ff, TOGEPI,     25
 FishGroup17_Super:
-	db 88, STARMIE,    80
-	db 125, HORSEA,    65
-	db 163, SEADRA,    75
-	db 200, CLOYSTER,    80
-	db 248, TENTACRUEL,    75
-	db $ff, TOGEPI,    60
+	db 88, STARMIE,    55
+	db 125, HORSEA,    45
+	db 163, SEADRA,    50
+	db 200, CLOYSTER,    55
+	db 248, TENTACRUEL,    50
+	db $ff, TOGEPI,    40
 
 FishGroup18: ; Slowpoke Well
 FishGroup18_Old:
-	db 240,    SLOWPOKE,    15
-	db $ff, SLOWKING,    15
+	db 240,    SLOWPOKE,    10
+	db $ff, SLOWKING,    10
 FishGroup18_Good:
-	db 200, SLOWPOKE,    45
-	db 228, SLOWBRO,    40
-	db $ff, SLOWKING,    40
+	db 200, SLOWPOKE,    30
+	db 228, SLOWBRO,    25
+	db $ff, SLOWKING,    25
 FishGroup18_Super:
-	db 180, SLOWPOKE,    70
-	db 218, SLOWBRO,    80
-	db $ff, SLOWKING,    80
+	db 180, SLOWPOKE,    45
+	db 218, SLOWBRO,    55
+	db $ff, SLOWKING,    55
 
-FishGroup19: ; EGK Freshwater
+FishGroup19: ; Prologue Seawater
 FishGroup19_Old:
-	db 75,    MAGIKARP,    15
-	db 125,    GOLDEEN,    15
-	db 175,    PSYDUCK,    15
-	db 200,    SLOWPOKE,    15
-	db 213,    DRATINI,    15
-	db 227,    POLIWAG,    15
-	db $ff, $0,    70
+	db 179, MAGIKARP,   10
+	db 217, MAGIKARP,   10
+	db $ff, TENTACOOL,  10
 FishGroup19_Good:
-	db $ff, MAGIKARP,    5
+	db $ff, TENTACOOL,  10
 FishGroup19_Super:
-	dw $ff, MAGIKARP,    5
+	dw $ff, TENTACOOL,  10
 
-FishGroup20: ; EGK Seawater
+FishGroup20: ; Prologue Pondwater
 FishGroup20_Old:
-	db 63,    MAGIKARP,    15
-	db 101,    TENTACOOL,    15
-	db 126,    KRABBY,    15
-	db 176,    SHELLDER,    15
-	db 202,    $0,    71
-	db $ff, $0,    72
+	db 179, MAGIKARP,   10
+	db 217, MAGIKARP,   10
+	db $ff, POLIWAG,    10
 FishGroup20_Good:
-	db $ff, MAGIKARP,    5
+	db $ff, POLIWAG,    10
 FishGroup20_Super:
-	dw $ff, MAGIKARP,    5
+	dw $ff, POLIWAG,    10
 
-FishGroup21: ; EGK Misty Gym
+FishGroup21: ; Prologue Lakewater
 FishGroup21_Old:
-	db 75,    MAGIKARP,    15
-	db 100,    SEEL,    15
-	db 150,    KRABBY,    15
-	db 175,    STARYU,    15
-	db 200,    GOLDEEN,    15
-	db $ff, $0,    73
+	db 179, MAGIKARP, 10
+	db 217, MAGIKARP, 10
+	db $ff, GOLDEEN,  10
 FishGroup21_Good:
-	db $ff, MAGIKARP,    5
+	db $ff, GOLDEEN,  10
 FishGroup21_Super:
-	dw $ff, MAGIKARP,    5
+	dw $ff, GOLDEEN,  10
+
+FishGroup22: ; Prologue Poolwater
+FishGroup22_Old:
+	db 179, MAGIKARP, 10
+	db 217, MAGIKARP, 10
+	db $ff, KRABBY,   10
+FishGroup22_Good:
+	db $ff, KRABBY,   10
+FishGroup22_Super:
+	dw $ff, KRABBY,   10
 
 ; 9266f
 
@@ -719,227 +725,217 @@ FishGroup21_Super:
 ;you can add any number of tables here
 TimeFishGroups: ; 9266f
 ; 0 - Johto Freshwater Old Rod
-	db WOOPER,     15 ; nite
-	db MARILL,     15 ; day
+	db WOOPER,     10 ; nite
+	db MARILL,     10 ; day
 ; 1 - Johto Freshwater Old Rod
-	db POLIWAG,    15 ; nite
-	db WOOPER,     15 ; day
+	db POLIWAG,    10 ; nite
+	db WOOPER,     10 ; day
 ; 2 - Johto Freshwater Old Rod
-	db WOOPER,     15 ; nite
-	db TOTODILE,   15 ; day
+	db WOOPER,     10 ; nite
+	db TOTODILE,   10 ; day
 ; 3 - Johto Freshwater Good Rod 5%
-	db TOTODILE,   40 ; nite
-	db POLIWHIRL,  45 ; day
+	db TOTODILE,   25 ; nite
+	db POLIWHIRL,  30 ; day
 ; 4 - Johto Freshwater Good Rod 15%
-	db POLIWHIRL,  45 ; nite
-	db AZUMARILL,  45 ; day
+	db POLIWHIRL,  30 ; nite
+	db AZUMARILL,  30 ; day
 ; 5 - Johto Freshwater Good Rod 10%
-	db WOOPER,     40 ; nite
-	db MARILL,     40 ; day
+	db WOOPER,     25 ; nite
+	db MARILL,     25 ; day
 ; 6 - Johto Freshwater Good Rod 5%
-	db WOOPER,     40 ; nite
-	db TOTODILE,   40 ; day
+	db WOOPER,     25 ; nite
+	db TOTODILE,   25 ; day
 ; 7 - Johto Freshwater Good Rod 5%
-	db WOOPER,     40 ; nite
-	db CROCONAW,   40 ; day
+	db WOOPER,     25 ; nite
+	db CROCONAW,   25 ; day
 ; 8 - Johto Freshwater Super Rod 5%
-	db POLIWHIRL,   65 ; nite
-	db TOTODILE,   50 ; day
+	db POLIWHIRL,  45 ; nite
+	db TOTODILE,   35 ; day
 ; 9 - Johto Freshwater Super Rod 10%
-	db WOOPER,     50 ; nite
-	db CROCONAW,   65 ; day
+	db WOOPER,     35 ; nite
+	db CROCONAW,   45 ; day
 ; 10 - Johto Freshwater Super Rod 15%
-	db QUAGSIRE,   75 ; nite
-	db AZUMARILL,  75 ; day
+	db QUAGSIRE,   50 ; nite
+	db AZUMARILL,  50 ; day
 ; 11 - Johto Freshwater Super Rod 5%
-	db POLITOED,   75 ; nite
-	db AZUMARILL,  75 ; day
-; 12 - Johto Seawwater Old Rod 15%
-	db CHINCHOU,   15 ; nite
-	db QWILFISH,   15 ; day
-; 13 - Johto Seawwater Good Rod 5%
-	db CHINCHOU,   40 ; nite
-	db QWILFISH,   45 ; day
-; 14 - Johto Seawwater Good Rod 10%
-	db LANTURN,    45 ; nite
-	db QWILFISH,   45 ; day
-; 15 - Johto Seawwater Super Rod 20%
-	db LANTURN,    75 ; nite
-	db QWILFISH,   75 ; day
-; 16 - Lake of Rage Good Rod 5%
-	db SEAKING,    45 ; nite
-	db GYARADOS,   35 ; day
-; 17 - Lake of Rage Super Rod 5%
-	db SEAKING,    75 ; nite
-	db GYARADOS,   80 ; day
-; 18 - Dragon's Den Old Rod 25%
-	db HORSEA,     15 ; nite
-	db DRATINI,    15 ; day
-; 19 - Dragon's Den Old Rod 10%
-	db DRATINI,    15 ; nite
-	db DRAGONAIR,  15 ; day
-; 20 - Dragon's Den Old Rod 5%
-	db DRATINI,    15 ; nite
-	db HORSEA,     15 ; day
-; 21
-	db SEADRA,     45 ; nite
-	db DRATINI,    40 ; day
-; 22
-	db HORSEA,     40 ; nite
-	db DRATINI,    40 ; day
-; 23
-	db HORSEA,     40 ; nite
-	db DRAGONAIR,  45 ; day
-; 24
-	db SEADRA,     75 ; nite
-	db DRAGONAIR,  75 ; day
-; 25
-	db GYARADOS,   80 ; nite
-	db DRATINI,    70 ; day
-; 26
-	db SEEL,       15 ; nite
-	db DRATINI,    15 ; day
-; 27
-	db SHELLDER,   15 ; nite
-	db DRATINI,    15 ; day
-; 28
-	db SEEL,       40 ; nite
-	db DRATINI,    40 ; day
-; 29
-	db SHELLDER,   40 ; nite
-	db DRAGONAIR,  45 ; day
-; 30
-	db DEWGONG,    80 ; nite
-	db DRAGONAIR,  75 ; day
-; 31
-	db CLOYSTER,   80 ; nite
-	db DRAGONAIR,  75 ; day
-; 32
-	db WOOPER,     15 ; nite
-	db SEEL,       15 ; day
-; 33
-	db WOOPER,     15 ; nite
-	db SHELLDER,   15 ; day
-; 34
-	db WOOPER,     40 ; nite
-	db SEEL,       40 ; day
-; 35
-	db QUAGSIRE,   45 ; nite
-	db SHELLDER,   40 ; day
-; 36
-	db QUAGSIRE,   75 ; nite
-	db DEWGONG,    80 ; day
-; 37
-	db QUAGSIRE,   75 ; nite
-	db CLOYSTER,   80 ; day
-; 38
-	db POLIWAG,    15 ; nite
-	db MARILL,     15 ; day
-; 39
-	db POLIWAG,    15 ; nite
-	db GOLDEEN,    15 ; day
-; 40
-	db POLIWHIRL,  45 ; nite
-	db SEAKING,    45 ; day
-; 41
-	db POLIWHIRL,  45 ; nite
-	db GOLDEEN,    40 ; day
-; 42
-	db POLIWHIRL,  45 ; nite
-	db AZUMARILL,  45 ; day
-; 43
-	db POLIWHIRL,  75 ; nite
-	db AZUMARILL,  75 ; day
-; 44
-	db POLIWRATH,  80 ; nite
-	db SEAKING,    75 ; nite
-; 45
-	db AZUMARILL,  75 ; nite
-	db POLITOED,   80 ; day
-; 46
-	db SEAKING,    75 ; nite
-	db POLIWRATH,  80 ; day
-; 47
-	db POLITOED,   80 ; nite
-	db POLIWHIRL,  75 ; day
-; 48
-	db GRIMER,     15 ; nite
-	db GOLDEEN,    15 ; day
-; 49
-	db GRIMER,     40 ; nite
-	db SEAKING,    45 ; day
-; 50
-	db GRIMER,     40 ; nite
-	db GOLDEEN,    40 ; day
-; 51
-	db MUK,        80 ; nite
-	db SEAKING,    75 ; day
-; 52
-	db HORSEA,     15 ; nite
-	db KRABBY,     15 ; day
-; 53
-	db KRABBY,     15 ; nite
-	db HORSEA,     15 ; day
-; 54
-	db SEADRA,     45 ; nite
-	db KINGLER,   45 ; day
-; 55
-	db KINGLER,    45 ; nite
-	db SEADRA,     45 ; day
-; 56
-	db SEADRA,     75 ; nite
-	db KINGLER,    75 ; day
-; 57
-	db KINGLER,    75 ; nite
-	db SEADRA,     75 ; day
-; 58
-	db KABUTO,     15 ; nite
-	db OMANYTE,    15 ; day
-; 59
-	db OMANYTE,    15 ; nite
-	db KABUTO,     15 ; day
-; 60
-	db SEEL,       15 ; nite
-	db PSYDUCK,    15 ; day
-; 61
-	db PSYDUCK,    15 ; nite
-	db SEEL,       15 ; day
-; 62
-	db KABUTO,     40 ; nite
-	db OMANYTE,    40 ; day
-; 63
-	db OMANYTE,    40 ; nite
-	db KABUTO,     40 ; day
-; 64
-	db SEEL,       40 ; nite
-	db GOLDUCK,    45 ; day
-; 65
-	db GOLDUCK,    45 ; nite
-	db SEEL,       40 ; day
-; 66
-	db KABUTO,     75 ; nite
-	db OMANYTE,    75 ; day
-; 67
-	db OMANYTE,    75 ; nite
-	db KABUTO,     75 ; day
-; 68
-	db DEWGONG,    80 ; nite
-	db GOLDUCK,    75 ; day
-; 69
-	db GOLDUCK,    75 ; nite
-	db DEWGONG,    80 ; day
-; 70 - EGK Freshwater
-	db MAGIKARP,    15 ; nite
-	db POLIWAG,     15 ; day
-; 71 - EGK Seawater 1
-	db TENTACOOL,   15 ; nite
-	db MAGIKARP,    15 ; day
-; 72 - EGK Seawater 2
-	db STARYU,     15 ; nite
-	db KRABBY,      15 ; day
-; 73 - EGK Misty Gym
-	db STARYU,    15 ; nite
-	db SEEL,        15 ; day
+	db POLITOED,   50 ; nite
+	db AZUMARILL,  50 ; day
 
+; 12 - Johto Seawwater Old Rod 15%
+	db CHINCHOU,   10 ; nite
+	db QWILFISH,   10 ; day
+; 13 - Johto Seawwater Good Rod 5%
+	db CHINCHOU,   25 ; nite
+	db QWILFISH,   30 ; day
+; 14 - Johto Seawwater Good Rod 10%
+	db LANTURN,    30 ; nite
+	db QWILFISH,   30 ; day
+; 15 - Johto Seawwater Super Rod 20%
+	db LANTURN,    50 ; nite
+	db QWILFISH,   50 ; day
+
+; 16 - Lake of Rage Good Rod 5%
+	db SEAKING,    30 ; nite
+	db GYARADOS,   25 ; day
+; 17 - Lake of Rage Super Rod 5%
+	db SEAKING,    50 ; nite
+	db GYARADOS,   55 ; day
+
+; 18 - Dragon's Den Old Rod 25%
+	db HORSEA,     10 ; nite
+	db DRATINI,    10 ; day
+; 19 - Dragon's Den Old Rod 10%
+	db DRATINI,    10 ; nite
+	db DRAGONAIR,  10 ; day
+; 20 - Dragon's Den Old Rod 5%
+	db DRATINI,    10 ; nite
+	db HORSEA,     10 ; day
+; 21
+	db SEADRA,     30 ; nite
+	db DRATINI,    25 ; day
+; 22
+	db HORSEA,     25 ; nite
+	db DRATINI,    25 ; day
+; 23
+	db HORSEA,     25 ; nite
+	db DRAGONAIR,  30 ; day
+; 24
+	db SEADRA,     50 ; nite
+	db DRAGONAIR,  50 ; day
+; 25
+	db GYARADOS,   55 ; nite
+	db DRATINI,    45 ; day
+; 26
+	db SEEL,       10 ; nite
+	db DRATINI,    10 ; day
+; 27
+	db SHELLDER,   10 ; nite
+	db DRATINI,    10 ; day
+; 28
+	db SEEL,       25 ; nite
+	db DRATINI,    25 ; day
+; 29
+	db SHELLDER,   25 ; nite
+	db DRAGONAIR,  30 ; day
+; 30
+	db DEWGONG,    55 ; nite
+	db DRAGONAIR,  50 ; day
+; 31
+	db CLOYSTER,   55 ; nite
+	db DRAGONAIR,  50 ; day
+; 32
+	db WOOPER,     10 ; nite
+	db SEEL,       10 ; day
+; 33
+	db WOOPER,     10 ; nite
+	db SHELLDER,   10 ; day
+; 34
+	db WOOPER,     25 ; nite
+	db SEEL,       25 ; day
+; 35
+	db QUAGSIRE,   30 ; nite
+	db SHELLDER,   25 ; day
+; 36
+	db QUAGSIRE,   50 ; nite
+	db DEWGONG,    55 ; day
+; 37
+	db QUAGSIRE,   50 ; nite
+	db CLOYSTER,   55 ; day
+; 38
+	db POLIWAG,    10 ; nite
+	db MARILL,     10 ; day
+; 39
+	db POLIWAG,    10 ; nite
+	db GOLDEEN,    10 ; day
+; 40
+	db POLIWHIRL,  30 ; nite
+	db SEAKING,    30 ; day
+; 41
+	db POLIWHIRL,  30 ; nite
+	db GOLDEEN,    25 ; day
+; 42
+	db POLIWHIRL,  30 ; nite
+	db AZUMARILL,  30 ; day
+; 43
+	db POLIWHIRL,  50 ; nite
+	db AZUMARILL,  50 ; day
+; 44
+	db POLIWRATH,  55 ; nite
+	db SEAKING,    50 ; nite
+; 45
+	db AZUMARILL,  50 ; nite
+	db POLITOED,   55 ; day
+; 46
+	db SEAKING,    50 ; nite
+	db POLIWRATH,  55 ; day
+; 47
+	db POLITOED,   55 ; nite
+	db POLIWHIRL,  50 ; day
+; 48
+	db GRIMER,     10 ; nite
+	db GOLDEEN,    10 ; day
+; 49
+	db GRIMER,     25 ; nite
+	db SEAKING,    30 ; day
+; 50
+	db GRIMER,     25 ; nite
+	db GOLDEEN,    25 ; day
+; 51
+	db MUK,        55 ; nite
+	db SEAKING,    50 ; day
+; 52
+	db HORSEA,     10 ; nite
+	db KRABBY,     10 ; day
+; 53
+	db KRABBY,     10 ; nite
+	db HORSEA,     10 ; day
+; 54
+	db SEADRA,     30 ; nite
+	db KINGLER,    30 ; day
+; 55
+	db KINGLER,    30 ; nite
+	db SEADRA,     30 ; day
+; 56
+	db SEADRA,     50 ; nite
+	db KINGLER,    50 ; day
+; 57
+	db KINGLER,    50 ; nite
+	db SEADRA,     50 ; day
+; 58
+	db KABUTO,     10 ; nite
+	db OMANYTE,    10 ; day
+; 59
+	db OMANYTE,    10 ; nite
+	db KABUTO,     10 ; day
+; 60
+	db SEEL,       10 ; nite
+	db PSYDUCK,    10 ; day
+; 61
+	db PSYDUCK,    10 ; nite
+	db SEEL,       10 ; day
+; 62
+	db KABUTO,     25 ; nite
+	db OMANYTE,    25 ; day
+; 63
+	db OMANYTE,    25 ; nite
+	db KABUTO,     25 ; day
+; 64
+	db SEEL,       25 ; nite
+	db GOLDUCK,    30 ; day
+; 65
+	db GOLDUCK,    30 ; nite
+	db SEEL,       25 ; day
+; 66
+	db KABUTO,     50 ; nite
+	db OMANYTE,    50 ; day
+; 67
+	db OMANYTE,    50 ; nite
+	db KABUTO,     50 ; day
+; 68
+	db DEWGONG,    55 ; nite
+	db GOLDUCK,    50 ; day
+; 69
+	db GOLDUCK,    50 ; nite
+	db DEWGONG,    55 ; day
 ; 926c7
 
