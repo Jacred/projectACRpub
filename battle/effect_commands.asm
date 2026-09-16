@@ -180,10 +180,8 @@ CheckPlayerTurn: ;checks if player can act
 	ld hl, FastAsleepText
 	call StdBattleTextBox
 
-	; Snore and Sleep Talk bypass sleep.
+	; Sleep Talk bypasses sleep.
 	ld a, [CurPlayerMove]
-	;cp SNORE
-	;jr z, .not_asleep
 	cp SLEEP_TALK
 	jr z, .not_asleep
 
@@ -196,13 +194,23 @@ CheckPlayerTurn: ;checks if player can act
 	bit FRZ, [hl]
 	jr z, .not_frozen
 
-	; Flame Wheel, flare blitz and Sacred Fire thaw the user.
+	; Fire-type attacks thaw the user.
 	ld a, [CurPlayerMove]
 	cp FLAME_WHEEL
 	jr z, .not_frozen
 	cp SACRED_FIRE
 	jr z, .not_frozen
 	cp FLARE_BLITZ
+	jr z, .not_frozen
+	cp EMBER
+	jr z, .not_frozen
+	cp FLAMETHROWER
+	jr z, .not_frozen
+	cp FIRE_BLAST
+	jr z, .not_frozen
+	cp FIRE_PUNCH
+	jr z, .not_frozen
+	cp HEAT_WAVE
 	jr z, .not_frozen
 
 	ld hl, FrozenSolidText
@@ -411,10 +419,8 @@ CheckEnemyTurn:
 	jr .not_asleep
 
 .fast_asleep
-	; Snore and Sleep Talk bypass sleep.
+	; Sleep Talk bypasses sleep.
 	ld a, [CurEnemyMove]
-	;cp SNORE
-	;jr z, .not_asleep
 	cp SLEEP_TALK
 	jr z, .not_asleep
 	call CantMove
@@ -431,6 +437,16 @@ CheckEnemyTurn:
 	cp SACRED_FIRE
 	jr z, .not_frozen
 	cp FLARE_BLITZ
+	jr z, .not_frozen
+	cp EMBER
+	jr z, .not_frozen
+	cp FLAMETHROWER
+	jr z, .not_frozen
+	cp FIRE_BLAST
+	jr z, .not_frozen
+	cp FIRE_PUNCH
+	jr z, .not_frozen
+	cp HEAT_WAVE
 	jr z, .not_frozen
 
 	ld hl, FrozenSolidText
@@ -662,63 +678,99 @@ BattleCommand02:
 
 	; If the monster's id doesn't match the player's,
 	; some conditions need to be met.
-	ld a, PartyMon1ID - PartyMon1
-	call BattlePartyAttr
+;	ld a, PartyMon1ID - PartyMon1
+;	call BattlePartyAttr
 
-	ld a, [PlayerID]
-	cp [hl]
-	jr nz, .obeylevel
-	inc hl
-	ld a, [PlayerID + 1]
-	cp [hl]
-	ret z
+;	ld a, [PlayerID]
+;	cp [hl]
+;	jr nz, .obeylevel
+;	inc hl
+;	ld a, [PlayerID + 1]
+;	cp [hl]
+;	ret z
 
 .obeylevel
 	; The maximum obedience level is constrained by owned badges:
-	ld hl, JohtoBadges
-	ld b, 2 ; 8 Johto Badges + first 2 Kanto Badges
-	call CountSetBits
-	cp 8
-	jr nc, .max_level
-	inc a
-	inc a
-	add a
-	ld c, a
-	add a
-	add a
-	add c
-	jr .got_level
 
-.max_level
+	ld hl, KantoBadges
+
+	; earthbadge
+	bit 7, [hl]
 	ld a, MAX_LEVEL + 1
-.got_level
-	; ld c, 8
-	; call AddBadgeLevels ;for every set bit in b up to bit (c-1), add 10 to a
-	; ld hl, KantoBadges ;include the first 2 badges in kanto only as player will have maxed obedience by late game
-	; ld c, 2
-	; call AddBadgeLevels ;for every set bit in b up to bit (c-1), add 10 to a
-		; risingbadge redundent code
-		;bit 7, [hl]
-		;ld a, MAX_LEVEL + 1
-		;jr nz, .getlevel
+	jr nz, .getlevel
 
-		; stormbadge
-		;bit 5, [hl]
-		;ld a, 70
-		;jr nz, .getlevel
+	; volcanobadge
+	bit 6, [hl]
+	ld a, 85 ; 95
+	jr nz, .getlevel
 
-		; fogbadge
-		;bit 3, [hl]
-		;ld a, 50
-		;jr nz, .getlevel
+	; marshbadge
+	bit 4, [hl]
+	ld a, 80 ; 90
+	jr nz, .getlevel
 
-		; hivebadge
-		;bit 1, [hl]
-		;ld a, 30
-		;jr nz, .getlevel
+	; thunderbadge
+	bit 2, [hl]
+	ld a, 75 ; 85
+	jr nz, .getlevel
 
-		; no badges
-		;ld a, 10
+	ld hl, JohtoBadges
+
+	; risingbadge
+	bit 7, [hl]
+	ld a, 70 ; 80
+	jr nz, .getlevel
+
+	; mineralbadge
+	bit 4, [hl]
+	ld a, 55 ; 65
+	jr nz, .getlevel
+
+	; stormbadge
+	bit 5, [hl]
+	ld a, 50 ; 60
+	jr nz, .getlevel
+
+	; glacierbadge
+	bit 6, [hl]
+	ld a, 45 ; 55
+	jr nz, .getlevel
+
+	; fogbadge
+	bit 3, [hl]
+	ld a, 40 ; 50
+	jr nz, .getlevel
+
+	; plainbadge
+	bit 2, [hl]
+	ld a, 35 ; 45
+	jr nz, .getlevel
+
+	; hivebadge
+	bit 1, [hl]
+	ld a, 30 ; 40
+	jr nz, .getlevel
+
+	; zephyrbadge
+	bit 0, [hl]
+	ld a, 25 ; 35
+	jr nz, .getlevel
+
+	ld hl, KantoBadges
+
+	; cascadebadge
+	bit 1, [hl]
+	ld a, 30 ; 40
+	jr nz, .getlevel
+
+	; boulderbadge
+	bit 0, [hl]
+	ld a, 25 ; 35
+	jr nz, .getlevel
+
+	; no badges
+	ld a, 20 ; 30
+
 
 .getlevel
 ; c = obedience level
@@ -949,8 +1001,6 @@ IgnoreSleepOnly:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 
-	;cp SNORE
-	;jr z, .CheckSleep
 	cp SLEEP_TALK
 	jr z, .CheckSleep
 	and a
@@ -1249,7 +1299,7 @@ BattleCommand05:
 	ret
 
 .Criticals
-	db KARATE_CHOP, RAZOR_LEAF, CRABHAMMER, SLASH, AEROBLAST, CROSS_CHOP, SKY_ATTACK, SHADOW_CLAW, DRILL_RUN, $ff ;crit+ moves
+	db KARATE_CHOP, DRILL_PECK, RAZOR_LEAF, CRABHAMMER, SLASH, X_SCISSOR, AEROBLAST, CROSS_CHOP, SKY_ATTACK, SHADOW_CLAW, DRILL_RUN, $ff ;crit+ moves
 .Chances
 	; 6.25% 12.5%  50%  100%
 	db $11,  $1f,  $80,  $ff,  $ff,  $ff,  $ff
@@ -3582,6 +3632,7 @@ ThickClubBoostTable:
 	db MAROWAK, THICK_CLUB
 LightBallBoostTable:
 	db PIKACHU, LIGHT_BALL
+	db PICHU, LIGHT_BALL
 	db $ff
 
 EnemyAttackDamage:
@@ -3667,179 +3718,6 @@ BattleCommanda1:
 ; beatup
 	ret
 
-;	call ResetDamage
-;	ld a, [hBattleTurn]
-;	and a
-;	jp nz, .asm_354ef
-;	ld a, [PlayerSubStatus3]
-;	bit SUBSTATUS_IN_LOOP, a
-;	jr nz, .asm_35482
-;	ld c, 20
-;	call DelayFrames
-;	xor a
-;	ld [PlayerRolloutCount], a
-;	ld [DefaultFlypoint], a
-;	ld [wc72d], a
-;	jr .asm_3548d
-; .asm_35482
-;	ld a, [PlayerRolloutCount]
-;	ld b, a
-;	ld a, [PartyCount]
-;	sub b
-;	ld [DefaultFlypoint], a
-; .asm_3548d
-;	ld a, [DefaultFlypoint]
-;	ld hl, PartyMonNicknames
-;	call GetNick
-;	ld a, $22
-;	call Function355bd
-;	ld a, [hli]
-;	or [hl]
-;	jp z, Function355b0
-;	ld a, [DefaultFlypoint]
-;	ld c, a
-;	ld a, [CurBattleMon]
-;	cp [hl]
-;	ld hl, BattleMonStatus
-;	jr z, .asm_354b2
-;	ld a, $20
-;	call Function355bd
-; .asm_354b2
-;	ld a, [hl]
-;	and a
-;	jp nz, Function355b0
-;	ld a, $1
-;	ld [wc72d], a
-;	ld hl, BeatUpAttackText
-;	call StdBattleTextBox
-;	ld a, [EnemyMonSpecies]
-;	ld [CurSpecies], a
-;	call GetBaseData
-;	ld a, [BaseDefense]
-;	ld c, a
-;	push bc
-;	ld a, $0
-;	call Function355bd
-;	ld a, [hl]
-;	ld [CurSpecies], a
-;	call GetBaseData
-;	ld a, [BaseAttack]
-;	pop bc
-;	ld b, a
-;	push bc
-;	ld a, $1f
-;	call Function355bd
-;	ld a, [hl]
-;	ld e, a
-;	pop bc
-;	ld a, [wPlayerMoveStructPower]
-;	ld d, a
-;	ret
-
-; .asm_354ef
-;	ld a, [EnemySubStatus3]
-;	bit SUBSTATUS_IN_LOOP, a
-;	jr nz, .asm_35502
-
-;	xor a
-;	ld [EnemyRolloutCount], a
-;	ld [DefaultFlypoint], a
-;	ld [wc72d], a
-;	jr .asm_3550d
-
-; .asm_35502
-;	ld a, [EnemyRolloutCount]
-;	ld b, a
-;	ld a, [OTPartyCount]
-;	sub b
-;	ld [DefaultFlypoint], a
-; .asm_3550d
-;	ld a, [IsInBattle]
-;	dec a
-;	jr z, .asm_3556b
-
-;	ld a, [wLinkMode]
-;	and a
-;	jr nz, .asm_35532
-
-;	ld a, [InBattleTowerBattle]
-;	and a
-;	jr nz, .asm_35532
-
-;	ld a, [DefaultFlypoint]
-;	ld c, a
-;	ld b, 0
-;	ld hl, OTPartySpecies
-;	add hl, bc
-;	ld a, [hl]
-;	ld [wd265], a
-;	call GetPokemonName
-;	jr .asm_35544
-
-; .asm_35532
-;	ld a, [DefaultFlypoint]
-;	ld hl, OTPartyMonNicknames
-;	ld bc, NAME_LENGTH
-;	call AddNTimes
-;	ld de, StringBuffer1
-;	call CopyBytes
-; .asm_35544
-;	ld a, $22
-;	call Function355bd
-;	ld a, [hli]
-;	or [hl]
-;	jp z, Function355b0
-;	ld a, [DefaultFlypoint]
-	;ld b, a
-;	ld a, [CurOTMon]
-;	cp b
-;	ld hl, EnemyMonStatus
-;	jr z, .asm_35560
-
-;	ld a, $20
-;	call Function355bd
-; .asm_35560
-;	ld a, [hl]
-;	and a
-;	jr nz, Function355b0
-
-;	ld a, $1
-;	ld [wc72d], a
-;	jr .asm_3557d
-
-; .asm_3556b
-;	ld a, [EnemyMonSpecies]
-;	ld [wd265], a
-;	call GetPokemonName
-;	ld hl, BeatUpAttackText
-;	call StdBattleTextBox
-;	jp EnemyAttackDamage
-; .asm_3557d
-;	ld hl, BeatUpAttackText
-;	call StdBattleTextBox
-;	ld a, [BattleMonSpecies]
-;	ld [CurSpecies], a
-;	call GetBaseData
-;	ld a, [BaseDefense]
-;	ld c, a
-;	push bc
-;	ld a, $0
-;	call Function355bd
-;	ld a, [hl]
-;	ld [CurSpecies], a
-;	call GetBaseData
-;	ld a, [BaseAttack]
-;	pop bc
-;	ld b, a
-;	push bc
-;	ld a, $1f
-;	call Function355bd
-;	ld a, [hl]
-;	ld e, a
-;	pop bc
-;	ld a, [wEnemyMoveStructPower]
-;	ld d, a
-;	ret
 
 Function355b0:
 	ld b, $12 ; buildopponentrage
@@ -4193,9 +4071,6 @@ BattleCommand3f:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_PSYWAVE
-	jr z, .psywave
-
 	cp EFFECT_SUPER_FANG
 	jr z, .super_fang
 
@@ -4204,34 +4079,6 @@ BattleCommand3f:
 
 	ld a, BATTLE_VARS_MOVE_POWER
 	call GetBattleVar
-	ld b, a
-	ld a, 0
-	jr .load_damage
-
-.psywave
-	; ld a, b
-	; srl a
-	; add b
-	; ld b, a
-
-; If the Pokemon is at level 1, always do 1 HP damage.
-; This prevents a softlock here.
-	ld a, b
-	cp 2
-	jr nc, .sample_psywave
-	ld b, 1
-	ld a, 0
-	jr .load_damage
-; Get a random number between 0 and the level
-.sample_psywave
-	call BattleRandom
-	and a
-	jr z, .sample_psywave
-	cp b
-	jr nc, .sample_psywave
-; Add 0.5 * level to get a number between (0.5 * level) and (1.5 * level)
-	srl b
-	add b
 	ld b, a
 	ld a, 0
 	jr .load_damage
@@ -6621,7 +6468,7 @@ GetStatName:
 	db "SPCL.DEF@"
 	db "ACCURACY@"
 	db "EVASION@"
-	db "ABILITY@"
+	db "stats@"
 
 Table0x364e6:
 	db 25, 100
@@ -7760,17 +7607,10 @@ BattleCommand39:
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	;cp RAZOR_WIND
-	;ld hl, .RazorWind
-	;jr z, .done
 
 	cp SOLARBEAM
 	ld hl, .Solarbeam
 	jr z, .done
-
-	;cp SKULL_BASH
-	;ld hl, .SkullBash
-	;jr z, .done
 
 	cp SKY_ATTACK
 	ld hl, .SkyAttack
@@ -7786,20 +7626,11 @@ BattleCommand39:
 .done
 	ret
 
-.RazorWind
-; 'made a whirlwind!'
-	TX_FAR UnknownText_0x1c0d12
-	db "@"
-
 .Solarbeam
 ; 'took in sunlight!'
 	TX_FAR UnknownText_0x1c0d26
 	db "@"
 
-.SkullBash
-; 'lowered its head!'
-	TX_FAR UnknownText_0x1c0d3a
-	db "@"
 
 .SkyAttack
 ; 'is glowing!'
@@ -7871,7 +7702,6 @@ BattleCommand3b:
 	jp StdBattleTextBox
 
 .Traps
-	;dbw BIND,      UsedBindText      ; 'used BIND on'
 	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
 	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
@@ -9512,37 +9342,13 @@ BattleCommand61:
 	jp EndMoveEffect
 
 .table_37907
-	db 40 percent,     40
-	db 70 percent + 1, 80
-	db 80 percent,    120
+	db 40 percent,     60
+	db 70 percent + 1, 90
+	db 90 percent,    120
 	db $ff
 
 BattleCommand63:
 ; frustrationpower
-
-	push bc
-	ld hl, BattleMonHappiness
-	ld a, [hBattleTurn]
-	and a
-	jr z, .asm_3791a
-	ld hl, EnemyMonHappiness
-.asm_3791a
-	ld a, $ff
-	sub [hl]
-	ld [$ffb6], a
-	xor a
-	ld [$ffb4], a
-	ld [$ffb5], a
-	ld a, 10
-	ld [$ffb7], a
-	call Multiply
-	ld a, 25
-	ld [$ffb7], a
-	ld b, 4
-	call Divide
-	ld a, [$ffb6]
-	ld d, a
-	pop bc
 	ret
 
 BattleCommand64:
@@ -9627,13 +9433,16 @@ BattleCommand66:
 
 .Magnitudes
 	;  /255, BP, magnitude
-	db  13,  10,  4
-	db  38,  30,  5
-	db  89,  50,  6
-	db 166,  70,  7
-	db 217,  90,  8
-	db 242, 110,  9
-	db 255, 150, 10
+	db  48,  20,  1		; 48/255
+	db  91,  40,  2		; 43/255
+	db 129,  60,  3		; 38/255
+	db 162,  80,  4		; 33/255
+	db 190, 100,  5		; 28/255
+	db 213, 120,  6		; 23/255
+	db 231, 140,  7		; 18/255
+	db 244, 160,  8		; 13/255
+	db 252, 180,  9		; 8/255
+	db 255, 200, 10		; 3/255
 
 BattleCommand67:
 ; batonpass
@@ -10028,7 +9837,7 @@ BattleCommand6e:
 	jr z, FailedWeather
 	ld a, WEATHER_RAIN
 	ld [Weather], a
-	ld a, 5
+	ld a, 8
 	ld [WeatherCount], a
 	call AnimateCurrentMove
 	ld hl, DownpourText
@@ -10041,7 +9850,7 @@ BattleCommand6f:
 	jr z, FailedWeather
 	ld a, WEATHER_SUN
 	ld [Weather], a
-	ld a, 5
+	ld a, 8
 	ld [WeatherCount], a
 	call AnimateCurrentMove
 	ld hl, SunGotBrightText
@@ -10084,48 +9893,7 @@ BattleCommand95:
 
 BattleCommand96:
 ; psychup
-
-	ld hl, EnemyStatLevels
-	ld de, PlayerStatLevels
-	ld a, [hBattleTurn]
-	and a
-	jr z, .asm_37c64
-	push hl
-	ld h, d
-	ld l, e
-	pop de
-.asm_37c64
-	push hl
-	ld b, $8
-.asm_37c67
-	ld a, [hli]
-	cp $7
-	jr nz, .asm_37c76
-	dec b
-	jr nz, .asm_37c67
-	pop hl
-	call AnimateFailedMove
-	jp PrintButItFailed
-.asm_37c76
-	pop hl
-	ld b, $8
-.asm_37c79
-	ld a, [hli]
-	ld [de], a
-	inc de
-	dec b
-	jr nz, .asm_37c79
-	ld a, [hBattleTurn]
-	and a
-	jr nz, .asm_37c89
-	call Function365d7
-	jr .asm_37c8c
-.asm_37c89
-	call Function365fd
-.asm_37c8c
-	call AnimateCurrentMove
-	ld hl, CopiedStatsText
-	jp StdBattleTextBox
+	ret
 
 BattleCommand9a:
 ; mirrorcoat
