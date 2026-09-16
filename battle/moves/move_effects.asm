@@ -149,6 +149,7 @@ BurnHit:
 	checkfaint
 	criticaltext
 	supereffectivetext
+	defrost
 	checkdestinybond
 	buildopponentrage
 	burntarget
@@ -1095,7 +1096,6 @@ OHKOHit:
 	endmove
 
 TakeDown:
-WildCharge:
 DoubleEdge:
 Submission:
 Struggle:
@@ -1122,7 +1122,7 @@ RecoilHit:
 	endmove
 
 FlareBlitz:
-checkobedience
+	checkobedience
 	usedmovetext
 	doturn
 	critical
@@ -1142,6 +1142,29 @@ checkobedience
 	checkdestinybond
 	buildopponentrage
 	burntarget
+	kingsrock
+	endmove
+
+WildCharge:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	hittarget
+	resulttext
+	checkfaint
+	criticaltext
+	supereffectivetext
+	recoil
+	checkdestinybond
+	buildopponentrage
+	paralyzetarget
 	kingsrock
 	endmove
 
@@ -1721,7 +1744,8 @@ FlameWheel:
 	defrost
 	checkdestinybond
 	buildopponentrage
-	burntarget
+	speedup
+	statmessageuser
 	kingsrock
 	endmove
 
@@ -1795,6 +1819,8 @@ Rollout:
 	supereffectivetext
 	checkdestinybond
 	buildopponentrage
+	speedup
+	statmessageuser
 	kingsrock
 	endmove
 
@@ -2006,6 +2032,8 @@ RapidSpin:
 	clearhazards
 	checkdestinybond
 	buildopponentrage
+	speedup
+	statmessageuser
 	kingsrock
 	endmove
 
@@ -2145,7 +2173,9 @@ Twister:
 	supereffectivetext
 	checkdestinybond
 	buildopponentrage
-	flinchtarget
+	kingsrock
+	effectchance
+	confusetarget
 	endmove
 
 Earthquake:
@@ -2204,6 +2234,7 @@ Gust:
 	damagevariation
 	doubleflyingdamage
 	checkhit
+	effectchance
 	hittarget
 	resulttext
 	checkfaint
@@ -2212,6 +2243,8 @@ Gust:
 	checkdestinybond
 	buildopponentrage
 	kingsrock
+	effectchance
+	confusetarget
 	endmove
 
 Stomp:
