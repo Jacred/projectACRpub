@@ -4,7 +4,7 @@ GBCOnlyScreen: ; 4ea82
 	and a
 	ret nz
 
-	ld de, MUSIC_NONE
+	ld de, MUSIC_PRINTER
 	call PlayMusic
 
 	call ClearTileMap
@@ -336,10 +336,10 @@ INCBIN "gfx/misc/betboy_banner.w96.1bpp"
 BetBoyGFXEnd
 
 GBCOnlyString: ; 4eb38
-	db   "This Game Pak is"
-	next "designed only for"
-	next "use on the"
-	next "Game Boy Color.@"
+	db   " This ROM must be"
+	next "  played using a"
+	next "  GAME BOY COLOR"
+	next "  core/emulator.@"
 ; 4eb76
 
 
