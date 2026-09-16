@@ -1,11 +1,11 @@
-; Johto Pok�mon in water
+; Johto Pok mon in water
 
 ;	map RUINS_OF_ALPH_OUTSIDE
 ;	db $05 ; encounter rate
 
 	map UNION_CAVE_1F
 	db $05 ; encounter rate
-	db 35
+	db 25
 	db $01
 ;morning
 		db STARYU ;20
@@ -61,7 +61,7 @@
 
 	map UNION_CAVE_B1F
 	db $05 ; encounter rate
-	db 35
+	db 25
 	db $01
 ;morning
 		db STARYU ;20
@@ -117,7 +117,7 @@
 
 	map UNION_CAVE_B2F
 	db $05 ; encounter rate
-	db 35
+	db 25
 	db $01
 ;morning
 		db STARYU ;20
@@ -173,7 +173,7 @@
 
 	map SLOWPOKE_WELL_B1F
 	db $05 ; encounter rate
-	db 37
+	db 26
 	db $00
 ;morning
 		db SLOWPOKE ;30
@@ -229,7 +229,7 @@
 
 	map SLOWPOKE_WELL_B2F
 	db $05 ; encounter rate
-	db 39
+	db 27
 	db $00
 ;morning
 		db SLOWPOKE ;30
@@ -283,15 +283,9 @@
 		db SLOWPOKE ;1
 		db SLOWPOKE ;1
 
-;	map ILEX_FOREST
-;	db $05 ; encounter rate
-;	db 15,PSYDUCK
-;	db 10,PSYDUCK
-;	db 15,GOLDUCK
-
 	map MOUNT_MORTAR_1F_OUTSIDE
 	db $0a ; encounter rate
-	db 33
+	db 24
 	db $02
 ;morning
 		db MARILL ;20
@@ -347,7 +341,7 @@
 
 	map MOUNT_MORTAR_2F_INSIDE
 	db $0a ; encounter rate
-	db 33
+	db 26
 	db $02
 ;morning
 		db MARILL ;20
@@ -403,7 +397,7 @@
 
 	map MOUNT_MORTAR_B1F
 	db $0a ; encounter rate
-	db 33
+	db 24
 	db $02
 ;morning
 		db MARILL ;20
@@ -683,7 +677,7 @@
 
 	map DARK_CAVE_VIOLET_ENTRANCE
 	db $05 ; encounter rate
-	db 50
+	db 32
 	db $00
 ;morning
 		db MAGIKARP ;30
@@ -739,7 +733,7 @@
 
 	map DARK_CAVE_BLACKTHORN_ENTRANCE
 	db $05 ; encounter rate
-	db 48
+	db 31
 	db $00
 ;morning
 		db MAGIKARP ;30
@@ -795,7 +789,7 @@
 
 	map DRAGONS_DEN_B1F
 	db $0a ; encounter rate
-	db 53
+	db 34
 	db $00
 ;morning
 		db DRATINI ;30
@@ -851,7 +845,7 @@
 
 	map OLIVINE_PORT
 	db $05 ; encounter rate
-	db 35
+	db 27
 	db $02
 ;morning
 		db OCTILLERY ;20
@@ -907,7 +901,7 @@
 
 	map ROUTE_30
 	db $05 ; encounter rate
-	db 35
+	db 27
 	db $03
 ;morning
 		db HOOTHOOT ;15
@@ -963,7 +957,7 @@
 
 	map ROUTE_31
 	db $05 ; encounter rate
-	db 35
+	db 27
 	db $03
 ;morning
 		db HOOTHOOT ;15
@@ -1019,7 +1013,7 @@
 
 	map ROUTE_32
 	db $0f ; encounter rate
-	db 35
+	db 25
 	db $02
 ;morning
 		db QUAGSIRE ;20
@@ -1075,7 +1069,7 @@
 
 	map ROUTE_34
 	db $0f ; encounter rate
-	db 35
+	db 27
 	db $02
 ;morning
 		db MANTINE ;20
@@ -1131,7 +1125,7 @@
 
 	map ROUTE_35
 	db $0a ; encounter rate
-	db 35
+	db 27
 	db $02
 ;morning
 		db POLIWAG ;20
@@ -1187,7 +1181,7 @@
 
 	map ROUTE_40
 	db $0f ; encounter rate
-	db 40
+	db 30
 	db $00
 ;morning
 		db HORSEA ;30
@@ -1243,7 +1237,7 @@
 
 	map ROUTE_41
 	db $0f ; encounter rate
-	db 40
+	db 30
 	db $00
 ;morning
 		db HORSEA ;30
@@ -1299,7 +1293,7 @@
 
 	map ROUTE_42
 	db $0a ; encounter rate
-	db 33
+	db 26
 	db $03
 ;morning
 		db QUAGSIRE ;15
@@ -1355,7 +1349,7 @@
 
 	map ROUTE_43
 	db $05 ; encounter rate
-	db 33
+	db 26
 	db $02
 ;morning
 		db POLIWAG ;20
@@ -1411,7 +1405,7 @@
 
 	map ROUTE_44
 	db $05 ; encounter rate
-	db 46
+	db 35
 	db $01
 ;morning
 		db POLIWAG ;20
@@ -1467,7 +1461,7 @@
 
 	map ROUTE_45
 	db $05 ; encounter rate
-	db 48
+	db 34
 	db $02
 ;morning
 		db GLIGAR ;20
@@ -1521,15 +1515,9 @@
 		db DEWGONG ;1
 		db CLOYSTER ;1
 
-;	map NEW_BARK_TOWN
-;	db $0f ; encounter rate
-;	db 20,TENTACOOL
-;	db 15,TENTACOOL
-;	db 20,TENTACRUEL
-
 	map CHERRYGROVE_CITY
 	db $0f ; encounter rate
-	db 35
+	db 27
 	db $02
 ;morning
 		db KRABBY ;20
@@ -1583,15 +1571,10 @@
 		db CORSOLA ;1
 		db CORSOLA ;1
 
-;	map VIOLET_CITY
-;	db $05 ; encounter rate
-;	db 20,POLIWAG
-;	db 15,POLIWAG
-;	db 20,POLIWHIRL
 
 	map CIANWOOD_CITY
 	db $0f ; encounter rate
-	db 40
+	db 30
 	db $02
 ;morning
 		db HORSEA ;20
@@ -1647,7 +1630,7 @@
 
 	map OLIVINE_CITY
 	db $05 ; encounter rate
-	db 35
+	db 27
 	db $02
 ;morning
 		db OCTILLERY ;20
@@ -1703,7 +1686,7 @@
 
 	map ECRUTEAK_CITY
 	db $19 ; encounter rate
-	db 35
+	db 27
 	db $00
 ;morning
 		db POLIWAG ;30
@@ -1759,7 +1742,7 @@
 
 	map LAKE_OF_RAGE
 	db $0f ; encounter rate
-	db 35
+	db 25
 	db $00
 ;morning
 		db SLOWPOKE ;30
@@ -1815,7 +1798,7 @@
 
 	map BLACKTHORN_CITY
 	db $0a ; encounter rate
-	db 48
+	db 31
 	db $03
 ;morning
 		db SEEL ;15
