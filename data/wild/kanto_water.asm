@@ -2,7 +2,7 @@
 
 	map TOHJO_FALLS
 	db $0a ; encounter rate
-	db 53
+	db 36
 	db $01
 ;morning
 		db GOLDEEN ;20
@@ -65,7 +65,7 @@
 
 	map ROUTE_6
 	db $05 ; encounter rate
-	db 61
+	db 35
 	db $01
 ;morning
 		db POLIWAG ;20
@@ -121,7 +121,7 @@
 
 	map ROUTE_9
 	db $0a ; encounter rate
-	db 60
+	db 37
 	db $02
 ;morning
 		db SEAKING ;20
@@ -177,7 +177,7 @@
 
 	map ROUTE_10_NORTH
 	db $0a ; encounter rate
-	db 63
+	db 39
 	db $02
 ;morning
 		db SEAKING ;20
@@ -233,7 +233,7 @@
 
 	map ROUTE_12
 	db $0f ; encounter rate
-	db 62
+	db 43
 	db $00
 ;morning
 		db HORSEA ;30
@@ -289,7 +289,7 @@
 
 	map ROUTE_13
 	db $0f ; encounter rate
-	db 61
+	db 43
 	db $00
 ;morning
 		db HORSEA ;30
@@ -345,7 +345,7 @@
 
 	map ROUTE_19
 	db $0f ; encounter rate
-	db 66
+	db 50
 	db $00
 ;morning
 		db TENTACOOL ;30
@@ -401,7 +401,7 @@
 
 	map ROUTE_20
 	db $0f ; encounter rate
-	db 66
+	db 50
 	db $00
 ;morning
 		db TENTACOOL ;30
@@ -457,7 +457,7 @@
 
 	map ROUTE_21
 	db $0f ; encounter rate
-	db 65
+	db 50
 	db $00
 ;morning
 		db TENTACOOL ;30
@@ -513,7 +513,7 @@
 
 	map ROUTE_22
 	db $05 ; encounter rate
-	db 58
+	db 34
 	db $02
 ;morning
 		db SQUIRTLE ;20
@@ -569,7 +569,7 @@
 
 	map ROUTE_24
 	db $0a ; encounter rate
-	db 63
+	db 36
 	db $02
 ;morning
 		db STARYU ;20
@@ -628,7 +628,7 @@
 
 	map ROUTE_26
 	db $0f ; encounter rate
-	db 53
+	db 41
 	db $01
 ;morning
 		db GOLDEEN ;20
@@ -684,7 +684,7 @@
 
 	map ROUTE_27
 	db $0f ; encounter rate
-	db 53
+	db 36
 	db $01
 ;morning
 		db GOLDEEN ;20
@@ -799,7 +799,7 @@
 
 	map VIRIDIAN_CITY
 	db $02 ; encounter rate
-	db 63
+	db 36
 	db $03
 ;morning
 		db PICHU ;15
@@ -855,7 +855,7 @@
 
 	map CERULEAN_CITY
 	db $05
-	db 63
+	db 36
 	db $02
 ;morning
 		db STARYU ;20
@@ -911,7 +911,7 @@
 
 	map VERMILION_CITY
 	db $0f ; encounter rate
-	db 60
+	db 47
 	db $00
 ;morning
 		db TENTACOOL ;30
@@ -967,7 +967,7 @@
 
 	map CELADON_CITY
 	db $fe ; encounter rate
-	db 60
+	db 40
 	db $00
 ;morning
 		db GRIMER ;30
@@ -1025,7 +1025,7 @@
 
 	map FUCHSIA_CITY
 	db $05 ; encounter rate
-	db 60
+	db 40
 	db $00
 ;morning
 		db SLOWPOKE ;30
@@ -1081,7 +1081,7 @@
 
 	map CINNABAR_ISLAND
 	db $0f ; encounter rate
-	db 65
+	db 50
 	db $00
 ;morning
 		db TENTACOOL ;30
@@ -1134,174 +1134,6 @@
 		db SHELLDER ;2
 		db KRABBY ;1
 		db GOLDUCK ;1
-
-;	map SEAFOAM_ISLANDS_B1F
-;	db $0f ; encounter rate
-;	db 68
-;	db $02
-;morning
-;		db DEWGONG ;20
-;		db CLOYSTER ;15
-;		db CLOYSTER ;10
-;		db SHELLDER ;10
-;		db SEEL ;10
-;		db KABUTO ;5
-;		db KABUTO ;5
-;		db PSYDUCK ;5
-;		db OMANYTE ;6
-;		db OMANYTE ;4
-;		db GOLDUCK ;3
-;		db GOLDUCK ;2
-;		db GOLDUCK ;2
-;		db GOLDUCK ;1
-;		db GOLDUCK ;1
-;		db GOLDUCK ;1
-;day
-;		db CLOYSTER ;20
-;		db GOLDUCK ;15
-;		db SHELLDER ;10
-;		db DEWGONG ;10
-;		db PSYDUCK ;10
-;		db GOLDUCK ;5
-;		db KABUTO ;5
-;		db KABUTO ;5
-;		db OMANYTE ;6
-;		db OMANYTE ;4
-;		db SEEL ;3
-;		db PSYDUCK ;2
-;		db SEEL ;2
-;		db SEEL ;1
-;		db SEEL ;1
-;		db PSYDUCK ;1
-;night
-;		db DEWGONG ;20
-;		db CLOYSTER ;15
-;		db SHELLDER ;10
-;		db PSYDUCK ;10
-;		db GOLDUCK ;10
-;		db DEWGONG ;5
-;		db OMANYTE ;5
-;		db OMANYTE ;5
-;		db KABUTO ;6
-;		db KABUTO ;4
-;		db GOLDUCK ;3
-;		db GOLDUCK ;2
-;		db SEEL ;2
-;		db SEEL ;1
-;		db SEEL ;1
-;		db SEEL ;1
-
-;	map SEAFOAM_ISLANDS_B2F
-;	db $0f ; encounter rate
-;	db 70
-;	db $02
-;morning
-;		db DEWGONG ;20
-;		db CLOYSTER ;15
-;		db CLOYSTER ;10
-;		db SHELLDER ;10
-;		db SEEL ;10
-;		db KABUTO ;5
-;		db KABUTO ;5
-;		db PSYDUCK ;5
-;		db OMANYTE ;6
-;		db OMANYTE ;4
-;		db GOLDUCK ;3
-;		db GOLDUCK ;2
-;		db GOLDUCK ;2
-;		db GOLDUCK ;1
-;		db GOLDUCK ;1
-;		db GOLDUCK ;1
-;day
-;		db CLOYSTER ;20
-;		db GOLDUCK ;15
-;		db SHELLDER ;10
-;		db DEWGONG ;10
-;		db PSYDUCK ;10
-;		db GOLDUCK ;5
-;		db KABUTO ;5
-;		db KABUTO ;5
-;		db OMANYTE ;6
-;		db OMANYTE ;4
-;		db SEEL ;3
-;		db PSYDUCK ;2
-;		db SEEL ;2
-;		db SEEL ;1
-;		db SEEL ;1
-;		db PSYDUCK ;1
-;night
-;		db DEWGONG ;20
-;		db CLOYSTER ;15
-;		db SHELLDER ;10
-;		db PSYDUCK ;10
-;		db GOLDUCK ;10
-;		db DEWGONG ;5
-;		db OMANYTE ;5
-;		db OMANYTE ;5
-;		db KABUTO ;6
-;		db KABUTO ;4
-;		db GOLDUCK ;3
-;		db GOLDUCK ;2
-;		db SEEL ;2
-;		db SEEL ;1
-;		db SEEL ;1
-;		db SEEL ;1
-
-;	map SEAFOAM_ISLANDS_B3F
-;	db $0f ; encounter rate
-;	db 72
-;	db $02
-;morning
-;		db DEWGONG ;20
-;		db CLOYSTER ;15
-;		db CLOYSTER ;10
-;		db SHELLDER ;10
-;		db SEEL ;10
-;		db KABUTO ;5
-;		db KABUTO ;5
-;		db PSYDUCK ;5
-;		db OMANYTE ;6
-;		db OMANYTE ;4
-;		db GOLDUCK ;3
-;		db GOLDUCK ;2
-;		db GOLDUCK ;2
-;		db GOLDUCK ;1
-;		db GOLDUCK ;1
-;		db GOLDUCK ;1
-;day
-;		db CLOYSTER ;20
-;		db GOLDUCK ;15
-;		db SHELLDER ;10
-;		db DEWGONG ;10
-;		db PSYDUCK ;10
-;		db GOLDUCK ;5
-;		db KABUTO ;5
-;		db KABUTO ;5
-;		db OMANYTE ;6
-;		db OMANYTE ;4
-;		db SEEL ;3
-;		db PSYDUCK ;2
-;		db SEEL ;2
-;		db SEEL ;1
-;		db SEEL ;1
-;		db PSYDUCK ;1
-;night
-;		db DEWGONG ;20
-;		db CLOYSTER ;15
-;		db SHELLDER ;10
-;		db PSYDUCK ;10
-;		db GOLDUCK ;10
-;		db DEWGONG ;5
-;		db OMANYTE ;5
-;		db OMANYTE ;5
-;		db KABUTO ;6
-;		db KABUTO ;4
-;		db GOLDUCK ;3
-;		db GOLDUCK ;2
-;		db SEEL ;2
-;		db SEEL ;1
-;		db SEEL ;1
-;		db SEEL ;1
 
 	map CERULEANCAVE1
 	db $0f ; encounter rate
