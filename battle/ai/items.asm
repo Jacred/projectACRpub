@@ -52,8 +52,8 @@ DontSwitch: ; 38041
 ; 38045
 
 SwitchOften: ; 38045
-	callab Function34941
-	ld a, [wc717]
+	callab Function34941 ; CheckAbleToSwitch
+	ld a, [wc717] ; wEnemySwitchMonParam
 	and $f0
 	jp z, DontSwitch
 
@@ -288,7 +288,10 @@ AI_Items: ; 39196
 	dbw FULL_RESTORE, .FullRestore
 	dbw MAX_POTION,   .MaxPotion
 	dbw HYPER_POTION, .HyperPotion
+	dbw LEMONADE,     .Lemonade
+	dbw SODA_POP,     .SodaPop
 	dbw SUPER_POTION, .SuperPotion
+	dbw FRESH_WATER,  .FreshWater
 	dbw POTION,       .Potion
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
@@ -402,7 +405,23 @@ AI_Items: ; 39196
 .HyperPotion: ; 38284
 	call .HealItem
 	jp c, .DontUse
-	ld b, 200
+	ld b, 120
+	call Function383f4
+	jp .Use
+; 38292 (e:4292)
+
+.Lemonade: ; 38284
+	call .HealItem
+	jp c, .DontUse
+	ld b, 80
+	call Function383f4
+	jp .Use
+; 38292 (e:4292)
+
+.SodaPop: ; 38284
+	call .HealItem
+	jp c, .DontUse
+	ld b, 70
 	call Function383f4
 	jp .Use
 ; 38292 (e:4292)
@@ -410,8 +429,16 @@ AI_Items: ; 39196
 .SuperPotion: ; 38292
 	call .HealItem
 	jp c, .DontUse
-	ld b, 50
+	ld b, 60
 	call Function383ee
+	jp .Use
+; 382a0
+
+.FreshWater: ; 38292
+	call .HealItem
+	jp c, .DontUse
+	ld b, 50
+	call Function383ee_2
 	jp .Use
 ; 382a0
 
@@ -594,6 +621,9 @@ ELSE
 	dbw MAX_POTION,   Function383ae
 	dbw HYPER_POTION, Function383f4
 	dbw SUPER_POTION, Function383ee
+	dbw FRESH_WATER,  Function383ee_2
+	dbw SODA_POP,     Function383ee_3
+	dbw LEMONADE,     Function383ee_4
 	dbw POTION,       Function383e8
 	dbw X_ACCURACY,   Function384f7
 	dbw FULL_HEAL,    Function383a3
@@ -684,12 +714,27 @@ Function383e8: ; 383e8
 
 Function383ee: ; 383ee
 	ld a, SUPER_POTION
+	ld b, 60
+	jr Function383f8
+
+Function383ee_2: ; 383ee
+	ld a, FRESH_WATER
 	ld b, 50
+	jr Function383f8
+
+Function383ee_3: ; 383ee
+	ld a, SODA_POP
+	ld b, 70
+	jr Function383f8
+
+Function383ee_4: ; 383ee
+	ld a, LEMONADE
+	ld b, 80
 	jr Function383f8
 
 Function383f4: ; 383f4 (e:43f4)
 	ld a, HYPER_POTION
-	ld b, 200
+	ld b, 120
 
 Function383f8: ; 383f8
 	ld [wd1f1], a
@@ -834,11 +879,11 @@ AI_HealStatus: ; 384e0
 	ret
 ; 384f7
 
-; Function384f7: ; 384f7
-	; call AIUsedItemSound
-	; ld hl, EnemySubStatus4
-	; set SUBSTATUS_X_ACCURACY, [hl]
-	; jp Function38568
+Function384f7: ; 384f7
+	call AIUsedItemSound
+	ld hl, EnemySubStatus4
+	set SUBSTATUS_X_ACCURACY, [hl]
+	jp Function38568
 
 ; 38504
 
@@ -885,36 +930,42 @@ Function3851e: ; 3851e
 ; 38541
 
 Function38541: ; 38541
+	call AIUsedItemSound
 	ld b, ATTACK
 	ld a, X_ATTACK
 	jr Function38557
 ; 38547
 
 Function38547: ; 38547
+	call AIUsedItemSound
 	ld b, DEFENSE
 	ld a, X_DEFEND
 	jr Function38557
 ; 3854d
 
 Function3854d: ; 3854d
+	call AIUsedItemSound
 	ld b, SPEED
 	ld a, X_SPEED
 	jr Function38557
 ; 38553
 
 Function38553: ; 38553
+	call AIUsedItemSound
 	ld b, SP_ATTACK
 	ld a, X_SPECIAL
 	jr Function38557
 
 AI_SpDef:
+	call AIUsedItemSound
 	ld b, SP_DEFENSE
 	ld a, X_SPDEF
 	jr Function38557
 
-Function384f7:
-	ld b, ACCURACY
-	ld a, X_ACCURACY
+;Function384f7:
+;	call AIUsedItemSound
+;	ld b, ACCURACY
+;	ld a, X_ACCURACY
 Function38557:
 	ld [wd1f1], a
 	push bc
