@@ -48,26 +48,25 @@ MartsEnd
 ; 160ed
 
 
-Mart0: ; 160ed
-	db 10 ; # items
+Mart0: ; 160ed CELADON CITY 3F (1)
+	db 9 ; # items
+	db GOLD_BERRY
+	db MIRACLEBERRY
+	db MYSTERYBERRY
 	db POISON_GUARD
 	db PARLYZ_GUARD
 	db SLEEP_GUARD
-	db CONFUSEGUARD
 	db BURN_GUARD
 	db FREEZE_GUARD
-	db LUCKY_PUNCH
-	db METAL_POWDER
-	db THICK_CLUB
-	db STICK
+	db CONFUSEGUARD
 	db $ff
 ; 160f3
 
-Mart1: ; 160f3
+Mart1: ; 160f3 CHERRYGROVE CITY
 	db 8 ; # items
 	db POKE_BALL
-	db SUPER_POTION
 	db POTION
+	db SUPER_POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
@@ -76,123 +75,129 @@ Mart1: ; 160f3
 	db $ff
 ; 160fa
 
-Mart2: ; 160fa
-	db 10 ; # items
+Mart2: ; 160fa VIOLET CITY
+	db 12 ; # items
+	db POKE_BALL
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
-	db ESCAPE_ROPE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db X_DEFEND
+	db ESCAPE_ROPE
 	db X_ATTACK
+	db X_DEFEND
 	db X_SPEED
 	db FLOWER_MAIL
 	db $ff
 ; 16106
 
-Mart3: ; 16106
-	db 9 ; # items
+Mart3: ; 16106 AZALEA TOWN
+	db 10 ; # items
 	db CHARCOAL
-	db GREAT_BALL
 	db POKE_BALL
+	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
-	db ESCAPE_ROPE
-	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
+	db ESCAPE_ROPE
+	db REPEL
 	db FLOWER_MAIL
 	db $ff
 ; 16111
 
-Mart4: ; 16111
+Mart4: ; 16111 CIANWOOD CITY
 	db 5 ; # items
-	db HYPER_POTION
-	db SUPER_POTION
 	db POTION
-	db FULL_HEAL
+	db SUPER_POTION
+	db HYPER_POTION
 	db REVIVE
+	db FULL_HEAL
 	db $ff
 ; 16118
 
-Mart5: ; 16118
-	db 9 ; # items
-	db HYPER_POTION
-	db SUPER_POTION
+Mart5: ; 16118 GOLDENROD 2F (1)
+	db 10 ; # items
 	db POTION
-	db FULL_HEAL
+	db SUPER_POTION
+	db HYPER_POTION
+	db REVIVE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
+	db FULL_HEAL
 	db $ff
 ; 16121
 
-Mart6: ; 16121
-	db 10 ; # items
-	db ULTRA_BALL
-	db GREAT_BALL
+Mart6: ; 16121 GOLDENROD 2F (2)
+	db 9 ; # items
 	db POKE_BALL
+	db GREAT_BALL
+	db ULTRA_BALL
 	db ESCAPE_ROPE
-	db MAX_REPEL
-	db SUPER_REPEL
-	db REPEL
-	db REVIVE
 	db POKE_DOLL
+	db REPEL
+	db SUPER_REPEL
+	db MAX_REPEL
 	db FLOWER_MAIL
 	db $ff
 ; 1612b
 
-Mart7: ; 1612b
+Mart7: ; 1612b GOLDENROD 3F
 	db 8 ; # items goldenrod
 	db X_ATTACK
-	db X_SPEED
+	db X_DEFEND
 	db X_SPECIAL
 	db X_SPDEF
-	db X_DEFEND
+	db X_SPEED
+	db X_ACCURACY
 	db DIRE_HIT
 	db GUARD_SPEC
-	db X_ACCURACY
 	db $ff
 ; 16134
 
-Mart8: ; 16134
-	db 10 ; # items
-	db FIRE_STONE
-	db THUNDERSTONE
-	db WATER_STONE
-	db LEAF_STONE
-	db DRAGON_SCALE
+Mart8: ; 16134 GOLDENROD 4F
+	db 9 ; # items
 	db PROTEIN
 	db IRON
 	db CARBOS
 	db CALCIUM
 	db HP_UP
+	db FIRE_STONE
+	db THUNDERSTONE
+	db WATER_STONE
+	db LEAF_STONE
 	db $ff
 ; 1613b
 
 Mart9: ; 1613b
-	db 4 ; # items
-	db TM_SUNNY_DAY
-	db TM_THUNDER_WAVE
-	db TM_STRING_SHOT
-	db TM_SEISMIC_TOSS
+	db 9 ; # items
+	db POLKADOT_BOW
+	db BLACKBELT
+	db SHARP_BEAK
+	db POISON_BARB
+	db SOFT_SAND
+	db HARD_STONE
+	db SILVERPOWDER
+	db SPELL_TAG
+	db METAL_COAT
 	db $ff
 ; 16140
 
 Mart10: ; 16140
-	db 10 ; # items
-	db METAL_COAT
-	db KINGS_ROCK
-	db TWISTEDSPOON
-	db SILVERPOWDER
-	db POLKADOT_BOW
-	db SCOPE_LENS
-	db SOFT_SAND
-	db POISON_BARB
+	db 9 ; # items
+	db CHARCOAL
+	db MYSTIC_WATER
 	db MIRACLE_SEED
-	db QUICK_CLAW
+	db MAGNET
+	db TWISTEDSPOON
+	db NEVERMELTICE
+	db DRAGON_FANG
+	db BLACKGLASSES
+	db PINK_BOW
 	db $ff
 ; 16146
 
@@ -208,10 +213,11 @@ Mart12: ; 1614c ;unused
 	db $ff
 ; 16153
 
-Mart13: ; 16153
-	db 9 ; # items
-	db ULTRA_BALL
+Mart13: ; 16153 OLIVINE CITY
+	db 10 ; # items
 	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
 	db HYPER_POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -222,22 +228,24 @@ Mart13: ; 16153
 	db $ff
 ; 1615e
 
-Mart14: ; 1615e
-	db 10 ; # items
-	db ULTRA_BALL
+Mart14: ; 1615e ECRUTEAK CITY
+	db 12 ; # items
+	db POKE_BALL
 	db GREAT_BALL
-	db HYPER_POTION
+	db ULTRA_BALL
+	db POTION
 	db SUPER_POTION
+	db HYPER_POTION
+	db REVIVE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
-	db REVIVE
 	db $ff
 ; 1616a
 
-Mart15: ; 1616a
+Mart15: ; 1616a MAHOGANY TOWN (ROCKET)
 	db 4 ; # items
 	db TINYMUSHROOM
 	db SLOWPOKETAIL
@@ -246,92 +254,93 @@ Mart15: ; 1616a
 	db $ff
 ; 16170
 
-Mart16: ; 16170
-	db 9 ; # items
+Mart16: ; 16170 MAHOGANY TOWN (NORMAL)
+	db 10 ; # items
 	db RAGECANDYBAR
-	db ULTRA_BALL
 	db GREAT_BALL
+	db ULTRA_BALL
+	db SUPER_POTION
 	db HYPER_POTION
+	db REVIVE
 	db FULL_HEAL
 	db ESCAPE_ROPE
 	db SUPER_REPEL
-	db REVIVE
 	db FLOWER_MAIL
 	db $ff
 ; 1617b
 
-Mart17: ; 1617b
+Mart17: ; 1617b BLACKTHORN CITY
 	db 9 ; # items
-	db ULTRA_BALL
 	db GREAT_BALL
-	db MAX_POTION
+	db ULTRA_BALL
 	db HYPER_POTION
-	db FULL_HEAL
+	db MAX_POTION
 	db REVIVE
+	db FULL_HEAL
 	db MAX_REPEL
-	db X_DEFEND
 	db X_ATTACK
+	db X_DEFEND
 	db $ff
 ; 16186
 
-Mart18: ; 16186
+Mart18: ; 16186 VIRIDIAN CITY
 	db 9 ; # items
 	db ULTRA_BALL
 	db HYPER_POTION
-	db FULL_HEAL
 	db REVIVE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
+	db FULL_HEAL
 	db FLOWER_MAIL
 	db $ff
 ; 16191
 
-Mart19: ; 16191
+Mart19: ; 16191 PEWTER CITY
 	db 7 ; # items
 	db GREAT_BALL
 	db SUPER_POTION
-	db SUPER_REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
+	db SUPER_REPEL
 	db $ff
 ; 1619a
 
-Mart20: ; 1619a
+Mart20: ; 1619a CERULEAN CITY
 	db 9 ; # items
-	db ULTRA_BALL
 	db GREAT_BALL
+	db ULTRA_BALL
 	db SUPER_POTION
-	db SUPER_REPEL
 	db FULL_HEAL
-	db X_DEFEND
+	db SUPER_REPEL
 	db X_ATTACK
+	db X_DEFEND
 	db DIRE_HIT
 	db SURF_MAIL
 	db $ff
 ; 161a5
 
-Mart21: ; 161a5
+Mart21: ; 161a5 LAVENDER TOWN
 	db 8 ; # items
 	db GREAT_BALL
-	db SUPER_POTION
 	db POTION
-	db MAX_REPEL
+	db SUPER_POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
+	db MAX_REPEL
 	db $ff
 ; 161af
 
-Mart22: ; 161af
+Mart22: ; 161af VERMILION CITY
 	db 8 ; # items
 	db ULTRA_BALL
-	db HYPER_POTION
 	db SUPER_POTION
+	db HYPER_POTION
 	db REVIVE
 	db PARLYZ_HEAL
 	db AWAKENING
@@ -340,111 +349,105 @@ Mart22: ; 161af
 	db $ff
 ; 161b9
 
-Mart23: ; 161b9
+Mart23: ; 161b9 CELADON CITY 2F (1)
 	db 7 ; # items
-	db MAX_POTION
-	db HYPER_POTION
-	db SUPER_POTION
 	db POTION
+	db SUPER_POTION
+	db HYPER_POTION
+	db MAX_POTION
 	db REVIVE
-	db MAX_REPEL
 	db SUPER_REPEL
+	db MAX_REPEL
 	db $ff
 ; 161c2
 
-Mart24: ; 161c2
+Mart24: ; 161c2 CELADON CITY 2F (2)
 	db 10 ; # items
-	db ULTRA_BALL
-	db GREAT_BALL
 	db POKE_BALL
-	db ESCAPE_ROPE
-	db FULL_HEAL
+	db GREAT_BALL
+	db ULTRA_BALL
 	db ANTIDOTE
+	db PARLYZ_HEAL
+	db AWAKENING
 	db BURN_HEAL
 	db ICE_HEAL
-	db AWAKENING
-	db PARLYZ_HEAL
+	db FULL_HEAL
+	db ESCAPE_ROPE
 	db $ff
 ; 161ce
 
-Mart25: ; 161ce
-	db 10 ; # items
-	db FOCUS_BAND
+Mart25: ; 161ce CELADON CITY 3F (1)
+	db 11 ; # items
 	db BRIGHTPOWDER
-	db HARD_STONE
-	db NEVERMELTICE
-	db SHARP_BEAK
-	db DRAGON_FANG
-	db EXP_SHARE
-	db MIRACLEBERRY
-	db MYSTERYBERRY
-	db GOLD_BERRY
+	db QUICK_CLAW
+	db KINGS_ROCK
+	db FOCUS_BAND
+	db SCOPE_LENS
 	db POWER_HERB
+	db LUCKY_PUNCH
+	db METAL_POWDER
+	db STICK
+	db THICK_CLUB
+	db LIGHT_BALL
 	db $ff
 ; 161d5
 
-Mart26: ; 161d5
-	db 10 ; # items
-	db LOVELY_MAIL
-	db SURF_MAIL
-	db POKE_DOLL
-	db BLACKGLASSES
-	db PINK_BOW
-	db BLACKBELT
-	db SPELL_TAG
-	db MAGNET
-	db LIGHT_BALL
-	db AMULET_COIN
-	db $ff
-; 161da
-
-Mart27: ; 161da
-	db 10 ; # items
+Mart26: ; 161d5 CELADON CITY 4F
+	db 9 ; # items
 	db FIRE_STONE
 	db THUNDERSTONE
 	db WATER_STONE
 	db LEAF_STONE
 	db MOON_STONE
+	db POKE_DOLL
+	db AMULET_COIN
+	db LOVELY_MAIL
+	db SURF_MAIL
+	db $ff
+; 161da
+
+Mart27: ; 161da CELADON CITY 5F (1)
+	db 6 ; # items
 	db HP_UP
 	db PROTEIN
 	db IRON
 	db CARBOS
 	db CALCIUM
+	db EXP_SHARE
 	db $ff
 ; 161e1
 
-Mart28: ; 161e1
+Mart28: ; 161e1 CELADON CITY 5F (2)
 	db 8 ; # items
-	db X_ACCURACY
-	db GUARD_SPEC
-	db DIRE_HIT
 	db X_ATTACK
 	db X_DEFEND
-	db X_SPEED
 	db X_SPECIAL
 	db X_SPDEF
+	db X_SPEED
+	db X_ACCURACY
+	db DIRE_HIT
+	db GUARD_SPEC
 	db $ff
 ; 161ea
 
-Mart29: ; 161ea
-	db 8 ; # items
-	db FRIEND_CHARM
-	db ULTRA_BALL
+Mart29: ; 161ea FUCHSIA CITY
+	db 7 ; # items
 	db GREAT_BALL
-	db HYPER_POTION
+	db ULTRA_BALL
 	db SUPER_POTION
+	db HYPER_POTION
 	db FULL_HEAL
 	db MAX_REPEL
 	db FLOWER_MAIL
 	db $ff
 ; 161f3
 
-Mart30: ; 161f3
+Mart30: ; 161f3 SAFFRON CITY
 	db 8 ; # items
-	db ULTRA_BALL
 	db GREAT_BALL
-	db MAX_POTION
+	db ULTRA_BALL
 	db HYPER_POTION
+	db MAX_POTION
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
@@ -452,7 +455,7 @@ Mart30: ; 161f3
 	db $ff
 ; 161fd
 
-Mart31: ; 161fd
+Mart31: ; 161fd MT.MOON SQUARE
 	db 6 ; # items
 	db POKE_DOLL
 	db FRESH_WATER
@@ -463,23 +466,24 @@ Mart31: ; 161fd
 	db $ff
 ; 16205
 
-Mart32: ; 16205
-	db 11 ; # items
-	db FULL_RESTORE
-	db MAX_POTION
-	db HYPER_POTION
+Mart32: ; 16205 INDIGO PLATEAU
+	db 12 ; # items
 	db ULTRA_BALL
+	db HYPER_POTION
+	db MAX_POTION
+	db FULL_RESTORE
 	db REVIVE
 	db FULL_HEAL
+	db MAX_REPEL
 	db X_ATTACK
 	db X_DEFEND
-	db X_SPEED
 	db X_SPECIAL
 	db X_SPDEF
+	db X_SPEED
 	db $ff
 ; 1620e
 
-Mart33: ; 1620e
+Mart33: ; 1620e WAREHOUSE ENTRANCE
 	db 4 ; # items
 	db ENERGYPOWDER
 	db ENERGY_ROOT
@@ -489,7 +493,7 @@ Mart33: ; 1620e
 ; 16214
 
 TmDepot1:
-	db 9
+	db 8
 	db TM_DYNAMICPUNCH
 	db TM_ZEN_HEADBUTT
 	db TM_CURSE
@@ -498,11 +502,11 @@ TmDepot1:
 	db TM_TOXIC
 	db TM_ZAP_CANNON
 	db TM_ROCK_SMASH
-	db TM_FOCUS_BLAST
 	db $ff
 
 TmDepot2:
-	db 9
+	db 8
+	db TM_FOCUS_BLAST
 	db TM_HIDDEN_POWER
 	db TM_SUNNY_DAY
 	db TM_EARTH_POWER
@@ -510,12 +514,12 @@ TmDepot2:
 	db TM_BLIZZARD
 	db TM_HYPER_BEAM
 	db TM_ICY_WIND
-	db TM_PROTECT
-	db TM_RAIN_DANCE
 	db $ff
 
 TmDepot3:
-	db 8
+	db 9
+	db TM_PROTECT
+	db TM_RAIN_DANCE
 	db TM_GIGA_DRAIN
 	db TM_FLARE_BLITZ
 	db TM_WILD_CHARGE
@@ -523,11 +527,11 @@ TmDepot3:
 	db TM_FLASH_CANNON
 	db TM_DRAGON_PULSE
 	db TM_THUNDER
-	db TM_EARTHQUAKE
 	db $ff
 
 TmDepot4:
 	db 8
+	db TM_EARTHQUAKE
 	db TM_RETURN
 	db TM_DIG
 	db TM_PSYCHIC
@@ -535,11 +539,11 @@ TmDepot4:
 	db TM_SKY_ATTACK
 	db TM_DOUBLE_TEAM
 	db TM_SHADOW_CLAW
-	db TM_SWAGGER
 	db $ff
 
 TmDepot5:
 	db 8
+	db TM_SWAGGER
 	db TM_SLEEP_TALK
 	db TM_SLUDGE_BOMB
 	db TM_SANDSTORM
@@ -547,11 +551,11 @@ TmDepot5:
 	db TM_GUNK_SHOT
 	db TM_SEISMIC_TOSS
 	db TM_SWORDS_DANCE
-	db TM_STRING_SHOT
 	db $ff
 
 TmDepot6:
-	db 8
+	db 9
+	db TM_DREAM_EATER
 	db TM_DARK_PULSE
 	db TM_REST
 	db TM_ATTRACT
@@ -570,36 +574,39 @@ DefaultMart: ; 16214
 ; 16218
 
 ViridianMartRB:
-	db 5
+	db 8
 	db POKE_BALL
+	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
+	db AWAKENING
 	db BURN_HEAL
+	db ESCAPE_ROPE
 	db REPEL
 	db $ff
 
 PewterMartRB:
-	db 9
+	db 8
 	db POKE_BALL
 	db POTION
-	db ESCAPE_ROPE
 	db ANTIDOTE
-	db BURN_HEAL
-	db AWAKENING
 	db PARLYZ_HEAL
+	db AWAKENING
+	db BURN_HEAL
+	db ESCAPE_ROPE
 	db REPEL
-	db X_SPEED
 	db $ff
 
 CeruleanMartRB: ; 2453 (0:2453)
-	db 7
+	db 8
 	db POKE_BALL
 	db POTION
-	db REPEL
 	db ANTIDOTE
-	db BURN_HEAL
-	db AWAKENING
 	db PARLYZ_HEAL
+	db AWAKENING
+	db BURN_HEAL
+	db ESCAPE_ROPE
+	db REPEL
 	db $ff
 
 ; Bike shop
@@ -610,12 +617,14 @@ CeruleanBikeShopRB:
 
 ; Vermilion
 VermilionMartRB: ; 2461 (0:2461)
-	db 6
+	db 8
 	db POKE_BALL
-	db SUPER_POTION
-	db ICE_HEAL
-	db AWAKENING
+	db POTION
+	db ANTIDOTE
 	db PARLYZ_HEAL
+	db AWAKENING
+	db BURN_HEAL
+	db ESCAPE_ROPE
 	db REPEL
 	db $ff
 
