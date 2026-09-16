@@ -453,13 +453,16 @@ Function3c27c: ; 3c27c
 	ld [hl], a
 	ld [AttackMissed], a
 	ld [EffectFailed], a
-	callba BattleCommand77
+;	callba BattleCommand77
 	pop af
 	pop hl
 	ld [hl], a
 	call GetItemName
 	ld hl, BattleText_0x80bde
 	call StdBattleTextBox
+	callba BattleCommand77
+	callab BattleCommand8c
+	callba BattleCommand7a
 	callab BattleCommand8c
 	pop af
 	bit SUBSTATUS_CONFUSED, a
@@ -898,37 +901,50 @@ ENDC
 
 FleeMons:
 
-SometimesFleeMons: ; 3c59a
-	db MAGNEMITE
-	db GRIMER
-	db TANGELA
-	db MR__MIME
-	db EEVEE
-	db PORYGON
-	db DRATINI
-	db DRAGONAIR
-	db TOGETIC
-	db UMBREON
-	db UNOWN
-	db SNUBBULL
-	db HERACROSS
+SometimesFleeMons: ; maximum is 28 before rom bank fills?
+	; 50% flee rate in GSC
+	db CUBONE
+	db QUAGSIRE
+	db TEDDIURSA
+	db DELIBIRD
+	db PHANPY
+	; 101 speed
+	db PIDGEOT
+	; 105 speed
+	db KADABRA
+	db RAPIDASH
+	db SCYTHER
+	db ELECTABUZZ
+	; 110 speed
+	db RAICHU
+	db DODRIO
+	db GENGAR
+	db TAUROS
+	db JUMPLUFF
+	db ESPEON
+	; 115 speed
+	db PERSIAN
+	db STARMIE
+	db SNEASEL
+	; 120 speed
+	db DUGTRIO
+	db ALAKAZAM
+	; 130 speed
+	db JOLTEON
+;	db AERODACTYL
+	db CROBAT
+	; 150 speed
+	db ELECTRODE
 	db -1
 
 OftenFleeMons: ; 3c5a8
-	db CUBONE
-;	db ARTICUNO
-;	db ZAPDOS
-;	db MOLTRES
-	db QUAGSIRE
-	db DELIBIRD
-	db PHANPY
-	db TEDDIURSA
-	db -1
-
-AlwaysFleeMons: ; 3c5b1
+	; 100% flee rate in GSC
 	db RAIKOU
 	db ENTEI
 	db SUICUNE
+	db -1
+
+AlwaysFleeMons: ; 3c5b1
 	db -1
 ; 3c5b4
 
@@ -980,10 +996,11 @@ MoveEffectPriorities: ; 3c5df
 	db EFFECT_ENDURE,       5
 	db EFFECT_EXTREMESPEED, 4
 	db EFFECT_PRIORITY_HIT, 3
-	db EFFECT_BIDE,			3
+	db EFFECT_BIDE,		3
 	db EFFECT_WHIRLWIND,    0
 	db EFFECT_COUNTER,      0
 	db EFFECT_MIRROR_COAT,  0
+	db EFFECT_TELEPORT,     0
 	db -1
 ; 3c5ec
 
@@ -2821,8 +2838,8 @@ JohtoGymLeaders:
 	db KOGA
 ; fallthrough
 ; these two entries are unused
-	db CHAMPION
-	db RED
+;	db CHAMPION
+;	db RED
 ; fallthrough
 KantoGymLeaders:
 	db BROCK
@@ -2832,8 +2849,7 @@ KantoGymLeaders:
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
-	db TPPPC
+;	db BLUE
 	db BROCK_RB
 	db MISTY_RB
 	db $ff
@@ -6618,28 +6634,36 @@ LoadEnemyMon: ; 3e8eb
 ; I will hijack this script to adjust the wild Pokemon's level.
 .WildItem
 ; Force Item1
-; Used for Ho-Oh, Lugia and Snorlax encounters
+; Used for boss encounters
 	ld a, [BattleType]
+	cp BATTLETYPE_ROAMING
+	jr z, .ForceItem1
+	cp BATTLETYPE_SHINY
+	jr z, .ForceItem1
 	cp BATTLETYPE_FORCEITEM
+	jr z, .ForceItem1
+	cp BATTLETYPE_CELEBI
+	jr z, .ForceItem1
+	cp BATTLETYPE_SUICUNE
 	jr z, .ForceItem1
 	cp BATTLETYPE_KANTOLEGEND
 	jr z, .ForceItem1
 
 ; Failing that, it's all up to chance
 ;  Effective chances:
-;    75% None
-;    23% Item1
-;     2% Item2
+;    50% None
+;    45% Item1
+;     5% Item2
 
-; 25% chance of getting an item
+; 50% chance of getting an item
 	call BattleRandom
-	cp $c0
+	cp $80
 	ld a, NO_ITEM
 	jr c, .UpdateItem
 
-; From there, an 8% chance for Item2
+; From there, an 10% chance for Item2
 	call BattleRandom
-	cp $14 ; 8% of 25% = 2% Item2
+	cp $19 ; 10% of 50% = 5% Item2
 	jr nc, .ForceItem1
 	ld a, [BaseItems + 1]
 	jr .UpdateItem
@@ -7451,23 +7475,23 @@ Function3ecb7: ; 3ecb7
 	ret
 ; 3ed2b
 
-.StatLevelMultipliers
+.StatLevelMultipliers ; theoretically this shouldn't break anything?? it is just math...
 ;	      /
-	db 25, 100 ; 25%
-	db 28, 100 ; 28%
-	db 33, 100 ; 33%
-	db 40, 100 ; 40%
-	db 50, 100 ; 50%
-	db 66, 100 ; 66%
+	db  2,  8 ; 1/4
+	db  2,  7 ; 2/7
+	db  2,  6 ; 1/3
+	db  2,  5 ; 2/5
+	db  2,  4 ; 1/2
+	db  2,  3 ; 2/3
 
-	db  1,  1 ; 100%
+	db  2,  2 ; 1.0x
 
-	db 15, 10 ; 150%
-	db  2,  1 ; 200%
-	db 25, 10 ; 250%
-	db  3,  1 ; 300%
-	db 35, 10 ; 350%
-	db  4,  1 ; 400%
+	db  3,  2 ; 1.5x
+	db  4,  2 ; 2.0x
+	db  5,  2 ; 2.5x
+	db  6,  2 ; 3.0x
+	db  7,  2 ; 3.5x
+	db  8,  2 ; 4.0x
 ; 3ed45
 
 BadgeStatBoosts: ; 3ed45
