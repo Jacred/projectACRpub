@@ -251,3 +251,4 @@
 	dw LugiaPokedexEntry
 	dw HoOhPokedexEntry
 	dw CelebiPokedexEntry
+	dw PhanceroPokedexEntry
