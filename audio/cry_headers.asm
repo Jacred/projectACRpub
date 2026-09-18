@@ -6,7 +6,7 @@ CharmeleonCryHeader:  dw $04,  $020,  $0c0
 CharizardCryHeader:   dw $04,  $000,  $100
 SquirtleCryHeader:    dw $1d,  $060,  $0c0
 WartortleCryHeader:   dw $1d,  $020,  $0c0
-BlastoiseCryHeader:   dw $13,  $000,  $100
+BlastoiseCryHeader:   dw $1d,  $000,  $100
 CaterpieCryHeader:    dw $16,  $080,  $0a0
 MetapodCryHeader:     dw $1c,  $0cc,  $081
 ButterfreeCryHeader:  dw $16,  $077,  $0c0
@@ -249,7 +249,7 @@ TyranitarCryHeader:   dw $2a, -$100,  $180
 LugiaCryHeader:       dw $3a,  $000,  $100
 HoOhCryHeader:        dw $41,  $000,  $180
 CelebiCryHeader:      dw $37,  $14a,  $111
-CryHeader252:         dw 0,    0,     0
+PhanceroCryHeader:    dw $18,  $11f,  $200
 CryHeader253:         dw 0,    0,     0
 CryHeader254:         dw 0,    0,     0
 CryHeader255:         dw 0,    0,     0
