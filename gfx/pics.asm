@@ -730,8 +730,9 @@ GiovanniPic:         INCBIN "gfx/trainers/giovanni.7x7.2bpp.lz"
 CoolSiblingsPic:     INCBIN "gfx/trainers/coolsiblings.7x7.2bpp.lz"
 ChrisPicLZ:          INCBIN "gfx/misc/chris.7x7.2bpp.lz"
 KrisPicLZ:           INCBIN "gfx/misc/kris.7x7.2bpp.lz"
-; BabaPic:             INCBIN "gfx/trainers/baba.7x7.2bpp.lz"
-BabaPic:             INCBIN "gfx/trainers/kris_orig.7x7.2bpp.lz" ; Uncomment this if the above is rejected
+BabaPic:             INCBIN "gfx/trainers/kris_orig.7x7.2bpp.lz"
+PhanceroFrontpic:    INCBIN "gfx/pics/phancero/front.7x7.2bpp.lz"
+PhanceroBackpic:     INCBIN "gfx/pics/phancero/back.6x6.2bpp.lz"
 
 SECTION "SubstitutePics", ROMX
 SubstituteFrontPic:: INCBIN "gfx/battle/substitute-front.2bpp.lz"
