@@ -213,7 +213,7 @@ Function2a088: ; 2a088  ;if mon d265 is in mon table hl, ret nc with that locati
 
 Check_IsInRoamMonNest: ; 2a09c if tile from place map bc exists in tilemap, ret nc
 	push de
-	call GetWorldMapLocation ; given a map group/id in bc, return its location on the Pok�gear map.
+	call GetWorldMapLocation ; given a map group/id in bc, return its location on the Pokegear map.
 	ld c, a ;put it in c
 	hlcoord 0, 0 ;hl = top of tilemap
 	ld de, SCREEN_HEIGHT * SCREEN_WIDTH ;for each tile
@@ -573,10 +573,10 @@ PctTables: ;0 = big 30
 	db 90 ;10
 	db 110 ;10
 	db 130 ;10
-	db 142 ;6
-	db 152 ;5
-	db 162 ;5
-	db 172 ;5
+	db 140 ;5
+	db 150 ;5
+	db 160 ;5
+	db 172 ;6
 	db 180 ;4
 	db 186 ;3
 	db 190 ;2
@@ -603,765 +603,585 @@ PctTables: ;0 = big 30
 	db 200
 
 LvlPointers: ;0 skips, 1 and onwards uses these to select the table used for each ToD. feel free to change examples
-;1 = EGK Diglett's Cave
-	db 1, 1, 1 ;Lvl table to use in specific Tod, first slot is morning, second is day and third is night
-;2 = Route 29
-	db 3, 4, 5
-;3 = Route 46
-	db 6, 7, 8
-;4 = Route 30
-	db 9, 10, 11
-;5 = Route 31
-	db 12, 13, 14
-;6 = Dark Cave Violet Entrance
-	db 15, 16, 17
-;7 = Sprout Tower
-	db 18, 19, 20
-;8 = Route 36
-	db 21, 22, 23
-;9 = Route 32
-	db 24, 25, 26
-;10 = Route 33
-	db 27, 28, 29
-;11 = Route 37
-	db 30, 31, 32
-;12 = Route 42
-	db 33, 34, 35
-;13 = Route 38
-	db 36, 37, 38
-;14 = Dark Cave Blackthorn Entrance
-	db 39, 40, 41
-;15 = Viridian Forest
+;1 = Diglett's Cave
+	db 1, 1, 1
+;2 = Route 46
 	db 2, 2, 2
+;3 = Sprout Tower
+	db 3, 3, 3
+;4 = Route 36, Route 34
+	db 4, 4, 4
+;5 = Ilex Forest
+	db 5, 5, 5
+;6 = Route 35
+	db 6, 6, 7
+;7 = Route 37
+	db 8, 8, 9
+;8 = Burned Tower 1F
+	db 10, 11, 12
+;9 = Burned Tower B1F
+	db 13, 13, 13
+;a = Mt. Mortar 1F Outside
+	db 14, 15, 16
+;b = Mt. Mortar 1F Inside
+	db 17, 18, 19
+;c = Mt. Mortar B1F
+	db 20, 21, 22
+;d = Route 42
+	db 23, 24, 25
+;e = Dark Cave Blackthorn
+	db 29, 29, 30
+;f = Viridian Forest
+	db 26, 27, 28
 
 LvlTables: ;0 = no adjustment feel free to change examples
-; 1 = EGK Diglett Cave
-	db 0
-	db -3
-	db -3
-	db -3
-	db 14
+; 1 = Diglett's Cave
 	db 0
 	db 0
 	db 0
 	db 0
 	db 0
 	db 0
+	db 5 ; Diglett
+	db 5 ; Dugtrio  
+	db 5 ; Diglett
+	db 10 ; Dugtrio
+	db 5 ; Diglett
+	db 5 ; Diglett
+	db 5 ; Diglett
+	db 5 ; Diglett
+	db 5 ; Diglett 
+	db 15 ; Dugtrio
+
+; 2 = Route 46
 	db 0
 	db 0
 	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Gligar
+	db 0
+	db 0
+	db 0
+	db 2 ; Jigglypuff
+	db 2 ; Jigglypuff
+	db 2 ; Jigglypuff
+	db 6 ; Skarmory
+
+; 3 = Sprout Tower
+	db -2 ; Rattata/Gastly
+	db 0
+	db 0
+	db 0
+	db -2 ; Bellsprout
+	db -2 ; Bellsprout
+	db 0
+	db 0
+	db 0
+	db 4 ; Weepinbell
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 5 ; Golbat
+
+; 4 = Route 36, Route 34
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 6 ; Sudowoodo/Mantine
+
+; 5 = Ilex Forest
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 5 ; Butterfree/Beedrill/Noctowl
+	db 5 ; Pidgeotto/Pidgeotto/Noctowl
+	db 0
+	db 5 ; Beedrill/Butterfree/Noctowl
+	db 5 ; Butterfree/Beedrill/Noctowl
+	db 0
+
+; 6 = Route 35 (morning/daytime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 5 ; Gloom
+
+; 7 = Route 35 (nighttime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 5 ; Noctowl
+	db 5 ; Gloom
+	db 5 ; Ariados
+	db 5 ; Poliwhirl
+	db 5 ; Poliwhirl
+
+; 8 = Route 37 (morning/daytime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Pidgeotto
+	db 2 ; Ledian/Pidgeotto
+	db 2 ; Flaaffy
+	db 2 ; Gloom
+	db 0
+	db 0
+	db 0
+	db 7 ; Sudowoodo
+
+; 9 = Route 37 (nighttime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Noctowl
+	db 2 ; Ariados
+	db 2 ; Gloom
+	db 0
+	db 0
+	db 0
+	db 7 ; Sudowoodo
+
+; 10 = Burned Tower 1F (morning)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Ariados
+	db 2 ; Noctowl
+	db 2 ; Golbat
+	db 2 ; Raticate
+	db 2 ; Raticate
+	db 4 ; Houndoom
+
+; 11 = Burned Tower 1F (daytime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Ariados
+	db 2 ; Golbat
+	db 4 ; Houndoom
+	db 2 ; Raticate
+	db 2 ; Raticate
+	db 4 ; Crobat
+
+; 12 = Burned Tower 1F (nighttime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Ariados
+	db 0
+	db 0
+	db 2 ; Raticate
+	db 2 ; Raticate
+	db 4 ; Houndoom
+
+; 13 = Burned Tower B1F
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 4 ; Weezing
+	db 4 ; Houndoom	
+
+; 14 = Mt. Mortar 1F Outside (morning)
+	db 0
+	db 0
+	db 0
+	db 2 ; Golbat
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Graveler
+	db 2 ; Pupitar
+	db 4 ; Steelix
+	db 0
+	db 0
+	db 4 ; Crobat
+
+; 15 = Mt. Mortar 1F Outside (daytime)
+	db 0
+	db 0
+	db 0
+	db 2 ; Golbat
+	db 0
+	db 0
+	db 0
+	db 2 ; Golbat
+	db 0
+	db 0
+	db 2 ; Graveler
+	db 2 ; Pupitar
+	db 4 ; Crobat
+	db 0
+	db 0
+	db 4 ; Steelix
+
+; 16 = Mt. Mortar 1F Outside (nighttime)
+	db 0
+	db 0
+	db 0
+	db 2 ; Golbat
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Graveler
+	db 2 ; Pupitar
+	db 0
+	db 0
+	db 0
+	db 4 ; Crobat
+
+; 17 = Mt. Mortar 1F Inside (morning)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Pupitar
+	db 0
+	db 0
+	db 2 ; Graveler
+	db 0
+	db 0
+	db 2 ; Graveler
+	db 0
+	db 0
+	db 0
+	db 0
+	db 4 ; Steelix
+
+; 18 = Mt. Mortar 1F Inside (daytime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Pupitar
+	db 2 ; Graveler
+	db 4 ; Magcargo
+	db 0
+	db 2 ; Quagsire
+	db 0
+	db 0
+	db 0
+	db 0
+	db 4 ; Steelix
+
+; 19 = Mt. Mortar 1F Inside (nighttime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Raticate
+	db 2 ; Pupitar
+	db 0
+	db 0
+	db 2 ; Graveler
+	db 0
+	db 0
+	db 0
+	db 0
+	db 4 ; Steelix
+
+; 20 = Mt. Mortar B1F (morning)
+	db 0
+	db 2 ; Golbat
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Pupitar
+	db 2 ; Poliwhirl
+	db 0
+	db 4 ; Politoed
+	db 0
+	db 0
+	db 4 ; Steelix
+	db 2 ; Quagsire
+	db 4 ; Poliwrath
+
+; 21 = Mt. Mortar B1F (daytime)
+	db 0
+	db 2 ; Golbat
+	db 0
+	db 0
+	db 2 ; Poliwhirl
+	db 0
+	db 0
+	db 2 ; Pupitar
+	db 2 ; Quagsire
+	db 0
+	db 0
+	db 0
+	db 4 ; Poliwrath
+	db 0
+	db 4 ; Politoed
+	db 4 ; Steelix
+
+; 22 = Mt. Mortar B1F (nighttime)
+	db 0
+	db 2 ; Golbat
+	db 0
+	db 0
+	db 2 ; Pupitar
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Poliwhirl
+	db 0
+	db 0
+	db 0
+	db 0
+	db 4 ; Steelix
+	db 4 ; Politoed
+
+; 23 = Route 42 (morning)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 3 ; Fearow
+	db 3 ; Flaaffy
+	db 3 ; Raticate
+	db 3 ; Arbok
+	db 3 ; Primeape
+	db 2 ; Quagsire
+	db 2 ; Mr. Mime
+	db 0	
+
+; 24 = Route 42 (daytime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 3 ; Fearow
+	db 3 ; Flaaffy
+	db 3 ; Raticate
+	db 3 ; Arbok
+	db 0
+	db 2 ; Quagsire
+	db 4 ; Quilava
+	db 3 ; Primeape
+
+; 25 = Route 32 (nighttime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Golbat
+	db 2 ; Raticate
+	db 2 ; Quagsire
+	db 2 ; Raticate
+	db 0
+	db 3 ; Flaaffy
+	db 0
+	db 2 ; Golbat
+	db 4 ; Crobat
+	db 0
+	db 4 ; Quilava
+
+; 26 = Viridian Forest (morning)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Metapod
+	db 2 ; Metapod
+	db 2 ; Kakuna
+	db 1 ; Pikachu
+	db 6 ; Pidgeotto
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 6 ; Beedrill 	
+
+; 27 = Viridian Forest (daytime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Metapod
+	db 2 ; Metapod
+	db 2 ; Kakuna
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 1 ; Pidgey
+	db 6 ; Pidgeotto
+
+; 28 = Viridian Forest (nighttime)
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Kakuna
+	db 2 ; Kakuna
+	db 2 ; Metapod
+	db 1 ; Pikachu
+	db 1 ; Pikachu
+	db 2 ; Kakuna
+	db 2 ; Kakuna
+	db 2 ; Kakuna
+	db 2 ; Metapod
+	db 2 ; Metapod
+	db 2 ; Metapod
+	db 6 ; Butterfree
+
+; 29 = Dark Cave Blackthorn (morning/daytime)
+	db 0
+	db 0
+	db 2 ; Graveler
+	db 0
+	db 2 ; Pupitar
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 0
+	db 2 ; Ursaring
+	db 0
+	db 3 ; Magcargo
 	db 0
 	db 0
 
-; 2 = EGK Viridian Forest
+; 30 = Dark Cave Blackthorn (nighttime)
 	db 0
 	db 0
-	db 4
-	db 4
-	db 0
-	db 0
+	db 2 ; Graveler
 	db 0
 	db 0
 	db 0
 	db 0
 	db 0
-	db 0
-	db 4
-	db 4
+	db 2 ; Pupitar
 	db 0
 	db 0
-
-; 3 = Route 29 Morning
-	db 0 ;0
 	db 0
-	db -2
 	db 0
-	db 0 ;4
-	db 0
-	db -2
-	db -2
-	db 0 ;8
-	db 0
-	db 3
-	db 1
-	db 3
-	db 1
+	db 3 ; Magcargo
 	db 0
 	db 0
 
-; 4 = Route 29 Day
+; 31 = unused
 	db 0
 	db 0
 	db 0
-	db -2
 	db 0
 	db 0
-	db -2
-	db -2
 	db 0
-	db 3
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-
-; 5 = Route 29 Night
-	db 0
-	db 0
-	db 0
-	db -2
-	db 0
-	db 0
-	db -2
-	db -2
-	db 0
-	db 0
-	db 0
-	db 5
-	db 7
-	db 0
-	db 0
-	db 0
-
-; 6 = Route 46 Morning
-	db 0
-	db 0
-	db -1
-	db -1
-	db 0
-	db -1
-	db -1
-	db -1
-	db 1
-	db 0
-	db 1
-	db 0
-	db 1
-	db 2
-	db 0
-	db 0
-
-; 7 = Route 46 Day
-	db 0
-	db 0
-	db -1
-	db 1
-	db 0
-	db 0
-	db -1
-	db -1
-	db -1
-	db 0
-	db 0
-	db 0
-	db 2
-	db 0
-	db -2
-	db 0
-
-; 8 = Route 46 Night
-	db 0
-	db 0
-	db -1
-	db 1
-	db 0
-	db -1
-	db -1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 5
-	db 0
-	db 1
-	db 1
-
-; 9 = Route 30 Morning
-	db -1
-	db 0
-	db 0
-	db -1
-	db 0
-	db 0
-	db -1
-	db -1
-	db 0
-	db 2
-	db 2
-	db 2
-	db 2
-	db 2
-	db 2
-	db 6
-
-; 10 = Route 30 Day
-	db 0
-	db 0
-	db -1
-	db -1
-	db 0
-	db -1
-	db -1
-	db 0
-	db 2
-	db 2
-	db 0
-	db 0
-	db 2
-	db 0
-	db 2
-	db 2
-
-; 11 = Route 30 Night
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db -1
-	db 0
-	db 0
-	db 4
-	db 4
-	db 6
-	db -1
-	db 0
-
-; 12 = Route 31 Morning
-	db 0
-	db 0
-	db -1
-	db -1
-	db 0
-	db -1
-	db 1
-	db -1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 0
-	db 0
-	db 1
-
-; 13 = Route 31 Day
-	db 0
-	db -1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 3
-	db 0
-	db 0
-	db 0
-	db 0
-
-; 14 = Route 31 Night
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 3
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 3
-	db 0
-
-; 15 = Dark Cave Morning
-	db -2
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 2
-
-; 16 = Dark Cave Day
-	db 0
-	db 0
-	db 0
-	db -2
-	db 0
-	db 0
-	db 0
-	db 1
-	db 1
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 1
-	db 0
-
-; 17 = Dark Cave Night
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 3
-	db 0
-	db 3
-	db 0
-	db 1
-	db 0
-	db 1
-	db 0
-	db 2
-	db 0
-
-; 18 = Sprout Tower Morning
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 5
-	db 5
-	db 6
-	db 0
-	db 0
-	db 1
-
-; 19 = Sprout Tower Day
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 1
-	db 5
-	db 6
-	db 5
-	db 0
-	db 0
-	db 1
-	db 1
-
-; 20 = Sprout Tower Night
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 5
-	db 0
-	db 5
-	db 1
-	db 0
-	db 6
-	db 1
-
-; 21 = Route 36 Morning
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 6
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 6
-
-; 22 = Route 36 Day
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 6
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-
-; 23 = Route 36 Night
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 0
-	db 3
-	db 0
-	db 0
-	db 0
-
-; 24 = Route 32 Morning
-	db 0
-	db -4
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 1
-	db 2
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-
-; 25 = Route 32 Day
-	db 0
-	db 0
-	db -1
-	db 0
-	db 0
-	db 0
-	db 1
-	db -1
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 2
-
-; 26 = Route 32 Night
-	db 0
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 0
-	db 0
-	db 2
-	db 0
-
-; 27 = Route 33 Morning
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 5
-	db 0
-	db 1
-	db 0
-	db 1
-	db 0
-	db 1
-
-; 28 = Route 33 Day
-	db 0
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 5
-	db 5
-	db 0
-	db 0
-	db 4
-	db 0
-	db 4
-	db 1
-
-; 29 = Route 33 Night
-	db 0
-	db 0
-	db 1
-	db 0
-	db 0
-	db 1
-	db 0
-	db 4
-	db 1
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 4
-	db 1
-
-; 30 = Route 37 Morning
-	db -2
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 3
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 9
-	db 3
-
-; 31 = Route 37 Day
-	db 1
-	db 0
-	db 3
-	db 0
-	db 0
-	db 0
-	db 3
-	db 0
-	db 0
-	db -2
-	db 0
-	db 0
-	db 0
-	db 9
-	db 0
-	db 0
-
-; 32 = Route 37 Night
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 2
-
-; 33 = Route 42 Morning
-	db -3
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 0
-	db 0
-	db 2
-	db 0
-	db 2
-	db 3
-	db 0
-	db 0
-
-; 34 = Route 42 Day
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 3
-	db 0
-	db 2
-	db 7
-	db 3
-	db 7
-
-; 35 = Route 42 Night
-	db 0
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 0
-	db 6
-	db 0
-	db 0
-	db 0
-	db 0
-	db 7
-
-; 36 = Route 38 Morning
-	db 0
-	db 1
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 2
-	db 4
-	db 0
-	db 2
-	db 2
-	db 2
-	db 2
-	db 2
-
-; 37 = Route 38 Day
-	db 0
-	db 0
-	db 0
-	db 0
-	db 1
-	db 2
-	db 0
-	db 0
-	db 0
-	db 2
-	db 2
-	db 0
-	db 2
-	db 0
-	db 2
-	db 4
-
-; 38 = Route 38 Night
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 2
-	db 0
-	db 0
-	db 2
-	db 2
-	db 1
-	db 2
-	db 1
-
-; 39 = Dark Cave Blackthorn Morning
-	db 2
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 6
-	db 0
-	db 3
-	db 0
-	db 2
-	db 3
-	db 3
-	db 2
-
-; 40 = Dark Cave Blackthorn Day
-	db 2
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 2
-	db 0
-	db 3
-	db 0
-	db 6
-	db 2
-	db 0
-	db 3
-	db 6
-
-; 41 = Dark Cave Blackthorn Night
-	db 0
-	db 2
-	db 0
-	db 0
-	db 0
-	db 3
 	db 0
 	db 0
 	db 0
