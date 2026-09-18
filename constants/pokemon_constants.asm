@@ -253,6 +253,7 @@ NUM_POKEMON EQU 251
 	const LUGIA
 	const HO_OH
 	const CELEBI
+	const PHANCERO
 
 EGG EQU 253
 
