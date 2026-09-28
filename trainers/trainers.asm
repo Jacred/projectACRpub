@@ -488,23 +488,23 @@ Rival1Group:
 	; Battle 1 - Cherrygrove City (1-3)
 	db "???@"
 	db 0
-	db 10, SPEAROW
+	db 11, SPEAROW
 	db 12, ELEKID
-	db 14, CHIKORITA ; hyper potion target
+	db 13, CHIKORITA ; hyper potion target
 	db $ff ; end
 
 	db "???@"
 	db 0
-	db 10, SPEAROW
+	db 11, SPEAROW
 	db 12, ELEKID
-	db 14, CYNDAQUIL ; hyper potion target
+	db 13, CYNDAQUIL ; hyper potion target
 	db $ff ; end
 
 	db "???@"
 	db 0
-	db 10, SPEAROW
+	db 11, SPEAROW
 	db 12, ELEKID
-	db 14, TOTODILE ; hyper potion target
+	db 13, TOTODILE ; hyper potion target
 	db $ff ; end
 
 	; Battle 2 - Sprout Tower (4-6)
