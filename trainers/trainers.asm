@@ -11460,20 +11460,15 @@ BoarderGroup:
 
 
 PokefanMGroup:
-; ================================
-; ================
-
 	; POKEFANM (1)
 	db "WILLIAM@" ; National Park
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-	db 22, SKARMORY, GOLD_BERRY ; super potion target
+	db 22, SKARMORY, GOLD_BERRY
 		db PURSUIT
 		db MUD_SLAP
 		db FLASH_CANNON
 		db FURY_CUTTER
 	db $ff ; end
-
-; ================
 
 	; POKEFANM (2)
 	db "DEREK@" ; Route 39
@@ -11495,25 +11490,21 @@ PokefanMGroup:
 		db TAKE_DOWN
 	db $ff ; end
 
-; ================
-
 	; POKEFANM (3)
 	db "ROBERT@" ; Route 10
 	db (1 << TRAINERTYPE_ITEM)
-	db 57, CUBONE, THICK_CLUB ; super potion target
+	db 57, CUBONE, THICK_CLUB
 	db $ff ; end
-
-; ================
 
 	; POKEFANM (4)
 	db "JOSHUA@" ; Route 13
 	db (1 << TRAINERTYPE_MOVES)
-	db 51, TENTACRUEL
+	db 52, TENTACRUEL
 		db WATERFALL
 		db SURF
 		db HIDDEN_POWER
 		db 0
-	db 50, GRAVELER
+	db 51, GRAVELER
 		db STRENGTH
 		db DOUBLE_EDGE
 		db ROCK_THROW
@@ -11523,14 +11514,12 @@ PokefanMGroup:
 		db SLUDGE_BOMB
 		db SLEEP_POWDER
 		db GIGA_DRAIN
-	db 52, AZUMARILL ; super potion target
+	db 53, AZUMARILL ; super potion target
 		db ROLLOUT
 		db STRENGTH
 		db SURF
 		db ROCK_SMASH
 	db $ff ; end
-
-; ================
 
 	; POKEFANM (5)
 	db "CARTER@" ; Route 14
@@ -11552,74 +11541,64 @@ PokefanMGroup:
 		db NASTY_PLOT
 	db $ff ; end
 
-; ================
-
 	; POKEFANM (6)
 	db "TREVOR@" ; Route 14
 	db (1 << TRAINERTYPE_ITEM)
 	db 55, BUTTERFREE, LEFTOVERS ; super potion target
 	db $ff ; end
 
-; ================
-
 	; POKEFANM (7)
 	db "BRANDON@" ; Route 34
 	db (1 << TRAINERTYPE_MOVES)
-	db 20, CLEFFA ; super potion target
+	db 20, CLEFFA
 		db SWEET_KISS
 		db MINIMIZE
 		db PLAY_ROUGH
 		db SOFTBOILED
-	db 20, SMOOCHUM ; super potion target
+	db 20, SMOOCHUM
 		db NIGHTMARE
 		db POWDER_SNOW
 		db DREAM_EATER
 		db LOVELY_KISS
-	db 20, PICHU ; super potion target
+	db 20, PICHU
 		db SWEET_KISS
 		db THUNDER_WAVE
 		db DIZZY_PUNCH
 		db WILD_CHARGE
-	db 20, IGGLYBUFF ; super potion target
+	db 20, IGGLYBUFF
 		db SWEET_KISS
 		db FAINT_ATTACK
 		db DIZZY_PUNCH
 		db MEGA_KICK
-	db 20, MAGBY ; super potion target
+	db 20, MAGBY
 		db CONFUSE_RAY
 		db FIRE_SPIN
 		db FOCUS_ENERGY
 		db SUNNY_DAY
-	db 20, ELEKID ; super potion target
+	db 20, ELEKID
 		db MEDITATE
 		db SPARK
 		db ROLLING_KICK
 		db FIRE_PUNCH
 	db $ff ; end
 
-; ================
-
 	; POKEFANM (8)
 	db "JEREMY@" ; Fast Ship
 	db (1 << TRAINERTYPE_ITEM)
-	db 54, HOOTHOOT, FOCUS_BAND ; super potion target
-	db 54, HOPPIP, FOCUS_BAND ; super potion target
-	db 54, WOOPER, FOCUS_BAND ; super potion target
+	db 55, HOOTHOOT, FOCUS_BAND
+	db 55, HOPPIP, FOCUS_BAND
+	db 55, WOOPER, FOCUS_BAND
 	db $ff ; end
-
-; ================
 
 	; POKEFANM (9)
 	db "COLIN@" ; Fast Ship
 	db (1 << TRAINERTYPE_MOVES)
-	db 56, DELIBIRD ; super potion target
+	db 56, DELIBIRD
 		db PRESENT
 		db AURORA_BEAM
 		db SEED_BOMB
 		db DESTINY_BOND
 	db $ff ; end
-
-; ================
 
 	; POKEFANM (10) ; unused?
 	db "DEREK@"
@@ -11627,53 +11606,36 @@ PokefanMGroup:
 	db 19, PIKACHU, BERRY
 	db $ff ; end
 
-; ================
-
 	; POKEFANM (11) ; unused?
 	db "DEREK@"
 	db (1 << TRAINERTYPE_ITEM)
 	db 36, PIKACHU, BERRY
 	db $ff ; end
 
-; ================
-
 	; POKEFANM (12)
 	db "ALEX@" ; Route 13
 	db (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_NICKNAME)
-	db 77, MAGIKARP, FOCUS_BAND, "KOIKING@" ; super potion target
+	db 77, MAGIKARP, FOCUS_BAND, "KOIKING@"
 	db $ff ; end
-
-; ================
 
 	; POKEFANM (13)
 	db "REX@" ; Route 6
 	db 0
-	db 52, PONYTA ; super potion target
+	db 53, PONYTA
 	db $ff ; end
-
-; ================
 
 	; POKEFANM (14)
 	db "ALLAN@" ; Route 6
 	db 0
-	db 52, BELLSPROUT ; super potion target
+	db 53, BELLSPROUT
 	db $ff ; end
 
-; ================
-; ================================
-
-
 KimonoGirlGroup:
-; ================================
-; ================
-
 	; KIMONO_GIRL (1) ; unused
 	db "SAYO@"
 	db 0
 	db 17, EEVEE
 	db $ff ; end
-
-; ================
 
 	; KIMONO_GIRL (2)
 	db "NAOKO@"
@@ -11705,14 +11667,7 @@ KimonoGirlGroup:
 	db 38, JOLTEON, KINGS_ROCK, "SATSUKI@"
 	db $ff ; end
 
-; ================
-; ================================
-
-
 TwinsGroup:
-; ================================
-; ================
-
 	; TWINS (1)
 	db "AMY & MAY@" ; Azalea Gym
 	db (1 << TRAINERTYPE_MOVES)
@@ -11727,8 +11682,6 @@ TwinsGroup:
 		db PSYBEAM
 		db BIDE
 	db $ff ; end
-
-; ================
 
 	; TWINS (2)
 	db "ANN & ANNE@" ; Route 37
@@ -11760,8 +11713,6 @@ TwinsGroup:
 		db PLAY_ROUGH
 	db $ff ; end
 
-; ================
-
 	; TWINS (4)
 	db "AMY & MAY@" ; Azalea Gym
 	db (1 << TRAINERTYPE_MOVES)
@@ -11777,8 +11728,6 @@ TwinsGroup:
 		db TWINEEDLE
 	db $ff ; end
 
-; ================
-
 	; TWINS (5)
 	db "JO & ZOE@" ; Celadon Gym
 	db 0
@@ -11793,8 +11742,6 @@ TwinsGroup:
 	db 56, BULBASAUR
 	db $ff ; end
 
-; ================
-
 	; TWINS (7)
 	db "MEG & PEG@" ; Fast Ship
 	db 0
@@ -11808,8 +11755,6 @@ TwinsGroup:
 	db 50, MARILL
 	db 50, WOOPER
 	db $ff ; end
-
-; ================
 
 	; TWINS (9)
 	db "LEA & PIA@" ; Dragon's Den
@@ -11841,55 +11786,42 @@ TwinsGroup:
 		db IRON_HEAD
 	db $ff ; end
 
-; ================
-; ================================
-
-
 PokefanFGroup:
-; ================================
-; ================
-
 	; POKEFANF (1)
 	db "BEVERLY@" ; National Park
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-	db 22, KANGASKHAN, GOLD_BERRY ; super potion target
+	db 22, KANGASKHAN, GOLD_BERRY
 		db FOCUS_ENERGY
 		db REVERSAL
 		db BITE
 		db TAKE_DOWN
 	db $ff ; end
 
-; ================
-
 	; POKEFANF (2)
 	db "RUTH@" ; Route 39
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_NICKNAME)
-	db 28, AMPHAROS, "SPARKLE@" ; super potion target
+	db 27, AMPHAROS, "SPARKLE@"
 		db HEAL_BELL
 		db SPARK
 		db LIGHT_SCREEN
 		db DRAGONBREATH
 	db $ff ; end
 
-; ================
-
 	; POKEFANF (3)
 	db "BEVERLY@" ; National Park
 	db (1 << TRAINERTYPE_ITEM)
-	db 45, KANGASKHAN, GOLD_BERRY ; super potion target
+	db 45, KANGASKHAN, GOLD_BERRY
 	db $ff ; end
 
 	; POKEFANF (4)
 	db "BEVERLY@" ; National Park
 	db (1 << TRAINERTYPE_ITEM)
-	db 60, KANGASKHAN, GOLD_BERRY ; super potion target
+	db 60, KANGASKHAN, GOLD_BERRY
 	db $ff ; end
-
-; ================
 
 	; POKEFANF (5)
 	db "GEORGIA@" ; Fast Ship
-	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
+	db (1 << TRAINERTYPE_MOVES)
 	db 50, SENTRET, GOLD_BERRY
 		db FIRE_PUNCH
 		db THUNDERPUNCH
@@ -11900,17 +11832,17 @@ PokefanFGroup:
 		db THUNDERPUNCH
 		db ICE_PUNCH
 		db DOUBLE_EDGE
-	db 51, SENTRET, FOCUS_BAND
+	db 52, SENTRET, FOCUS_BAND
 		db FIRE_PUNCH
 		db THUNDERPUNCH
 		db ICE_PUNCH
 		db DOUBLE_EDGE
-	db 51, SENTRET, POLKADOT_BOW
+	db 52, SENTRET, POLKADOT_BOW
 		db FIRE_PUNCH
 		db THUNDERPUNCH
 		db ICE_PUNCH
 		db DOUBLE_EDGE
-	db 52, SENTRET, GOLD_BERRY
+	db 54, SENTRET, GOLD_BERRY
 		db FIRE_PUNCH
 		db THUNDERPUNCH
 		db ICE_PUNCH
@@ -11922,99 +11854,85 @@ PokefanFGroup:
 		db DOUBLE_EDGE
 	db $ff ; end
 
-; ================
-
 	; POKEFANF (6)
 	db "JAIME@" ; Route 39
 	db (1 << TRAINERTYPE_ITEM)
-	db 40, MEOWTH, AMULET_COIN ; super potion target
+	db 40, MEOWTH, AMULET_COIN
 	db $ff ; end
-
-; ================
 
 	; POKEFANF (7)
 	db "DELIA@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_NICKNAME) | (1 << TRAINERTYPE_MAXXP)
-	db 70, MR__MIME, GOLD_BERRY, "MIMEY@" ; super potion target
+	db 70, MR__MIME, GOLD_BERRY, "MIMEY@"
 		db PSYCHIC_M
 		db DYNAMICPUNCH
 		db BARRIER
 		db SUBSTITUTE
 	db $ff ; end
 
-; ================================
-
-
-
-
 RedGroup:
-; ================================
-; ================
-
-	; RED (1)
 	db "???@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_NICKNAME)
-	db 100, ZAPDOS, BRIGHTPOWDER, "AA-j@" ; full restore target
+	db 95, ZAPDOS, BRIGHTPOWDER, "AA-j@"
 		db THUNDERBOLT
 		db DRILL_PECK
 		db RAIN_DANCE
 		db THUNDER
-	db 100, NIDOKING, SCOPE_LENS, "AAAAAAAAAA@" ; full restore target
+	db 95, NIDOKING, SCOPE_LENS, "AAAAAAAAAA@"
 		db POISON_JAB
 		db DRILL_RUN
 		db THUNDERBOLT
 		db ICE_BEAM
-	db 100, OMASTAR, LEFTOVERS, "OMASTAR@" ; full restore target
+	db 95, OMASTAR, LEFTOVERS, "OMASTAR@"
 		db HYDRO_PUMP
 		db ANCIENTPOWER
-		db PROTECT
 		db METRONOME
-	db 100, VENOMOTH, SILVERPOWDER, "AATTVVV@" ; full restore target
+		db PROTECT
+	db 95, VENOMOTH, SILVERPOWDER, "AATTVVV@"
 		db LEECH_LIFE
 		db BLIZZARD
 		db ROLLOUT
 		db TOXIC
-	db 100, LAPRAS, GOLD_BERRY, "AIIIIIIRRR@" ; full restore target
+	db 95, LAPRAS, GOLD_BERRY, "AIIIIIIRRR@"
 		db SURF
 		db ICE_BEAM
 		db BODY_SLAM
 		db CONFUSE_RAY
-	db 100, PIDGEOT, POWER_HERB, "aaabaaajss@" ; full restore target
+	db 95, PIDGEOT, POWER_HERB, "aaabaaajss@"
 		db AIR_SLASH
 		db EXTREMESPEED
 		db FLASH
 		db SKY_ATTACK
 	db $ff ; end
 
-	; RED (2)
 	db "RED@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-	db 100, PIKACHU, LIGHT_BALL ; full restore target
+	db 100, PIKACHU, LIGHT_BALL
 		db THUNDERBOLT
 		db IRON_TAIL
 		db SURF
 		db FLY
-	db 100, ESPEON, GOLD_BERRY ; full restore target
+	db 100, ESPEON, GOLD_BERRY
 		db PSYCHIC_M
 		db SURF
 		db THUNDERBOLT
 		db FLAMETHROWER
-	db 100, SNORLAX, MINT_BERRY ; full restore target
+	db 100, SNORLAX, MINT_BERRY
 		db STRENGTH
 		db EARTHQUAKE
 		db CRUNCH
 		db REST
-	db 100, BLASTOISE, BLACKGLASSES ; full restore target
-		db HYDRO_PUMP
+	db 100, BLASTOISE, BLACKGLASSES
+		db SURF
 		db DARK_PULSE
 		db BLIZZARD
-		db SURF
-	db 100, VENUSAUR, POWER_HERB ; full restore target
-		db SOLARBEAM
+		db HYDRO_PUMP
+	db 100, VENUSAUR, POWER_HERB
+		db GIGA_DRAIN
 		db SLUDGE_BOMB
 		db EARTH_POWER
-		db GIGA_DRAIN
-	db 100, CHARIZARD, MIRACLEBERRY ; full restore target
+		db SOLARBEAM
+	db 100, CHARIZARD, MIRACLEBERRY
 		db FLAMETHROWER
 		db FLY
 		db OUTRAGE
@@ -12026,10 +11944,6 @@ RedGroup:
 
 
 BlueGroup:
-; ================================
-; ================
-
-	; BLUE (1)
 	db "BLUE@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
 	db 78, PIDGEOT, GOLD_BERRY
@@ -12064,55 +11978,46 @@ BlueGroup:
 		db FLARE_BLITZ
 	db $ff ; end
 
-	; BLUE (2)
 	db "BLUE@" ; rematch
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-	db 100, SANDSLASH, FOCUS_BAND ; full restore target
+	db 100, SANDSLASH, FOCUS_BAND
 		db EARTHQUAKE
 		db POISON_JAB
 		db ROCK_SLIDE
 		db SWORDS_DANCE
-	db 100, ALAKAZAM, MIRACLEBERRY ; full restore target
+	db 100, ALAKAZAM, MIRACLEBERRY
 		db PSYCHIC_M
 		db SHADOW_BALL
 		db FOCUS_BLAST
 		db REFLECT
-	db 100, EXEGGUTOR, QUICK_CLAW ; full restore target
+	db 100, EXEGGUTOR, QUICK_CLAW
 		db GIGA_DRAIN
 		db PSYCHIC_M
 		db SLUDGE_BOMB
 		db SLEEP_POWDER
-	db 100, GYARADOS, SCOPE_LENS ; full restore target
+	db 100, GYARADOS, SCOPE_LENS
 		db WATERFALL
 		db CRUNCH
 		db BLIZZARD
 		db EARTHQUAKE
-	db 100, ARCANINE, KINGS_ROCK ; full restore target
+	db 100, ARCANINE, KINGS_ROCK
 		db FLARE_BLITZ
 		db WILD_CHARGE
 		db SUBMISSION
 		db EXTREMESPEED
-	db 100, UMBREON, BRIGHTPOWDER ; full restore target
+	db 100, UMBREON, BRIGHTPOWDER
 		db DARK_PULSE
 		db DOUBLE_TEAM
 		db FLASH
 		db TOXIC
 	db $ff ; end
 
-; ================
-; ================================
-
-
 OfficerGroup:
-; ================================
-
 	; OFFICER (1)
 	db "KEITH@" ; Route 34
 	db (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
 	db 28, GRANBULL, KINGS_ROCK
 	db $ff ; end
-
-; ================
 
 	; OFFICER (2)
 	db "DIRK@" ; Route 35
@@ -12120,8 +12025,6 @@ OfficerGroup:
 	db 30, GROWLITHE
 	db 30, URSARING
 	db $ff ; end
-
-; ================
 
 	; OFFICER (3)
 	db "JOHNSON@" ; League Reception Gate
@@ -12133,12 +12036,7 @@ OfficerGroup:
 		db 0
 	db $ff ; end
 
-; ================================
-
-
 GruntFGroup:
-; ================================
-
 	; GRUNTF (1)
 	db "GRUNT@" ; Slowpoke Well
 	db (1 << TRAINERTYPE_MOVES)
@@ -12158,8 +12056,6 @@ GruntFGroup:
 		db FIRE_SPIN
 		db HEADBUTT
 	db $ff ; end
-
-; ================
 
 	; GRUNTF (2)
 	db "GRUNT@" ; Goldenrod Radio Tower
@@ -12181,8 +12077,6 @@ GruntFGroup:
 		db DOUBLE_EDGE
 	db $ff ; end
 
-; ================
-
 	; GRUNTF (3)
 	db "GRUNT@" ; Goldenrod Tunnel
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -12192,8 +12086,6 @@ GruntFGroup:
 		db HEADBUTT
 		db IRON_TAIL
 	db $ff ; end
-
-; ================
 
 	; GRUNTF (4)
 	db "GRUNT@" ; Goldenrod Radio Tower
@@ -12210,8 +12102,6 @@ GruntFGroup:
 		db REVERSAL
 	db $ff ; end
 
-; ================
-
 	; GRUNTF (5)
 	db "GRUNT@" ; Team Rocket Base
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -12227,9 +12117,8 @@ GruntFGroup:
 		db MEGA_KICK
 	db $ff ; end
 
-; ================
-
-	db "GRUNT@" ; Mt. Moon, final floor
+	; GRUNTF (6)
+	db "GRUNT@" ; Mt. Moon
 	db (1 << TRAINERTYPE_MOVES) 
 	db 13, MEOWTH
 		db SCRATCH
@@ -12238,13 +12127,8 @@ GruntFGroup:
 		db PAY_DAY
 	db $ff
 
-; ================================
-
 MysticalmanGroup:
-; ================================
-
-	; LORESEEKER (1)
-	db "EUSINE@" ; burned tower
+	db "EUSINE@" ; Battle 1 - Burned Tower
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_MAXXP)
 	db 23, DROWZEE
 		db HYPNOSIS
@@ -12263,33 +12147,31 @@ MysticalmanGroup:
 		db THUNDER
 	db $ff ; end
 
-	; LORESEEKER (2)
-	db "EUSINE@" ; cianwood city
+	db "EUSINE@" ; Battle 2 - Ecruteak City
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-	db 37, SKARMORY, LEFTOVERS ; hyper potion target
+	db 37, SKARMORY, LEFTOVERS
 		db COUNTER
 		db AIR_SLASH
 		db SPIKES
 		db WHIRLWIND
-	db 37, HAUNTER, BRIGHTPOWDER ; hyper potion target
+	db 37, HAUNTER, BRIGHTPOWDER
 		db NIGHTMARE
 		db HYPNOSIS
 		db SLUDGE_BOMB
 		db PAIN_SPLIT
-	db 37, PORYGON2, POLKADOT_BOW ; hyper potion target
+	db 37, PORYGON2, POLKADOT_BOW
 		db SWIFT
 		db PSYBEAM
 		db DEFENSE_CURL
 		db RECOVER
 	db $ff ; end
 
-	; LORESEEKER (3)
-	db "EUSINE@" ; tin tower
+	db "EUSINE@" ; Battle 3 - Tin Tower
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
 	db 53, NOCTOWL, SLEEP_GUARD
 		db FLY
-		db DREAM_EATER
 		db HYPNOSIS
+		db DREAM_EATER
 		db NIGHTMARE
 	db 50, HYPNO, BRIGHTPOWDER
 		db ZEN_HEADBUTT
