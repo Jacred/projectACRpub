@@ -10873,9 +10873,6 @@ CamperGroup:
 
 
 ExecutiveFGroup:
-; ================================
-; ================
-
 	; EXECUTIVEF (1)
 	db "ATHENA@" ; radio tower
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -10896,8 +10893,6 @@ ExecutiveFGroup:
 		db ROAR
 	db $ff ; end
 
-; ================
-
 	; EXECUTIVEF (2)
 	db "ATHENA@" ; team rocket base
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
@@ -10911,21 +10906,14 @@ ExecutiveFGroup:
 		db RAZOR_LEAF
 		db SLEEP_POWDER
 		db SUNNY_DAY
-	db 32, GRANBULL, KINGS_ROCK ; hyper potion target
+	db 33, GRANBULL, KINGS_ROCK ; hyper potion target
 		db REFLECT
 		db DIZZY_PUNCH
 		db SUPER_FANG
 		db FAINT_ATTACK
 	db $ff ; end
 
-; ================
-; ================================
-
-
 SageGroup:
-; ================================
-; ================
-
 	; SAGE (1)
 	db "CHOW@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10934,7 +10922,7 @@ SageGroup:
 		db SLAM
 		db RAZOR_LEAF
 		db ACID
-	db 11, HOUNDOUR
+	db 12, HOUNDOUR
 		db PURSUIT
 		db ROAR
 		db SPITE
@@ -10946,8 +10934,6 @@ SageGroup:
 		db ACID
 	db $ff ; end
 
-; ================
-
 	; SAGE (2)
 	db "NICO@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10956,7 +10942,7 @@ SageGroup:
 		db SLAM
 		db RAZOR_LEAF
 		db ACID
-	db 11, ZUBAT
+	db 12, ZUBAT
 		db LEECH_LIFE
 		db GUST
 		db FAINT_ATTACK
@@ -10968,8 +10954,6 @@ SageGroup:
 		db ACID
 	db $ff ; end
 
-; ================
-
 	; SAGE (3)
 	db "JIN@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10979,8 +10963,6 @@ SageGroup:
 		db GROWTH
 		db SWAGGER
 	db $ff ; end
-
-; ================
 
 	; SAGE (4)
 	db "TROY@"
@@ -11007,8 +10989,6 @@ SageGroup:
 		db FLAIL
 	db $ff ; end
 
-; ================
-
 	; SAGE (5)
 	db "JEFFREY@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -11018,8 +10998,6 @@ SageGroup:
 		db ICE_BEAM
 		db METAL_CLAW
 	db $ff ; end
-
-; ================
 
 	; SAGE (6)
 	db "PING@"
@@ -11041,8 +11019,6 @@ SageGroup:
 		db PROTECT
 	db $ff ; end
 
-; ================
-
 	; SAGE (7)
 	db "EDMOND@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -11051,7 +11027,7 @@ SageGroup:
 		db SLAM
 		db RAZOR_LEAF
 		db ACID
-	db 11, HOOTHOOT
+	db 12, HOOTHOOT
 		db PECK
 		db HYPNOSIS
 		db TAKE_DOWN
@@ -11063,15 +11039,11 @@ SageGroup:
 		db ACID
 	db $ff ; end
 
-; ================
-
 	; SAGE (8)
 	db "NEAL@"
 	db 0
 	db 14, WEEPINBELL
 	db $ff ; end
-
-; ================
 
 	; SAGE (9)
 	db "ELDER LI@"
@@ -11092,8 +11064,6 @@ SageGroup:
 		db WING_ATTACK
 		db SUPERSONIC
 	db $ff ; end
-
-; ================
 
 	; SAGE (10)
 	db "GAKU@"
@@ -11154,8 +11124,6 @@ SageGroup:
 		db REST
 		db HYDRO_PUMP
 	db $ff ; end
-
-; ================
 
 	db "ZEKE@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -11229,8 +11197,6 @@ SageGroup:
 		db THUNDER_WAVE
 	db $ff ; end
 
-; ================
-
 	; SAGE (16)
 	db "MASTER@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -11261,12 +11227,7 @@ SageGroup:
 		db HYPER_BEAM
 	db $ff ; end
 
-; ================
-
 MediumGroup:
-; ================================
-; ================
-
 	; MEDIUM (1)
 	db "MARTHA@" ; Ecruteak Gym
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
@@ -11277,8 +11238,6 @@ MediumGroup:
 		db SAND_ATTACK
 	db $ff ; end
 
-; ================
-
 	; MEDIUM (2)
 	db "GRACE@" ; Ecruteak Gym
 	db (1 << TRAINERTYPE_MOVES)
@@ -11287,14 +11246,12 @@ MediumGroup:
 		db STEEL_WING
 		db NIGHT_SHADE
 		db FAINT_ATTACK
-	db 28, MURKROW
+	db 27, MURKROW
 		db WING_ATTACK
 		db STEEL_WING
 		db NIGHT_SHADE
 		db FAINT_ATTACK
 	db $ff ; end
-
-; ================
 
 	; MEDIUM (3) ; unused
 	db "BETHANY@"
@@ -11314,8 +11271,6 @@ MediumGroup:
 	db 25, HAUNTER
 	db $ff ; end
 
-; ================
-
 	; MEDIUM (6)
 	db "REBECCA@" ; Saffron Gym
 	db (1 << TRAINERTYPE_MOVES)
@@ -11330,8 +11285,6 @@ MediumGroup:
 		db NASTY_PLOT
 		db DAZZLINGLEAM
 	db $ff ; end
-
-; ================
 
 	; MEDIUM (7)
 	db "DORIS@" ; Saffron Gym
@@ -11352,8 +11305,6 @@ MediumGroup:
 		db BUBBLEBEAM
 		db TRI_ATTACK
 	db $ff ; end
-
-; ================
 
 	db "MARTHA@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
@@ -11393,14 +11344,7 @@ MediumGroup:
 		db COUNTER
 	db $ff ; end
 
-; ================
-; ================================
-
-
 BoarderGroup:
-; ================================
-; ================
-
 	; BOARDER (1)
 	db "RONALD@" ; Mahogany Gym
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -11416,8 +11360,6 @@ BoarderGroup:
 		db ICY_WIND
 	db $ff ; end
 
-; ================
-
 	; BOARDER (2)
 	db "BRAD@" ; Mahogany Gym
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -11432,8 +11374,6 @@ BoarderGroup:
 		db HORN_ATTACK
 		db HAZE
 	db $ff ; end
-
-; ================
 
 	; BOARDER (3)
 	db "DOUGLAS@" ; Mahogany Gym
@@ -11454,10 +11394,6 @@ BoarderGroup:
 		db SPIKES
 		db CLAMP
 	db $ff ; end
-
-; ================
-; ================================
-
 
 PokefanMGroup:
 	; POKEFANM (1)
