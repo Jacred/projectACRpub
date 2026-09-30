@@ -9039,9 +9039,6 @@ BikerGroup:
 
 
 BlaineGroup:
-; ================================
-; ================
-
 	; BLAINE (1)
 	db "BLAINE@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
@@ -9078,7 +9075,7 @@ BlaineGroup:
 	db $ff ; end
 
 	; BLAINE (2)
-	db "BLAINE@"
+	db "BLAINE@" ; rematch
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
 	db 100, RAPIDASH, CHARCOAL
 		db FLARE_BLITZ
@@ -9112,14 +9109,7 @@ BlaineGroup:
 		db WILLOWISP
 	db $ff
 
-; ================
-; ================================
-
-
 BurglarGroup:
-; ================================
-; ================
-
 	; BURGLAR (1)
 	db "DUNCAN@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -9140,8 +9130,6 @@ BurglarGroup:
 		db FLAMETHROWER
 	db $ff ; end
 
-; ================
-
 	; BURGLAR (2)
 	db "EDDIE@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -9151,8 +9139,6 @@ BurglarGroup:
 		db ROLLOUT
 		db DEFENSE_CURL
 	db $ff ; end
-
-; ================
 
 	; BURGLAR (3)
 	db "COREY@"
@@ -9178,8 +9164,6 @@ BurglarGroup:
 		db DOUBLE_EDGE
 		db EARTHQUAKE
 	db $ff ; end
-
-; ================
 
 	; BURGLAR (4)
 	db "SIMON@" ; azalea gym
@@ -9314,67 +9298,58 @@ BurglarGroup:
 	; BURGLAR (9)
 	db "SIMON@" ; rocket hideout ruins
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
-	db 96, HOUNDOOM, BLACKGLASSES
+	db 91, HOUNDOOM, BLACKGLASSES
 		db NASTY_PLOT
 		db DARK_PULSE
 		db HEAT_WAVE
 		db DESTINY_BOND
-	db 96, WEEZING, LEFTOVERS
+	db 91, WEEZING, LEFTOVERS
 		db SLUDGE_BOMB
 		db WILLOWISP
 		db PROTECT
 		db EXPLOSION
-	db 95, MURKROW, SHARP_BEAK
+	db 91, MURKROW, SHARP_BEAK
 		db DRILL_PECK
 		db DARK_PULSE
 		db PERISH_SONG
 		db CONFUSE_RAY
-	db 96, MUK, CHARCOAL
+	db 91, MUK, CHARCOAL
 		db REST
 		db SLEEP_TALK
 		db GUNK_SHOT
 		db FIRE_PUNCH
-	db 96, ARCANINE, CONFUSEGUARD
+	db 91, ARCANINE, CONFUSEGUARD
 		db ROAR
 		db SUNNY_DAY
 		db FLAMETHROWER
 		db OUTRAGE
-	db 100, NINETALES, GOLD_BERRY ; drink target
+	db 95, NINETALES, GOLD_BERRY ; drink target
 		db DARK_PULSE
 		db NASTY_PLOT
 		db FIRE_BLAST
 		db HYPNOSIS
 	db $ff ; end
 
-; ================
-; ================================
-
-
 FirebreatherGroup:
-; ================================
-; ================
-
 	; FIREBREATHER (1)
 	db "OTIS@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_MAXXP)
-	db 57, GYARADOS
+	db 58, GYARADOS
 		db FLAMETHROWER
 		db 0
 		db 0
 		db 0
-	db 57, OCTILLERY
+	db 58, OCTILLERY
 		db FLAMETHROWER
 		db 0
 		db 0
 		db 0
-	db 57, SLOWBRO
+	db 58, SLOWBRO
 		db FIRE_BLAST
 		db THUNDER_WAVE
 		db FUTURE_SIGHT
 		db PROTECT
 	db $ff ; end
-
-; ================
 
 	; FIREBREATHER (2)
 	db "DICK@"
@@ -9390,8 +9365,6 @@ FirebreatherGroup:
 		db SEISMIC_TOSS
 		db FIRE_PUNCH
 	db $ff ; end
-
-; ================
 
 	; FIREBREATHER (3)
 	db "NED@"
@@ -9413,24 +9386,20 @@ FirebreatherGroup:
 		db SUPER_FANG
 	db $ff ; end
 
-; ================
-
 	; FIREBREATHER (4)
 	db "BURT@"
 	db (1 << TRAINERTYPE_MOVES)
-	db 58, CHARMELEON ; x sp.atk target
+	db 58, CHARMELEON
 		db FLAMETHROWER
 		db CRUNCH
 		db IRON_TAIL
 		db SWORDS_DANCE
-	db 58, QUILAVA ; x sp.atk target
+	db 58, QUILAVA
 		db FLAMETHROWER
 		db WILD_CHARGE
 		db SUBMISSION
 		db DOUBLE_EDGE
 	db $ff ; end
-
-; ================
 
 	; FIREBREATHER (5)
 	db "BILL@"
@@ -9447,8 +9416,6 @@ FirebreatherGroup:
 		db HEADBUTT
 	db $ff ; end
 
-; ================
-
 	; FIREBREATHER (6)
 	db "WALT@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -9464,8 +9431,6 @@ FirebreatherGroup:
 		db HEADBUTT
 	db $ff ; end
 
-; ================
-
 	; FIREBREATHER (7)
 	db "RAY@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -9475,8 +9440,6 @@ FirebreatherGroup:
 		db ACID_ARMOR
 		db RECOVER
 	db $ff ; end
-
-; ================
 
 	; FIREBREATHER (8)
 	db "LYLE@"
@@ -9498,14 +9461,7 @@ FirebreatherGroup:
 		db DOUBLE_EDGE
 	db $ff ; end
 
-; ================
-; ================================
-
-
 JugglerGroup:
-; ================================
-; ================
-
 	; JUGGLER (1)
 	db "IRWIN@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -9536,8 +9492,6 @@ JugglerGroup:
 		db THUNDERPUNCH
 	db $ff ; end
 
-; ================
-
 	; JUGGLER (2)
 	db "FRITZ@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -9558,8 +9512,6 @@ JugglerGroup:
 		db SAFEGUARD
 	db $ff ; end
 
-; ================
-
 	; JUGGLER (3)
 	db "HORTON@"
 	db (1 << TRAINERTYPE_ITEM)
@@ -9579,17 +9531,12 @@ JugglerGroup:
 	db $ff ; end
 
 BlackbeltGroup:
-; ================================
-; ================
-
 	; BLACKBELT_T (1)
 	db "KENJI@"
 	db 0
 	db 80, HITMONLEE
 	db 84, HERACROSS ; x attack target
 	db $ff ; end
-
-; ================
 
 	; BLACKBELT_T (2)
 	db "YOSHI@"
@@ -9600,8 +9547,6 @@ BlackbeltGroup:
 		db AGILITY
 		db POISON_JAB
 	db $ff ; end
-
-; ================
 
 	; BLACKBELT_T (3)
 	db "KENJI@"
@@ -9614,8 +9559,6 @@ BlackbeltGroup:
 	db 99, HITMONTOP ; x attack target
 	db $ff ; end
 
-; ================
-
 	; BLACKBELT_T (4)
 	db "LAO@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -9625,8 +9568,6 @@ BlackbeltGroup:
 		db ICE_PUNCH
 		db FIRE_PUNCH
 	db $ff ; end
-
-; ================
 
 	; BLACKBELT_T (5)
 	db "NOB@"
@@ -9643,8 +9584,6 @@ BlackbeltGroup:
 		db SUBMISSION
 	db $ff ; end
 
-; ================
-
 	; BLACKBELT_T (6)
 	db "KIYO@"
 	db (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
@@ -9653,8 +9592,6 @@ BlackbeltGroup:
 	db 68, HITMONCHAN, BLACKBELT
 	db 70, HITMONTOP, BLACKBELT ; x attack target
 	db $ff ; end
-
-; ================
 
 	; BLACKBELT_T (7)
 	db "LUNG@"
@@ -9671,8 +9608,6 @@ BlackbeltGroup:
 		db DRILL_RUN
 	db $ff ; end
 
-; ================
-
 	; BLACKBELT_T (8)
 	db "KENJI@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -9682,8 +9617,6 @@ BlackbeltGroup:
 		db BIDE
 		db COUNTER
 	db $ff ; end
-
-; ================
 
 	; BLACKBELT_T (9)
 	db "WAI@"
@@ -9704,8 +9637,6 @@ BlackbeltGroup:
 		db MEDITATE
 		db OUTRAGE
 	db $ff ; end
-
-; ================
 
 	; BLACKBELT_T (10)
 	db "KOICHI@"
@@ -9742,13 +9673,7 @@ BlackbeltGroup:
 		db CROSS_CHOP
 	db $ff
 
-; ================================
-
-
 ExecutiveMGroup:
-; ================================
-; ================
-
 	; EXECUTIVEM (1)
 	db "APOLLO@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
@@ -9773,8 +9698,6 @@ ExecutiveMGroup:
 		db SEISMIC_TOSS
 		db THRASH
 	db $ff ; end
-
-; ================
 
 	; EXECUTIVEM (2)
 	db "PROTON@"
@@ -9801,22 +9724,20 @@ ExecutiveMGroup:
 		db DARK_PULSE
 	db $ff ; end
 
-; ================
-
 	; EXECUTIVEM (3)
 	db "LAMBDA@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
-	db 40, MURKROW, BERSERK_GENE
+	db 41, MURKROW, BERSERK_GENE
 		db HEAT_WAVE
 		db HAZE
 		db DRILL_PECK
 		db MEAN_LOOK
-	db 41, MR__MIME, GOLD_BERRY
+	db 42, MR__MIME, GOLD_BERRY
 		db DAZZLINGLEAM
 		db BATON_PASS
 		db HYPNOSIS
 		db NASTY_PLOT
-	db 42, LICKITUNG, BERSERK_GENE
+	db 43, LICKITUNG, BERSERK_GENE
 		db SCREECH
 		db FIRE_PUNCH
 		db SHADOW_BALL
@@ -9827,8 +9748,6 @@ ExecutiveMGroup:
 		db EARTH_POWER
 		db RECOVER
 	db $ff ; end
-
-; ================
 
 	; EXECUTIVEM (4)
 	db "APOLLO@"
@@ -9855,34 +9774,26 @@ ExecutiveMGroup:
 		db HEADBUTT
 	db $ff ; end
 
-; ================
-
 	; EXECUTIVEM (5)
 	db "APOLLO@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_MAXXP)
-	db 50, LUGIA, BERSERK_GENE ; x attack target
+	db 50, LUGIA, BERSERK_GENE
 		db AEROBLAST
 		db WHIRLPOOL
 		db THUNDER
 		db DARK_PULSE
 	db $ff ; end
 
-
 PsychicGroup:
-; ================================
-; ================
-
 	; PSYCHIC_T (1)
 	db "NATHAN@"
 	db (1 << TRAINERTYPE_MOVES)
-	db 40, UNOWN ; x special target
+	db 40, UNOWN
 		db HIDDEN_POWER
 		db ANCIENTPOWER
 		db 0
 		db 0
 	db $ff ; end
-
-; ================
 
 	; PSYCHIC_T (2)
 	db "FRANKLIN@"
@@ -9909,48 +9820,40 @@ PsychicGroup:
 		db PSYCHIC_M
 	db $ff ; end
 
-; ================
-
 	; PSYCHIC_T (3)
 	db "HERMAN@"
 	db (1 << TRAINERTYPE_MOVES)
-	db 55, HYPNO ; x special target
+	db 55, HYPNO
 		db PSYCHIC_M
 		db NASTY_PLOT
 		db DAZZLINGLEAM
 		db BATON_PASS
 	db $ff ; end
 
-; ================
-
 	; PSYCHIC_T (4)
 	db "FIDEL@"
 	db (1 << TRAINERTYPE_MOVES)
-	db 56, DROWZEE ; x special target
+	db 56, DROWZEE
 		db ZEN_HEADBUTT
 		db HYPNOSIS
 		db NIGHTMARE
 		db DREAM_EATER
-	db 56, XATU ; x special target
+	db 57, XATU ; x special target
 		db PSYCHIC_M
 		db HEAT_WAVE
 		db PAIN_SPLIT
 		db AIR_SLASH
 	db $ff ; end
 
-; ================
-
 	; PSYCHIC_T (5)
 	db "GREG@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-	db 25, XATU, LEFTOVERS ; x special target
+	db 25, XATU, LEFTOVERS
 		db NIGHT_SHADE
 		db ZEN_HEADBUTT
 		db PROTECT
 		db FAINT_ATTACK
 	db $ff ; end
-
-; ================
 
 	; PSYCHIC_T (6)
 	db "NORMAN@"
@@ -9966,8 +9869,6 @@ PsychicGroup:
 		db CRUNCH
 		db AMNESIA
 	db $ff ; end
-
-; ================
 
 	; PSYCHIC_T (7)
 	db "MARK@"
@@ -9989,8 +9890,6 @@ PsychicGroup:
 		db HEADBUTT
 	db $ff ; end
 
-; ================
-
 	; PSYCHIC_T (8)
 	db "PHIL@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10011,19 +9910,15 @@ PsychicGroup:
 		db DAZZLINGLEAM
 	db $ff ; end
 
-; ================
-
 	; PSYCHIC_T (9)
 	db "RICHARD@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-	db 50, ALAKAZAM, BRIGHTPOWDER ; x special target
+	db 50, ALAKAZAM, BRIGHTPOWDER
 		db DAZZLINGLEAM
 		db PSYBEAM
 		db LIGHT_SCREEN
 		db HYPER_BEAM
 	db $ff ; end
-
-; ================
 
 	; PSYCHIC_T (10)
 	db "GILBERT@"
@@ -10045,8 +9940,6 @@ PsychicGroup:
 		db RECOVER
 	db $ff ; end
 
-; ================
-
 	; PSYCHIC_T (11)
 	db "JARED@"
 	db 0 ; normal
@@ -10058,46 +9951,37 @@ PsychicGroup:
 	db 55, UNOWN
 	db $ff ; end
 
-; ================
-
 	; PSYCHIC_T (12)
 	db "RODNEY@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-	db 55, ABRA, FOCUS_BAND
+	db 54, ABRA, FOCUS_BAND
 		db PSYWAVE
 		db LIGHT_SCREEN
 		db FOCUS_BLAST
 		db PSYCHIC_M
-	db 55, EXEGGCUTE, FOCUS_BAND
+	db 54, EXEGGCUTE, FOCUS_BAND
 		db HYPNOSIS
 		db DREAM_EATER
 		db SUNNY_DAY
 		db SOLARBEAM
-	db 55, DROWZEE, FOCUS_BAND
+	db 54, DROWZEE, FOCUS_BAND
 		db ZEN_HEADBUTT
 		db HYPNOSIS
 		db NIGHTMARE
 		db DREAM_EATER
-	db 55, UNOWN, FOCUS_BAND
+	db 54, UNOWN, FOCUS_BAND
 		db HIDDEN_POWER
 		db ANCIENTPOWER
 		db 0
 		db 0
-	db 57, MR__MIME, PINK_BOW ; x special target
+	db 58, MR__MIME, PINK_BOW ; x special target
 		db PSYCHIC_M
 		db MOONBLAST
 		db CONFUSE_RAY
 		db SAFEGUARD
 	db $ff ; end
 
-; ================
-; ================================
-
-
 PicnickerGroup:
-; ================================
-; ================
-
 	; PICNICKER (1)
 	db "LIZ@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10112,8 +9996,6 @@ PicnickerGroup:
 		db AQUA_JET
 		db BITE
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (2)
 	db "GINA@"
@@ -10135,8 +10017,6 @@ PicnickerGroup:
 		db LIGHT_SCREEN
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (3)
 	db "BROOKE@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10147,8 +10027,6 @@ PicnickerGroup:
 		db LEECH_SEED
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (4)
 	db "KIM@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10157,14 +10035,12 @@ PicnickerGroup:
 		db MORNING_SUN
 		db RAZOR_LEAF
 		db CURSE
-	db 23, BELLOSSOM
+	db 22, BELLOSSOM
 		db ENDURE
 		db FLAIL
 		db MEGA_DRAIN
 		db REFLECT
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (5)
 	db "CINDY@"
@@ -10175,8 +10051,6 @@ PicnickerGroup:
 		db POISON_JAB
 		db MOONLIGHT
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (6)
 	db "HOPE@"
@@ -10198,8 +10072,6 @@ PicnickerGroup:
 		db POISON_JAB
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (7)
 	db "SHARON@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10209,8 +10081,6 @@ PicnickerGroup:
 		db MOONBLAST
 		db SLUDGE_BOMB
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (8)
 	db "DEBRA@"
@@ -10232,8 +10102,6 @@ PicnickerGroup:
 		db AIR_SLASH
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (9)
 	db "GINA@"
 	db 0
@@ -10241,8 +10109,6 @@ PicnickerGroup:
 	db 41, GLOOM
 	db 41, CHIKORITA
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (10)
 	db "ERIN@"
@@ -10264,8 +10130,6 @@ PicnickerGroup:
 		db CROSS_CHOP
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (11)
 	db "LIZ@"
 	db 0
@@ -10279,8 +10143,6 @@ PicnickerGroup:
 	db 41, NATU
 	db 41, CROCONAW
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (13)
 	db "HEIDI@"
@@ -10302,24 +10164,20 @@ PicnickerGroup:
 		db THUNDER
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (14)
 	db "EDNA@"
 	db (1 << TRAINERTYPE_MOVES)
-	db 55, PORYGON
+	db 56, PORYGON
 		db TRI_ATTACK
 		db ICE_BEAM
 		db MIND_READER
 		db ZAP_CANNON
-	db 57, WEEZING
+	db 56, WEEZING
 		db SLUDGE_BOMB
 		db FIRE_BLAST
 		db PROTECT
 		db WILLOWISP
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (15)
 	db "GINA@"
@@ -10328,8 +10186,6 @@ PicnickerGroup:
 	db 61, BAYLEEF
 	db 62, JUMPLUFF
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (16)
 	db "TIFFANY@"
@@ -10343,8 +10199,6 @@ PicnickerGroup:
 	db 89, CLEFAIRY
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (18)
 	db "ERIN@"
 	db 0 ; normal
@@ -10352,8 +10206,6 @@ PicnickerGroup:
 	db 83, ELEKID
 	db 83, MAGBY
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (19)
 	db "TANYA@"
@@ -10365,8 +10217,6 @@ PicnickerGroup:
 		db NIGHTMARE
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (20)
 	db "TIFFANY@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -10377,8 +10227,6 @@ PicnickerGroup:
 		db BELLY_DRUM
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (21)
 	db "ERIN@"
 	db 0
@@ -10386,8 +10234,6 @@ PicnickerGroup:
 	db 96, ELECTABUZZ
 	db 96, MAGMAR
 	db $ff ; end
-
-; ================
 
 	; PICNICKER (22)
 	db "LIZ@"
@@ -10405,8 +10251,6 @@ PicnickerGroup:
 	db 82, FERALIGATR
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (24)
 	db "GINA@"
 	db 0
@@ -10423,15 +10267,11 @@ PicnickerGroup:
 	db 95, MEGANIUM
 	db $ff ; end
 
-; ================
-
 	; PICNICKER (26)
 	db "TIFFANY@"
 	db 0
 	db 98, XATU
 	db $ff ; end
-
-; ================
 
 	db "KELSEY@" ; route 25
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | (1 << TRAINERTYPE_NICKNAME)
@@ -10446,8 +10286,6 @@ PicnickerGroup:
 		db FOCUS_ENERGY
 		db DOUBLE_KICK
 	db $ff
-
-; ================
 
 	db "GISELLE@" ; changed to lass
 	db 0
@@ -10493,13 +10331,7 @@ PicnickerGroup:
 		db REST
 	db $ff
 
-
-; ================================
-
 CamperGroup:
-; ================================
-; ================
-
 	; CAMPER (1)
 	db "ROLAND@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10525,8 +10357,6 @@ CamperGroup:
 		db CHARM
 	db $ff ; end
 
-; ================
-
 	; CAMPER (2)
 	db "TODD@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10541,8 +10371,6 @@ CamperGroup:
 		db AGILITY
 		db TWISTER
 	db $ff ; end
-
-; ================
 
 	; CAMPER (3)
 	db "IVAN@"
@@ -10564,12 +10392,10 @@ CamperGroup:
 		db SLASH
 	db $ff ; end
 
-; ================
-
 	; CAMPER (4)
 	db "ELLIOT@"
 	db (1 << TRAINERTYPE_MOVES)
-	db 22, MAREEP
+	db 21, MAREEP
 		db SCREECH
 		db HEAL_BELL
 		db TAKE_DOWN
@@ -10581,8 +10407,6 @@ CamperGroup:
 		db FUTURE_SIGHT
 	db $ff ; end
 
-; ================
-
 	; CAMPER (5)
 	db "BARRY@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10592,8 +10416,6 @@ CamperGroup:
 		db MEGAHORN
 		db FISSURE
 	db $ff ; end
-
-; ================
 
 	; CAMPER (6)
 	db "LLOYD@"
@@ -10615,8 +10437,6 @@ CamperGroup:
 		db 0
 	db $ff ; end
 
-; ================
-
 	; CAMPER (7)
 	db "DEAN@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10637,13 +10457,9 @@ CamperGroup:
 		db NASTY_PLOT
 	db $ff ; end
 
-; ================
-
 	; CAMPER (8)
 	db "SID@"
 	db (1 << TRAINERTYPE_MOVES)
-
-	; party
 	db 54, NIDORINA
 		db SLUDGE_BOMB
 		db IRON_TAIL
@@ -10661,21 +10477,17 @@ CamperGroup:
 		db EARTHQUAKE
 	db $ff ; end
 
-; ================
-
 	; CAMPER (9)
-	db "HARVEY@"
+	db "HARVEY@" ; unused
 	db 0 ; normal
 	db 15, NIDORINO
 	db $ff ; end
 
 	; CAMPER (10)
-	db "DALE@"
+	db "DALE@" ; unused
 	db 0 ; normal
 	db 15, NIDORINO
 	db $ff ; end
-
-; ================
 
 	; CAMPER (11)
 	db "TED@"
@@ -10692,16 +10504,12 @@ CamperGroup:
 		db CRUNCH
 	db $ff ; end
 
-; ================
-
 	; CAMPER (12)
 	db "TODD@"
 	db 0
 	db 50, POLIWAG
 	db 50, MANTINE
 	db $ff ; end
-
-; ================
 
 	; CAMPER (13)
 	db "TODD@"
@@ -10710,8 +10518,6 @@ CamperGroup:
 	db 61, POLIWHIRL
 	db 63, MANTINE
 	db $ff ; end
-
-; ================
 
 	; CAMPER (14)
 	db "THOMAS@"
@@ -10737,8 +10543,6 @@ CamperGroup:
 	db 42, GOLDUCK
 	db $ff ; end
 
-; ================
-
 	; CAMPER (18)
 	db "JERRY@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -10748,8 +10552,6 @@ CamperGroup:
 		db SUPER_FANG
 		db FISSURE
 	db $ff ; end
-
-; ================
 
 	; CAMPER (19)
 	db "SPENCER@"
@@ -10771,8 +10573,6 @@ CamperGroup:
 		db AMNESIA
 	db $ff ; end
 
-; ================
-
 	; CAMPER (20)
 	db "TODD@"
 	db 0
@@ -10788,8 +10588,6 @@ CamperGroup:
 	db 95, POLIWRATH
 	db 95, AMPHAROS
 	db $ff ; end
-
-; ================
 
 	; CAMPER (22)
 	db "QUENTIN@"
@@ -10810,8 +10608,6 @@ CamperGroup:
 		db SEISMIC_TOSS
 		db MEGA_KICK
 	db $ff ; end
-
-; ================
 
 	db "JERRY@" ; pewter gym
 	db 0
@@ -10869,8 +10665,6 @@ CamperGroup:
 		db WATER_GUN
 		db WITHDRAW
 	db $ff
-; ================================
-
 
 ExecutiveFGroup:
 	; EXECUTIVEF (1)
