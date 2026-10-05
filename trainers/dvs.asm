@@ -100,12 +100,12 @@ GetTrainerDVs: ; 270c4
 	db $FD, $DE ; BLASTOISE
 
 .AJDVs
+	db $FF, $FF ; PICHU
+	db $DC, $DD ; SUDOWOODO
+	db $DC, $DD ; TOGETIC
+	db $DC, $DD ; FERALIGATR
 	db $DC, $DD ; MEGANIUM
 	db $DC, $DD ; TYPHLOSION
-	db $DC, $DD ; FERALIGATR
-	db $DC, $DD ; UMBREON
-	db $DC, $DD ; SKARMORY
-	db $DC, $DD ; DONPHAN
 
 .AbeDVs
 	db $FD, $DE ; ZAPDOS
@@ -116,92 +116,92 @@ GetTrainerDVs: ; 270c4
 	db $FD, $DE ; PIDGEOT
 
 .BabaDVs 
-	db $FD, $FF ; RAIKOU
-	db $CF, $FF ; ENTEI
-	db $AF, $FF ; SUICUNE
+	db $FD, $FF ; RAIKOU	hp ice
+	db $CF, $FF ; ENTEI		hp ground
+	db $AF, $FF ; SUICUNE	hp grass
 	db $FF, $FF ; CELEBI
 	db $FF, $FF ; LUGIA
 	db $FF, $FF ; HO-OH
 
 TrainerClassDVs: ; 270d6
-;	ATK DEF SPD SPC
-	db $9A, $77 ; falkner
-	db $88, $88 ; whitney
-	db $98, $88 ; bugsy
-	db $98, $88 ; morty
-	db $98, $88 ; pryce
-	db $98, $88 ; jasmine
-	db $98, $88 ; chuck
-	db $7C, $DD ; clair
-	db $DD, $DD ; silver1
-	db $98, $88 ; oak
-	db $DC, $DD ; will
-	db $DC, $DD ; gold
-	db $DC, $DD ; bruno
-	db $7F, $DF ; karen
-	db $DC, $DD ; koga
-	db $DC, $DD ; lance
-	db $98, $88 ; brock
-	db $78, $88 ; misty
-	db $98, $88 ; surge
-	db $98, $88 ; researcher
-	db $78, $88 ; erika
-	db $98, $88 ; youngster
-	db $98, $88 ; schoolkid
-	db $98, $88 ; birdkeeper
-	db $58, $88 ; lass
-	db $98, $88 ; janine
-	db $D8, $C8 ; elite♂
-	db $7C, $C8 ; elite♀
-	db $69, $C8 ; beauty
-	db $98, $88 ; pokemaniac
-	db $D8, $A8 ; grunt♂
-	db $98, $88 ; gentleman
-	db $98, $88 ; skier
-	db $68, $88 ; teacher
-	db $7D, $87 ; sabrina
-	db $98, $88 ; bug catcher
-	db $98, $88 ; fisher
-	db $98, $88 ; swimmer♂
-	db $78, $88 ; swimmer♀
-	db $98, $88 ; sailor
-	db $98, $88 ; super nerd
-	db $DD, $DD ; silver2
-	db $98, $88 ; guitarist
-	db $A8, $88 ; hiker
-	db $98, $88 ; biker
-	db $98, $88 ; blaine
-	db $98, $88 ; burglar
-	db $98, $88 ; firebreather
-	db $98, $88 ; juggler
-	db $98, $88 ; blackbelt
-	db $D8, $A8 ; executive♂
-	db $98, $88 ; esper
-	db $6A, $A8 ; scout♀
-	db $98, $88 ; scout♂
-	db $7E, $A8 ; executive♀
-	db $98, $88 ; sage
-	db $78, $88 ; channeler
-	db $98, $88 ; boarder
-	db $98, $88 ; pokefan♂
-	db $68, $8A ; kimono girl
-	db $68, $A8 ; twins
-	db $6D, $88 ; pokefan♀
-	db $FD, $DE ; red
-	db $9D, $DD ; blue
-	db $98, $88 ; officer
-	db $7E, $A8 ; grunt♀
-	db $98, $88 ; eusine
-	db $98, $88 ; bill
-	db $FF, $FF ; elm
-	db $FF, $FF ; league's pc
-	db $D8, $A8 ; giovanni
-	db $DC, $C8 ; elites
-	db $EE, $FF ; rusty
-	db $EE, $FF ; azure
-	db $98, $88 ; brock
-	db $78, $88 ; misty
-	db $FF, $FF ; kris
-	db $D8, $A8 ; executive	
+;	ATK DEF SPD SPC	class		hidden power
+	db $FA, $F7 ; falkner		dragon
+	db $7F, $DA ; whitney		dark
+	db $CC, $BA ; bugsy			fighting
+	db $CA, $FF ; morty			poison
+	db $9E, $8F ; pryce			ghost
+	db $BF, $7A ; jasmine		dark
+	db $FF, $97 ; chuck			dark
+	db $D5, $CD ; clair			bug
+	db $DD, $DD ; silver1		bug
+	db $DD, $DD ; oak			bug
+	db $DC, $DD ; will			rock
+	db $DC, $DD ; gold			rock
+	db $DD, $DC ; bruno			bug
+	db $7F, $DF ; karen			dark
+	db $BD, $DD ; koga			ice
+	db $DD, $DD ; lance			bug
+	db $AF, $8F ; brock			electric
+	db $F8, $C8 ; misty			psychic
+	db $AC, $FF ; surge			fire
+	db $98, $88 ; researcher	rock
+	db $7D, $9F ; erika			ice
+	db $98, $88 ; youngster		rock
+	db $98, $88 ; schoolkid		rock
+	db $98, $88 ; birdkeeper	rock
+	db $58, $88 ; lass			rock
+	db $CA, $FF ; janine		poison
+	db $D8, $C8 ; elite♂		rock
+	db $7C, $C8 ; elite♀		psychic
+	db $69, $C8 ; beauty		water
+	db $98, $88 ; pokemaniac	rock
+	db $D8, $A8 ; grunt♂		rock
+	db $98, $88 ; gentleman		rock
+	db $98, $88 ; skier			rock
+	db $68, $88 ; teacher		fire
+	db $78, $FF ; sabrina		psychic
+	db $98, $88 ; bug catcher	rock
+	db $98, $88 ; fisher		rock
+	db $98, $88 ; swimmer♂		rock
+	db $78, $88 ; swimmer♀		psychic
+	db $98, $88 ; sailor		rock
+	db $98, $88 ; super nerd	rock
+	db $DD, $DD ; silver2		bug
+	db $98, $88 ; guitarist		rock
+	db $A8, $88 ; hiker			fire
+	db $98, $88 ; biker			rock
+	db $F8, $8F ; blaine		rock
+	db $98, $88 ; burglar		rock
+	db $98, $88 ; firebreather	rock
+	db $98, $88 ; juggler		rock
+	db $98, $88 ; blackbelt		rock
+	db $D8, $A8 ; executive♂	rock
+	db $98, $88 ; esper			rock
+	db $6A, $A8 ; scout♀		grass
+	db $98, $88 ; scout♂		rock
+	db $7E, $A8 ; executive♀	dragon
+	db $98, $88 ; sage			rock
+	db $78, $88 ; channeler		psychic
+	db $98, $88 ; boarder		rock
+	db $98, $88 ; pokefan♂		rock
+	db $68, $8A ; kimono girl	fire
+	db $68, $A8 ; twins			fire
+	db $6D, $88 ; pokefan♀		water
+	db $FD, $DE ; red			ice
+	db $DD, $DD ; blue			bug
+	db $98, $88 ; officer		rock
+	db $7E, $A8 ; grunt♀		dragon
+	db $AA, $AA ; eusine		grass
+	db $98, $88 ; bill			rock
+	db $FF, $FF ; elm			dark
+	db $FF, $FF ; league's pc	dark
+	db $D8, $C8 ; giovanni		rock
+	db $DC, $C8 ; elites		rock
+	db $EE, $FF ; rusty			grass
+	db $EE, $FF ; azure			grass
+	db $98, $88 ; brock			rock
+	db $78, $88 ; misty			psychic
+	db $FF, $FF ; kris			varies
+	db $D8, $A8 ; executive		rock
 ; 2715c
 
