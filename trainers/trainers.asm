@@ -1,7 +1,5 @@
 Trainers:
 
-; LV, SPECIES, HELD_ITEM, "NICKNAME@"
-
 FalknerGroup:
 	db "FALKNER@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
@@ -157,10 +155,10 @@ BugsyGroup:
 		db EARTHQUAKE
 		db ROCK_SLIDE
 		db SUBMISSION
-	db 97, VENOMOTH, BRIGHTPOWDER
+	db 97, YANMA, BRIGHTPOWDER
 		db BUG_BUZZ
-		db SLUDGE_BOMB
-		db SLEEP_POWDER
+		db AIR_SLASH
+		db ANCIENTPOWER
 		db DOUBLE_TEAM
 	db 100, HERACROSS, BURN_GUARD
 		db MEGAHORN
@@ -1067,12 +1065,12 @@ WillGroup:
 
 	db "WILL@" ; rematch
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-	db 100, MR__MIME, NO_ITEM
+	db 100, MR__MIME, MIRACLEBERRY
 		db PSYCHIC_M
 		db MOONBLAST
 		db SUBSTITUTE
 		db BATON_PASS
-	db 100, HYPNO, NO_ITEM
+	db 100, HYPNO, SLEEP_GUARD
 		db ZEN_HEADBUTT
 		db BODY_SLAM
 		db FIRE_PUNCH
@@ -1087,7 +1085,7 @@ WillGroup:
 		db METRONOME
 		db MOONLIGHT
 		db HEAL_BELL
-	db 100, SLOWKING, NO_ITEM
+	db 100, SLOWKING, CONFUSEGUARD
 		db ZEN_HEADBUTT
 		db WATERFALL
 		db HEADBUTT
@@ -1119,8 +1117,8 @@ PKMNTrainerGroup:
 		db SOFTBOILED
 	db 75, FERALIGATR, BITTER_BERRY
 		db WATERFALL
+		db OUTRAGE
 		db CRUNCH
-		db EARTHQUAKE
 		db ICE_PUNCH
 	db 75, MEGANIUM, GOLD_BERRY
 		db GIGA_DRAIN
@@ -1153,8 +1151,8 @@ PKMNTrainerGroup:
 		db SOFTBOILED
 	db 100, FERALIGATR, BITTER_BERRY
 		db WATERFALL
+		db OUTRAGE
 		db CRUNCH
-		db EARTHQUAKE
 		db ICE_PUNCH
 	db 100, MEGANIUM, GOLD_BERRY
 		db GIGA_DRAIN
@@ -1274,12 +1272,12 @@ KarenGroup:
 		db CRUNCH
 		db ROLLING_KICK
 		db SWORDS_DANCE
-	db 100, VILEPLUME, LEFTOVERS
+	db 100, VILEPLUME, KINGS_ROCK
 		db PETAL_DANCE
 		db SLUDGE_BOMB
+		db HIDDEN_POWER ; dark
 		db MOONLIGHT
-		db TOXIC
-	db 100, GENGAR, FOCUS_BAND
+	db 100, GENGAR, BRIGHTPOWDER
 		db SHADOW_BALL
 		db DARK_PULSE
 		db FOCUS_BLAST
@@ -1328,31 +1326,31 @@ KogaGroup:
 
 	db "KOGA@" ; rematch
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
-	db 100, FORRETRESS, NO_ITEM
+	db 100, FORRETRESS, FOCUS_BAND
 		db SPIKES
 		db FLASH_CANNON
 		db PIN_MISSILE
 		db EXPLOSION
-	db 100, ARBOK, NO_ITEM
+	db 100, ARBOK, MIRACLEBERRY
 		db GUNK_SHOT
 		db IRON_TAIL
 		db ROCK_SLIDE
 		db GLARE
-	db 100, ARIADOS, NO_ITEM
+	db 100, ARIADOS, SLEEP_GUARD
 		db MEGAHORN
+		db POISON_JAB
 		db DOUBLE_TEAM
 		db BATON_PASS
-		db TOXIC
 	db 100, NIDOKING, NO_ITEM
 		db POISON_JAB
 		db DRILL_RUN
 		db HORN_DRILL
 		db FOCUS_ENERGY
-	db 100, VENOMOTH, NO_ITEM
+	db 100, VENOMOTH, MIRACLEBERRY
 		db BUG_BUZZ
 		db SLUDGE_BOMB
-		db SUPERSONIC
-		db TOXIC
+		db PSYCHIC_M
+		db SLEEP_POWDER
 	db 100, CROBAT, GOLD_BERRY
 		db AIR_SLASH
 		db POISON_JAB
@@ -1397,7 +1395,7 @@ ChampionGroup:
 
 	db "LANCE@" ; rematch
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
-	db 100, GYARADOS, MYSTIC_WATER
+	db 100, GYARADOS, BITTER_BERRY
 		db WATERFALL
 		db OUTRAGE
 		db THUNDER
@@ -1707,8 +1705,6 @@ ScientistGroup:
 		db POISON_JAB
 	db $ff ; end
 
-; ================
-
 	; SCIENTIST (3)
 	db "JED@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -1728,8 +1724,6 @@ ScientistGroup:
 		db RECOVER
 		db TRI_ATTACK
 	db $ff ; end
-
-; ================
 
 	; SCIENTIST (4)
 	db "MARC@"
@@ -1766,8 +1760,6 @@ ScientistGroup:
 		db SWAGGER
 	db $ff ; end
 
-; ================
-
 	; SCIENTIST (5)
 	db "RICH@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -1777,15 +1769,7 @@ ScientistGroup:
 		db RECOVER
 		db CONVERSION2
 	db $ff ; end
-
-; ================
-; ================================
-
-
 ErikaGroup:
-; ================================
-; ================
-
 	; ERIKA (1)
 	db "ERIKA@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM) | ( 1 << TRAINERTYPE_MAXXP)
@@ -1825,45 +1809,38 @@ ErikaGroup:
 	db "ERIKA@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
 	db 95, JUMPLUFF, BRIGHTPOWDER
-		db SWAGGER
-		db LEECH_SEED
-		db REFLECT
-		db SLEEP_POWDER
-	db 97, MILTANK, LEFTOVERS
-		db BODY_SLAM
-		db MILK_DRINK
-		db ATTRACT
-		db EARTHQUAKE
-	db 99, VICTREEBEL, LEFTOVERS
-		db SWORDS_DANCE
-		db SLEEP_POWDER
-		db DOUBLE_EDGE
-		db SLUDGE_BOMB
-	db 97, AMPHAROS, LEFTOVERS
-		db THUNDER_WAVE
-		db THUNDERBOLT
-		db FIRE_PUNCH
-		db LIGHT_SCREEN
-	db 100, MEGANIUM, LEFTOVERS
-		db SYNTHESIS
-		db LEECH_SEED
-		db EARTHQUAKE
 		db GIGA_DRAIN
-	db 96, NINETALES, CHARCOAL
-		db CONFUSE_RAY
-		db FIRE_BLAST
-		db HYPNOSIS
-		db REFLECT
+		db DAZZLINGLEAM
+		db SLEEP_POWDER
+		db LEECH_SEED
+	db 97, BELLOSSOM, GOLD_BERRY
+		db SOLARBEAM
+		db PETAL_DANCE
+		db SYNTHESIS
+		db SUNNY_DAY
+	db 96, MEGANIUM, MIRACLEBERRY
+		db PETAL_DANCE
+		db EARTH_POWER
+		db GROWTH
+		db SYNTHESIS
+	db 97, VICTREEBEL, LEFTOVERS
+		db SEED_BOMB
+		db POISON_JAB
+		db LEECH_LIFE
+		db SWORDS_DANCE
+	db 100, CELEBI, MIRACLE_SEED
+		db GIGA_DRAIN
+		db PSYCHIC_M
+		db EARTH_POWER
+		db LEECH_SEED
+	db 100, VENUSAUR, POWER_HERB
+		db GIGA_DRAIN
+		db SLUDGE_BOMB
+		db EARTHQUAKE
+		db SOLARBEAM
 	db $ff ; end
 
-; ================
-; ================================
-
-
 YoungsterGroup:
-; ================================
-; ================
-
 	; YOUNGSTER (1)
 	db "JOEY@"
 	db (1 << TRAINERTYPE_MOVES)
