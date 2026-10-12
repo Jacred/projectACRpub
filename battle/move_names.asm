@@ -91,7 +91,7 @@
  	db "DIG@"
  	db "TOXIC@"
  	db "PSYSHOCK@"
- 	db "PSYCHO FORCE@"
+ 	db "PSYBREAK@"
  	db "HYPNOSIS@"
  	db "MEDITATE@"
  	db "AGILITY@"
