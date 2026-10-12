@@ -3256,45 +3256,39 @@ JanineGroup:
 	; JANINE (2)
 	db "JANINE@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
-	db 100, TENTACRUEL, GOLD_BERRY
+	db 95, TENTACRUEL, GOLD_BERRY
 		db WHIRLPOOL
+		db SLUDGE_BOMB
+		db TOXIC
 		db SPIKES
-		db SLUDGE_BOMB
-		db TOXIC
-	db 100, WEEZING, LEFTOVERS
-		db FIRE_BLAST
-		db SLUDGE_BOMB
-		db PROTECT
-		db WILLOWISP
-	db 100, CROBAT, SHARP_BEAK
-		db SUPER_FANG
-		db TOXIC
-		db AIR_SLASH
-		db WHIRLWIND
-	db 100, MUK, LEFTOVERS
-		db SLUDGE_BOMB
+	db 96, MUK, LEFTOVERS
+		db POISON_JAB
+		db GIGA_DRAIN
+		db FIRE_PUNCH
 		db MINIMIZE
-		db TOXIC
+	db 96, CROBAT, SHARP_BEAK
+		db POISON_JAB
+		db AIR_SLASH
+		db SUPER_FANG
+		db WHIRLWIND
+	db 97, WEEZING, LEFTOVERS
+		db SLUDGE_BOMB
 		db FIRE_BLAST
-	db 100, NIDOQUEEN, SOFT_SAND
-		db TOXIC
+		db PROTECT
+		db EXPLOSION
+	db 99, VENOMOTH, SILVERPOWDER
+		db SLUDGE_BOMB
+		db BUG_BUZZ
+		db PSYCHIC_M
+		db SLEEP_POWDER
+	db 99, NIDOQUEEN, POISON_BARB
 		db POISON_JAB
 		db EARTHQUAKE
-		db MOONLIGHT
-	db 100, VENUSAUR, MIRACLE_SEED
-		db PROTECT
-		db LEECH_SEED
-		db SEED_BOMB
-		db SYNTHESIS
+		db CRUNCH
+		db TOXIC
 	db $ff
-; ================
-; ================================
-
 
 CooltrainerMGroup:
-; ================================
-; ================
-
 	; COOLTRAINERM (1)
 	db "NICK@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -3315,8 +3309,6 @@ CooltrainerMGroup:
 		db AQUA_JET
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (2)
 	db "AARON@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -3336,8 +3328,6 @@ CooltrainerMGroup:
 		db MIRROR_COAT
 		db AQUA_JET
 	db $ff ; end
-
-; ================
 
 	; COOLTRAINERM (3)
 	db "PAUL@"
@@ -3364,7 +3354,7 @@ CooltrainerMGroup:
 	; COOLTRAINERM (4)
 	db "CODY@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
-	db 46, HORSEA, FOCUS_BAND
+	db 45, HORSEA, FOCUS_BAND
 		db AURORA_BEAM
 		db DISABLE
 		db HYDRO_PUMP
@@ -3393,8 +3383,6 @@ CooltrainerMGroup:
 		db ROCK_SLIDE
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (6)
 	db "GAVEN@"
 	db 0
@@ -3413,8 +3401,6 @@ CooltrainerMGroup:
 	db 99, SNORLAX
 	db 100, MACHAMP ; hyper potion target
 	db $ff ; end
-
-; ================
 
 	; COOLTRAINERM (8)
 	db "RYAN@"
@@ -3436,8 +3422,6 @@ CooltrainerMGroup:
 		db DIZZY_PUNCH
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (9)
 	db "JAKE@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -3457,8 +3441,6 @@ CooltrainerMGroup:
 		db IRON_DEFENSE
 		db EXPLOSION
 	db $ff ; end
-
-; ================
 
 	; COOLTRAINERM (10)
 	db "GAVEN@"
@@ -3485,8 +3467,6 @@ CooltrainerMGroup:
 		db DYNAMICPUNCH
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (11)
 	db "BLAKE@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -3507,8 +3487,6 @@ CooltrainerMGroup:
 		db METAL_SOUND
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (12)
 	db "BRIAN@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -3523,8 +3501,6 @@ CooltrainerMGroup:
 		db MEGA_KICK
 		db COUNTER
 	db $ff ; end
-
-; ================
 
 	; COOLTRAINERM (13)
 	db "ERICK@"
@@ -3544,13 +3520,9 @@ CooltrainerMGroup:
 	db 10, SQUIRTLE
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (16)
 	db "SEAN@"
 	db (1 << TRAINERTYPE_MOVES)
-
-	; party
 	db 57, TANGELA
 		db SLEEP_POWDER
 		db SYNTHESIS
@@ -3567,8 +3539,6 @@ CooltrainerMGroup:
 		db EARTHQUAKE
 		db DOUBLE_EDGE
 	db $ff ; end
-
-; ================
 
 	; COOLTRAINERM (17)
 	db "KEVIN@"
@@ -3590,15 +3560,11 @@ CooltrainerMGroup:
 		db X_SCISSOR
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (18)
 	db "STEVE@"
 	db 0 ; normal
 	db 14, PIKACHU
 	db $ff ; end
-
-; ================
 
 	; COOLTRAINERM (19)
 	db "ALLEN@"
@@ -3615,8 +3581,6 @@ CooltrainerMGroup:
 		db PETAL_DANCE
 	db $ff ; end
 
-; ================
-
 	; COOLTRAINERM (20)
 	db "DARIN@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
@@ -3627,6 +3591,7 @@ CooltrainerMGroup:
 		db REFLECT
 	db $ff ; end
 
+	; COOLTRAINERM (21)
 	db "BONITA@"
 	db (1 << TRAINERTYPE_MOVES)
 	db 70, GRANBULL
@@ -3641,7 +3606,7 @@ CooltrainerMGroup:
 		db EXPLOSION
 	db $ff
 
-	; COOLTRAINERM (Rematch)
+	; COOLTRAINERM (22)
 	db "MIKE@"
 	db 0 ; normal
 	db 95, STEELIX
@@ -3649,7 +3614,7 @@ CooltrainerMGroup:
 	db 95, TYPHLOSION
 	db $ff ; end
 
-	; COOLTRAINERM (Rematch)
+	; COOLTRAINERM (23)
 	db "PAUL@"
 	db (1 << TRAINERTYPE_ITEM)
 	db 95, KINGDRA, DRAGON_FANG
@@ -3657,6 +3622,7 @@ CooltrainerMGroup:
 	db 95, DRAGONAIR, MINT_BERRY
 	db $ff ; end
 
+	; COOLTRAINERM (24)
 	db "CHASE@"
 	db (1 << TRAINERTYPE_MOVES)
 	db 95, PORYGON2
@@ -3686,8 +3652,7 @@ CooltrainerMGroup:
 		db SHEER_COLD
 	db $ff ; end
 
-; ================
-
+	; COOLTRAINERM (25)
 	db "MORIMOTO@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
 	db 100, KANGASKHAN, MIRACLEBERRY
@@ -3721,9 +3686,6 @@ CooltrainerMGroup:
 		db FIRE_BLAST
 		db THUNDER
 	db $ff ; end
-
-; ================================
-
 
 CooltrainerFGroup:
 ; ================================
