@@ -827,10 +827,16 @@ GLOBAL PokedexEntries4
 	db BANK(PokedexEntries4)
 
 HeavyBallMultiplier:
-; subtract 20 from catch rate if weight < 204.8 kg
-; else add 20 to catch rate if weight < 307.2 kg
-; else add 30 to catch rate if weight < 409.6 kg
-; else add 40 to catch rate (never happens)
+; subtract 20 from catch rate if weight < 100 kg
+; else add 0 to catch rate if weight = 100-125 kg
+; else add 5 to catch rate if weight = 125-150 kg
+; else add 10 to catch rate if weight = 150-175 kg
+; else add 15 to catch rate if weight = 175-200 kg
+; else add 20 to catch rate if weight = 200-250 kg
+; else add 25 to catch rate if weight = 250-300 kg
+; else add 30 to catch rate if weight = 300-350 kg
+; else add 35 to catch rate if weight = 350-400 kg
+; else add 40 to catch rate (weight > 400 kg)
 	ld a, [EnemyMonSpecies]
 	ld hl, PokedexDataPointerTable
 	dec a
@@ -890,7 +896,7 @@ HeavyBallMultiplier:
 
 .compare
 	ld c, a
-	cp 2048 >> 8 ; 204.8 kg
+	cp 2000 >> 8 ; 200 kg
 	jr c, .lightmon
 
 	ld hl, .WeightsTable
@@ -921,9 +927,15 @@ HeavyBallMultiplier:
 
 .WeightsTable
 ; weight factor, boost
-	db 3072 >> 8, 20
-	db 4096 >> 8, 30
-	db 65280 >> 8, 40
+	db 1250 >> 8, 0
+	db 1500 >> 8, 5
+	db 1750 >> 8, 10
+	db 2000 >> 8, 15
+	db 2500 >> 8, 20
+	db 3000 >> 8, 25
+	db 3500 >> 8, 30
+	db 4000 >> 8, 35
+	db 9999 >> 8, 40
 
 LureBallMultiplier:
 ; multiply catch rate by 3 if this is a fishing rod battle
@@ -1802,10 +1814,10 @@ FreshWater:
 SodaPop:
 Lemonade:
 MoomooMilk:
-Ragecandybar:
 BerryJuice:
 Berry:
-GoldBerry: ; f186
+GoldBerry: 
+Ragecandybar: ; f186
 	call Functionf1a9
 	jp Functionf09e
 ; f18c
@@ -2214,19 +2226,18 @@ Functionf395: ; f395 (3:7395)
 
 Tablef3af: ; f3af
 	dbw FRESH_WATER,   50
-	dbw SODA_POP,      60
+	dbw SODA_POP,      70
 	dbw LEMONADE,      80
-	dbw HYPER_POTION, 200
-	dbw SUPER_POTION,  50
+	dbw HYPER_POTION, 120
+	dbw SUPER_POTION,  60
 	dbw POTION,        20
 	dbw MAX_POTION,   999
 	dbw FULL_RESTORE, 999
 	dbw MOOMOO_MILK,  100
 	dbw BERRY,         10
-	; dbw GOLD_BERRY,    30
 	dbw ENERGYPOWDER,  50
 	dbw ENERGY_ROOT,  200
-	dbw RAGECANDYBAR,  20
+	dbw RAGECANDYBAR,  30
 	dbw BERRY_JUICE,   20
 	dbw -1,             0
 ; f3df
