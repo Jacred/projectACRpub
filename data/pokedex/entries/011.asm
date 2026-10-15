@@ -1,5 +1,5 @@
 ; MetapodPokedexEntry: ; 0x181ace
-	db "COCOON@" ; species name
+	db "CHRYSALIS@" ; species name
 	dw 204, 220 ; height, width
 
 	db   "This is its pre-"
