@@ -7721,7 +7721,6 @@ GuitaristGroup:
 		db SPARK
 	db $ff
 
-
 	; GUITARIST (5)
 	db "VINCENT@"
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
@@ -7748,17 +7747,12 @@ GuitaristGroup:
 	db $ff ; end
 
 HikerGroup:
-; ================================
-; ================
-
 	; HIKER (1)
 	db "ANTHONY@"
 	db 0
 	db 30, STANTLER
 	db 32, CYNDAQUIL
 	db $ff ; end
-
-; ================
 
 	; HIKER (2)
 	db "RUSSELL@"
@@ -7780,8 +7774,6 @@ HikerGroup:
 		db BITE
 	db $ff ; end
 
-; ================
-
 	; HIKER (3)
 	db "PHILLIP@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -7802,8 +7794,6 @@ HikerGroup:
 		db IRON_TAIL
 	db $ff ; end
 
-; ================
-
 	; HIKER (4)
 	db "LEONARD@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -7819,8 +7809,6 @@ HikerGroup:
 		db HORN_DRILL
 	db $ff ; end
 
-; ================
-
 	; HIKER (5)
 	db "ANTHONY@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -7829,14 +7817,12 @@ HikerGroup:
 		db BITE
 		db HYPNOSIS
 		db NIGHTMARE
-	db 18, CYNDAQUIL
+	db 19, CYNDAQUIL
 		db ENDURE
 		db REVERSAL
 		db DEFENSE_CURL
 		db ROLLOUT
 	db $ff ; end
-
-; ================
 
 	; HIKER (6)
 	db "BENJAMIN@"
@@ -7846,7 +7832,7 @@ HikerGroup:
 		db SWIFT
 		db HAZE
 		db GIGA_DRAIN
-	db 23, ONIX
+	db 24, ONIX
 		db ROLLOUT
 		db SHARPEN
 		db SELFDESTRUCT
@@ -7857,8 +7843,6 @@ HikerGroup:
 		db REVERSAL
 		db THRASH
 	db $ff ; end
-
-; ================
 
 	; HIKER (7)
 	db "ERIK@"
@@ -7880,8 +7864,6 @@ HikerGroup:
 		db STEEL_WING
 	db $ff ; end
 
-; ================
-
 	; HIKER (8)
 	db "MICHAEL@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -7902,8 +7884,6 @@ HikerGroup:
 		db EARTHQUAKE
 	db $ff ; end
 
-; ================
-
 	; HIKER (9)
 	db "PARRY@"
 	db 0
@@ -7912,8 +7892,6 @@ HikerGroup:
 	db 80, SWINUB
 	db 82, SANDSLASH
 	db $ff ; end
-
-; ================
 
 	; HIKER (10)
 	db "TIMOTHY@"
@@ -7924,8 +7902,6 @@ HikerGroup:
 		db DOUBLE_EDGE
 		db EARTHQUAKE
 	db $ff ; end
-
-; ================
 
 	; HIKER (11)
 	db "BAILEY@"
@@ -7952,16 +7928,12 @@ HikerGroup:
 		db EARTHQUAKE
 	db $ff ; end
 
-; ================
-
 	; HIKER (12)
 	db "ANTHONY@"
 	db 0
 	db 41, STANTLER
 	db 41, QUILAVA
 	db $ff ; end
-
-; ================
 
 	; HIKER (13)
 	db "TIM@"
@@ -7978,24 +7950,20 @@ HikerGroup:
 		db PLAY_ROUGH
 	db $ff ; end
 
-; ================
-
 	; HIKER (14)
 	db "NOLAND@"
 	db (1 << TRAINERTYPE_MOVES)
-	db 49, SUDOWOODO
+	db 50, SUDOWOODO
 		db ROCK_SLIDE
 		db SEISMIC_TOSS
 		db MEGA_KICK
 		db EXPLOSION
-	db 52, DONPHAN
+	db 51, DONPHAN
 		db DOUBLE_EDGE
 		db EARTHQUAKE
 		db DEFENSE_CURL
 		db ROLLOUT
 	db $ff ; end
-
-; ================
 
 	; HIKER (15)
 	db "SIDNEY@"
@@ -8012,8 +7980,6 @@ HikerGroup:
 		db DRILL_RUN
 	db $ff ; end
 
-; ================
-
 	; HIKER (16)
 	db "KENNY@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -8028,8 +7994,6 @@ HikerGroup:
 		db SUPER_FANG
 		db FISSURE
 	db $ff ; end
-
-; ================
 
 	; HIKER (17)
 	db "JIM@"
@@ -8046,8 +8010,6 @@ HikerGroup:
 		db GUNK_SHOT
 	db $ff ; end
 
-; ================
-
 	; HIKER (18)
 	db "DANIEL@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -8057,8 +8019,6 @@ HikerGroup:
 		db ROCK_POLISH
 		db ROCK_SLIDE
 	db $ff ; end
-
-; ================
 
 	; HIKER (19)
 	db "PARRY@"
@@ -8084,8 +8044,6 @@ HikerGroup:
 		db EARTHQUAKE
 	db $ff ; end
 
-; ================
-
 	; HIKER (21)
 	db "ANTHONY@"
 	db 0
@@ -8102,10 +8060,7 @@ HikerGroup:
 	db 90, TYPHLOSION
 	db $ff ; end
 
-; ================
-
-	; MT.MOON
-
+	; HIKER (23)
 	db "MARCOS@"
 	db (1 << TRAINERTYPE_MOVES)
 	db 10, GEODUDE
@@ -8120,10 +8075,7 @@ HikerGroup:
 		db 0
 	db $ff
 
-; ================
-
-	; CERULEAN CAPE
-
+	; HIKER (24)
 	db "FRANKLIN@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
 	db 14, GEODUDE, BRICK_PIECE
@@ -8138,6 +8090,7 @@ HikerGroup:
 		db 0
 	db $ff
 
+	; HIKER (25)
 	db "WAYNE@"
 	db (1 << TRAINERTYPE_MOVES)
 	db 16, ONIX
@@ -8147,6 +8100,7 @@ HikerGroup:
 		db ROCK_THROW
 	db $ff
 
+	; HIKER (26)
 	db "NOB@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_ITEM)
 	db 13, GEODUDE, BRICK_PIECE
@@ -8165,8 +8119,6 @@ HikerGroup:
 		db ROCK_THROW
 		db 0
 	db $ff
-
-; ================
 
 	; HIKER (27)
 	db "NISHINO@"
@@ -8203,14 +8155,7 @@ HikerGroup:
 		db REST
 	db $ff ; end
 
-; ================
-; ================================
-
-
 BikerGroup:
-; ================================
-; ================
-
 	; BIKER (1)
 	db "BENNY@" ; unused
 	db 0 ; normal
@@ -8222,8 +8167,6 @@ BikerGroup:
 	db 0 ; normal
 	db 20, KOFFING
 	db $ff ; end
-
-; ================
 
 	; BIKER (3)
 	db "DWAYNE@"
@@ -8243,14 +8186,12 @@ BikerGroup:
 		db COUNTER
 		db CRUNCH
 		db IRON_TAIL
-	db 49, CHARMELEON
+	db 50, CHARMELEON
 		db FLAMETHROWER
 		db CRUNCH
 		db IRON_TAIL
 		db SWORDS_DANCE
 	db $ff ; end
-
-; ================
 
 	; BIKER (4)
 	db "HARRIS@"
@@ -8267,8 +8208,6 @@ BikerGroup:
 		db METAL_SOUND
 	db $ff ; end
 
-; ================
-
 	; BIKER (5)
 	db "ZEKE@"
 	db (1 << TRAINERTYPE_MOVES)
@@ -8278,8 +8217,6 @@ BikerGroup:
 		db EARTH_POWER
 		db SPIKES
 	db $ff ; end
-
-; ================
 
 	; BIKER (6)
 	db "CHARLES@"
@@ -8296,8 +8233,6 @@ BikerGroup:
 		db REST
 	db $ff ; end
 
-; ================
-
 	; BIKER (7)
 	db "RILEY@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_NICKNAME)
@@ -8307,8 +8242,6 @@ BikerGroup:
 		db DRILL_RUN
 		db X_SCISSOR
 	db $ff ; end
-
-; ================
 
 	; BIKER (8)
 	db "JOEL@"
@@ -8325,8 +8258,6 @@ BikerGroup:
 		db EARTHQUAKE
 	db $ff ; end
 
-; ================
-
 	; BIKER (9)
 	db "GLENN@"
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_NICKNAME)
@@ -8336,10 +8267,6 @@ BikerGroup:
 		db CRUNCH
 		db IRON_TAIL
 	db $ff ; end
-
-; ================
-; ================================
-
 
 BlaineGroup:
 	; BLAINE (1)
@@ -8380,36 +8307,36 @@ BlaineGroup:
 	; BLAINE (2)
 	db "BLAINE@" ; rematch
 	db (1 << TRAINERTYPE_MOVES) | ( 1 << TRAINERTYPE_ITEM)
-	db 100, RAPIDASH, CHARCOAL
-		db FLARE_BLITZ
-		db DRILL_RUN
-		db MORNING_SUN
-		db SUNNY_DAY
-	db 100, MAGCARGO, POISON_GUARD
-		db FIRE_BLAST
-		db SOLARBEAM
-		db RECOVER
-		db SUNNY_DAY
-	db 100, FLAREON, LEFTOVERS
-		db FLARE_BLITZ
-		db GROWTH
-		db BATON_PASS
-		db SUNNY_DAY
-	db 100, NINETALES, CHARCOAL
+	db 96, NINETALES, CHARCOAL
 		db FLAMETHROWER
 		db SOLARBEAM
 		db HYPNOSIS
 		db SUNNY_DAY
-	db 100, ENTEI, POLKADOT_BOW
-		db SACRED_FIRE
-		db IRON_HEAD
-		db EXTREMESPEED
-		db ROAR
-	db 100, ARCANINE, CHARCOAL
+	db 96, TYPHLOSION, MINT_BERRY
+		db FLARE_BLITZ
+		db SUBMISSION
+		db WILD_CHARGE
+		db REST
+	db 96, CHARIZARD, DRAGON_FANG
+		db FIRE_BLAST
+		db AIR_SLASH
+		db DRAGON_PULSE
+		db FOCUS_BLAST
+	db 98, RAPIDASH, CHARCOAL
+		db FLARE_BLITZ
+		db DRILL_RUN
+		db MORNING_SUN
+		db SUNNY_DAY
+	db 99, ARCANINE, LEFTOVERS
 		db FLARE_BLITZ
 		db WILD_CHARGE
 		db EXTREMESPEED
-		db WILLOWISP
+		db MORNING_SUN
+	db 100, MAGMAR, POWER_HERB
+		db FIRE_BLAST
+		db THUNDERBOLT
+		db SOLARBEAM
+		db PSYCHIC_M
 	db $ff
 
 BurglarGroup:
