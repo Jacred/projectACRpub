@@ -1,8 +1,8 @@
 ; SuicunePokedexEntry: ; 0x1d1642
-	db "AURORA@" ; species name
+	db "LEGENDARY@" ; species name
 	dw 607, 4120 ; height, width
 
-	db   "This divine"
+	db   "This SACRED BEAST"
 	next "#MON blows"
 	next "around the world,"
 	page "always in search"
