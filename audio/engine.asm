@@ -14,10 +14,10 @@ _SoundRestart:: ; e8000
 	push bc
 	push af
 	ld a, [MapGroup]
-	cp GROUP_HALLWAY_OF_FAME
+	cp GROUP_LANCES_ROOM
 	jr nz, .not_hallway
 	ld a, [MapNumber]
-	cp MAP_HALLWAY_OF_FAME
+	cp MAP_LANCES_ROOM
 	jr nz, .not_hallway
 	ld a, [Channel1MusicID]
 	cp MUSIC_GYM_VICTORY
