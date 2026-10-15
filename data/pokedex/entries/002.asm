@@ -1,5 +1,5 @@
 ; IvysaurPokedexEntry: ; 0x181702
-	db "SEED@" ; species name
+	db "PLANT@" ; species name
 	dw 303, 290 ; height, width
 
 	db   "The bulb on its"
