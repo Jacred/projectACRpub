@@ -1,5 +1,5 @@
 ; BeedrillPokedexEntry: ; 0x181c8a
-	db "POISON BEE@" ; species name
+	db "SPEAR BEE@" ; species name
 	dw 303, 650 ; height, width
 
 	db   "It uses sharp,"
