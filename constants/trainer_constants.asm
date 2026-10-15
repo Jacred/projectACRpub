@@ -48,6 +48,9 @@
 	const RIVAL1_13
 	const RIVAL1_14
 	const RIVAL1_15
+	const RIVAL1_16
+	const RIVAL1_17
+	const RIVAL1_18
 
 	trainerclass POKEMON_PROF ; a
 	const OAK_1
