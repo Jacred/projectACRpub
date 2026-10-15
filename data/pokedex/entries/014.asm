@@ -1,5 +1,5 @@
 ; KakunaPokedexEntry: ; 0x181c23
-	db "CHRYSALIS@" ; species name
+	db "COCOON@" ; species name
 	dw 200, 220 ; height, width
 
 	db   "Nearly incapable"
