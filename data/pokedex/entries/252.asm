@@ -1,5 +1,5 @@
 ; PhanceroPokedexEntry: ; 0x1d18cc
-	db "MISSINGNO.@" ; species name
+	db "???@" ; species name
 	dw 000, 000 ; height, width
 
 	db   "This elusive bird"
