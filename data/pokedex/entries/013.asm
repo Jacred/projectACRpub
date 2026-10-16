@@ -1,5 +1,5 @@
 ; WeedlePokedexEntry: ; 0x181bb4
-	db "HAIRY WORM@" ; species name
+	db "LARVA@" ; species name
 	dw 100, 70 ; height, width
 
 	db   "The barb on top of"
