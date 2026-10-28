@@ -1,5 +1,5 @@
 ; MagbyPokedexEntry: ; 0x1d140e
-	db "LIVE COAL@" ; species name
+	db "EMBER@" ; species name
 	dw 204, 470 ; height, width
 
 	metricdex .metric
