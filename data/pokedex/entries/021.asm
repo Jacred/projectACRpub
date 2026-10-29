@@ -1,5 +1,5 @@
 ; SpearowPokedexEntry: ; 0x181f03
-	db "TINY BIRD@" ; species name
+	db "SMALL BIRD@" ; species name
 	dw 100, 40 ; height, width
 
 	db   "To protect its"
