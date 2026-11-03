@@ -1,8 +1,8 @@
 ; ArticunoPokedexEntry: ; 0x1cc632
-	db "FREEZE@" ; species name
+	db "LEGENDARY@" ; species name
 	dw 507, 1220 ; height, width
 
-	db   "Legendary bird"
+	db   "WINGED MIRAGE"
 	next "#MON. As it"
 	next "flies through the"
 	page "sky, it cools the"
