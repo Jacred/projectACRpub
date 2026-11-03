@@ -1,5 +1,5 @@
 ; MewPokedexEntry: ; 0x1cc915
-	db "NEW SPECIE@" ; species name
+	db "MYTHICAL@" ; species name
 	dw 104, 90 ; height, width
 
 	db   "Because it can"
