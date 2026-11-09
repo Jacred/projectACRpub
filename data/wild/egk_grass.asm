@@ -788,13 +788,13 @@
 	db 2
 	db $f1
 ;morning
-		db CATERPIE ;20		30% Caterpie L2-6
-		db WEEDLE ;20		30% Weedle L2-6
-		db CATERPIE ;10		15% Pidgey L3-7
-		db WEEDLE ;10		10% Metapod L4-8
-		db METAPOD ;5		5% Kakuna L4-8
-		db METAPOD ;5		5% Pikachu L3-7
-		db KAKUNA ;5		5% Pidgeotto L8-12
+		db CATERPIE ;20     30% Caterpie L2-6
+		db WEEDLE ;20       30% Weedle L2-6
+		db CATERPIE ;10     15% Pidgey L3-7
+		db WEEDLE ;10       10% Metapod L4-8
+		db METAPOD ;5       5% Kakuna L4-8
+		db METAPOD ;5       5% Pikachu L3-7
+		db KAKUNA ;5        5% Pidgeotto L8-12
 		db PIKACHU ;5
 		db PIDGEOTTO ;4
 		db PIDGEY ;4
@@ -805,13 +805,13 @@
 		db PIDGEY ;1
 		db PIDGEOTTO ;1
 ;day
-		db CATERPIE ;20		40% Caterpie L2-6
-		db CATERPIE ;20		20% Weedle L2-6
-		db WEEDLE ;10		19% Pidgey L3-7
-		db WEEDLE ;10		10% Metapod L4-8
-		db METAPOD ;5		5% Kakuna L4-8
-		db METAPOD ;5		5% Pikachu L3-7
-		db KAKUNA ;5		1% Pidgeotto L8-12
+		db CATERPIE ;20     40% Caterpie L2-6
+		db CATERPIE ;20     20% Weedle L2-6
+		db WEEDLE ;10       19% Pidgey L3-7
+		db WEEDLE ;10       10% Metapod L4-8
+		db METAPOD ;5       5% Kakuna L4-8
+		db METAPOD ;5       5% Pikachu L3-7
+		db KAKUNA ;5        1% Pidgeotto L8-12
 		db PIKACHU ;5
 		db PIDGEY ;4
 		db PIDGEY ;4
@@ -822,20 +822,20 @@
 		db PIDGEY ;1
 		db PIDGEOTTO ;1
 ;night
-		db WEEDLE ;20		30% Weedle L2-6
-		db CATERPIE ;20		30% Caterpie L2-6
-		db WEEDLE ;10		20% Kakuna L4-8
-		db CATERPIE ;10		10% Metapod L4-8
-		db KAKUNA ;5		10% Pikachu L3-7
+		db WEEDLE ;20       30% Weedle L2-6
+		db CATERPIE ;20     30% Caterpie L2-6
+		db WEEDLE ;10       20% Kakuna L4-8
+		db CATERPIE ;10     10% Metapod L4-8
+		db KAKUNA ;5        10% Pikachu L3-7
 		db KAKUNA ;5
-		db KAKUNA ;5
-		db KAKUNA ;5
-		db METAPOD ;4
-		db METAPOD ;4
-		db METAPOD ;3
-		db PIKACHU ;3
-		db PIKACHU ;2
-		db PIKACHU ;2
-		db PIKACHU ;1
+		db METAPOD ;5
+		db PIKACHU ;5
+		db PIKACHU ;4
+		db KAKUNA ;4
+		db KAKUNA ;3
+		db KAKUNA ;3
+		db METAPOD ;2
+		db METAPOD ;2
+		db METAPOD ;1
 		db PIKACHU ;1
 	db $ff ; end
