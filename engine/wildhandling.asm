@@ -1101,7 +1101,7 @@ LvlTables: ;0 = no adjustment feel free to change examples
 	db 1 ; Pidgey
 	db 1 ; Pidgey
 	db 1 ; Pidgey
-	db 6 ; Beedrill 	
+	db 6 ; Pidgeotto 	
 
 ; 27 = Viridian Forest (daytime)
 	db 0
@@ -1111,7 +1111,7 @@ LvlTables: ;0 = no adjustment feel free to change examples
 	db 2 ; Metapod
 	db 2 ; Metapod
 	db 2 ; Kakuna
-	db 1 ; Pidgey
+	db 1 ; Pikachu
 	db 1 ; Pidgey
 	db 1 ; Pidgey
 	db 1 ; Pidgey
@@ -1137,7 +1137,7 @@ LvlTables: ;0 = no adjustment feel free to change examples
 	db 2 ; Metapod
 	db 2 ; Metapod
 	db 2 ; Metapod
-	db 6 ; Butterfree
+	db 1 ; Pikachu
 
 ; 29 = Dark Cave Blackthorn (morning/daytime)
 	db 0
