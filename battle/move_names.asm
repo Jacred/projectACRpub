@@ -90,8 +90,8 @@
  	db "FISSURE@"
  	db "DIG@"
  	db "TOXIC@"
- 	db "PSYSHOCK@"
- 	db "PSYBREAK@"
+ 	db "PSYSHOCK@" ; Confusion, original TCG translation of "Nenriki"
+ 	db "PSYBREAK@" ; Psychic, inspired by "Psycho Break", Psystrike's JP name
  	db "HYPNOSIS@"
  	db "MEDITATE@"
  	db "AGILITY@"
