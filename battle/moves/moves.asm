@@ -13,7 +13,7 @@ ENDM
 
 	move POUND,        EFFECT_NORMAL_HIT,         40, PHYSICAL, NORMAL,   100, 35,   0
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, PHYSICAL, FIGHTING, 100, 25,   0
-	move DOUBLESLAP,   EFFECT_MULTI_HIT,          25, PHYSICAL, FAIRY_T,   85, 10,   0
+	move DOUBLESLAP,   EFFECT_MULTI_HIT,          25, PHYSICAL, FAIRY_T,   85, 10,   0 ; power buffed to match tail slap
 	move GUNK_SHOT,    EFFECT_POISON_HIT,        120, PHYSICAL, POISON,    80, 10,  40
 	move ZEN_HEADBUTT, EFFECT_FLINCH_HIT,         80, PHYSICAL, PSYCHIC,  100, 15,  30
 	move PAY_DAY,      EFFECT_PAY_DAY,            60, PHYSICAL, NORMAL,   100, 20,   0
@@ -21,17 +21,17 @@ ENDM
 	move ICE_PUNCH,    EFFECT_FREEZE_HIT,         80, PHYSICAL, ICE,      100, 20,  10
 	move THUNDERPUNCH, EFFECT_PARALYZE_HIT,       80, PHYSICAL, ELECTRIC, 100, 20,  20
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, PHYSICAL, NORMAL,   100, 35,   0
-	move FAIRY_WIND,   EFFECT_EVASION_DOWN_HIT,   40, SPECIAL,  FAIRY_T,  100, 30, 100
+	move FAIRY_WIND,   EFFECT_EVASION_DOWN_HIT,   40, SPECIAL,  FAIRY_T,  100, 30, 100 ; secondary effect inspired by sweet scent
 	move FOCUS_BLAST,  EFFECT_SP_DEF_DOWN_HIT,   120, SPECIAL,  FIGHTING,  70, 10,  30
 	move IRON_DEFENSE, EFFECT_DEFENSE_UP_2,        0, STATUS,   STEEL,    100, 20,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, STATUS,   NORMAL,   100, 20,   0
-	move CUT,          EFFECT_NORMAL_HIT,         80, PHYSICAL, NORMAL,   100, 30,   0
-	move GUST,         EFFECT_CONFUSE_HIT,        40, SPECIAL,  FLYING,   100, 35,  10
+	move CUT,          EFFECT_NORMAL_HIT,         80, PHYSICAL, NORMAL,   100, 30,   0 ; power buffed to match old strength
+	move GUST,         EFFECT_CONFUSE_HIT,        40, SPECIAL,  FLYING,   100, 35,  10 ; confusion side effect inspired by hurricane
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, PHYSICAL, FLYING,   100, 30,   0
 	move WHIRLWIND,    EFFECT_WHIRLWIND,           0, STATUS,   FLYING,   100, 20,   0
-	move FLY,          EFFECT_JUMP_KICK,          90, PHYSICAL, FLYING,    95, 15,   0
+	move FLY,          EFFECT_JUMP_KICK,          90, PHYSICAL, FLYING,    95, 15,   0 ; no longer 2 turns, inspired by floaty fall
 	move BUG_BUZZ,     EFFECT_SP_DEF_DOWN_HIT,    80, SPECIAL,  BUG,      100, 15,  30
-	move SLAM,         EFFECT_NORMAL_HIT,        100, PHYSICAL, NORMAL,    75, 20,   0
+	move SLAM,         EFFECT_NORMAL_HIT,        100, PHYSICAL, NORMAL,    75, 20,   0 ; inspired by old iron tail but with no secondary effect
 	move VINE_WHIP,    EFFECT_FLINCH_HIT,         45, PHYSICAL, GRASS,    100, 25,  10
 	move STOMP,        EFFECT_STOMP,              70, PHYSICAL, NORMAL,   100, 20,  30
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         40, PHYSICAL, FIGHTING, 100, 30,   0
@@ -50,8 +50,8 @@ ENDM
 	move THRASH,       EFFECT_RAMPAGE,           120, PHYSICAL, NORMAL,   100, 20,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, PHYSICAL, NORMAL,   100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, STATUS,   NORMAL,   100, 30,   0
-	move POISON_STING, EFFECT_POISON_HIT,         30, PHYSICAL, POISON,   100, 35,  50
-	move TWINEEDLE,    EFFECT_TWINEEDLE,          45, PHYSICAL, BUG,      100, 20,  30
+	move POISON_STING, EFFECT_POISON_HIT,         30, PHYSICAL, POISON,   100, 35,  50 ; buffed to match legends arceus
+	move TWINEEDLE,    EFFECT_TWINEEDLE,          45, PHYSICAL, BUG,      100, 20,  30 ; 51% poison chance after both hits
 	move PIN_MISSILE,  EFFECT_MULTI_HIT,          25, PHYSICAL, BUG,       95, 20,   0
 	move LEER,         EFFECT_DEFENSE_DOWN,        0, STATUS,   NORMAL,   100, 30,   0
 	move BITE,         EFFECT_FLINCH_HIT,         60, PHYSICAL, DARK,     100, 25,  30
@@ -61,7 +61,7 @@ ENDM
 	move SUPERSONIC,   EFFECT_CONFUSE,             0, STATUS,   NORMAL,    60, 20,   0
 	move SONICBOOM,    EFFECT_STATIC_DAMAGE,      20, SPECIAL,  NORMAL,    90, 20,   0
 	move DISABLE,      EFFECT_DISABLE,             0, STATUS,   NORMAL,   100, 20,   0
-	move ACID,         EFFECT_SP_DEF_DOWN_HIT,    40, SPECIAL,  POISON,   100, 30, 100
+	move ACID,         EFFECT_SP_DEF_DOWN_HIT,    40, SPECIAL,  POISON,   100, 30, 100 ; based on acid spray
 	move EMBER,        EFFECT_BURN_HIT,           40, SPECIAL,  FIRE,     100, 25,  30
 	move FLAMETHROWER, EFFECT_BURN_HIT,           90, SPECIAL,  FIRE,     100, 15,  20
 	move MIST,         EFFECT_MIST,                0, STATUS,   ICE,      100, 30,   0
@@ -70,24 +70,24 @@ ENDM
 	move SURF,         EFFECT_NORMAL_HIT,         90, SPECIAL,  WATER,    100, 15,   0
 	move ICE_BEAM,     EFFECT_FREEZE_HIT,         90, SPECIAL,  ICE,      100, 15,  10
 	move BLIZZARD,     EFFECT_FREEZE_HIT,        120, SPECIAL,  ICE,       70, 10,  30
-	move PSYBEAM,      EFFECT_SP_DEF_DOWN_HIT,    70, SPECIAL,  PSYCHIC,  100, 20,  30
+	move PSYBEAM,      EFFECT_SP_DEF_DOWN_HIT,    70, SPECIAL,  PSYCHIC,  100, 20,  30 ; secondary effect swapped with psychic
 	move BUBBLEBEAM,   EFFECT_SPEED_DOWN_HIT,     70, SPECIAL,  WATER,    100, 20,  30
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    70, SPECIAL,  ICE,      100, 20,  30
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        250, SPECIAL,  NORMAL,    90,  5,   0
 	move PECK,         EFFECT_NORMAL_HIT,         40, PHYSICAL, FLYING,   100, 35,   0
-	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, PHYSICAL, FLYING,   100, 15,   0
-	move SUBMISSION,   EFFECT_RECOIL_HIT,        100, PHYSICAL, FIGHTING, 100, 20,   0
+	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, PHYSICAL, FLYING,   100, 15,   0 ; high critical chance
+	move SUBMISSION,   EFFECT_RECOIL_HIT,        100, PHYSICAL, FIGHTING, 100, 20,   0 ; buffed to match gen 1 double-edge
 	move HEAT_WAVE,    EFFECT_BURN_HIT,          100, SPECIAL,  FIRE,      90, 10,  10
 	move COUNTER,      EFFECT_COUNTER,             1, PHYSICAL, FIGHTING, 100, 20,   0
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, PHYSICAL, FIGHTING, 100, 20,   0
-	move STRENGTH,     EFFECT_NORMAL_HIT,        100, PHYSICAL, NORMAL,   100, 10,  10
+	move STRENGTH,     EFFECT_NORMAL_HIT,        100, PHYSICAL, NORMAL,   100, 10,   0 ; power buffed to (almost) match return
 	move ABSORB,       EFFECT_LEECH_HIT,          40, SPECIAL,  GRASS,    100, 25,   0
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          60, SPECIAL,  GRASS,    100, 20,   0
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, STATUS,   GRASS,     90, 10,   0
 	move GROWTH,       EFFECT_GROWTH,              0, STATUS,   NORMAL,   100, 20,   0
-	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         70, PHYSICAL, GRASS,    100, 20,   0
+	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         70, PHYSICAL, GRASS,    100, 20,   0 ; buffed to match gen 3 leaf blade
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         200, SPECIAL,  GRASS,    100, 10,   0
-	move POISONPOWDER, EFFECT_POISON,              0, STATUS,   POISON,    90, 40,   0
+	move POISONPOWDER, EFFECT_POISON,              0, STATUS,   POISON,    90, 40,   0 ; accuracy buffed to match poison gas
 	move STUN_SPORE,   EFFECT_PARALYZE,            0, STATUS,   GRASS,     85, 30,   0
 	move SLEEP_POWDER, EFFECT_SLEEP,               0, STATUS,   GRASS,     80, 20,   0
 	move PETAL_DANCE,  EFFECT_RAMPAGE,           120, SPECIAL,  GRASS,    100, 20,   0
@@ -98,13 +98,13 @@ ENDM
 	move THUNDERBOLT,  EFFECT_PARALYZE_HIT,       90, SPECIAL,  ELECTRIC, 100, 20,  10
 	move THUNDER_WAVE, EFFECT_PARALYZE,            0, STATUS,   ELECTRIC,  90, 20,   0
 	move THUNDER,      EFFECT_THUNDER,           120, SPECIAL,  ELECTRIC,  85, 10,  30
-	move ROCK_THROW,   EFFECT_SPEED_DOWN_HIT,     50, PHYSICAL, ROCK,     100, 20,  30
+	move ROCK_THROW,   EFFECT_SPEED_DOWN_HIT,     50, PHYSICAL, ROCK,     100, 20,  30 ; secondary effect inspired by rock tomb
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, PHYSICAL, GROUND,   100, 10,   0
 	move FISSURE,      EFFECT_OHKO,                1, PHYSICAL, GROUND,    30,  5,   0
 	move DIG,          EFFECT_FLY,               100, PHYSICAL, GROUND,   100, 15,   0
 	move TOXIC,        EFFECT_TOXIC,               0, STATUS,   POISON,    90, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, SPECIAL,  PSYCHIC,  100, 25,  20
-	move PSYCHIC_M,    EFFECT_CONFUSE_HIT,        90, SPECIAL,  PSYCHIC,  100, 15,  10
+	move PSYCHIC_M,    EFFECT_CONFUSE_HIT,        90, SPECIAL,  PSYCHIC,  100, 15,  10 ; secondary effect swapped with psybeam
 	move HYPNOSIS,     EFFECT_SLEEP,               0, STATUS,   PSYCHIC,   70, 20,   0
 	move MEDITATE,     EFFECT_ATTACK_UP,           0, STATUS,   PSYCHIC,  100, 30,   0
 	move AGILITY,      EFFECT_SPEED_UP_2,          0, STATUS,   PSYCHIC,  100, 20,   0
@@ -130,10 +130,10 @@ ENDM
 	move BIDE,         EFFECT_BIDE,                0, PHYSICAL, NORMAL,   100, 10,   0
 	move METRONOME,    EFFECT_METRONOME,           0, STATUS,   CURSE_T,  100, 20,   0
 	move MIRROR_MOVE,  EFFECT_MIRROR_MOVE,         0, STATUS,   CURSE_T,  100, 20,   0
-	move SELFDESTRUCT, EFFECT_EXPLOSION,         125, PHYSICAL, NORMAL,   100,  5,   0
+	move SELFDESTRUCT, EFFECT_EXPLOSION,         125, PHYSICAL, NORMAL,   100,  5,   0 ; effective power matches post-nerf explosion
 	move METAL_SOUND,  EFFECT_SP_DEF_DOWN_2,       0, STATUS,   STEEL,    100, 40,   0
 	move LICK,         EFFECT_PARALYZE_HIT,       30, PHYSICAL, GHOST,    100, 30, 100
-	move DRAGON_PULSE, EFFECT_ALWAYS_HIT,         90, SPECIAL,  DRAGON,   100, 20,   0
+	move DRAGON_PULSE, EFFECT_ALWAYS_HIT,         90, SPECIAL,  DRAGON,   100, 20,   0 ; accuracy buff inspired by aura sphere
 	move SLUDGE,       EFFECT_POISON_HIT,         65, SPECIAL,  POISON,   100, 20,  40
 	move BONE_CLUB,    EFFECT_FLINCH_HIT,         80, PHYSICAL, GROUND,   100, 15,  30
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, SPECIAL,  FIRE,      85,  5,  40
@@ -141,10 +141,10 @@ ENDM
 	move CLAMP,        EFFECT_BIND,               35, PHYSICAL, WATER,    100, 15,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, SPECIAL,  NORMAL,   100, 20,   0
 	move AQUA_JET,     EFFECT_PRIORITY_HIT,       40, PHYSICAL, WATER,    100, 30,   0
-	move SPIKE_CANNON, EFFECT_MULTI_HIT,          25, PHYSICAL, WATER,    100, 30,   0
+	move SPIKE_CANNON, EFFECT_MULTI_HIT,          25, PHYSICAL, WATER,    100, 30,   0 ; type changed to suit cloyster and omastar
 	move FLASH_CANNON, EFFECT_SP_DEF_DOWN_HIT,    80, SPECIAL,  STEEL,    100, 15,  30
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, STATUS,   PSYCHIC,  100, 20,   0
-	move WILLOWISP,	   EFFECT_BURN,                0, STATUS,   GHOST,     85, 15,   0
+	move WILLOWISP,	   EFFECT_BURN,                0, STATUS,   GHOST,     85, 15,   0 ; doesn't thaw, so type changed to ghost
 	move SOFTBOILED,   EFFECT_HEAL,                0, STATUS,   NORMAL,   100, 20,   0
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         130, PHYSICAL, FIGHTING,  90, 20,   0
 	move GLARE,        EFFECT_PARALYZE,            0, STATUS,   NORMAL,   100, 30,   0
@@ -156,16 +156,16 @@ ENDM
 	move SKY_ATTACK,   EFFECT_SKY_ATTACK,        200, PHYSICAL, FLYING,    90,  5,  30
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, STATUS,   NORMAL,   100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     30, SPECIAL,  WATER,    100, 30,  30
-	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        80, PHYSICAL, FAIRY_T,  100, 20,  20
+	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        80, PHYSICAL, FAIRY_T,  100, 20,  20 ; buffed to match elemental punches
 	move SPORE,        EFFECT_SLEEP,               0, STATUS,   GRASS,    100, 15,   0
-	move FLASH,        EFFECT_ACCURACY_DOWN_2,     0, STATUS,   NORMAL,   100, 20,   0
-	move PSYWAVE,      EFFECT_LEVEL_DAMAGE,        1, SPECIAL,  PSYCHIC,  100, 20,   0
+	move FLASH,        EFFECT_ACCURACY_DOWN_2,     0, STATUS,   NORMAL,   100, 20,   0 ; lowers accuracy by 2 stages to justify HM usage
+	move PSYWAVE,      EFFECT_LEVEL_DAMAGE,        1, SPECIAL,  PSYCHIC,  100, 20,   0 ; psychic-type night shade clone
 	move SPLASH,       EFFECT_SPLASH,              0, STATUS,   NORMAL,   100, 40,   0
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, STATUS,   POISON,   100, 40,   0
 	move CRABHAMMER,   EFFECT_NORMAL_HIT,        100, PHYSICAL, WATER,     90, 10,   0
-	move EXPLOSION,    EFFECT_EXPLOSION,         200, PHYSICAL, NORMAL,   100,  5,   0
+	move EXPLOSION,    EFFECT_EXPLOSION,         200, PHYSICAL, NORMAL,   100,  5,   0 ; effective power matches pre-nerf selfdestruct
 	move POISON_JAB,   EFFECT_POISON_HIT,         80, PHYSICAL, POISON,   100, 20,  30
-	move BONEMERANG,   EFFECT_DOUBLE_HIT,         65, PHYSICAL, GROUND,    85, 10,   0
+	move BONEMERANG,   EFFECT_DOUBLE_HIT,         65, PHYSICAL, GROUND,    85, 10,   0 ; power/accuracy based on old bone club
 	move REST,         EFFECT_HEAL,                0, STATUS,   PSYCHIC,  100, 10,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, PHYSICAL, ROCK,     100, 15,  30
 	move HYPER_FANG,   EFFECT_FLINCH_HIT,         80, PHYSICAL, NORMAL,   100, 15,  30
@@ -178,21 +178,21 @@ ENDM
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         60, PHYSICAL, CURSE_T,  100,  1,   0
 ; New to Gen 2
 	move SKETCH,       EFFECT_SKETCH,              0, STATUS,   CURSE_T,  100,  1,   0
-	move WILD_CHARGE,  EFFECT_WILD_CHARGE,       100, PHYSICAL, ELECTRIC, 100, 20,  30
+	move WILD_CHARGE,  EFFECT_WILD_CHARGE,       100, PHYSICAL, ELECTRIC, 100, 20,  30 ; can now paralyze like volt tackle
 	move THIEF,        EFFECT_THIEF,              65, PHYSICAL, DARK,     100, 20, 100
-	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, PHYSICAL, BUG,      100, 15,   0
+	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, PHYSICAL, BUG,      100, 15,   0 ; high critical chance
 	move MIND_READER,  EFFECT_LOCK_ON,             0, STATUS,   NORMAL,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, STATUS,   GHOST,    100, 15,   0
-	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, PHYSICAL, FIRE,     100, 20, 100 ; flame wheel + flame charge
+	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, PHYSICAL, FIRE,     100, 20, 100 ; also raises speed like flame charge
 	move IRON_HEAD,    EFFECT_FLINCH_HIT,         80, PHYSICAL, STEEL,    100, 15,  30
 	move CURSE,        EFFECT_CURSE,               0, STATUS,   CURSE_T,  100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, PHYSICAL, NORMAL,   100, 15,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, STATUS,   CURSE_T,  100, 30,   0
-	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, SPECIAL,  FLYING,   100,  5,   0
+	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, SPECIAL,  FLYING,   100, 10,   0
 	move COTTON_SPORE, EFFECT_SPEED_DOWN_2,        0, STATUS,   GRASS,    100, 20,   0
 	move REVERSAL,     EFFECT_REVERSAL,            1, PHYSICAL, FIGHTING, 100, 15,   0
 	move SPITE,        EFFECT_SPITE,               0, STATUS,   GHOST,    100, 10,   0
-	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, SPECIAL,  ICE,       90, 25,  30
+	move POWDER_SNOW,  EFFECT_FREEZE_HIT,         40, SPECIAL,  ICE,       90, 25,  30 ; accuracy and freeze chance inspired by gen 1 blizzard
 	move PROTECT,      EFFECT_PROTECT,             0, STATUS,   NORMAL,   100, 10,   0
 	move MACH_PUNCH,   EFFECT_PRIORITY_HIT,       40, PHYSICAL, FIGHTING, 100, 30,   0
 	move SCARY_FACE,   EFFECT_SPEED_DOWN_2,        0, STATUS,   NORMAL,   100, 20,   0
@@ -207,7 +207,7 @@ ENDM
 	move FORESIGHT,    EFFECT_FORESIGHT,           0, STATUS,   NORMAL,   100, 40,   0
 	move DESTINY_BOND, EFFECT_DESTINY_BOND,        0, STATUS,   GHOST,    100,  5,   0
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, STATUS,   NORMAL,   100,  5,   0
-	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     65, SPECIAL,  ICE,       95, 15, 100
+	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     65, SPECIAL,  ICE,       95, 15, 100 ; power buff inspired by glaciate
 	move AIR_SLASH,    EFFECT_FLINCH_HIT,         80, SPECIAL,  FLYING,   100, 15,  30
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, SPECIAL,  DARK,     100, 15,  30
 	move EARTH_POWER,  EFFECT_SP_DEF_DOWN_HIT,    80, SPECIAL,  GROUND,   100, 15,  30
@@ -216,7 +216,7 @@ ENDM
 	move GIGA_DRAIN,   EFFECT_LEECH_HIT,          80, SPECIAL,  GRASS,    100, 15,   0
 	move ENDURE,       EFFECT_ENDURE,              0, STATUS,   NORMAL,   100, 10,   0
 	move CHARM,        EFFECT_ATTACK_DOWN_2,       0, STATUS,   FAIRY_T,  100, 20,   0
-	move ROLLOUT,      EFFECT_ROLLOUT,            30, PHYSICAL, ROCK,      90, 20, 100
+	move ROLLOUT,      EFFECT_ROLLOUT,            30, PHYSICAL, ROCK,      90, 20, 100 ; raises speed with each hit
 	move FALSE_SWIPE,  EFFECT_FALSE_SWIPE,        40, PHYSICAL, NORMAL,   100, 40,   0
 	move SWAGGER,      EFFECT_SWAGGER,             0, STATUS,   NORMAL,    90, 15, 100
 	move MILK_DRINK,   EFFECT_HEAL,                0, STATUS,   NORMAL,   100, 10,   0
@@ -229,10 +229,10 @@ ENDM
 	move HEAL_BELL,    EFFECT_HEAL_BELL,           0, STATUS,   NORMAL,   100,  5,   0
 	move RETURN,       EFFECT_RETURN,              1, PHYSICAL, NORMAL,   100, 20,   0
 	move PRESENT,      EFFECT_PRESENT,             1, PHYSICAL, NORMAL,   100, 15,   0
-	move DAZZLINGLEAM, EFFECT_ACCURACY_DOWN_HIT,  80, SPECIAL,  FAIRY_T,  100, 15,  20
+	move DAZZLINGLEAM, EFFECT_ACCURACY_DOWN_HIT,  80, SPECIAL,  FAIRY_T,  100, 15,  20 ; secondary effect inspired by flash
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, STATUS,   NORMAL,   100, 20,   0
 	move PAIN_SPLIT,   EFFECT_PAIN_SPLIT,          0, STATUS,   NORMAL,   100, 20,   0
-	move SACRED_FIRE,  EFFECT_SACRED_FIRE,       120, PHYSICAL, FIRE,      95,  5, 100 ; sacred fire + inferno
+	move SACRED_FIRE,  EFFECT_SACRED_FIRE,       100, PHYSICAL, FIRE,      95,  5, 100 ; burn chance inspired by inferno
 	move MAGNITUDE,    EFFECT_MAGNITUDE,           1, PHYSICAL, GROUND,   100, 30,   0
 	move DYNAMICPUNCH, EFFECT_CONFUSE_HIT,       120, PHYSICAL, FIGHTING,  50,  5, 100
 	move MEGAHORN,     EFFECT_NORMAL_HIT,        120, PHYSICAL, BUG,       85, 10,   0
@@ -242,7 +242,7 @@ ENDM
 	move PURSUIT,      EFFECT_PURSUIT,            40, PHYSICAL, DARK,     100, 20,   0
 	move RAPID_SPIN,   EFFECT_RAPID_SPIN,         50, PHYSICAL, NORMAL,   100, 40, 100
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, STATUS,   DARK,     100, 20,   0
-	move IRON_TAIL,    EFFECT_DEFENSE_DOWN_HIT,   80, PHYSICAL, STEEL,    100, 15,  30
+	move IRON_TAIL,    EFFECT_DEFENSE_DOWN_HIT,   80, PHYSICAL, STEEL,    100, 15,  30 ; physical counterpart of flash cannon
 	move METAL_CLAW,   EFFECT_METAL_CLAW,         50, PHYSICAL, STEEL,    100, 30,  20
 	move VITAL_THROW,  EFFECT_ALWAYS_HIT,         70, PHYSICAL, FIGHTING, 100, 10,   0
 	move MORNING_SUN,  EFFECT_MORNING_SUN,         0, STATUS,   NORMAL,   100,  5,   0
@@ -250,7 +250,7 @@ ENDM
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, STATUS,   FAIRY_T,  100,  5,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,        1, SPECIAL,  CURSE_T,  100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, PHYSICAL, FIGHTING,  80,  5,   0
-	move TWISTER,      EFFECT_CONFUSE_HIT,        60, SPECIAL,  DRAGON,   100, 20,  30
+	move TWISTER,      EFFECT_CONFUSE_HIT,        60, SPECIAL,  DRAGON,   100, 20,  30 ; secondary effect inspired by hurricane
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, STATUS,   WATER,    100, 10,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, STATUS,   FIRE,     100, 10,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, PHYSICAL, DARK,     100, 15,  30
@@ -260,9 +260,9 @@ ENDM
 	move ANCIENTPOWER, EFFECT_ANCIENTPOWER,       60, SPECIAL,  ROCK,     100, 15,  20
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, SPECIAL,  GHOST,    100, 15,  30
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, SPECIAL,  PSYCHIC,  100, 15,   0
-	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   50, PHYSICAL, FIGHTING, 100, 20, 100
-	move WHIRLPOOL,    EFFECT_BIND,              120, SPECIAL,  WATER,     75,  5,   0
+	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   50, PHYSICAL, FIGHTING, 100, 20, 100 ; buffed to match strong style from legends arceus
+	move WHIRLPOOL,    EFFECT_BIND,              120, SPECIAL,  WATER,     75,  5,   0 ; changes inspired by magma storm
 	move DRILL_RUN,    EFFECT_NORMAL_HIT,         80, PHYSICAL, GROUND,   100, 15,   0
-	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,    90, SPECIAL,  FAIRY_T,  100, 15,  20
-	move PLAY_ROUGH,   EFFECT_ATTACK_DOWN_HIT,    90, PHYSICAL, FAIRY_T,  100, 15,  20
+	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,    90, SPECIAL,  FAIRY_T,  100, 15,  20 ; equalized with play rough
+	move PLAY_ROUGH,   EFFECT_ATTACK_DOWN_HIT,    90, PHYSICAL, FAIRY_T,  100, 15,  20 ; equalized with moonblast
 	move SHEER_COLD,   EFFECT_OHKO,                1, SPECIAL,  ICE,       30,  5,   0
