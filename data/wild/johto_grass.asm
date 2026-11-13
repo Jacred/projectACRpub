@@ -5,15 +5,15 @@
 	db 8
 	db $30
 ;morning
-		db RATTATA ;30		50% Rattata L6-12
-		db RATTATA ;10		25% Bellsprout L6-12
-		db RATTATA ;10		5% Spinarak L8-12
-		db BELLSPROUT ;10	5% Zubat L8-12
-		db BELLSPROUT ;5	5% Houndour L8-12
-		db BELLSPROUT ;5	4% Murkrow L8-12
-		db BELLSPROUT ;5	4% Weepinbell L12-16
-		db SPINARAK ;5		1% Oddish L8-12
-		db MURKROW ;4		1% Golbat L13-17
+		db RATTATA ;30      50% Rattata L6-12
+		db RATTATA ;10      25% Bellsprout L6-12
+		db RATTATA ;10      5% Spinarak L8-12
+		db BELLSPROUT ;10   5% Zubat L8-12
+		db BELLSPROUT ;5    5% Houndour L8-12
+		db BELLSPROUT ;5    4% Murkrow L8-12
+		db BELLSPROUT ;5    4% Weepinbell L12-16
+		db SPINARAK ;5      1% Oddish L8-12
+		db MURKROW ;4       1% Golbat L13-17
 		db WEEPINBELL ;4
 		db ZUBAT ;3
 		db HOUNDOUR ;3
@@ -22,15 +22,15 @@
 		db ODDISH ;1
 		db GOLBAT ;1
 ;day
-		db RATTATA ;30		50% Rattata L6-12
-		db RATTATA ;10		25% Bellsprout L6-12
-		db RATTATA ;10		5% Spinarak L8-12
-		db BELLSPROUT ;10	5% Zubat L8-12
-		db BELLSPROUT ;5	5% Houndour L8-12
-		db BELLSPROUT ;5	4% Murkrow L8-12
-		db BELLSPROUT ;5	4% Weepinbell L12-16
-		db SPINARAK ;5		1% Oddish L8-12
-		db MURKROW ;4		1% Golbat L13-17
+		db RATTATA ;30      50% Rattata L6-12
+		db RATTATA ;10      25% Bellsprout L6-12
+		db RATTATA ;10      5% Spinarak L8-12
+		db BELLSPROUT ;10   5% Zubat L8-12
+		db BELLSPROUT ;5    5% Houndour L8-12
+		db BELLSPROUT ;5    4% Murkrow L8-12
+		db BELLSPROUT ;5    4% Weepinbell L12-16
+		db SPINARAK ;5      1% Oddish L8-12
+		db MURKROW ;4       1% Golbat L13-17
 		db WEEPINBELL ;4
 		db ZUBAT ;3
 		db HOUNDOUR ;3
@@ -39,16 +39,16 @@
 		db ODDISH ;1
 		db GOLBAT ;1
 ;night
-		db GASTLY ;30		40% Gastly L6-12
-		db GASTLY ;10		25% Bellsprout L6-12
-		db RATTATA ;10		10% Rattata L8-12
-		db BELLSPROUT ;10	9% Misdreavus L8-12
-		db BELLSPROUT ;5	5% Spinarak L8-12
-		db BELLSPROUT ;5	4% Weepinbell L12-16
-		db BELLSPROUT ;5	3% Zubat L8-12
-		db SPINARAK ;5		2% Houndour L8-12
-		db MISDREAVUS ;4	1% Oddish L8-12
-		db WEEPINBELL ;4	1% Golbat L13-17
+		db GASTLY ;30       40% Gastly L6-12
+		db GASTLY ;10       25% Bellsprout L6-12
+		db RATTATA ;10      10% Rattata L8-12
+		db BELLSPROUT ;10   9% Misdreavus L8-12
+		db BELLSPROUT ;5    5% Spinarak L8-12
+		db BELLSPROUT ;5    4% Weepinbell L12-16
+		db BELLSPROUT ;5    3% Zubat L8-12
+		db SPINARAK ;5      2% Houndour L8-12
+		db MISDREAVUS ;4    1% Oddish L8-12
+		db WEEPINBELL ;4    1% Golbat L13-17
 		db ZUBAT ;3
 		db MISDREAVUS ;3
 		db HOUNDOUR ;2
@@ -61,15 +61,15 @@
 	db 8
 	db $30
 ;morning
-		db RATTATA ;30		50% Rattata L6-12
-		db RATTATA ;10		25% Bellsprout L6-12
-		db RATTATA ;10		5% Spinarak L8-12
-		db BELLSPROUT ;10	5% Zubat L8-12
-		db BELLSPROUT ;5	5% Houndour L8-12
-		db BELLSPROUT ;5	4% Murkrow L8-12
-		db BELLSPROUT ;5	4% Weepinbell L12-16
-		db SPINARAK ;5		1% Oddish L8-12
-		db MURKROW ;4		1% Golbat L13-17
+		db RATTATA ;30      50% Rattata L6-12
+		db RATTATA ;10      25% Bellsprout L6-12
+		db RATTATA ;10      5% Spinarak L8-12
+		db BELLSPROUT ;10   5% Zubat L8-12
+		db BELLSPROUT ;5    5% Houndour L8-12
+		db BELLSPROUT ;5    4% Murkrow L8-12
+		db BELLSPROUT ;5    4% Weepinbell L12-16
+		db SPINARAK ;5      1% Oddish L8-12
+		db MURKROW ;4       1% Golbat L13-17
 		db WEEPINBELL ;4
 		db ZUBAT ;3
 		db HOUNDOUR ;3
@@ -78,15 +78,15 @@
 		db ODDISH ;1
 		db GOLBAT ;1
 ;day
-		db RATTATA ;30		50% Rattata L6-12
-		db RATTATA ;10		25% Bellsprout L6-12
-		db RATTATA ;10		5% Spinarak L8-12
-		db BELLSPROUT ;10	5% Zubat L8-12
-		db BELLSPROUT ;5	5% Houndour L8-12
-		db BELLSPROUT ;5	4% Murkrow L8-12
-		db BELLSPROUT ;5	4% Weepinbell L12-16
-		db SPINARAK ;5		1% Oddish L8-12
-		db MURKROW ;4		1% Golbat L13-17
+		db RATTATA ;30      50% Rattata L6-12
+		db RATTATA ;10      25% Bellsprout L6-12
+		db RATTATA ;10      5% Spinarak L8-12
+		db BELLSPROUT ;10   5% Zubat L8-12
+		db BELLSPROUT ;5    5% Houndour L8-12
+		db BELLSPROUT ;5    4% Murkrow L8-12
+		db BELLSPROUT ;5    4% Weepinbell L12-16
+		db SPINARAK ;5      1% Oddish L8-12
+		db MURKROW ;4       1% Golbat L13-17
 		db WEEPINBELL ;4
 		db ZUBAT ;3
 		db HOUNDOUR ;3
@@ -95,16 +95,16 @@
 		db ODDISH ;1
 		db GOLBAT ;1
 ;night
-		db GASTLY ;30		40% Gastly L6-12
-		db GASTLY ;10		25% Bellsprout L6-12
-		db RATTATA ;10		10% Rattata L8-12
-		db BELLSPROUT ;10	9% Misdreavus L8-12
-		db BELLSPROUT ;5	5% Spinarak L8-12
-		db BELLSPROUT ;5	4% Weepinbell L12-16
-		db BELLSPROUT ;5	3% Zubat L8-12
-		db SPINARAK ;5		2% Houndour L8-12
-		db MISDREAVUS ;4	1% Oddish L8-12
-		db WEEPINBELL ;4	1% Golbat L13-17
+		db GASTLY ;30       40% Gastly L6-12
+		db GASTLY ;10       25% Bellsprout L6-12
+		db RATTATA ;10      10% Rattata L8-12
+		db BELLSPROUT ;10   9% Misdreavus L8-12
+		db BELLSPROUT ;5    5% Spinarak L8-12
+		db BELLSPROUT ;5    4% Weepinbell L12-16
+		db BELLSPROUT ;5    3% Zubat L8-12
+		db SPINARAK ;5      2% Houndour L8-12
+		db MISDREAVUS ;4    1% Oddish L8-12
+		db WEEPINBELL ;4    1% Golbat L13-17
 		db ZUBAT ;3
 		db MISDREAVUS ;3
 		db HOUNDOUR ;2
@@ -117,51 +117,51 @@
 	db 20
 	db $83
 	; morn
-		db RATTATA ;15		25% Rattata L20-24
-		db KOFFING ;10		15% Koffing L20-24
-		db ZUBAT ;10		10% Zubat L20-24
-		db HOUNDOUR ;10		10% Houndour L20-24
-		db RATTATA ;10		5% Spinarak L20-24
-		db KOFFING ;5		5% Hoothoot L20-24
-		db SPINARAK ;5		5% Slugma L20-24
-		db HOOTHOOT ;5		5% Murkrow L20-24
-		db SLUGMA ;5		5% Ariados L22-26
-		db MURKROW ;5		5% Noctowl L22-26
-		db ARIADOS ;5		5% Raticate L22-26
-		db NOCTOWL ;5		4% Golbat L22-26
-		db GOLBAT ;4		1% Houndoom L24-28
+		db RATTATA ;15      25% Rattata L20-24
+		db KOFFING ;10      15% Koffing L20-24
+		db ZUBAT ;10        10% Zubat L20-24
+		db HOUNDOUR ;10     10% Houndour L20-24
+		db RATTATA ;10      5% Spinarak L20-24
+		db KOFFING ;5       5% Hoothoot L20-24
+		db SPINARAK ;5      5% Slugma L20-24
+		db HOOTHOOT ;5      5% Murkrow L20-24
+		db SLUGMA ;5        5% Ariados L22-26
+		db MURKROW ;5       5% Noctowl L22-26
+		db ARIADOS ;5       5% Raticate L22-26
+		db NOCTOWL ;5       4% Golbat L22-26
+		db GOLBAT ;4        1% Houndoom L24-28
 		db RATICATE ;3
 		db RATICATE ;2
 		db HOUNDOOM ;1
 	; day
-		db RATTATA ;15		25% Rattata L20-24
-		db KOFFING ;10		15% Koffing L20-24
-		db ZUBAT ;10		15% Houndour L20-24
-		db HOUNDOUR ;10		10% Zubat L20-24
-		db RATTATA ;10		5% Spinarak L20-24
-		db KOFFING ;5		5% Slugma L20-24
-		db SPINARAK ;5		5% Murkrow L20-24
-		db HOUNDOUR ;5		5% Ariados L22-26
-		db SLUGMA ;5		5% Golbat L22-26
-		db MURKROW ;5		5% Raticate L22-26
-		db ARIADOS ;5		4% Houndoom L24-28
-		db GOLBAT ;5		1% Crobat L24-28
+		db RATTATA ;15      25% Rattata L20-24
+		db KOFFING ;10      15% Koffing L20-24
+		db ZUBAT ;10        15% Houndour L20-24
+		db HOUNDOUR ;10     10% Zubat L20-24
+		db RATTATA ;10      5% Spinarak L20-24
+		db KOFFING ;5       5% Slugma L20-24
+		db SPINARAK ;5      5% Murkrow L20-24
+		db HOUNDOUR ;5      5% Ariados L22-26
+		db SLUGMA ;5        5% Golbat L22-26
+		db MURKROW ;5       5% Raticate L22-26
+		db ARIADOS ;5       4% Houndoom L24-28
+		db GOLBAT ;5        1% Crobat L24-28
 		db HOUNDOOM ;4
 		db RATICATE ;3
 		db RATICATE ;2
 		db CROBAT ;1
 	; nite
-		db RATTATA ;15		25% Rattata L20-24
-		db KOFFING ;10		15% Koffing L20-24
-		db MISDREAVUS ;10	15% Misdreavus L20-24
-		db SPINARAK ;10		10% Spinarak L20-24
-		db RATTATA ;10		10% Houndour L20-24
-		db KOFFING ;5		5% Zubat L20-24
-		db MISDREAVUS ;5	5% Slugma L20-24
-		db HOUNDOUR ;5		5% Ariados L22-26
-		db ZUBAT ;5			5% Raticate L22-26
-		db SLUGMA ;5		4% Magmar L20-24
-		db ARIADOS ;5		1% Houndoom L24-28
+		db RATTATA ;15      25% Rattata L20-24
+		db KOFFING ;10      15% Koffing L20-24
+		db MISDREAVUS ;10   15% Misdreavus L20-24
+		db SPINARAK ;10     10% Spinarak L20-24
+		db RATTATA ;10      10% Houndour L20-24
+		db KOFFING ;5       5% Zubat L20-24
+		db MISDREAVUS ;5    5% Slugma L20-24
+		db HOUNDOUR ;5      5% Ariados L22-26
+		db ZUBAT ;5         5% Raticate L22-26
+		db SLUGMA ;5        4% Magmar L20-24
+		db ARIADOS ;5       1% Houndoom L24-28
 		db HOUNDOUR ;5
 		db MAGMAR ;4
 		db RATICATE ;3
@@ -173,52 +173,52 @@
 	db 21
 	db $91
 	; morn
-		db KOFFING ;20		34% Koffing L21-25	
-		db RATTATA ;20		20% Rattata L21-25
-		db KOFFING ;10		10% Slugma L21-25
-		db SLUGMA ;10		8% Shuckle L21-25
-		db HOUNDOUR ;5		7% Swinub L21-25
-		db SWINUB ;5		5% Houndour L21-25
-		db SHUCKLE ;5		5% Larvitar L21-25
-		db MAGMAR ;5		5% Magmar L21-25
-		db KOFFING ;4		4% Zubat L21-25
-		db ZUBAT ;4			1% Weezing L25-29
-		db LARVITAR ;3		1% Houndoom L25-29
+		db KOFFING ;20      34% Koffing L21-25	
+		db RATTATA ;20      20% Rattata L21-25
+		db KOFFING ;10      10% Slugma L21-25
+		db SLUGMA ;10       8% Shuckle L21-25
+		db HOUNDOUR ;5      7% Swinub L21-25
+		db SWINUB ;5        5% Houndour L21-25
+		db SHUCKLE ;5       5% Larvitar L21-25
+		db MAGMAR ;5        5% Magmar L21-25
+		db KOFFING ;4       4% Zubat L21-25
+		db ZUBAT ;4         1% Weezing L25-29
+		db LARVITAR ;3      1% Houndoom L25-29
 		db SHUCKLE ;3
 		db SWINUB ;2
 		db LARVITAR ;2
 		db WEEZING ;1
 		db HOUNDOOM ;1
 	; day
-		db KOFFING ;20		29% Koffing L21-25
-		db RATTATA ;20		20% Rattata L21-25
-		db SWINUB ;10		10% Swinub L21-25
-		db SLUGMA ;10		10% Slugma L21-25
-		db HOUNDOUR ;5		10% Houndour L21-25
-		db KOFFING ;5		7% Larvitar L21-25
-		db HOUNDOUR ;5		5% Magmar L21-25
-		db MAGMAR ;5		4% Zubat L21-25
-		db KOFFING ;4		3% Shuckle L21-25
-		db ZUBAT ;4			1% Weezing L25-29
-		db SHUCKLE ;3		1% Houndoom L25-29
+		db KOFFING ;20      29% Koffing L21-25
+		db RATTATA ;20      20% Rattata L21-25
+		db SWINUB ;10       10% Swinub L21-25
+		db SLUGMA ;10       10% Slugma L21-25
+		db HOUNDOUR ;5      10% Houndour L21-25
+		db KOFFING ;5       7% Larvitar L21-25
+		db HOUNDOUR ;5      5% Magmar L21-25
+		db MAGMAR ;5        4% Zubat L21-25
+		db KOFFING ;4       3% Shuckle L21-25
+		db ZUBAT ;4         1% Weezing L25-29
+		db SHUCKLE ;3       1% Houndoom L25-29
 		db LARVITAR ;3
 		db LARVITAR ;2
 		db LARVITAR ;2
 		db WEEZING ;1
 		db HOUNDOOM ;1
 	; nite
-		db KOFFING ;20		24% Koffing L21-25
-		db RATTATA ;20		20% Rattata L21-25
-		db MISDREAVUS ;10	15% Misdreavus L21-25
-		db SLUGMA ;10		10% Slugma L21-25
-		db LARVITAR ;5		10% Larvitar L21-25
-		db MISDREAVUS ;5	5% Magmar L21-25
-		db LARVITAR ;5		4% Zubat L21-25
-		db MAGMAR ;5		4% Houndour L21-25
-		db KOFFING ;4		3% Swinub L21-25
-		db ZUBAT ;4			3% Shuckle L21-25
-		db SWINUB ;3		1% Weezing L25-29	
-		db SHUCKLE ;3		1% Houndoom L25-29
+		db KOFFING ;20      24% Koffing L21-25
+		db RATTATA ;20      20% Rattata L21-25
+		db MISDREAVUS ;10   15% Misdreavus L21-25
+		db SLUGMA ;10       10% Slugma L21-25
+		db LARVITAR ;5      10% Larvitar L21-25
+		db MISDREAVUS ;5    5% Magmar L21-25
+		db LARVITAR ;5      4% Zubat L21-25
+		db MAGMAR ;5        4% Houndour L21-25
+		db KOFFING ;4       3% Swinub L21-25
+		db ZUBAT ;4         3% Shuckle L21-25
+		db SWINUB ;3        1% Weezing L25-29	
+		db SHUCKLE ;3       1% Houndoom L25-29
 		db HOUNDOUR ;2
 		db HOUNDOUR ;2
 		db WEEZING ;1
