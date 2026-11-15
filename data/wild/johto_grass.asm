@@ -229,51 +229,51 @@
 	db 17
 	db $03
 	; morn
-		db LEDYBA ;15		15% Ledyba L17-21
-		db CATERPIE ;10		10% Caterpie L17-21
-		db WEEDLE ;10		10% Weedle L17-21
-		db SUNKERN ;10		10% Sunkern L17-21
-		db PIDGEY ;10		10% Pidgey L17-21
-		db NIDORAN_M ;5		10% Nidoran L17-21
-		db NIDORAN_F ;5		5% Chansey L17-21
-		db CHANSEY ;5		5% Skarmory L17-21
-		db SKARMORY ;5		5% Pinsir L17-21
-		db PINSIR ;5		5% Scyther L17-21
-		db SCYTHER ;5		5% Heracross L17-21
-		db HERACROSS ;5		4% Chikorita L17-21
-		db CHIKORITA ;4		3% Spinarak L17-21
-		db SPINARAK ;3		3% Oddish L17-21
+		db LEDYBA ;15       15% Ledyba L17-21
+		db CATERPIE ;10     10% Caterpie L17-21
+		db WEEDLE ;10       10% Weedle L17-21
+		db SUNKERN ;10      10% Sunkern L17-21
+		db PIDGEY ;10       10% Pidgey L17-21
+		db NIDORAN_M ;5     10% Nidoran L17-21
+		db NIDORAN_F ;5     5% Chansey L17-21
+		db CHANSEY ;5       5% Skarmory L17-21
+		db SKARMORY ;5      5% Pinsir L17-21
+		db PINSIR ;5        5% Scyther L17-21
+		db SCYTHER ;5       5% Heracross L17-21
+		db HERACROSS ;5     4% Chikorita L17-21
+		db CHIKORITA ;4     3% Spinarak L17-21
+		db SPINARAK ;3      3% Oddish L17-21
 		db ODDISH ;2
 		db ODDISH ;1
 	; day
-		db SCYTHER ;15		20% Sunkern L17-21
-		db CATERPIE ;10		15% Scyther L17-21
-		db WEEDLE ;10		10% Caterpie L17-21
-		db SUNKERN ;10		10% Weedle L17-21
-		db SUNKERN ;10		10% Nidoran L17-21
-		db NIDORAN_M ;5		5% Chansey L17-21
-		db NIDORAN_F ;5		5% Skarmory L17-21
-		db CHANSEY ;5		5% Pidgey L17-21
-		db SKARMORY ;5		5% Marill L17-21
-		db PIDGEY ;5		5% Ledyba L17-21
-		db MARILL ;5		4% Chikorita L17-21
-		db LEDYBA ;5		3% Heracross L17-21
-		db CHIKORITA ;4		3% Pinsir L17-21
+		db SCYTHER ;15      20% Sunkern L17-21
+		db CATERPIE ;10     15% Scyther L17-21
+		db WEEDLE ;10       10% Caterpie L17-21
+		db SUNKERN ;10      10% Weedle L17-21
+		db SUNKERN ;10      10% Nidoran L17-21
+		db NIDORAN_M ;5     5% Chansey L17-21
+		db NIDORAN_F ;5     5% Skarmory L17-21
+		db CHANSEY ;5       5% Pidgey L17-21
+		db SKARMORY ;5      5% Marill L17-21
+		db PIDGEY ;5        5% Ledyba L17-21
+		db MARILL ;5        4% Chikorita L17-21
+		db LEDYBA ;5        3% Heracross L17-21
+		db CHIKORITA ;4     3% Pinsir L17-21
 		db HERACROSS ;3
 		db PINSIR ;2
 		db PINSIR ;1
 	; nite
-		db PSYDUCK ;15		20% Hoothoot L17-21
-		db HOOTHOOT ;10		20% Spinarak L17-21
-		db SPINARAK ;10		15% Psyduck L17-21
-		db HOOTHOOT ;10		10% Oddish L17-21
-		db SPINARAK ;10		8% Houndour L17-21
-		db ODDISH ;5		7% Sneasel L17-21
-		db ODDISH ;5		5% Venonat L17-21
-		db HOUNDOUR ;5		5% Skarmory L17-21
-		db SNEASEL ;5		5% Scyther L17-21
-		db VENONAT ;5		4% Chikorita L17-21
-		db SKARMORY ;5		1% Chansey L17-21
+		db PSYDUCK ;15      20% Hoothoot L17-21
+		db HOOTHOOT ;10     20% Spinarak L17-21
+		db SPINARAK ;10     15% Psyduck L17-21
+		db HOOTHOOT ;10     10% Oddish L17-21
+		db SPINARAK ;10     8% Houndour L17-21
+		db ODDISH ;5        7% Sneasel L17-21
+		db ODDISH ;5        5% Venonat L17-21
+		db HOUNDOUR ;5      5% Skarmory L17-21
+		db SNEASEL ;5       5% Scyther L17-21
+		db VENONAT ;5       4% Chikorita L17-21
+		db SKARMORY ;5      1% Chansey L17-21
 		db SCYTHER ;5		
 		db CHIKORITA ;4
 		db HOUNDOUR ;3
@@ -285,15 +285,15 @@
 	db 26
 	db $03
 ;morning
-		db NATU ;15			45% Natu L26-30
-		db NATU ;10			10% Smeargle L26-30
-		db NATU ;10			10% Pichu L26-30
-		db NATU ;10			10% Tyrogue L26-30
-		db SMEARGLE ;10		9% Teddiursa L26-30
-		db TEDDIURSA ;5		5% Cleffa L26-30
-		db PICHU ;5			5% Skarmory L26-30
-		db TYROGUE ;5		5% Bellossom L26-30
-		db CLEFFA ;5		1% Ursaring L26-30
+		db NATU ;15         45% Natu L26-30
+		db NATU ;10         10% Smeargle L26-30
+		db NATU ;10         10% Pichu L26-30
+		db NATU ;10         10% Tyrogue L26-30
+		db SMEARGLE ;10     9% Teddiursa L26-30
+		db TEDDIURSA ;5     5% Cleffa L26-30
+		db PICHU ;5         5% Skarmory L26-30
+		db TYROGUE ;5       5% Bellossom L26-30
+		db CLEFFA ;5        1% Ursaring L26-30
 		db SKARMORY ;5
 		db BELLOSSOM ;5
 		db PICHU ;5
@@ -302,16 +302,16 @@
 		db TYROGUE ;2
 		db URSARING ;1
 ;day
-		db NATU ;15			45% Natu L26-30
-		db NATU ;10			10% Smeargle L26-30
-		db NATU ;10			10% Tyrogue L26-30
-		db NATU ;10			8% Teddiursa L26-30
-		db SMEARGLE ;10		5% Igglybuff L26-30
-		db TYROGUE ;5		5% Pichu L26-30
-		db TYROGUE ;5		5% Skarmory L26-30
-		db TEDDIURSA ;5		5% Cleffa L26-30
-		db IGGLYBUFF ;5		5% Bellossom L26-30
-		db PICHU ;5			2% Ursaring L26-30
+		db NATU ;15         45% Natu L26-30
+		db NATU ;10         10% Smeargle L26-30
+		db NATU ;10         10% Tyrogue L26-30
+		db NATU ;10         8% Teddiursa L26-30
+		db SMEARGLE ;10     5% Igglybuff L26-30
+		db TYROGUE ;5       5% Pichu L26-30
+		db TYROGUE ;5       5% Skarmory L26-30
+		db TEDDIURSA ;5     5% Cleffa L26-30
+		db IGGLYBUFF ;5     5% Bellossom L26-30
+		db PICHU ;5         2% Ursaring L26-30
 		db SKARMORY ;5
 		db CLEFFA ;5
 		db BELLOSSOM ;4
@@ -319,18 +319,18 @@
 		db URSARING ;2
 		db BELLOSSOM ;1
 ;night
-		db NATU ;15			45% Natu L26-30
-		db NATU ;10			15% Misdreavus L26-30
-		db NATU ;10			5% Cleffa L26-30
-		db NATU ;10			5% Smeargle L26-30
-		db MISDREAVUS ;10	5% Igglybuff L26-30
-		db MISDREAVUS ;5	5% Tyrogue L26-30
-		db CLEFFA ;5		5% Skarmory L26-30
-		db SMEARGLE ;5		5% Pichu L26-30
-		db IGGLYBUFF ;5		4% Teddiursa L26-30
-		db TYROGUE ;5		3% Wooper L26-30
-		db SKARMORY ;5		2% Quagsire L26-30
-		db PICHU ;5			1% Ursaring L26-30
+		db NATU ;15         45% Natu L26-30
+		db NATU ;10         15% Misdreavus L26-30
+		db NATU ;10         5% Cleffa L26-30
+		db NATU ;10         5% Smeargle L26-30
+		db MISDREAVUS ;10   5% Igglybuff L26-30
+		db MISDREAVUS ;5    5% Tyrogue L26-30
+		db CLEFFA ;5        5% Skarmory L26-30
+		db SMEARGLE ;5      5% Pichu L26-30
+		db IGGLYBUFF ;5     4% Teddiursa L26-30
+		db TYROGUE ;5       3% Wooper L26-30
+		db SKARMORY ;5      2% Quagsire L26-30
+		db PICHU ;5         1% Ursaring L26-30
 		db TEDDIURSA ;4
 		db WOOPER ;3
 		db QUAGSIRE ;2
@@ -341,10 +341,10 @@
 	db 10
 	db $10
 ;morning
-		db UNOWN ;30		70% Unown L10-14
-		db UNOWN ;10		25% Unown L15-19
-		db UNOWN ;10		4% Unown L20-24
-		db UNOWN ;10		1% Unown L25-29
+		db UNOWN ;30        70% Unown L10-14
+		db UNOWN ;10        25% Unown L15-19
+		db UNOWN ;10        4% Unown L20-24
+		db UNOWN ;10        1% Unown L25-29
 		db UNOWN ;5
 		db UNOWN ;5
 		db UNOWN ;5
@@ -358,10 +358,10 @@
 		db UNOWN ;1
 		db UNOWN ;1
 ;day
-		db UNOWN ;30		70% Unown L10-14
-		db UNOWN ;10		25% Unown L15-19
-		db UNOWN ;10		4% Unown L20-24
-		db UNOWN ;10		1% Unown L25-29
+		db UNOWN ;30        70% Unown L10-14
+		db UNOWN ;10        25% Unown L15-19
+		db UNOWN ;10        4% Unown L20-24
+		db UNOWN ;10        1% Unown L25-29
 		db UNOWN ;5
 		db UNOWN ;5
 		db UNOWN ;5
@@ -375,10 +375,10 @@
 		db UNOWN ;1
 		db UNOWN ;1
 ;night
-		db UNOWN ;30		70% Unown L10-14
-		db UNOWN ;10		25% Unown L15-19
-		db UNOWN ;10		4% Unown L20-24
-		db UNOWN ;10		1% Unown L25-29
+		db UNOWN ;30        70% Unown L10-14
+		db UNOWN ;10        25% Unown L15-19
+		db UNOWN ;10        4% Unown L20-24
+		db UNOWN ;10        1% Unown L25-29
 		db UNOWN ;5
 		db UNOWN ;5
 		db UNOWN ;5
@@ -397,50 +397,50 @@
 	db 10
 	db $03
 	; morn
-		db GEODUDE ;15		15% Geodude L10-14
-		db ZUBAT ;10		15% Sandshrew L10-14
-		db SANDSHREW ;10	10% Zubat L10-14
-		db WOOPER ;10		10% Wooper L10-14
-		db SLUGMA ;10		10% Slugma L10-14
-		db SANDSHREW ;5		10% Shuckle L10-14
-		db RATTATA ;5		5% Rattata L10-14
-		db SHUCKLE ;5		5% Tyrogue L10-14
-		db TYROGUE ;5		5% Swinub L10-14
-		db SWINUB ;5		5% Larvitar L10-14
-		db LARVITAR ;5		5% Gligar L10-14
-		db GLIGAR ;5		5% Onix L10-14
+		db GEODUDE ;15      15% Geodude L10-14
+		db ZUBAT ;10        15% Sandshrew L10-14
+		db SANDSHREW ;10    10% Zubat L10-14
+		db WOOPER ;10       10% Wooper L10-14
+		db SLUGMA ;10       10% Slugma L10-14
+		db SANDSHREW ;5     10% Shuckle L10-14
+		db RATTATA ;5       5% Rattata L10-14
+		db SHUCKLE ;5       5% Tyrogue L10-14
+		db TYROGUE ;5       5% Swinub L10-14
+		db SWINUB ;5        5% Larvitar L10-14
+		db LARVITAR ;5      5% Gligar L10-14
+		db GLIGAR ;5        5% Onix L10-14
 		db ONIX ;4
 		db SHUCKLE ;3
 		db SHUCKLE ;2
 		db ONIX ;1
 	; day
-		db GEODUDE ;15		20% Swinub L10-14
-		db SANDSHREW ;10	15% Geodude L10-14
-		db ZUBAT ;10		15% Sandshrew L10-14
-		db SWINUB ;10		10% Zubat L10-14
-		db SWINUB ;10		10% Slugma L10-14
-		db SLUGMA ;5		5% Rattata L10-14
-		db SLUGMA ;5		5% Shuckle L10-14
-		db RATTATA ;5		5% Gligar L10-14
-		db SANDSHREW ;5		5% Onix L10-14
-		db SHUCKLE ;5		4% Wooper L10-14
-		db GLIGAR ;5		3% Larvitar L10-14
-		db ONIX ;5			3% Tyrogue L10-14
+		db GEODUDE ;15      20% Swinub L10-14
+		db SANDSHREW ;10    15% Geodude L10-14
+		db ZUBAT ;10        15% Sandshrew L10-14
+		db SWINUB ;10       10% Zubat L10-14
+		db SWINUB ;10       10% Slugma L10-14
+		db SLUGMA ;5        5% Rattata L10-14
+		db SLUGMA ;5        5% Shuckle L10-14
+		db RATTATA ;5       5% Gligar L10-14
+		db SANDSHREW ;5     5% Onix L10-14
+		db SHUCKLE ;5       4% Wooper L10-14
+		db GLIGAR ;5        3% Larvitar L10-14
+		db ONIX ;5          3% Tyrogue L10-14
 		db WOOPER ;4
 		db LARVITAR ;3
 		db TYROGUE ;2
 		db TYROGUE ;1
 	; nite
-		db GEODUDE ;15		20% Rattata L10-14
-		db RATTATA ;10		15% Geodude L10-14
-		db RATTATA ;10		15% Wooper L10-14
-		db SLUGMA ;10		10% Slugma L10-14
-		db LARVITAR ;10		10% Larvitar L10-14
-		db WOOPER ;5		8% Shuckle L10-14
-		db WOOPER ;5		7% Tyrogue L10-14
-		db WOOPER ;5		5% Swinub L10-14
-		db SWINUB ;5		5% Gligar L10-14
-		db GLIGAR ;5		5% Onix L10-14
+		db GEODUDE ;15      20% Rattata L10-14
+		db RATTATA ;10      15% Geodude L10-14
+		db RATTATA ;10      15% Wooper L10-14
+		db SLUGMA ;10       10% Slugma L10-14
+		db LARVITAR ;10     10% Larvitar L10-14
+		db WOOPER ;5        8% Shuckle L10-14
+		db WOOPER ;5        7% Tyrogue L10-14
+		db WOOPER ;5        5% Swinub L10-14
+		db SWINUB ;5        5% Gligar L10-14
+		db GLIGAR ;5        5% Onix L10-14
 		db SHUCKLE ;5
 		db TYROGUE ;5
 		db ONIX ;4
@@ -453,51 +453,51 @@
 	db 12
 	db $03
 	; morn
-		db GEODUDE ;15		20% Zubat L12-16
-		db ZUBAT ;10		15% Geodude L12-16
-		db ZUBAT ;10		10% Wooper L12-16
-		db WOOPER ;10		10% Slugma L12-16
-		db SLUGMA ;10		10% Shuckle L12-16
-		db RATTATA ;5		5% Rattata L12-16
-		db SANDSHREW ;5		5% Sandshrew L12-16
-		db SHUCKLE ;5		5% Tyrogue L12-16
-		db TYROGUE ;5		5% Swinub L12-16
-		db SWINUB ;5		5% Larvitar L12-16
-		db LARVITAR ;5		5% Gligar L12-16
-		db GLIGAR ;5		5% Onix L12-16
+		db GEODUDE ;15      20% Zubat L12-16
+		db ZUBAT ;10        15% Geodude L12-16
+		db ZUBAT ;10        10% Wooper L12-16
+		db WOOPER ;10       10% Slugma L12-16
+		db SLUGMA ;10       10% Shuckle L12-16
+		db RATTATA ;5       5% Rattata L12-16
+		db SANDSHREW ;5     5% Sandshrew L12-16
+		db SHUCKLE ;5       5% Tyrogue L12-16
+		db TYROGUE ;5       5% Swinub L12-16
+		db SWINUB ;5        5% Larvitar L12-16
+		db LARVITAR ;5      5% Gligar L12-16
+		db GLIGAR ;5        5% Onix L12-16
 		db ONIX ;4
 		db SHUCKLE ;3
 		db SHUCKLE ;2
 		db ONIX ;1
 	; day
-		db GEODUDE ;15		20% Zubat L12-16
-		db ZUBAT ;10		20% Swinub L12-16
-		db ZUBAT ;10		15% Geodude L12-16
-		db SWINUB ;10		10% Slugma L12-16
-		db SWINUB ;10		5% Rattata L12-16
-		db SLUGMA ;5		5% Sandshrew L12-16
-		db SLUGMA ;5		5% Shuckle L12-16
-		db RATTATA ;5		5% Gligar L12-16
-		db SANDSHREW ;5		5% Onix L12-16
-		db SHUCKLE ;5		4% Wooper L12-16
-		db GLIGAR ;5		3% Larvitar L12-16
-		db ONIX ;5			3% Tyrogue L12-16
+		db GEODUDE ;15      20% Zubat L12-16
+		db ZUBAT ;10        20% Swinub L12-16
+		db ZUBAT ;10        15% Geodude L12-16
+		db SWINUB ;10       10% Slugma L12-16
+		db SWINUB ;10       5% Rattata L12-16
+		db SLUGMA ;5        5% Sandshrew L12-16
+		db SLUGMA ;5        5% Shuckle L12-16
+		db RATTATA ;5       5% Gligar L12-16
+		db SANDSHREW ;5     5% Onix L12-16
+		db SHUCKLE ;5       4% Wooper L12-16
+		db GLIGAR ;5        3% Larvitar L12-16
+		db ONIX ;5          3% Tyrogue L12-16
 		db WOOPER ;4
 		db LARVITAR ;3
 		db TYROGUE ;2
 		db TYROGUE ;1
 	; nite
-		db GEODUDE ;15		15% Geodude L12-16
-		db ZUBAT ;10		15% Zubat L12-16
-		db WOOPER ;10		15% Wooper L12-16
-		db SLUGMA ;10		10% Slugma L12-16
-		db LARVITAR ;10		10% Larvitar L12-16
-		db ZUBAT ;5			8% Shuckle L12-16
-		db WOOPER ;5		7% Tyrogue L12-16
-		db RATTATA ;5		5% Rattata L12-16
-		db SWINUB ;5		5% Swinub L12-16
-		db GLIGAR ;5		5% Gligar L12-16
-		db SHUCKLE ;5		5% Onix L12-16
+		db GEODUDE ;15      15% Geodude L12-16
+		db ZUBAT ;10        15% Zubat L12-16
+		db WOOPER ;10       15% Wooper L12-16
+		db SLUGMA ;10       10% Slugma L12-16
+		db LARVITAR ;10     10% Larvitar L12-16
+		db ZUBAT ;5         8% Shuckle L12-16
+		db WOOPER ;5        7% Tyrogue L12-16
+		db RATTATA ;5       5% Rattata L12-16
+		db SWINUB ;5        5% Swinub L12-16
+		db GLIGAR ;5        5% Gligar L12-16
+		db SHUCKLE ;5       5% Onix L12-16
 		db TYROGUE ;5
 		db ONIX ;4
 		db SHUCKLE ;3
