@@ -11188,17 +11188,17 @@ GruntFGroup:
 MysticalmanGroup:
 	db "EUSINE@" ; Battle 1 - Burned Tower
 	db (1 << TRAINERTYPE_MOVES) | (1 << TRAINERTYPE_MAXXP)
-	db 23, DROWZEE
+	db 25, DROWZEE
 		db HYPNOSIS
 		db DISABLE
 		db CONFUSION
 		db DREAM_EATER
-	db 23, HAUNTER
+	db 25, HAUNTER
 		db HYPNOSIS
 		db LICK
 		db MEAN_LOOK
 		db CURSE
-	db 25, ELECTRODE ; hyper potion target
+	db 27, ELECTRODE ; hyper potion target
 		db SONICBOOM
 		db ROLLOUT
 		db SCREECH
